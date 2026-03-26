@@ -52,6 +52,7 @@ const Index = () => {
   };
 
   const onSubmit = async (data: IntakeValues) => {
+    localStorage.setItem('intake_data', JSON.stringify(data));
     const success = await submitIntake(data);
     if (success) {
       navigate('/audit');
