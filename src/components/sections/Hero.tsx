@@ -63,7 +63,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
                         <Button
                             onClick={onContactClick}
                             size="lg"
-                            className="h-16 md:h-24 w-full md:w-auto rounded-none px-8 md:px-16 text-base md:text-2xl font-black uppercase tracking-[0.3em] bg-white hover:bg-white/90 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] text-black transition-all group shrink-0"
+                            className="h-16 md:h-24 w-full md:w-auto rounded-none px-8 md:px-16 text-base md:text-2xl font-black uppercase tracking-[0.3em] bg-[#10b981] hover:bg-[#10b981]/90 hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] text-black transition-all group shrink-0 border-none"
                         >
                             INITIATE AUDIT
                             <ArrowRight className="ml-4 h-6 w-6 md:h-8 md:w-8 transition-transform group-hover:translate-x-3" />

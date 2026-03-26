@@ -177,7 +177,7 @@ const Index = () => {
                     type="submit"
                     size="lg"
                     disabled={isLoading}
-                    className="w-full h-20 md:h-24 rounded-none bg-[#10b981] hover:bg-[#0ea672] text-black text-xl font-black uppercase tracking-[0.3em] transition-all px-4 disabled:opacity-50 disabled:cursor-not-allowed group border-none"
+                    className="w-full h-20 md:h-24 rounded-none bg-[#10b981] hover:bg-[#0ea672] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] text-black text-xl font-black uppercase tracking-[0.3em] transition-all px-4 disabled:opacity-50 disabled:cursor-not-allowed group border-none"
                   >
                     {isLoading ? (
                       <div className="flex items-center gap-4">

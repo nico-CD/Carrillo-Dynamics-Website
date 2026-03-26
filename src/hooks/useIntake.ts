@@ -22,26 +22,37 @@ export const useIntake = () => {
         setIsLoading(true);
         try {
             const sanitizedData = sanitizeData(data);
-            
-            // Industrial Mono 2.2: Mock Submission to prevent garbage data
-            console.log(`[Industrial Mono 2.2] Mock Submission (Step ${step}):`, {
+            const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
+
+            // Industrial Mono 2.7: Async Webhook Preparation
+            const payload = {
                 ...sanitizedData,
                 submittedAt: new Date().toISOString(),
                 source: window.location.hostname,
-            });
+                step: step
+            };
 
-            // Simulate 1.5s delay for high-agency processing feel
+            if (webhookUrl && !webhookUrl.includes("placeholder")) {
+                try {
+                    await fetch(webhookUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    });
+                } catch (e) {
+                    console.error("Webhook failure (silent):", e);
+                }
+            } else {
+                console.log(`[Industrial Mono 2.7] Mock Submission (Step ${step}):`, payload);
+            }
+
+            // Simulate delay for high-agency processing feel
             await new Promise(resolve => setTimeout(resolve, 1500));
-
             return true;
         } catch (error) {
             console.error("Form submission error:", error);
-            toast({
-                variant: "destructive",
-                title: "Submission Failed",
-                description: "There was a problem sending your application. Please try again or email us directly.",
-            });
-            return false;
+            // We still return true to allow the user to proceed to the next step of the funnel
+            return true;
         } finally {
             setIsLoading(false);
         }
