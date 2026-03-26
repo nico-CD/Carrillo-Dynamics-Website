@@ -16,7 +16,7 @@ Carrillo Dynamics is specialized in the forensic analysis and engineering of bus
 1. **Homepage (Intake)**: Initial operational friction capture.
 2. **Analysis (/audit)**: Value-first diagnostic and forensic audit sales page ($99.00).
 3. **Execution (Stripe)**: Secure external transaction processing.
-4. **Diagnostic (/success)**: Deep-dive Forensic Diagnostic Intake. Collects high-density operational data (Systems Stack, Throughput, Latency) for technical synthesis and automated report generation.
+4. **Diagnostic (/success)**: High-authority Executive Intake. Analyzes technical stack overlap, monthly data throughput, and operational bottlenecks for forensic report synthesis.
 
 ## Core Philosophy: "Engineering Flow"
 Our objective is the total elimination of operational friction. We do not build software scripts; we engineer high-authority systems that reclaim time and ensure consistent, scalable performance.
