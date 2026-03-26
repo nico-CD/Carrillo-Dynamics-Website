@@ -22,17 +22,19 @@ export const useIntake = () => {
         setIsLoading(true);
         try {
             const sanitizedData = sanitizeData(data);
-            const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
+            const webhookUrl = "https://n8n.carrillodynamics.com/webhook-test/CD-audit";
 
-            // Industrial Mono 2.7: Async Webhook Preparation
+            // The Handshake: n8n Lead Generation Payload
             const payload = {
-                ...sanitizedData,
+                lead_name: sanitizedData.firstName,
+                lead_email: sanitizedData.email,
+                bottleneck: sanitizedData.howCanWeHelp,
                 submittedAt: new Date().toISOString(),
                 source: window.location.hostname,
-                step: step
+                event_type: "lead_gen"
             };
 
-            if (webhookUrl && !webhookUrl.includes("placeholder")) {
+            if (webhookUrl) {
                 try {
                     await fetch(webhookUrl, {
                         method: "POST",

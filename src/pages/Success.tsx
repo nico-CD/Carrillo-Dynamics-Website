@@ -46,22 +46,44 @@ const Success = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        const finalPayload = {
-            ...intakeData,
-            diagnostic: formData,
+        const webhookUrl = "https://n8n.carrillodynamics.com/webhook-test/CD-audit";
+
+        // The Handshake: n8n Audit Intake Payload
+        const payload = {
+            lead_name: intakeData?.firstName || "N/A",
+            lead_email: intakeData?.email || "N/A",
+            systemStack: formData.systemStack,
+            monthlyThroughput: formData.monthlyThroughput,
+            manualLatency: formData.manualLatency,
+            interfaceRequirements: formData.interfaceRequirements,
+            primaryObjective: formData.primaryObjective,
             submittedAt: new Date().toISOString(),
-            type: "TECHNICAL_DIAGNOSTIC"
+            source: window.location.hostname,
+            event_type: "audit_intake"
         };
 
-        console.log("[Industrial Mono 3.0] Technical Synthesis Payload:", finalPayload);
+        console.log("[The Handshake] Initiating Audit Transmission:", payload);
 
-        // Simulate clinical processing delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        // Clear local storage after successful bridge
-        localStorage.removeItem('intake_data');
+        try {
+            const response = await fetch(webhookUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                console.log("[The Handshake] Transmission Confirmed.");
+                localStorage.removeItem('intake_data');
+            }
+            
+            // Industrial Mono 4.0: Show terminal readout regardless for mission continuity
+            setIsSubmitted(true);
+        } catch (error) {
+            console.error("[The Handshake] Critical Transmission Error:", error);
+            setIsSubmitted(true); // Allow UI to transition to terminal state
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
