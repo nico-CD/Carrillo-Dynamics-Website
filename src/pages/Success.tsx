@@ -209,61 +209,60 @@ const Success = () => {
                             </motion.div>
                         </div>
                     ) : (
-                        <motion.div 
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            className="max-w-xl mx-auto w-full bg-zinc-900 border border-[#10b981]/30 p-12 space-y-6 tech-mono"
-                        >
-                            <div className="space-y-4">
-                                <motion.p 
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.2 }}
-                                    className="text-[#10b981] text-xs font-bold uppercase tracking-widest"
-                                >
-                                    &gt; DATA_PACKET_RECEIVED
-                                </motion.p>
-                                <motion.p 
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.5 }}
-                                    className="text-[#10b981] text-xs font-bold uppercase tracking-widest"
-                                >
-                                    &gt; ENCRYPTING_TRANSMISSION...
-                                </motion.p>
-                                <motion.p 
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.8 }}
-                                    className="text-[#10b981] text-xs font-bold uppercase tracking-widest"
-                                >
-                                    &gt; ARCHITECT_NOTIFIED.
-                                </motion.p>
-                                <motion.p 
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 1.1 }}
-                                    className="text-white text-xs font-bold uppercase tracking-widest pt-4"
-                                >
-                                    &gt; FINAL_REPORT_PENDING_ASYNCHRONOUS_REVIEW.
-                                </motion.p>
-                            </div>
-
+                        <div className="flex-1 flex items-center justify-center p-6 bg-black">
                             <motion.div 
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 2 }}
-                                className="pt-12"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                className="max-w-md mx-auto w-full border border-zinc-900 bg-[#050505] p-8 md:p-12 space-y-10 tech-mono shadow-2xl overflow-hidden relative"
                             >
-                                <Button
-                                    onClick={() => navigate("/")}
-                                    variant="outline"
-                                    className="w-full rounded-none border-zinc-800 text-zinc-400 hover:bg-white hover:text-black transition-all text-[10px] uppercase font-black tracking-widest h-12"
+                                <div className="space-y-6">
+                                    {[
+                                        { text: "DATA_PACKET_RECEIVED", delay: 0.2 },
+                                        { text: "ENCRYPTING_TRANSMISSION...", delay: 0.5 },
+                                        { text: "ARCHITECT_NOTIFIED.", delay: 0.8 },
+                                    ].map((line, idx) => (
+                                        <motion.div 
+                                            key={idx}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: line.delay }}
+                                            className="flex items-start gap-3"
+                                        >
+                                            <span className="text-[#10b981] font-bold">&gt;</span>
+                                            <p className="text-zinc-200 text-[10px] md:text-xs font-bold uppercase tracking-widest leading-relaxed">{line.text}</p>
+                                        </motion.div>
+                                    ))}
+                                    
+                                    <motion.div 
+                                        initial={{ opacity: 0, x: -10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 1.1 }}
+                                        className="flex items-start gap-3 pt-4"
+                                    >
+                                        <span className="text-[#10b981] font-bold">&gt;</span>
+                                        <p className="text-zinc-200 text-[10px] md:text-xs font-bold uppercase tracking-widest leading-relaxed break-all">
+                                            FINAL_REPORT_PENDING_ASYNCHRONOUS_REVIEW.
+                                        </p>
+                                    </motion.div>
+                                </div>
+
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 1.5 }}
+                                    className="pt-6"
                                 >
-                                    Terminating_Session
-                                </Button>
+                                    <Button
+                                        onClick={() => navigate("/")}
+                                        className="w-full h-14 rounded-none border border-zinc-800 bg-transparent hover:bg-zinc-900 text-zinc-400 hover:text-white tech-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] transition-all"
+                                    >
+                                        RETURN TO SYSTEMS CONTROL
+                                    </Button>
+                                </motion.div>
+
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-[#10b981]/5 blur-3xl rounded-full -mr-12 -mt-12" />
                             </motion.div>
-                        </motion.div>
+                        </div>
                     )}
                 </div>
             </main>

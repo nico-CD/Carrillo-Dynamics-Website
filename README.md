@@ -7,16 +7,22 @@ Carrillo Dynamics is specialized in the forensic analysis and engineering of bus
 
 ## The Stack
 - **Foundational**: Vite, React 18, TypeScript (High-performance SPA)
-- **Styling**: Tailwind CSS (Custom "Industrial Mono" Design System)
+- **Styling**: Vanilla CSS + Tailwind Core (Custom "Industrial Mono" Design System)
 - **Fluidity**: Framer Motion (Deterministic micro-animations)
-- **Processing**: n8n Webhook Architecture for lead/audit synthesis
+- **Processing**: n8n Production Webhook Architecture for lead/audit synthesis
 - **Payments**: Stripe Checkout Integration
 
-## The Funnel (Unified Revenue Track)
-1. **Homepage (Intake)**: Initial operational friction capture.
-2. **Analysis (/audit)**: Value-first diagnostic and forensic audit sales page ($99.00).
-3. **Execution (Stripe)**: Secure external transaction processing.
-4. **Diagnostic (/success)**: High-authority Executive Intake. Analyzes technical stack overlap, monthly data throughput, and operational bottlenecks for forensic report synthesis.
+---
+
+## 🚀 The Revenue Funnel (Industrial Mono 4.1)
+The platform implements a high-conversion 4-stage funnel optimized for mobile-first executive interactions:
+
+1.  **Lead Capture (Index)**: High-urgency baseline intake for initial operational friction capture.
+2.  **Strategic Qualification (/audit)**: Value-first diagnostic and forensic audit sales page ($99.00).
+3.  **Payment Verification (Stripe)**: Frictionless external transaction processing.
+4.  **Executive Diagnostic (/success)**: High-authority Technical Synthesis. Analyzes stack overlap, monthly throughput (Select-based), and "Human Tax" (Manual Latency Select) for forensic report generation.
+
+---
 
 ## Core Philosophy: "Engineering Flow"
 Our objective is the total elimination of operational friction. We do not build software scripts; we engineer high-authority systems that reclaim time and ensure consistent, scalable performance.
@@ -25,6 +31,7 @@ Our objective is the total elimination of operational friction. We do not build 
 - **Monochromatic Clarity**: Minimum visual debt. Maximum information density.
 - **Single-Column Focus**: Focused, high-conviction reading experiences.
 - **Industrial Performance**: Zero-bloat, performance-optimized infrastructure.
+- **Executive Legibility**: Zinc-300 Inter typography on mobile-first hint text.
 
 ---
 **Carrillo Dynamics** | *Engineer Flow. Eliminate Friction.*
