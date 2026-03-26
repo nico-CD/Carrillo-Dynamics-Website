@@ -69,22 +69,22 @@ const InteractiveCalculator = () => {
             <div className="p-12 md:p-20 flex flex-col justify-between gap-16 border border-zinc-800 bg-[#050505]">
                 <div className="flex flex-col gap-12">
                     <div className="space-y-4">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 tech-mono">Annual Reclaimed</p>
+                        <p className="text-xs md:text-sm font-black uppercase tracking-widest text-zinc-100 tech-mono">Annual Reclaimed</p>
                         <div className="flex items-baseline gap-4">
-                            <span className="text-7xl md:text-8xl font-black text-[#10b981] tabular-nums tracking-tighter">
+                            <span className="text-6xl md:text-7xl font-black text-[#10b981] tabular-nums tracking-tighter">
                                 {reclaimedHours.toLocaleString()}
                             </span>
-                            <span className="text-xl font-bold text-zinc-400 tech-mono uppercase">Hrs</span>
+                            <span className="text-lg font-bold text-zinc-400 tech-mono uppercase">Hrs</span>
                         </div>
                     </div>
 
                     <div className="space-y-4">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 tech-mono">Engineered Leverage</p>
+                        <p className="text-xs md:text-sm font-black uppercase tracking-widest text-zinc-100 tech-mono">Engineered Leverage</p>
                         <div className="flex items-baseline gap-4">
-                            <span className="text-7xl md:text-8xl font-black text-[#10b981] tabular-nums tracking-tighter">
+                            <span className="text-6xl md:text-7xl font-black text-[#10b981] tabular-nums tracking-tighter">
                                 {equivalentHires}
                             </span>
-                            <span className="text-xl font-bold text-zinc-400 italic tech-mono uppercase">FTU</span>
+                            <span className="text-lg font-bold text-zinc-400 italic tech-mono uppercase">FTU</span>
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ const FastTrackNav = ({ onContactClick, onVisibilityChange }: FastTrackNavProps)
                                 style={{ scaleX, width: '100%' }}
                             />
 
-                            <div className="flex w-full items-center justify-between gap-8">
+                             <div className="flex w-full items-center justify-between gap-8">
                                 <button
                                     onClick={() => window.location.href = "/"}
                                     className="flex items-center group"
@@ -66,19 +66,12 @@ const FastTrackNav = ({ onContactClick, onVisibilityChange }: FastTrackNavProps)
                                 </button>
 
                                 <div className="flex items-center gap-12">
-                                    <button
-                                        onClick={() => handleNavigation('calculator')}
-                                        className="hidden md:block tech-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted hover:text-white transition-colors"
-                                    >
-                                        Reclaim Your Time
-                                    </button>
-
                                     <Button
                                         onClick={onContactClick}
                                         size="sm"
                                         className="h-10 rounded-none px-6 text-[10px] font-black uppercase tracking-widest bg-white hover:bg-white/90 text-black transition-all group"
                                     >
-                                        Initiate Blueprint
+                                        INITIATE AUDIT
                                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </Button>
                                 </div>
