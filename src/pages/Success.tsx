@@ -77,9 +77,12 @@ const Success = () => {
             }
             
             // Industrial Mono 4.0: Show terminal readout regardless for mission continuity
+            // Ensure we scroll to top to show the centered success container
+            window.scrollTo({ top: 0, behavior: 'instant' });
             setIsSubmitted(true);
         } catch (error) {
             console.error("[The Handshake] Critical Transmission Error:", error);
+            window.scrollTo({ top: 0, behavior: 'instant' });
             setIsSubmitted(true); // Allow UI to transition to terminal state
         } finally {
             setIsSubmitting(false);
@@ -217,9 +220,9 @@ const Success = () => {
                             >
                                 <div className="space-y-6">
                                     {[
-                                        { text: "DATA_PACKET_RECEIVED", delay: 0.2 },
+                                        { text: "Audit Data Received", delay: 0.2 },
                                         { text: "ENCRYPTING_TRANSMISSION...", delay: 0.5 },
-                                        { text: "ARCHITECT_NOTIFIED.", delay: 0.8 },
+                                        { text: "Engineers Notified", delay: 0.8 },
                                     ].map((line, idx) => (
                                         <motion.div 
                                             key={idx}
@@ -241,7 +244,7 @@ const Success = () => {
                                     >
                                         <span className="text-[#10b981] font-bold">&gt;</span>
                                         <p className="text-zinc-200 text-[10px] md:text-xs font-bold uppercase tracking-widest leading-relaxed break-all">
-                                            FINAL_REPORT_PENDING_ASYNCHRONOUS_REVIEW.
+                                            Final Report Pending Review
                                         </p>
                                     </motion.div>
                                 </div>
@@ -256,7 +259,7 @@ const Success = () => {
                                         onClick={() => navigate("/")}
                                         className="w-full h-14 rounded-none border border-zinc-800 bg-transparent hover:bg-zinc-900 text-zinc-400 hover:text-white tech-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] transition-all"
                                     >
-                                        RETURN TO SYSTEMS CONTROL
+                                        Return to Homepage
                                     </Button>
                                 </motion.div>
 

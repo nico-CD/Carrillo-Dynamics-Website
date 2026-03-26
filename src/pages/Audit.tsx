@@ -19,12 +19,12 @@ const Audit = () => {
             <main className="pt-32">
                 {/* 3 Pillars Section - Focused Reading */}
                 <section className="py-12 px-6">
-                    <div className="max-w-3xl mx-auto space-y-24">
+                    <div className="max-w-4xl mx-auto space-y-24 w-full">
                         <motion.div {...revealProps} className="space-y-8">
-                            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-white">
+                            <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] text-white">
                                 Friction <span className="italic">Audit.</span>
                             </h1>
-                            <p className="text-xl md:text-2xl text-zinc-400 font-medium leading-relaxed">
+                            <p className="text-xl md:text-2xl text-zinc-400 font-medium leading-relaxed max-w-2xl">
                                 A forensic analysis of your operational architecture. Direct engineering clarity for industrial scale.
                             </p>
                         </motion.div>
