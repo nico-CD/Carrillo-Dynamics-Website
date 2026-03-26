@@ -46,7 +46,7 @@ const Success = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        const webhookUrl = "https://n8n.carrillodynamics.com/webhook-test/CD-audit";
+        const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
 
         // The Handshake: n8n Audit Intake Payload
         const payload = {

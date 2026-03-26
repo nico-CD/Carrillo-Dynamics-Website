@@ -22,7 +22,7 @@ export const useIntake = () => {
         setIsLoading(true);
         try {
             const sanitizedData = sanitizeData(data);
-            const webhookUrl = "https://n8n.carrillodynamics.com/webhook-test/CD-audit";
+            const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
 
             // The Handshake: n8n Lead Generation Payload
             const payload = {
