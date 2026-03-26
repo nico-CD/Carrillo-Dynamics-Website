@@ -111,10 +111,11 @@ const Success = () => {
                                         {/* SYSTEM_STACK */}
                                         <div className="space-y-3 text-left">
                                             <Label className="text-zinc-100 text-sm font-bold tracking-tight">What is your primary software stack?</Label>
+                                            <p className="tech-mono text-xs text-zinc-500 mt-1 uppercase tracking-wider leading-relaxed">e.g., Salesforce, HubSpot, or the specific tools you use daily.</p>
                                             <Input 
                                                 required
-                                                placeholder="e.g., Salesforce, HubSpot, or the specific tools you use daily."
-                                                className="h-14 rounded-none border-zinc-800 bg-zinc-950 text-white px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-500 text-md"
+                                                placeholder="e.g., Salesforce, HubSpot..."
+                                                className="h-14 rounded-none border-zinc-800 bg-zinc-950 text-white px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-600 text-md"
                                                 value={formData.systemStack}
                                                 onChange={(e) => setFormData({...formData, systemStack: e.target.value})}
                                             />
@@ -123,6 +124,7 @@ const Success = () => {
                                         {/* MONTHLY_THROUGHPUT */}
                                         <div className="space-y-3 text-left">
                                             <Label className="text-zinc-100 text-sm font-bold tracking-tight">Approximate monthly data volume?</Label>
+                                            <p className="tech-mono text-xs text-zinc-500 mt-1 uppercase tracking-wider leading-relaxed">Select the scale of your current digital throughput.</p>
                                             <Select 
                                                 required
                                                 onValueChange={(val) => setFormData({...formData, monthlyThroughput: val})}
@@ -141,10 +143,11 @@ const Success = () => {
                                         {/* MANUAL_LATENCY */}
                                         <div className="space-y-3 text-left">
                                             <Label className="text-zinc-100 text-sm font-bold tracking-tight">How many hours per week are lost to manual data entry?</Label>
+                                            <p className="tech-mono text-xs text-zinc-500 mt-1 uppercase tracking-wider leading-relaxed">Estimate the 'Human Tax' your team pays for fragmented systems.</p>
                                             <Input 
                                                 required
-                                                placeholder="Estimate the 'Human Tax' your team pays for fragmented systems."
-                                                className="h-14 rounded-none border-zinc-800 bg-zinc-950 text-white px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-500 text-md"
+                                                placeholder="Estimate weekly hours..."
+                                                className="h-14 rounded-none border-zinc-800 bg-zinc-950 text-white px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-600 text-md"
                                                 value={formData.manualLatency}
                                                 onChange={(e) => setFormData({...formData, manualLatency: e.target.value})}
                                             />
@@ -153,10 +156,11 @@ const Success = () => {
                                         {/* INTERFACE_REQUIREMENTS */}
                                         <div className="space-y-3 text-left">
                                             <Label className="text-zinc-100 text-sm font-bold tracking-tight">Which systems need to be connected?</Label>
+                                            <p className="tech-mono text-xs text-zinc-500 mt-1 uppercase tracking-wider leading-relaxed">Identify the top 3 apps that aren't talking to each other.</p>
                                             <Textarea 
                                                 required
-                                                placeholder="Identify the top 3 apps that aren't talking to each other."
-                                                className="min-h-[100px] rounded-none border-zinc-800 bg-zinc-950 text-white p-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-500 text-md resize-none"
+                                                placeholder="e.g., CRM → ERP"
+                                                className="min-h-[100px] rounded-none border-zinc-800 bg-zinc-950 text-white p-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-600 text-md resize-none"
                                                 value={formData.interfaceRequirements}
                                                 onChange={(e) => setFormData({...formData, interfaceRequirements: e.target.value})}
                                             />
@@ -165,10 +169,11 @@ const Success = () => {
                                         {/* PRIMARY_OBJECTIVE */}
                                         <div className="space-y-3 text-left">
                                             <Label className="text-zinc-100 text-sm font-bold tracking-tight">What is the #1 bottleneck we should solve first?</Label>
+                                            <p className="tech-mono text-xs text-zinc-500 mt-1 uppercase tracking-wider leading-relaxed">If one task was 100% automated by next week, what would change the game?</p>
                                             <Textarea 
                                                 required
-                                                placeholder="If one task was 100% automated by next week, what would change the game?"
-                                                className="min-h-[100px] rounded-none border-zinc-800 bg-zinc-950 text-white p-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-500 text-md resize-none"
+                                                placeholder="e.g., Automated Lead Sync"
+                                                className="min-h-[100px] rounded-none border-zinc-800 bg-zinc-950 text-white p-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-600 text-md resize-none"
                                                 value={formData.primaryObjective}
                                                 onChange={(e) => setFormData({...formData, primaryObjective: e.target.value})}
                                             />

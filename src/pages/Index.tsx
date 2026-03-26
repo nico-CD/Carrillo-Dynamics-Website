@@ -150,14 +150,14 @@ const Index = () => {
                       <FormField control={form.control} name="firstName" render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-xs uppercase font-black tracking-widest text-white mb-4 block tech-mono">Full Name</FormLabel>
-                          <FormControl><Input placeholder="John Doe" className="h-16 rounded-none border-zinc-700 bg-black px-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} /></FormControl>
+                          <FormControl><Input required placeholder="John Doe" className="h-16 rounded-none border-zinc-700 bg-black px-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
                       <FormField control={form.control} name="email" render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-xs uppercase font-black tracking-widest text-white mb-4 block tech-mono">Business Email</FormLabel>
-                          <FormControl><Input type="email" placeholder="john@company.com" className="h-16 rounded-none border-zinc-700 bg-black px-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} /></FormControl>
+                          <FormControl><Input required type="email" placeholder="john@company.com" className="h-16 rounded-none border-zinc-700 bg-black px-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
@@ -167,7 +167,7 @@ const Index = () => {
                       <FormItem>
                         <FormLabel className="text-xs uppercase font-black tracking-widest text-white mb-4 block tech-mono">Primary Operational Bottleneck</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Describe what you think is slowing down your business..." className="min-h-[200px] rounded-none border-zinc-700 bg-black p-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} />
+                          <Textarea required placeholder="Describe what you think is slowing down your business..." className="min-h-[200px] rounded-none border-zinc-700 bg-black p-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
