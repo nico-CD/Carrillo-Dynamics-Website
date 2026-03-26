@@ -4,44 +4,43 @@ import {
 
 const FAQ = () => {
     return (
-        <section className="px-6 py-40 border-t border-white/5 bg-white/[0.01]">
-            <div className="mx-auto max-w-4xl">
-                <div className="mb-20 text-center">
-                    <h2 className="text-5xl font-black uppercase tracking-tight mb-4 sm:text-7xl">Operations <span className="text-primary italic">FAQ.</span></h2>
-                    <p className="text-xl text-muted-foreground font-medium italic">Addressing common friction points and structural concerns.</p>
-                </div>
-
-                <Accordion type="single" collapsible className="w-full space-y-4">
-                    {[
-                        {
-                            q: "Is this just another software we have to force our technicians to use?",
-                            a: "No. We build invisible systems that integrate seamlessly with your existing dispatch and CRM tools. Your field crew won't have to learn another app. We just make the ones they already use communicate automatically."
-                        },
-                        {
-                            q: "How long until we see fewer scheduling errors and more billable hours?",
-                            a: "Because we target high-friction bottlenecks first (like duplicate data entry or missed follow-ups), our systems start reclaiming field hours and reducing dispatch chaos within 14 to 21 days of deployment."
-                        },
-                        {
-                            q: "What if our office processes are mostly paper, whiteboards, or just in the owner's head?",
-                            a: "That is our ideal starting point. We do not automate chaos; we engineer clarity. Our first step is a rigorous Blueprint phase where we map out your dispatch and quoting flows before writing a single line of logic."
-                        },
-                        {
-                            q: "Do we need an IT guy to maintain this?",
-                            a: "Zero internal maintenance is required. We act as your fractional operations engineering department, providing ongoing structural oversight, proactive monitoring, and iterative scaling so you can focus on the field."
-                        }
-                    ].map((faq, idx) => (
-                        <AccordionItem key={idx} value={`item-${idx}`} className="border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl px-6 data-[state=open]:bg-white/10 transition-colors">
-                            <AccordionTrigger className="text-left text-xl sm:text-2xl font-bold hover:no-underline py-8 data-[state=open]:text-primary transition-colors">
-                                {faq.q}
-                            </AccordionTrigger>
-                            <AccordionContent className="text-muted-foreground font-medium text-lg sm:text-xl leading-relaxed pb-8">
-                                {faq.a}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+        <div className="space-y-16 max-w-4xl mx-auto w-full overflow-hidden">
+            <div className="space-y-4 text-center">
+                <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">Operations <span className="italic">FAQ.</span></h2>
             </div>
-        </section>
+
+            <Accordion type="single" collapsible className="w-full space-y-4">
+                {[
+                    {
+                        q: "Is this just another software application?",
+                        a: "No. We build invisible systems that integrate with your existing tools. Your field crew won't have to learn another app; we just make the ones they already use communicate deterministically."
+                    },
+                    {
+                        q: "How long until we see reduced friction?",
+                        a: "We target high-friction bottlenecks first (duplicate entry, missed follow-ups). Systems typically start reclaiming hours and reducing dispatch chaos within 14-21 days of deployment."
+                    },
+                    {
+                        q: "What if our processes are currently manual?",
+                        a: "That is our ideal starting point. We do not automate chaos; we engineer clarity. Our first step is a rigorous Blueprint phase where we map out dispatch and quoting flows."
+                    },
+                    {
+                        q: "Do we need internal IT to maintain this?",
+                        a: "Zero internal maintenance. We act as your fractional operations engineering department, providing structural oversight and iterative scaling."
+                    }
+                ].map((faq, idx) => (
+                    <AccordionItem key={idx} value={`item-${idx}`} className="border border-zinc-700 bg-white/[0.01] rounded-none px-4 md:px-8 data-[state=open]:bg-white/[0.03] transition-all overflow-hidden">
+                        <AccordionTrigger className="text-left text-lg md:text-xl font-bold hover:no-underline py-8 data-[state=open]:text-white transition-colors uppercase tracking-tight leading-snug">
+                            <span className="max-w-[90%] break-words">{faq.q}</span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-zinc-400 font-medium text-base md:text-lg leading-relaxed pb-8 border-t border-zinc-800 pt-6 mt-2 overflow-hidden">
+                            <div className="break-words whitespace-normal">
+                                {faq.a}
+                            </div>
+                        </AccordionContent>
+                    </AccordionItem>
+                ))}
+            </Accordion>
+        </div>
     );
 };
 

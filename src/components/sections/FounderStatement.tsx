@@ -1,27 +1,28 @@
-import { Quote } from "lucide-react";
-import GlassCard from "@/components/GlassCard";
-
 const FounderStatement = () => {
     return (
-        <section className="px-6 py-40 border-b border-white/5">
-            <div className="mx-auto max-w-4xl">
-                <GlassCard className="p-12 sm:p-20 relative overflow-hidden border-primary/20 bg-primary/[0.02]">
-                    <Quote className="absolute top-10 left-10 h-20 w-20 text-primary/5 -z-10" />
-                    <div className="space-y-8 relative z-10">
-                        <h3 className="text-sm font-black uppercase tracking-[0.4em] text-primary italic">Founder's Statement.</h3>
-                        <p className="text-xl sm:text-3xl font-bold leading-relaxed text-foreground">
-                            "I started Carrillo Dynamics because I saw too many talented teams drowning in the kind of work that adds spreadsheets instead of adding zeros.<br /><br />My goal is to turn your operational chaos into a deterministic engine that wins on repeat by design."
-                        </p>
-                        <div className="pt-12 flex flex-col sm:flex-row sm:items-center justify-between gap-8 border-t border-white/5">
-                            <div>
-                                <p className="text-xl font-black uppercase tracking-tight">Nicolas Carrillo</p>
-                                <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest italic">Founding Engineer, Carrillo Dynamics</p>
-                            </div>
+        <div className="space-y-16">
+            <div className="space-y-4">
+                <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">Engineered <span className="italic">Conviction.</span></h2>
+            </div>
+
+            <div className="border border-zinc-700 p-12 md:p-24 relative overflow-hidden bg-white/[0.01]">
+                <div className="space-y-12 relative z-10">
+                    <p className="text-2xl md:text-5xl font-black leading-tight text-white italic tracking-tighter">
+                        "Most teams drown in spreadsheets. We build deterministic engines that add zeros. Chaos is a choice; engineering is the solution."
+                    </p>
+                    
+                    <div className="pt-12 flex flex-col md:flex-row md:items-end justify-between gap-8 border-t border-zinc-700">
+                        <div className="space-y-2">
+                            <p className="text-2xl font-black uppercase tracking-tight text-white">Nicolas Carrillo</p>
+                            <p className="tech-mono text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Founding Engineer</p>
+                        </div>
+                        <div className="tech-mono text-[10px] text-zinc-500 uppercase tracking-[0.5em] pb-1 font-black">
+                            Carrillo Dynamics / HQ
                         </div>
                     </div>
-                </GlassCard>
+                </div>
             </div>
-        </section>
+        </div>
     );
 };
 

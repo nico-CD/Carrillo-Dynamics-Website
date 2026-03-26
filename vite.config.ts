@@ -10,6 +10,16 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
+    headers: {
+      "X-Frame-Options": "DENY",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://grainy-gradients.vercel.app; connect-src 'self' https://n8n.carrillodynamics.com https://buy.stripe.com;"
+    }
+  },
+  preview: {
+    headers: {
+      "X-Frame-Options": "DENY",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://grainy-gradients.vercel.app; connect-src 'self' https://n8n.carrillodynamics.com https://buy.stripe.com;"
+    }
   },
   plugins: [react()].filter(Boolean),
   resolve: {

@@ -1,26 +1,26 @@
-# Carrillo Dynamics - Systems Engineering & Automation
+# Carrillo Dynamics
+### Industrial-Grade Operations Engineering
 
-High-performance operational infrastructure for high-stakes sectors. This project represents the digital presence and intake system for Carrillo Dynamics, engineered for flow and designed to eliminate operational friction.
+Carrillo Dynamics is specialized in the forensic analysis and engineering of business operations. We replace manual chaos and spreadsheet-sprawl with deterministic digital infrastructure designed for high-stakes industrial, logistics, and healthcare ecosystems.
 
-## Core Objective
-To replace business bottlenecks with industrial-grade engineering. Every element of this site is optimized for conversion, clarity, and structural integrity.
+## Core Philosophy: "Engineering Flow"
+Our objective is the total elimination of operational friction. We do not build software scripts; we engineer high-authority systems that reclaim time and ensure consistent, scalable performance.
 
-## Technology Stack
-- **Framework**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Components**: [shadcn/ui](https://ui.shadcn.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
+## The Stack
+- **Foundation**: React 18 / Vite / TypeScript
+- **Styling**: Tailwind CSS (Custom "Industrial Mono" Design System)
+- **Animation**: Framer Motion (Discrete Transition Logic)
+- **Backend/Routing**: n8n Webhook Architecture
+- **Infrastrucure**: Zero-Trust Security Protocols
 
-## Key Features
-- **Deterministic ROI Calculator**: Live feedback loop for operational debt analysis.
-- **Magnetic UX**: Spotlight-aware interaction logic across all primary cards.
-- **Mobile-Adaptive Resilience**: Fully responsive architecture optimized for all device signatures.
-- **Backend Flow**: Secure async intake routed through custom n8n webhooks.
+## Strategic Funnels
+1. **Friction Analysis Report ($99)**: A rapid forensic audit of operational bottlenecks.
+2. **Systems Architecture Consultation**: Full-cycle engineering for fragmented teams.
 
-## Development Status
-Current Iteration: **20 (Branding & Structural Finalization)**.
+## Principles
+- **Monochromatic Clarity**: Minimum visual debt. Maximum information density.
+- **Single-Column Focus**: Focused, high-conviction reading experiences.
+- **Industrial Performance**: Zero-bloat, performance-optimized infrastructure.
 
 ---
-© 2026 Carrillo Dynamics. All rights reserved.
+**Carrillo Dynamics** | *Engineer Flow. Eliminate Friction.*

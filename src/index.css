@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 220 15% 5%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 2%;    /* #050505 */
+    --foreground: 0 0% 100%;  /* #FFFFFF */
 
-    --card: 220 15% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 4%;           /* Slight variance for depth, sharp edges */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 15% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 2%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 160 84% 39%;
-    --primary-foreground: 220 15% 5%;
+    --primary: 0 0% 100%;      /* Industrial primary is White */
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 9.6%;     /* zinc-900 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 220 10% 75%;
+    --muted: 240 5% 64.9%;         /* zinc-400 */
+    --muted-foreground: 240 3.8% 46.1%; /* zinc-500 */
 
-    --accent: 220 15% 25%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 160 84% 39%;
+    --border: 240 5.9% 26.1%;      /* zinc-700 */
+    --input: 240 5.9% 26.1%;         /* zinc-700 */
+    --ring: 0 0% 100%;
 
-    --radius: 0.75rem;
+    --radius: 0px;             /* Sharp corners confirmed */
   }
 }
 
@@ -48,53 +48,41 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Custom Slim Scrollbar */
+  /* Industrial Slim Scrollbar (Monochrome) */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-white/10 rounded-full border border-transparent bg-clip-padding;
-    border-width: 1px;
+    @apply bg-white/20 border-none;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/40;
+    @apply bg-white/40;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black tracking-widest uppercase;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Technical labeling & numerical data */
+  .tech-mono {
+    font-family: 'JetBrains Mono', monospace;
   }
 }
 
 @layer utilities {
-  .mesh-gradient {
-    background-color: hsla(220, 15%, 5%, 1);
-    background-image:
-      radial-gradient(at 0% 0%, hsla(160, 84%, 39%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(220, 15%, 20%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(160, 84%, 39%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(220, 15%, 20%, 0.1) 0px, transparent 50%);
+  .industrial-border {
+    @apply border border-zinc-700;
   }
 
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  .sharp-btn {
+    @apply rounded-none transition-all duration-300;
   }
 
-  .fade-in-section {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .fade-in-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .reading-section {
+    @apply py-48 px-6 max-w-4xl mx-auto w-full; /* 12rem vertical whitespace */
   }
 }

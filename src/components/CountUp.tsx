@@ -8,9 +8,10 @@ interface CountUpProps {
     decimals?: number;
     suffix?: string;
     prefix?: string;
+    className?: string;
 }
 
-export default function CountUp({ start = 0, end, duration = 2, decimals = 0, suffix = "", prefix = "" }: CountUpProps) {
+export default function CountUp({ start = 0, end, duration = 2, decimals = 0, suffix = "", prefix = "", className = "" }: CountUpProps) {
     const ref = useRef<HTMLSpanElement>(null);
     const isInView = useInView(ref, { once: true, margin: "-50px" });
 

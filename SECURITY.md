@@ -1,27 +1,22 @@
-# Security & Data Safety Guide
+# SECURITY PROTOCOL
+### Carrillo Dynamics | Data Integrity & Protection
 
-This document outlines the architectural safeguards and best practices implemented to protect Carrillo Dynamics and its clients' data.
+We treat our clients' operational context as mission-critical infrastructure. Security and data integrity are integrated into the initial architectural blueprint.
 
-## 1. Environment Variables (.env)
-We use `.env` files to keep sensitive information (like the n8n webhook URL) out of the source code.
+## Vulnerability Disclosure Policy
+We maintain an open channel for responsible security reporting. If you identify a security vulnerability in our infrastructure or any of our client-facing tools, please report it immediately:
 
-### Why this matters:
-- **Prevent Leakage**: By using `import.meta.env.VITE_N8N_WEBHOOK_URL`, the actual URL is only injected during build time or local development.
-- **Git Safety**: The `.env` file should **never** be committed to version control. Our project includes a `.gitignore` that specifically excludes these files.
+- **Email**: security@carrillodynamics.com
+- **Response SLA**: Initial triage within 24 hours. Full remediation within 72 hours (Critical severity).
 
-### How to use:
-1. Create a file named `.env` in the root directory.
-2. Add your secrets: `VITE_N8N_WEBHOOK_URL=https://n8n.yourdomain.com/webhook/...`
-3. Restart your dev server for changes to take effect.
+## Our Commitment
+1. **Minimum Data Footprint**: We only request the minimum information required for a successful operational audit.
+2. **Deterministic Sanitization**: All frontend inputs are strictly sanitized via DOMPurify before entering our processing hooks.
+3. **No Third-Party Access**: Lead data and operational blueprints are reviewed internally and are NEVER shared or sold.
+4. **Header Enforcement**: Global CSP, X-Frame-Options, and X-Content-Type-Options are enforced throughout our distribution network.
 
-## 2. Client Data Privacy
-- **Stateless Frontend**: The website does not store client PII (Personally Identifiable Information) in the browser's local storage or cookies.
-- **Secure Intake**: All form data is transmitted via HTTPS directly to our secure backend (n8n), minimizing exposure.
-- **Data Minimization**: We only request the minimum data necessary for a high-quality systems consultation.
-
-## 3. Deployment Security
-- **Production Build**: During the build process (`npm run build`), Vite optimizes and minifies the code, removing development-only logs and comments.
-- **Environment Injections**: Ensure your hosting provider (Vercel, Netlify, etc.) has the environment variables set in their dashboard so they are available in the production environment.
+## Secure Audits
+Payment for our "Friction Analysis" is handled through a secure, encrypted Stripe pipeline. We do not store financial data or credit card numbers on our local infrastructure.
 
 ---
-**Carrillo Dynamics** | *Industrial-Grade Security Architecture*
+**Carrillo Dynamics Security Team** | *Industrial-Grade Data Protection*
