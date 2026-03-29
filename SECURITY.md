@@ -6,7 +6,7 @@ We treat our clients' operational context as mission-critical infrastructure. Se
 ## Vulnerability Disclosure Policy
 We maintain an open channel for responsible security reporting. If you identify a security vulnerability in our infrastructure or any of our client-facing tools, please report it immediately:
 
-- **Email**: security@carrillodynamics.com
+- **Email**: engineering@carrillodynamics.com
 - **Response SLA**: Initial triage within 24 hours. Full remediation within 72 hours (Critical severity).
 
 ## Our Commitment
