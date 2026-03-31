@@ -228,15 +228,15 @@ const Success = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-[#10b981]/20 border-2 border-[#10b981]/30 overflow-hidden shadow-[0_0_150px_rgba(16,185,129,0.2)] ring-1 ring-[#10b981]/50 bg-black/40 backdrop-blur-md"
+                                className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-[#10b981]/20 border-2 border-[#10b981]/50 overflow-hidden shadow-[0_0_150px_rgba(16,185,129,0.3)] ring-1 ring-[#10b981] bg-black/40 backdrop-blur-md"
                             >
-                                <div className="bg-black/80 p-12 lg:p-20 space-y-12 border-r-2 border-[#10b981]/20">
+                                <div className="bg-[#10b981]/10 p-12 lg:p-20 space-y-12 border-r-2 border-[#10b981]/20 backdrop-blur-sm">
                                     <div className="space-y-6 text-left">
                                         <div className="text-sm tech-mono font-black text-[#10b981] uppercase tracking-[0.3em]">MISSION PROTOCOL: ACTIVE</div>
                                         <div className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-[0.9]">STRATEGIC <br/>CONSULTATION <br/>INITIATED.</div>
                                     </div>
-                                    <div className="space-y-8 pt-8 border-t border-[#10b981]/20 text-left">
-                                        <div className="text-xs font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">ENGINEERING NEXT STEPS:</div>
+                                    <div className="space-y-8 pt-8 border-t border-[#10b981]/30 text-left">
+                                        <div className="text-xs font-bold text-[#10b981]/70 uppercase tracking-[0.2em] mb-4">ENGINEERING NEXT STEPS:</div>
                                         <ul className="space-y-4">
                                             {["Full Operational Immersion", "Friction Point Isolation", "ROI Scaling Blueprint"].map((item, i) => (
                                                 <li key={i} className="flex items-center gap-4 text-sm font-black uppercase text-white tracking-tight">
@@ -248,7 +248,7 @@ const Success = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-[#10b981]/5 p-12 lg:p-20 space-y-12 flex flex-col justify-between">
+                                <div className="bg-black/60 p-12 lg:p-20 space-y-12 flex flex-col justify-between">
                                     <div className="space-y-12">
                                         <div className="text-sm font-bold text-[#10b981] uppercase tracking-[0.3em] text-left">INTAKE VERIFIED:</div>
                                         <div className="space-y-12 text-left">
@@ -265,7 +265,7 @@ const Success = () => {
                                         </div>
                                     </div>
                                     <div className="pt-8 border-t border-[#10b981]/20">
-                                        <p className="text-[10px] font-bold text-zinc-500 leading-relaxed text-left uppercase tracking-widest">
+                                        <p className="text-[10px] font-bold text-[#10b981]/50 leading-relaxed text-left uppercase tracking-widest">
                                             Secure architectural mapping prioritized. Your Lead Engineer will review this blueprint within 24 hours.
                                         </p>
                                     </div>
