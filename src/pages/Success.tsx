@@ -233,7 +233,7 @@ const Success = () => {
                                 <div className="bg-[#10b981]/10 p-12 lg:p-20 space-y-12 border-r-2 border-[#10b981]/20 backdrop-blur-sm">
                                     <div className="space-y-6 text-left">
                                         <div className="text-sm tech-mono font-black text-[#10b981] uppercase tracking-[0.3em]">MISSION PROTOCOL: ACTIVE</div>
-                                        <div className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-[0.9]">STRATEGIC <br/>CONSULTATION <br/>INITIATED.</div>
+                                        <div className="text-4xl lg:text-6xl font-black text-white uppercase tracking-tight leading-[0.9]">STRATEGIC <br/>MAPPING <br/>INITIATED.</div>
                                     </div>
                                     <div className="space-y-8 pt-8 border-t border-[#10b981]/30 text-left">
                                         <div className="text-xs font-bold text-[#10b981]/70 uppercase tracking-[0.2em] mb-4">ENGINEERING NEXT STEPS:</div>
