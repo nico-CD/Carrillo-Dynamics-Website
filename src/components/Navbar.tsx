@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import { ModeToggle } from "./mode-toggle";
 
 const Navbar = () => {
     return (
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b border-zinc-700 bg-[#050505]/95 backdrop-blur-sm transition-all duration-300"
+            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b border-border bg-background/95 backdrop-blur-sm transition-all duration-300"
         >
             <div 
                 className="flex items-center gap-4 cursor-pointer group"
@@ -18,7 +19,11 @@ const Navbar = () => {
                         className="h-full w-full object-contain transition-transform group-hover:scale-105"
                     />
                 </div>
-                <span className="text-xs font-black uppercase tracking-[0.4em] tech-mono text-white">Carrillo Dynamics</span>
+                <span className="text-sm font-black uppercase tracking-[0.2em] text-foreground">Carrillo Dynamics</span>
+            </div>
+
+            <div className="flex items-center gap-6">
+                <ModeToggle />
             </div>
         </motion.nav>
     );

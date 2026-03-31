@@ -1,31 +1,22 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion, AnimatePresence } from "framer-motion";
-import { Check, Loader2, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Loader2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
-} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage,
 } from "@/components/ui/form";
 import Navbar from "@/components/Navbar";
 import InteractiveCalculator from "@/components/InteractiveCalculator";
-import FastTrackNav from "@/components/FastTrackNav";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Modular Sections
 import Hero from "@/components/sections/Hero";
-import SectorTrust from "@/components/sections/SectorTrust";
-import QualificationBento from "@/components/sections/QualificationBento";
-import Process from "@/components/sections/Process";
-import SuccessSnapshots from "@/components/sections/SuccessSnapshots";
-import FounderStatement from "@/components/sections/FounderStatement";
-import FAQ from "@/components/sections/FAQ";
+import BlueprintProtocol from "@/components/sections/BlueprintProtocol";
 import Footer from "@/components/Footer";
 
 // Logic & Types
@@ -34,16 +25,14 @@ import { useIntake } from "@/hooks/useIntake";
 
 const Index = () => {
   const formRef = useRef<HTMLDivElement>(null);
-  const successContainerRef = useRef<HTMLDivElement>(null);
-  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
-
   const navigate = useNavigate();
   const { isLoading, submitIntake } = useIntake();
 
   const form = useForm<IntakeValues>({
     resolver: zodResolver(intakeSchema),
     defaultValues: {
-      firstName: "", email: "", howCanWeHelp: "",
+      firstName: "", email: "", howCanWeHelp: "", 
+      consent: false
     },
   });
 
@@ -60,10 +49,6 @@ const Index = () => {
     }
   };
 
-  const resetForm = () => {
-    form.reset();
-  };
-
   const revealProps = {
     initial: { opacity: 0, y: 10 },
     whileInView: { opacity: 1, y: 0 },
@@ -72,75 +57,71 @@ const Index = () => {
   };
 
   return (
-    <div className="bg-[#050505] min-h-screen text-white selection:bg-white/10 font-sans">
-      <FastTrackNav onContactClick={scrollToForm} onVisibilityChange={setIsNavbarHidden} />
-      {!isNavbarHidden && <Navbar />}
+    <div className="bg-background min-h-screen text-foreground selection:bg-white/10 font-sans overflow-x-hidden transition-colors duration-300">
+      <Navbar />
 
-      <div className="border-b border-zinc-700">
+      {/* SEGMENT 1: HERO */}
+      <section className="border-b border-border">
         <Hero onContactClick={scrollToForm} />
-      </div>
+      </section>
 
-      <div className="border-b border-zinc-700">
-        <motion.div {...revealProps} className="reading-section">
-            <SectorTrust />
-        </motion.div>
-      </div>
-
-      <div className="border-b border-zinc-700">
-        <motion.div {...revealProps} className="reading-section">
-            <Process />
-        </motion.div>
-      </div>
-
-      <div className="border-b border-zinc-700">
-        <motion.section 
-            id="calculator" 
-            className="reading-section"
+      {/* SEGMENT 2: THE PROOF (CALCULATOR) */}
+      <section id="calculator" className="border-b border-border bg-background transition-colors duration-300">
+        <motion.div 
+            className="reading-section py-32"
             {...revealProps}
         >
-            <div className="mb-24">
-                <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight mb-8 leading-none text-white">
-                    Reclaim <span className="italic">Your Time.</span>
+            <div className="mb-20 text-left">
+                <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight mb-8 leading-none text-foreground lg:max-w-3xl transition-colors duration-300">
+                    Reclaim <span className="italic text-[#10b981]">Every Hour.</span>
                 </h2>
-                <p className="text-lg text-zinc-400 font-medium max-w-2xl">
-                    Our calculated ROI projection for your current operational structures.
+                <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl leading-relaxed transition-colors duration-300">
+                    Automating your current manual tasks has a direct impact on your bottom line. We calculate your potential ROI before we write a single line of code.
                 </p>
             </div>
             <InteractiveCalculator />
-        </motion.section>
-      </div>
-
-      <div className="border-b border-zinc-700">
-        <motion.div {...revealProps} className="reading-section">
-            <SuccessSnapshots />
         </motion.div>
-      </div>
+      </section>
 
-      <div className="border-b border-zinc-700">
-        <motion.div {...revealProps} className="reading-section">
-            <FounderStatement />
+      {/* SEGMENT 3: THE BLUEPRINT OVERLAY */}
+      <BlueprintProtocol />
+
+      {/* Bridge CTA: The Transition */}
+      <section className="bg-background py-24 px-6 border-b border-border transition-colors duration-300">
+        <motion.div 
+            {...revealProps}
+            className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
+        >
+            <div className="space-y-4 text-center md:text-left">
+                <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">Stop the manual leak.</h3>
+                <p className="text-lg md:text-xl font-bold text-[#10b981] uppercase tracking-widest">Start the engine.</p>
+            </div>
+            <Button
+                onClick={scrollToForm}
+                size="lg"
+                className="h-16 md:h-20 w-full md:w-auto rounded-none px-12 md:px-16 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-foreground hover:bg-muted-foreground text-background transition-all group border-none"
+            >
+                GET IN TOUCH
+                <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
+            </Button>
         </motion.div>
-      </div>
+      </section>
 
-
-      {/* INTAKE FORM SECTION */}
-      <section id="consultation" className="px-6 py-48 bg-[#050505]">
+      {/* SEGMENT 4: THE INTAKE FORM (CORE WORKFLOW) */}
+      <section id="intake" className="px-6 py-48 bg-background relative z-10 transition-colors duration-300">
         <motion.div 
           ref={formRef} 
           className="mx-auto max-w-4xl scroll-mt-24"
           {...revealProps}
         >
-          <div className="mb-24 text-left space-y-8">
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none text-white">
-              Systems <span className="italic">Intake.</span>
+          <div className="mb-24 text-center space-y-8">
+            <h2 className="text-6xl md:text-8xl font-black tracking-tight uppercase leading-none text-foreground transition-colors duration-300">
+              Discovery <span className="italic text-[#10b981]">Protocol.</span>
             </h2>
-            <p className="tech-mono text-[10px] font-black text-zinc-400 uppercase tracking-widest leading-relaxed">
-                Complete the fields below. All information reviewed prior to scheduling.
-            </p>
           </div>
 
-          <div ref={successContainerRef} className="bg-zinc-900 border border-zinc-700 p-8 md:p-16 relative overflow-hidden flex flex-col justify-center">
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-white opacity-20" />
+          <div className="bg-background border-2 border-border p-8 md:p-16 relative overflow-hidden flex flex-col justify-center transition-colors duration-300">
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-foreground opacity-10" />
 
             <div className="w-full">
               <Form {...form}>
@@ -149,15 +130,15 @@ const Index = () => {
                     <div className="grid gap-8 md:grid-cols-2">
                       <FormField control={form.control} name="firstName" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs uppercase font-black tracking-widest text-white mb-4 block tech-mono">Full Name</FormLabel>
-                          <FormControl><Input required placeholder="John Doe" className="h-16 rounded-none border-zinc-700 bg-black px-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} /></FormControl>
+                          <FormLabel className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-4 block transition-colors duration-300">Full Name</FormLabel>
+                          <FormControl><Input required placeholder="John Doe" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
                       <FormField control={form.control} name="email" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs uppercase font-black tracking-widest text-white mb-4 block tech-mono">Business Email</FormLabel>
-                          <FormControl><Input required type="email" placeholder="john@company.com" className="h-16 rounded-none border-zinc-700 bg-black px-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} /></FormControl>
+                          <FormLabel className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-4 block transition-colors duration-300">Business Email</FormLabel>
+                          <FormControl><Input required type="email" placeholder="john@company.com" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
@@ -165,11 +146,27 @@ const Index = () => {
 
                     <FormField control={form.control} name="howCanWeHelp" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs uppercase font-black tracking-widest text-white mb-4 block tech-mono">Primary Operational Bottleneck</FormLabel>
+                        <FormLabel className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-4 block transition-colors duration-300">biggest operations obstacle</FormLabel>
                         <FormControl>
-                          <Textarea required placeholder="Describe what you think is slowing down your business..." className="min-h-[200px] rounded-none border-zinc-700 bg-black p-6 text-zinc-100 focus:border-white focus:ring-1 focus:ring-white transition-all font-medium placeholder:text-zinc-500" {...field} />
+                          <Textarea required placeholder="Describe what you think is slowing down your business..." className="min-h-[200px] rounded-none border-2 border-border bg-background p-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} />
                         </FormControl>
                         <FormMessage />
+                      </FormItem>
+                    )} />
+
+                    {/* GDPR REGULATION CHECKBOX */}
+                    <FormField control={form.control} name="consent" render={({ field }) => (
+                      <FormItem className="flex flex-row items-start space-x-4 space-y-0 p-4 bg-secondary/50 border border-border transition-colors duration-300">
+                        <FormControl>
+                          <Checkbox checked={field.value} onCheckedChange={field.onChange} className="mt-1 border-border data-[state=checked]:bg-[#10b981] data-[state=checked]:border-[#10b981] rounded-none" />
+                        </FormControl>
+                        <div className="space-y-1 leading-none">
+                          <FormLabel className="text-[10px] uppercase font-black tracking-[0.1em] text-muted-foreground leading-tight transition-colors duration-300">
+                            I consent to the Discovery Protocol and occasional automation strategy updates. 
+                            <span className="block mt-2 opacity-60 font-bold normal-case tracking-normal">Data is processed in accordance with our Privacy Governance Standards.</span>
+                          </FormLabel>
+                          <FormMessage />
+                        </div>
                       </FormItem>
                     )} />
                   </div>
@@ -183,11 +180,11 @@ const Index = () => {
                     {isLoading ? (
                       <div className="flex items-center gap-4">
                         <Loader2 className="h-8 w-8 animate-spin" />
-                        <span className="tech-mono">Initializing_</span>
+                        <span>Initializing_</span>
                       </div>
                     ) : (
                       <div className="flex items-center gap-4">
-                        <span>Initiate Audit</span>
+                        <span>Get In Touch</span>
                         <ArrowRight className="h-7 w-7 transition-transform group-hover:translate-x-2" />
                       </div>
                     )}
@@ -198,10 +195,6 @@ const Index = () => {
           </div>
         </motion.div>
       </section>
-
-      <motion.div {...revealProps}>
-        <FAQ />
-      </motion.div>
 
       <Footer />
     </div>

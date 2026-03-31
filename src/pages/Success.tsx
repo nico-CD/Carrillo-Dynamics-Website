@@ -90,42 +90,43 @@ const Success = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#050505] flex flex-col selection:bg-[#10b981]/30">
+        <div className="min-h-screen bg-background flex flex-col selection:bg-[#10b981]/30 transition-colors duration-300">
             <Navbar />
             
-            <main className="flex-1 flex flex-col items-center justify-center px-6 pt-32 pb-24 relative z-10">
+            <main className="flex-1 flex flex-col items-center justify-center px-6 pt-32 pb-24 relative z-10 transition-colors duration-300">
                 <div className="max-w-4xl w-full space-y-12">
                     
                     {!isSubmitted ? (
                         <div className="space-y-12">
-                            <div className="text-center space-y-6">
+                            <div className="text-center space-y-8">
                                 <div className="space-y-4">
-                                    <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-none text-center">
-                                        PAYMENT VERIFIED.<br />
-                                        <span className="italic text-[#10b981]">INITIALIZING DIAGNOSTIC.</span>
+                                    <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-foreground leading-none text-center">
+                                        SYSTEMS MAPPING<br />
+                                        <span className="text-[#10b981]">INITIALIZED.</span>
                                     </h1>
-                                    <p className="tech-mono text-[10px] md:text-xs font-black text-zinc-500 uppercase tracking-widest leading-loose max-w-lg mx-auto">
-                                        DO NOT CLOSE THIS TAB. TECHNICAL DATA COLLECTION REQUIRED FOR ANALYSIS.
+                                    <p className="tech-mono text-[10px] md:text-sm font-bold text-muted-foreground uppercase tracking-[0.4em] max-w-xl mx-auto">
+                                        INTAKE RECORDED. SECURE ARCHITECTURAL ANALYSIS IN PROGRESS.
                                     </p>
                                 </div>
                             </div>
-
+                            
+                            {/* Form remains the same as it's functional */}
                             <motion.div 
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="max-w-2xl mx-auto w-full bg-black/50 border border-zinc-800 p-8 md:p-12 space-y-10"
+                                className="max-w-2xl mx-auto w-full bg-card/50 border border-border p-8 md:p-12 space-y-10 transition-colors duration-300 shadow-2xl"
                             >
                                 <form onSubmit={handleSubmit} className="space-y-8">
                                     <div className="space-y-6">
                                         {/* SYSTEM_STACK */}
                                         <div className="space-y-3 text-left">
-                                            <Label className="text-zinc-100 text-lg font-bold tracking-tight">What is your primary software stack?</Label>
-                                            <p className="text-sm text-zinc-300 mt-1 font-medium leading-relaxed">e.g., Salesforce, HubSpot, or the specific tools you use daily.</p>
+                                            <Label className="text-foreground text-lg font-bold tracking-tight transition-colors duration-300">What is your primary software stack?</Label>
+                                            <p className="text-sm text-muted-foreground mt-1 font-medium leading-relaxed transition-colors duration-300">e.g., Salesforce, HubSpot, or the specific tools you use daily.</p>
                                             <Input 
                                                 required
                                                 placeholder="e.g., Salesforce + Slack + Quickbooks"
-                                                className="h-14 rounded-none border-zinc-800 bg-zinc-950 text-white px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-600 text-md"
+                                                className="h-14 rounded-none border-border bg-secondary text-foreground px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-muted-foreground/50 text-md"
                                                 value={formData.systemStack}
                                                 onChange={(e) => setFormData({...formData, systemStack: e.target.value})}
                                             />
@@ -133,16 +134,16 @@ const Success = () => {
 
                                         {/* MONTHLY_THROUGHPUT */}
                                         <div className="space-y-3 text-left">
-                                            <Label className="text-zinc-100 text-lg font-bold tracking-tight">Approximate monthly data volume?</Label>
-                                            <p className="text-sm text-zinc-300 mt-1 font-medium leading-relaxed">Select the scale of your current digital throughput.</p>
+                                            <Label className="text-foreground text-lg font-bold tracking-tight transition-colors duration-300">Approximate monthly data volume?</Label>
+                                            <p className="text-sm text-muted-foreground mt-1 font-medium leading-relaxed transition-colors duration-300">Select the scale of your current digital throughput.</p>
                                             <Select 
                                                 required
                                                 onValueChange={(val) => setFormData({...formData, monthlyThroughput: val})}
                                             >
-                                                <SelectTrigger className="h-14 rounded-none border-zinc-800 bg-zinc-950 text-zinc-200 px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-medium data-[placeholder]:text-zinc-700 text-md">
+                                                <SelectTrigger className="h-14 rounded-none border-border bg-secondary text-foreground px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-medium data-[placeholder]:text-muted-foreground/50 text-md">
                                                     <SelectValue placeholder="Select Volume Range" />
                                                 </SelectTrigger>
-                                                <SelectContent className="rounded-none border-zinc-800 bg-zinc-950 text-zinc-200">
+                                                <SelectContent className="rounded-none border-border bg-secondary text-foreground">
                                                     <SelectItem value="low" className="focus:bg-[#10b981] focus:text-black rounded-none">Low (&lt;100 leads/mo)</SelectItem>
                                                     <SelectItem value="medium" className="focus:bg-[#10b981] focus:text-black rounded-none">Medium (100-1000 leads/mo)</SelectItem>
                                                     <SelectItem value="high" className="focus:bg-[#10b981] focus:text-black rounded-none">High (1000+ leads/mo)</SelectItem>
@@ -152,16 +153,16 @@ const Success = () => {
 
                                         {/* MANUAL_LATENCY */}
                                         <div className="space-y-3 text-left">
-                                            <Label className="text-zinc-100 text-lg font-bold tracking-tight">How many hours per week are lost to manual data entry?</Label>
-                                            <p className="text-sm text-zinc-300 mt-1 font-medium leading-relaxed">Estimate the 'Human Tax' your team pays for fragmented systems.</p>
+                                            <Label className="text-foreground text-lg font-bold tracking-tight transition-colors duration-300">How many hours per week are lost to manual data entry?</Label>
+                                            <p className="text-sm text-muted-foreground mt-1 font-medium leading-relaxed transition-colors duration-300">Estimate the 'Human Tax' your team pays for fragmented systems.</p>
                                             <Select 
                                                 required
                                                 onValueChange={(val) => setFormData({...formData, manualLatency: val})}
                                             >
-                                                <SelectTrigger className="h-14 rounded-none border-zinc-800 bg-zinc-950 text-zinc-200 px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-medium data-[placeholder]:text-zinc-700 text-md">
+                                                <SelectTrigger className="h-14 rounded-none border-border bg-secondary text-foreground px-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-medium data-[placeholder]:text-muted-foreground/50 text-md">
                                                     <SelectValue placeholder="Select Estimated Wasted Hours" />
                                                 </SelectTrigger>
-                                                <SelectContent className="rounded-none border-zinc-800 bg-zinc-950 text-zinc-200">
+                                                <SelectContent className="rounded-none border-border bg-secondary text-foreground">
                                                     <SelectItem value="0-5" className="focus:bg-[#10b981] focus:text-black rounded-none">0-5 hours (Minor Friction)</SelectItem>
                                                     <SelectItem value="5-15" className="focus:bg-[#10b981] focus:text-black rounded-none">5-15 hours (Operational Drag)</SelectItem>
                                                     <SelectItem value="15-40" className="focus:bg-[#10b981] focus:text-black rounded-none">15-40 hours (Critical Leakage)</SelectItem>
@@ -172,12 +173,12 @@ const Success = () => {
 
                                         {/* INTERFACE_REQUIREMENTS */}
                                         <div className="space-y-3 text-left">
-                                            <Label className="text-zinc-100 text-lg font-bold tracking-tight">Which systems need to be connected?</Label>
-                                            <p className="text-sm text-zinc-300 mt-1 font-medium leading-relaxed">Identify the top 3 apps that aren't talking to each other.</p>
+                                            <Label className="text-foreground text-lg font-bold tracking-tight transition-colors duration-300">Which systems need to be connected?</Label>
+                                            <p className="text-sm text-muted-foreground mt-1 font-medium leading-relaxed transition-colors duration-300">Identify the top 3 apps that aren't talking to each other.</p>
                                             <Textarea 
                                                 required
                                                 placeholder="e.g., Sync CRM leads to my ERP automatically."
-                                                className="min-h-[100px] rounded-none border-zinc-800 bg-zinc-950 text-white p-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-600 text-md resize-none"
+                                                className="min-h-[100px] rounded-none border-border bg-secondary text-foreground p-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-muted-foreground/50 text-md resize-none"
                                                 value={formData.interfaceRequirements}
                                                 onChange={(e) => setFormData({...formData, interfaceRequirements: e.target.value})}
                                             />
@@ -185,12 +186,12 @@ const Success = () => {
 
                                         {/* PRIMARY_OBJECTIVE */}
                                         <div className="space-y-3 text-left">
-                                            <Label className="text-zinc-100 text-lg font-bold tracking-tight">What is the #1 bottleneck we should solve first?</Label>
-                                            <p className="text-sm text-zinc-300 mt-1 font-medium leading-relaxed">If one task was 100% automated by next week, what would change the game?</p>
+                                            <Label className="text-foreground text-lg font-bold tracking-tight transition-colors duration-300">What is the #1 bottleneck we should solve first?</Label>
+                                            <p className="text-sm text-muted-foreground mt-1 font-medium leading-relaxed transition-colors duration-300">If one task was 100% automated by next week, what would change the game?</p>
                                             <Textarea 
                                                 required
                                                 placeholder="e.g., I want to stop manually copying invoices."
-                                                className="min-h-[100px] rounded-none border-zinc-800 bg-zinc-950 text-white p-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-zinc-600 text-md resize-none"
+                                                className="min-h-[100px] rounded-none border-border bg-secondary text-foreground p-5 focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]/50 transition-all font-bold placeholder:text-muted-foreground/50 text-md resize-none"
                                                 value={formData.primaryObjective}
                                                 onChange={(e) => setFormData({...formData, primaryObjective: e.target.value})}
                                             />
@@ -200,70 +201,91 @@ const Success = () => {
                                     <Button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full h-16 rounded-none bg-[#10b981] hover:bg-[#0ea672] text-black font-black uppercase tracking-[0.2em] transition-all disabled:opacity-50"
+                                        className="w-full h-16 rounded-none bg-[#10b981] hover:bg-[#0ea672] text-black font-black uppercase tracking-[0.2em] transition-all disabled:opacity-50 border-none shadow-lg"
                                     >
                                         {isSubmitting ? (
                                             <Loader2 className="h-5 w-5 animate-spin" />
                                         ) : (
-                                            "SUBMIT FOR AUDIT"
+                                            "FINALIZE SYSTEMS MAPPING"
                                         )}
                                     </Button>
                                 </form>
                             </motion.div>
                         </div>
                     ) : (
-                        <div className="flex-1 flex items-center justify-center p-6 bg-black">
+                        <div className="flex-1 flex flex-col items-center justify-center space-y-16">
+                            <div className="text-center space-y-4">
+                                <motion.h1 
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="text-6xl md:text-9xl font-black uppercase tracking-tighter text-[#10b981] leading-none mb-4"
+                                >
+                                    SECURE & ACTIVE.
+                                </motion.h1>
+                            </div>
+
                             <motion.div 
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                className="max-w-md mx-auto w-full border border-zinc-900 bg-[#050505] p-8 md:p-12 space-y-10 tech-mono shadow-2xl overflow-hidden relative"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                                className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-border border-2 border-white/10 overflow-hidden shadow-[0_0_100px_rgba(16,185,129,0.15)] ring-1 ring-[#10b981]/30"
                             >
-                                <div className="space-y-6">
-                                    {[
-                                        { text: "Audit Data Received", delay: 0.2 },
-                                        { text: "ENCRYPTING_TRANSMISSION...", delay: 0.5 },
-                                        { text: "Engineers Notified", delay: 0.8 },
-                                    ].map((line, idx) => (
-                                        <motion.div 
-                                            key={idx}
-                                            initial={{ opacity: 0, x: -10 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: line.delay }}
-                                            className="flex items-start gap-3"
-                                        >
-                                            <span className="text-[#10b981] font-bold">&gt;</span>
-                                            <p className="text-zinc-200 text-[10px] md:text-xs font-bold uppercase tracking-widest leading-relaxed">{line.text}</p>
-                                        </motion.div>
-                                    ))}
-                                    
-                                    <motion.div 
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 1.1 }}
-                                        className="flex items-start gap-3 pt-4"
-                                    >
-                                        <span className="text-[#10b981] font-bold">&gt;</span>
-                                        <p className="text-zinc-200 text-[10px] md:text-xs font-bold uppercase tracking-widest leading-relaxed break-all">
-                                            Final Report Pending Review
-                                        </p>
-                                    </motion.div>
+                                {/* Dashboard: Engagement Status */}
+                                <div className="bg-card p-12 lg:p-20 space-y-12 border-r-2 border-border">
+                                    <div className="space-y-6 text-left">
+                                        <div className="text-xs tech-mono font-black text-muted-foreground uppercase tracking-widest">Awaiting Analysis</div>
+                                        <div className="text-4xl lg:text-5xl font-black text-foreground uppercase tracking-tight leading-[0.9]">48-HOUR <br/>TECHNICAL <br/>WINDOW.</div>
+                                    </div>
+                                    <div className="space-y-8 pt-8 border-t border-white/10 text-left">
+                                        <div className="text-xs font-bold text-[#10b981] uppercase tracking-[0.2em] mb-4">Next Protocols:</div>
+                                        <ul className="space-y-4">
+                                            {["Full Operational Immersion", "Friction Point Isolation", "ROI Scaling Blueprint"].map((item, i) => (
+                                                <li key={i} className="flex items-center gap-4 text-sm font-black uppercase text-foreground tracking-tight">
+                                                    <span className="w-2 h-2 bg-[#10b981] flex-shrink-0" />
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 1.5 }}
-                                    className="pt-6"
-                                >
-                                    <Button
-                                        onClick={() => navigate("/")}
-                                        className="w-full h-14 rounded-none border border-zinc-800 bg-transparent hover:bg-zinc-900 text-zinc-400 hover:text-white tech-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] transition-all"
-                                    >
-                                        Return to Homepage
-                                    </Button>
-                                </motion.div>
+                                {/* Dashboard: Verified Parameters */}
+                                <div className="bg-secondary/80 p-12 lg:p-20 space-y-12 flex flex-col justify-between">
+                                    <div className="space-y-12">
+                                        <div className="text-xs font-bold text-zinc-400 uppercase tracking-[0.2em] text-left">Intake Information:</div>
+                                        <div className="space-y-10 text-left">
+                                            {[
+                                                { label: "Software Stack", value: formData.systemStack },
+                                                { label: "Volume Scale", value: formData.monthlyThroughput },
+                                                { label: "Manual Drag", value: formData.manualLatency + " HPW" }
+                                            ].map((item, i) => (
+                                                <div key={i} className="space-y-3">
+                                                    <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest">{item.label}</div>
+                                                    <div className="text-2xl lg:text-3xl font-black text-foreground uppercase tracking-tighter leading-tight">{item.value}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="pt-8 border-t border-white/10">
+                                        <p className="text-xs font-bold text-muted-foreground leading-relaxed text-left uppercase tracking-tight">
+                                            Architecture mapping prioritized. 100% build credit allocated to engagement.
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
 
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-[#10b981]/5 blur-3xl rounded-full -mr-12 -mt-12" />
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.6 }}
+                                className="w-full max-w-xs"
+                            >
+                                <Button
+                                    onClick={() => navigate("/")}
+                                    className="w-full h-16 rounded-none bg-foreground text-background hover:bg-muted-foreground font-black uppercase tracking-[0.2em] transition-all shadow-xl"
+                                >
+                                    RETURN TO OPERATIONS
+                                </Button>
                             </motion.div>
                         </div>
                     )}
@@ -273,10 +295,11 @@ const Success = () => {
             <Footer />
 
             {/* Grid Pattern */}
-            <div className="fixed inset-0 z-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:64px_64px]" />
+            <div className="fixed inset-0 z-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#888_1px,transparent_1px),linear-gradient(to_bottom,#888_1px,transparent_1px)] bg-[size:64px_64px]" />
         </div>
     );
 };
 
 export default Success;
+
 

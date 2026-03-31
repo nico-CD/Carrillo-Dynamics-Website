@@ -69,9 +69,9 @@ const FastTrackNav = ({ onContactClick, onVisibilityChange }: FastTrackNavProps)
                                     <Button
                                         onClick={onContactClick}
                                         size="sm"
-                                        className="h-10 rounded-none px-6 text-[10px] font-black uppercase tracking-widest bg-white hover:bg-white/90 text-black transition-all group"
+                                        className="h-10 rounded-none px-6 text-[10px] font-black uppercase tracking-widest bg-[#10b981] hover:bg-[#0ea672] text-black transition-all group"
                                     >
-                                        INITIATE AUDIT
+                                        GET IN TOUCH
                                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </Button>
                                 </div>

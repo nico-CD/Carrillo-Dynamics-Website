@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -7,73 +7,84 @@ interface HeroProps {
     onContactClick: () => void;
 }
 
-const cyclingWords = ["Sheet Sprawl", "Manual Syncing", "Invoice Chasing", "Email Purgatory", "CRM Bloat", "Lead Leakage"];
+const words = ["Sheet Sprawl", "Manual Syncs", "Invoice Chasing", "Email Purgatory", "CRM Bloat", "Lead Leakage"];
 
 const Hero = ({ onContactClick }: HeroProps) => {
+    const [currentWord, setCurrentWord] = useState("");
     const [wordIndex, setWordIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [typingSpeed, setTypingSpeed] = useState(150);
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setWordIndex((prev) => (prev + 1) % cyclingWords.length);
-        }, 2000);
-        return () => clearInterval(timer);
-    }, []);
+        const handleType = () => {
+            const targetWord = words[wordIndex];
+            if (isDeleting) {
+                setCurrentWord(targetWord.substring(0, currentWord.length - 1));
+                setTypingSpeed(40);
+            } else {
+                setCurrentWord(targetWord.substring(0, currentWord.length + 1));
+                setTypingSpeed(90);
+            }
 
-    const easeTransition = [0.16, 1, 0.3, 1] as any;
+            if (!isDeleting && currentWord === targetWord) {
+                setTimeout(() => setIsDeleting(true), 1500);
+            } else if (isDeleting && currentWord === "") {
+                setIsDeleting(false);
+                setWordIndex((prev) => (prev + 1) % words.length);
+            }
+        };
+
+        const timer = setTimeout(handleType, typingSpeed);
+        return () => clearTimeout(timer);
+    }, [currentWord, isDeleting, wordIndex, typingSpeed]);
 
     return (
-        <section className="relative flex min-h-[90vh] flex-col justify-center px-6 py-48 bg-[#050505] overflow-hidden">
-            <div className="max-w-4xl mx-auto w-full z-10">
+        <section className="relative flex min-h-[90vh] flex-col justify-center px-6 py-24 md:py-48 bg-background overflow-hidden transition-colors duration-300">
+            <div className="max-w-5xl mx-auto w-full z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="space-y-12"
+                    className="space-y-12 md:space-y-24"
                 >
-                    <div className="space-y-6 text-left">
-                        <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-white">
-                            Engineer <span className="italic">Flow.</span><br />
-                            Eliminate <span className="italic">Friction.</span>
+                    <div className="space-y-4 text-left">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-tight leading-[0.9] text-foreground transition-colors duration-300">
+                            Your team is <br /> spending hours on <br />
+                            <span className="text-[#10b981] italic">
+                                {currentWord}
+                                <span className="animate-pulse">|</span>
+                            </span>
                         </h1>
                     </div>
 
-                    <div className="flex items-center gap-4 h-10 overflow-hidden">
-                        <span className="tech-mono text-[11px] font-bold text-zinc-400 uppercase tracking-widest whitespace-nowrap">We are eliminating:</span>
-                        <div className="relative flex-1 h-full">
-                            <AnimatePresence mode="wait">
-                                <motion.span
-                                    key={cyclingWords[wordIndex]}
-                                    initial={{ y: 20, opacity: 0 }}
-                                    animate={{ y: 0, opacity: 1 }}
-                                    exit={{ y: -20, opacity: 0 }}
-                                    transition={{ duration: 0.4, ease: easeTransition }}
-                                    className="absolute left-0 tech-mono text-[11px] font-bold text-white uppercase tracking-widest border border-zinc-700 px-4 py-1.5"
-                                >
-                                    {cyclingWords[wordIndex]}
-                                </motion.span>
-                            </AnimatePresence>
+                    <div className="space-y-8 text-left max-w-4xl">
+                        <div className="flex flex-col gap-6">
+                             <p className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest text-muted-foreground leading-none transition-colors duration-300">
+                                Manual data entry. Disconnected tools. Repeating the same steps every day.
+                             </p>
+                             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground leading-tight transition-colors duration-300">
+                                AI automation is not a trend.<br />It's a <span className="text-[#10b981] italic underline decoration-2 underline-offset-8">tool to reclaim your time.</span>
+                             </h2>
                         </div>
                     </div>
-
-                    <p className="text-xl md:text-2xl font-medium max-w-2xl leading-relaxed text-left text-zinc-400">
-                        High-agency digital infrastructure for industrial operations. We replace friction with engineered leverage.
-                    </p>
 
                     <div className="pt-8 text-left">
                         <Button
                             onClick={onContactClick}
                             size="lg"
-                            className="h-16 md:h-24 w-full md:w-auto rounded-none px-8 md:px-16 text-base md:text-2xl font-black uppercase tracking-[0.3em] bg-[#10b981] hover:bg-[#10b981]/90 hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] text-black transition-all group shrink-0 border-none"
+                            className="h-16 md:h-24 w-full sm:w-fit rounded-none px-10 md:px-20 text-xs sm:text-sm md:text-xl font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] shadow-[0_0_50px_rgba(16,185,129,0.2)] text-black transition-all group border-none"
                         >
-                            INITIATE AUDIT
-                            <ArrowRight className="ml-4 h-6 w-6 md:h-8 md:w-8 transition-transform group-hover:translate-x-3" />
+                            <span className="flex items-center gap-4">
+                                GET IN TOUCH
+                                <ArrowRight className="h-4 w-4 md:h-8 md:w-8 transition-transform group-hover:translate-x-4" />
+                            </span>
                         </Button>
                     </div>
                 </motion.div>
             </div>
             
-            {/* Minimalist Industrial Grid Branding */}
-            <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:64px_64px]" />
+            {/* Visual background cleanup */}
+            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,#10b981_0,transparent:25%)] blur-3xl" />
         </section>
     );
 };
