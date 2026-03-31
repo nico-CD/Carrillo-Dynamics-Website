@@ -228,7 +228,7 @@ const Success = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-[#10b981]/20 border-2 border-[#10b981]/50 overflow-hidden shadow-[0_0_150px_rgba(16,185,129,0.3)] ring-1 ring-[#10b981] bg-black/40 backdrop-blur-md"
+                                className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-[#10b981]/20 border-2 border-[#10b981]/50 overflow-hidden shadow-2xl ring-1 ring-[#10b981] bg-black/40 backdrop-blur-md"
                             >
                                 <div className="bg-[#10b981]/10 p-12 lg:p-20 space-y-12 border-r-2 border-[#10b981]/20 backdrop-blur-sm">
                                     <div className="space-y-6 text-left">
