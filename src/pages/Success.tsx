@@ -228,19 +228,18 @@ const Success = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-border border-2 border-white/10 overflow-hidden shadow-[0_0_100px_rgba(16,185,129,0.15)] ring-1 ring-[#10b981]/30"
+                                className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-[#10b981]/20 border-2 border-[#10b981]/30 overflow-hidden shadow-[0_0_150px_rgba(16,185,129,0.2)] ring-1 ring-[#10b981]/50 bg-black/40 backdrop-blur-md"
                             >
-                                {/* Dashboard: Engagement Status */}
-                                <div className="bg-card p-12 lg:p-20 space-y-12 border-r-2 border-border">
+                                <div className="bg-black/80 p-12 lg:p-20 space-y-12 border-r-2 border-[#10b981]/20">
                                     <div className="space-y-6 text-left">
-                                        <div className="text-xs tech-mono font-black text-muted-foreground uppercase tracking-widest">Awaiting Analysis</div>
-                                        <div className="text-4xl lg:text-5xl font-black text-foreground uppercase tracking-tight leading-[0.9]">48-HOUR <br/>TECHNICAL <br/>WINDOW.</div>
+                                        <div className="text-sm tech-mono font-black text-[#10b981] uppercase tracking-[0.3em]">MISSION PROTOCOL: ACTIVE</div>
+                                        <div className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-[0.9]">STRATEGIC <br/>CONSULTATION <br/>INITIATED.</div>
                                     </div>
-                                    <div className="space-y-8 pt-8 border-t border-white/10 text-left">
-                                        <div className="text-xs font-bold text-[#10b981] uppercase tracking-[0.2em] mb-4">Next Protocols:</div>
+                                    <div className="space-y-8 pt-8 border-t border-[#10b981]/20 text-left">
+                                        <div className="text-xs font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">ENGINEERING NEXT STEPS:</div>
                                         <ul className="space-y-4">
                                             {["Full Operational Immersion", "Friction Point Isolation", "ROI Scaling Blueprint"].map((item, i) => (
-                                                <li key={i} className="flex items-center gap-4 text-sm font-black uppercase text-foreground tracking-tight">
+                                                <li key={i} className="flex items-center gap-4 text-sm font-black uppercase text-white tracking-tight">
                                                     <span className="w-2 h-2 bg-[#10b981] flex-shrink-0" />
                                                     {item}
                                                 </li>
@@ -249,26 +248,25 @@ const Success = () => {
                                     </div>
                                 </div>
 
-                                {/* Dashboard: Verified Parameters */}
-                                <div className="bg-secondary/80 p-12 lg:p-20 space-y-12 flex flex-col justify-between">
+                                <div className="bg-[#10b981]/5 p-12 lg:p-20 space-y-12 flex flex-col justify-between">
                                     <div className="space-y-12">
-                                        <div className="text-xs font-bold text-zinc-400 uppercase tracking-[0.2em] text-left">Intake Information:</div>
-                                        <div className="space-y-10 text-left">
+                                        <div className="text-sm font-bold text-[#10b981] uppercase tracking-[0.3em] text-left">INTAKE VERIFIED:</div>
+                                        <div className="space-y-12 text-left">
                                             {[
-                                                { label: "Software Stack", value: formData.systemStack },
-                                                { label: "Volume Scale", value: formData.monthlyThroughput },
-                                                { label: "Manual Drag", value: formData.manualLatency + " HPW" }
+                                                { label: "PRIMARY STACK", value: formData.systemStack },
+                                                { label: "THROUGHPUT VOLUME", value: formData.monthlyThroughput },
+                                                { label: "OPERATIONAL DRAG", value: formData.manualLatency + " HPW" }
                                             ].map((item, i) => (
                                                 <div key={i} className="space-y-3">
-                                                    <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest">{item.label}</div>
-                                                    <div className="text-2xl lg:text-3xl font-black text-foreground uppercase tracking-tighter leading-tight">{item.value}</div>
+                                                    <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest">{item.label}</div>
+                                                    <div className="text-3xl lg:text-4xl font-black text-[#10b981] uppercase tracking-tighter leading-tight">{item.value}</div>
                                                 </div>
                                             ))}
                                         </div>
                                     </div>
-                                    <div className="pt-8 border-t border-white/10">
-                                        <p className="text-xs font-bold text-muted-foreground leading-relaxed text-left uppercase tracking-tight">
-                                            Architecture mapping prioritized. 100% build credit allocated to engagement.
+                                    <div className="pt-8 border-t border-[#10b981]/20">
+                                        <p className="text-[10px] font-bold text-zinc-500 leading-relaxed text-left uppercase tracking-widest">
+                                            Secure architectural mapping prioritized. Your Lead Engineer will review this blueprint within 24 hours.
                                         </p>
                                     </div>
                                 </div>
