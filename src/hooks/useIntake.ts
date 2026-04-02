@@ -28,7 +28,10 @@ export const useIntake = () => {
             const payload = {
                 lead_name: sanitizedData.firstName,
                 lead_email: sanitizedData.email,
-                bottleneck: sanitizedData.howCanWeHelp,
+                company_name: sanitizedData.companyName,
+                company_website: sanitizedData.companyWebsite,
+                industry: sanitizedData.industry,
+                bottleneck: sanitizedData.bottleneck,
                 submittedAt: new Date().toISOString(),
                 source: window.location.hostname,
                 event_type: "lead_gen"

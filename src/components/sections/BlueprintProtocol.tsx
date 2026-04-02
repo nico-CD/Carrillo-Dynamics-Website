@@ -74,7 +74,7 @@ const BlueprintProtocol = () => {
                 <div className="space-y-20">
                     <div className="flex flex-col items-start gap-4">
                          <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">Our System Blueprint</h2>
-                         <p className="text-lg md:text-2xl text-foreground font-bold max-w-3xl leading-relaxed transition-colors duration-300">
+                         <p className="text-lg md:text-2xl text-muted-foreground font-medium max-w-2xl transition-colors duration-300">
                              A scientific approach to operational engineering that scales with your business.
                          </p>
                     </div>
