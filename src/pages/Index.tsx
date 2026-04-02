@@ -127,7 +127,7 @@ const Index = () => {
           {...revealProps}
         >
           <div className="mb-20 text-center space-y-8">
-            <h2 className="text-7xl md:text-7xl font-black uppercase tracking-tight leading-[0.85] text-foreground transition-colors duration-300 mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight leading-none text-foreground transition-colors duration-300 mx-auto">
                 Get Your <span className="italic text-[#10b981]">Free Custom Blueprint.</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl leading-relaxed transition-colors duration-300 mx-auto">
@@ -135,7 +135,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="bg-background border-2 border-border p-8 md:p-16 relative overflow-hidden flex flex-col justify-center transition-colors duration-300">
+          <div className="bg-secondary/10 border-2 border-zinc-800 p-8 md:p-16 relative overflow-hidden flex flex-col justify-center transition-colors duration-300 shadow-[0_0_50px_rgba(0,0,0,0.3)]">
             <div className="absolute top-0 left-0 w-full h-[2px] bg-foreground opacity-10" />
 
             <div className="w-full">
@@ -146,14 +146,14 @@ const Index = () => {
                       <FormField control={form.control} name="firstName" render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Full Name</FormLabel>
-                          <FormControl><Input required placeholder="John Doe" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
+                          <FormControl><Input required placeholder="John Doe" className="h-16 rounded-none border-2 border-zinc-700 bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/50" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
                       <FormField control={form.control} name="email" render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Business Email</FormLabel>
-                          <FormControl><Input required type="email" placeholder="john@company.com" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
+                          <FormControl><Input required type="email" placeholder="john@company.com" className="h-16 rounded-none border-2 border-zinc-700 bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/50" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
@@ -163,14 +163,14 @@ const Index = () => {
                       <FormField control={form.control} name="companyName" render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Company Name</FormLabel>
-                          <FormControl><Input required placeholder="ACME Corp" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
+                          <FormControl><Input required placeholder="ACME Corp" className="h-16 rounded-none border-2 border-zinc-700 bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/50" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
                       <FormField control={form.control} name="companyWebsite" render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Company Website</FormLabel>
-                          <FormControl><Input required placeholder="https://company.com" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
+                          <FormControl><Input required placeholder="https://company.com" className="h-16 rounded-none border-2 border-zinc-700 bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/50" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
@@ -182,11 +182,11 @@ const Index = () => {
                                 <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Industry</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
-                                        <SelectTrigger className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium">
+                                        <SelectTrigger className="h-16 rounded-none border-2 border-zinc-700 bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium">
                                             <SelectValue placeholder="Select your industry" />
                                         </SelectTrigger>
                                     </FormControl>
-                                    <SelectContent className="rounded-none border-2 border-border bg-background">
+                                    <SelectContent className="rounded-none border-2 border-zinc-700 bg-background">
                                         {[
                                             "HVAC / Plumbing / Electrical",
                                             "Restoration / Contracting",
@@ -209,11 +209,11 @@ const Index = () => {
                                 <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Primary Bottleneck</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
-                                        <SelectTrigger className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium">
+                                        <SelectTrigger className="h-16 rounded-none border-2 border-zinc-700 bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium">
                                             <SelectValue placeholder="Select your biggest bottleneck" />
                                         </SelectTrigger>
                                     </FormControl>
-                                    <SelectContent className="rounded-none border-2 border-border bg-background">
+                                    <SelectContent className="rounded-none border-2 border-zinc-700 bg-background">
                                         {[
                                             "Dispatching & Scheduling",
                                             "Lead Follow-up & Conversion",
@@ -234,9 +234,9 @@ const Index = () => {
 
                     {/* GDPR REGULATION CHECKBOX */}
                     <FormField control={form.control} name="consent" render={({ field }) => (
-                      <FormItem className="flex flex-row items-start space-x-4 space-y-0 p-4 bg-secondary/50 border border-border transition-colors duration-300">
+                      <FormItem className="flex flex-row items-start space-x-4 space-y-0 p-4 bg-secondary/30 border border-zinc-800 transition-colors duration-300">
                         <FormControl>
-                          <Checkbox checked={field.value} onCheckedChange={field.onChange} className="mt-1 border-border data-[state=checked]:bg-[#10b981] data-[state=checked]:border-[#10b981] rounded-none" />
+                          <Checkbox checked={field.value} onCheckedChange={field.onChange} className="mt-1 border-zinc-700 data-[state=checked]:bg-[#10b981] data-[state=checked]:border-[#10b981] rounded-none" />
                         </FormControl>
                         <div className="space-y-1 leading-none">
                           <FormLabel className="text-[10px] uppercase font-black tracking-[0.1em] text-muted-foreground leading-tight transition-colors duration-300">

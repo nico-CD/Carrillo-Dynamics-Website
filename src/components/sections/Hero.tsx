@@ -59,7 +59,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
 
                     <div className="space-y-6 text-left max-w-4xl">
                         <div className="flex flex-col gap-4">
-                             <p className="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground leading-none transition-colors duration-300 whitespace-nowrap">
+                             <p className="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground leading-relaxed transition-colors duration-300">
                                 Manual data entry. Disconnected tools. Repeating the same steps every day.
                              </p>
                              <h2 className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest text-foreground leading-none transition-colors duration-300">
