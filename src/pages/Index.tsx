@@ -10,6 +10,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
 import InteractiveCalculator from "@/components/InteractiveCalculator";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +38,12 @@ const Index = () => {
   const form = useForm<IntakeValues>({
     resolver: zodResolver(intakeSchema),
     defaultValues: {
-      firstName: "", email: "", howCanWeHelp: "", 
+      firstName: "", 
+      email: "", 
+      companyName: "",
+      companyWebsite: "",
+      industry: undefined,
+      bottleneck: undefined,
       consent: false
     },
   });
@@ -44,7 +56,7 @@ const Index = () => {
     localStorage.setItem('intake_data', JSON.stringify(data));
     const success = await submitIntake(data);
     if (success) {
-      navigate('/audit');
+      navigate('/success');
       window.scrollTo(0, 0);
     }
   };
@@ -83,29 +95,29 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* SEGMENT 3: THE BLUEPRINT OVERLAY */}
-      <BlueprintProtocol />
-
-      {/* Bridge CTA: The Transition */}
+      {/* Bridge CTA: The Transition (REORDERED: Under Calculator) */}
       <section className="bg-background py-24 px-6 border-b border-border transition-colors duration-300">
         <motion.div 
             {...revealProps}
             className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
         >
             <div className="space-y-4 text-center md:text-left">
-                <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">Stop the manual leak.</h3>
+                <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">Stop the leak.</h3>
                 <p className="text-lg md:text-xl font-bold text-[#10b981] uppercase tracking-widest">Start the engine.</p>
             </div>
             <Button
                 onClick={scrollToForm}
                 size="lg"
-                className="h-16 md:h-20 w-full md:w-auto rounded-none px-12 md:px-16 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-foreground hover:bg-muted-foreground text-background transition-all group border-none"
+                className="h-16 md:h-20 w-full md:w-auto rounded-none px-12 md:px-16 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] text-black transition-all group border-none shadow-[0_0_30px_rgba(16,185,129,0.2)]"
             >
                 GET IN TOUCH
                 <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
             </Button>
         </motion.div>
       </section>
+
+      {/* SEGMENT 3: THE BLUEPRINT OVERLAY */}
+      <BlueprintProtocol />
 
       {/* SEGMENT 4: THE INTAKE FORM (CORE WORKFLOW) */}
       <section id="intake" className="px-6 py-48 bg-background relative z-10 transition-colors duration-300">
@@ -114,10 +126,13 @@ const Index = () => {
           className="mx-auto max-w-4xl scroll-mt-24"
           {...revealProps}
         >
-          <div className="mb-24 text-center space-y-8">
-            <h2 className="text-6xl md:text-8xl font-black tracking-tight uppercase leading-none text-foreground transition-colors duration-300">
-              Discovery <span className="italic text-[#10b981]">Protocol.</span>
+          <div className="mb-20 text-center space-y-8">
+            <h2 className="text-7xl md:text-7xl font-black uppercase tracking-tight leading-[0.85] text-foreground transition-colors duration-300 mx-auto">
+                Get Your <span className="italic text-[#10b981]">Free Custom Blueprint.</span>
             </h2>
+            <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl leading-relaxed transition-colors duration-300 mx-auto">
+                Tell me where your manual bottlenecks are. Within 24 hours, I'll send you a custom video analysis and automation blueprint.
+            </p>
           </div>
 
           <div className="bg-background border-2 border-border p-8 md:p-16 relative overflow-hidden flex flex-col justify-center transition-colors duration-300">
@@ -130,29 +145,92 @@ const Index = () => {
                     <div className="grid gap-8 md:grid-cols-2">
                       <FormField control={form.control} name="firstName" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-4 block transition-colors duration-300">Full Name</FormLabel>
+                          <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Full Name</FormLabel>
                           <FormControl><Input required placeholder="John Doe" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
                       <FormField control={form.control} name="email" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-4 block transition-colors duration-300">Business Email</FormLabel>
+                          <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Business Email</FormLabel>
                           <FormControl><Input required type="email" placeholder="john@company.com" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
                     </div>
 
-                    <FormField control={form.control} name="howCanWeHelp" render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-4 block transition-colors duration-300">biggest operations obstacle</FormLabel>
-                        <FormControl>
-                          <Textarea required placeholder="Describe what you think is slowing down your business..." className="min-h-[200px] rounded-none border-2 border-border bg-background p-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )} />
+                    <div className="grid gap-8 md:grid-cols-2">
+                      <FormField control={form.control} name="companyName" render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Company Name</FormLabel>
+                          <FormControl><Input required placeholder="ACME Corp" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )} />
+                      <FormField control={form.control} name="companyWebsite" render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Company Website</FormLabel>
+                          <FormControl><Input required placeholder="https://company.com" className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground" {...field} /></FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )} />
+                    </div>
+
+                    <div className="grid gap-8 md:grid-cols-2">
+                        <FormField control={form.control} name="industry" render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Industry</FormLabel>
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                        <SelectTrigger className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium">
+                                            <SelectValue placeholder="Select your industry" />
+                                        </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent className="rounded-none border-2 border-border bg-background">
+                                        {[
+                                            "HVAC / Plumbing / Electrical",
+                                            "Restoration / Contracting",
+                                            "Property Management / Real Estate",
+                                            "Logistics / Fleet",
+                                            "Healthcare / Clinics",
+                                            "Other"
+                                        ].map((option) => (
+                                            <SelectItem key={option} value={option} className="focus:bg-[#10b981] focus:text-black rounded-none">
+                                                {option}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                                <FormMessage />
+                            </FormItem>
+                        )} />
+                        <FormField control={form.control} name="bottleneck" render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className="text-sm uppercase font-black tracking-widest text-foreground mb-4 block transition-colors duration-300">Primary Bottleneck</FormLabel>
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                        <SelectTrigger className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium">
+                                            <SelectValue placeholder="Select your biggest bottleneck" />
+                                        </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent className="rounded-none border-2 border-border bg-background">
+                                        {[
+                                            "Dispatching & Scheduling",
+                                            "Lead Follow-up & Conversion",
+                                            "Paperwork & Compliance",
+                                            "Legacy System Integration",
+                                            "Other"
+                                        ].map((option) => (
+                                            <SelectItem key={option} value={option} className="focus:bg-[#10b981] focus:text-black rounded-none">
+                                                {option}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                                <FormMessage />
+                            </FormItem>
+                        )} />
+                    </div>
 
                     {/* GDPR REGULATION CHECKBOX */}
                     <FormField control={form.control} name="consent" render={({ field }) => (
@@ -162,7 +240,7 @@ const Index = () => {
                         </FormControl>
                         <div className="space-y-1 leading-none">
                           <FormLabel className="text-[10px] uppercase font-black tracking-[0.1em] text-muted-foreground leading-tight transition-colors duration-300">
-                            I consent to the Discovery Protocol and occasional automation strategy updates. 
+                            I consent to the Blueprint Analysis and occasional automation strategy updates. 
                             <span className="block mt-2 opacity-60 font-bold normal-case tracking-normal">Data is processed in accordance with our Privacy Governance Standards.</span>
                           </FormLabel>
                           <FormMessage />

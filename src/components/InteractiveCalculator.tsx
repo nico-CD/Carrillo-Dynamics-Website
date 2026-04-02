@@ -21,9 +21,9 @@ const InteractiveCalculator = () => {
     const annualHoursSaved = weeklyWaste * 52;
     const ftuReclaimed = (weeklyWaste / 40).toFixed(1);
 
-    // Dynamic width calculation: 30% floor + scale based on hoursPerWeek (max 40)
+    // Dynamic width calculation: 30% floor + scale based on efficiency input (max 100%)
     const weightedTotal = (teamSize[0] * 20) + (hoursPerWeek[0] * 10);
-    const dynamicWidth = Math.min(100, 10 + (weightedTotal / 1400) * 90);
+    const dynamicWidth = Math.min(100, 30 + (weightedTotal / 1400) * 70);
 
     return (
         <div className="w-full max-w-7xl mx-auto space-y-12">

@@ -1,0 +1,34 @@
+# CARRILLO DYNAMICS: INDUSTRIAL OPERATIONS PROTOCOL
+## SYSTEM_VERSION: 3.31.26
+## ENGINE: VITE + REACT + TYPESCRIPT
+
+This protocol defines the "Industrial Mono" development standard. All future development must strictly adhere to these directives to ensure maximum operational authority and zero technical debt.
+
+---
+
+### 1. DESIGN PHILOSOPHY: "INDUSTRIAL MONO"
+- **Visual Aura**: High-stakes engineering aesthetic. Monochromatic clarity with "Action Green" (`#10b981`) as the only permitted primary accent.
+- **Typography**: Inter (Zinc-300 / White). Focused on executive legibility.
+- **Micro-Animations**: All transitions must be deterministic and high-performance (Framer Motion). No generic "bouncing."
+
+---
+
+### 2. ARCHITECTURAL PROTOCOLS
+- **The Handshake Service**: All external communications (n8n, Supabase, Sentry) must be localized in `src/services/Handshake.ts`. Direct `fetch` or `axios` calls in UI components are BANNED.
+- **Environment Integrity**: Critical environment variables (VITE_N8N_URL, SENTRY_DSN) must be validated via `src/utils/env.ts` before the application enters the "Active" state.
+- **Audit-Ready Code**: Every user interaction that leads to data change must be logged. Failures must be captured by Sentry.
+
+---
+
+### 3. TECH STACK DIRECTIVES
+- **Frontend**: Vite + React 18.
+- **Backend/Ops**: n8n (Flow), Supabase (Vault), Slack (Alerts), Linear (Tasks).
+- **Styles**: Vanilla CSS for core design tokens, Tailwind for layout implementation.
+
+---
+
+### 4. AI COORDINATION (MASTER PROMPT)
+When generating code for this repository:
+1.  **Do not build Minimum Viable Products.** Build Industrial-Grade Infrastructure.
+2.  **Avoid Placeholders.** Generate and use actual assets or highly descriptive text.
+3.  **Think Forensic.** If you encounter an error, add logging first.

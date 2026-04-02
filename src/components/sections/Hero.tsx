@@ -39,17 +39,17 @@ const Hero = ({ onContactClick }: HeroProps) => {
     }, [currentWord, isDeleting, wordIndex, typingSpeed]);
 
     return (
-        <section className="relative flex min-h-[90vh] flex-col justify-center px-6 py-24 md:py-48 bg-background overflow-hidden transition-colors duration-300">
+        <section className="relative flex min-h-[85vh] flex-col justify-center px-6 pt-32 md:pt-48 pb-12 md:pb-24 bg-background overflow-hidden transition-colors duration-300">
             <div className="max-w-5xl mx-auto w-full z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="space-y-12 md:space-y-24"
+                    className="space-y-8 md:space-y-12"
                 >
                     <div className="space-y-4 text-left">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-tight leading-[0.9] text-foreground transition-colors duration-300">
-                            Your team is <br /> spending hours on <br />
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-tight leading-[0.85] text-foreground transition-colors duration-300">
+                            Your team is spending hours on{" "}
                             <span className="text-[#10b981] italic">
                                 {currentWord}
                                 <span className="animate-pulse">|</span>
@@ -57,13 +57,13 @@ const Hero = ({ onContactClick }: HeroProps) => {
                         </h1>
                     </div>
 
-                    <div className="space-y-8 text-left max-w-4xl">
-                        <div className="flex flex-col gap-6">
-                             <p className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest text-muted-foreground leading-none transition-colors duration-300">
+                    <div className="space-y-6 text-left max-w-4xl">
+                        <div className="flex flex-col gap-4">
+                             <p className="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground leading-none transition-colors duration-300 whitespace-nowrap">
                                 Manual data entry. Disconnected tools. Repeating the same steps every day.
                              </p>
-                             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground leading-tight transition-colors duration-300">
-                                AI automation is not a trend.<br />It's a <span className="text-[#10b981] italic underline decoration-2 underline-offset-8">tool to reclaim your time.</span>
+                             <h2 className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest text-foreground leading-none transition-colors duration-300">
+                                AI automation is not a trend. It's a <span className="text-[#10b981] italic underline decoration-2 underline-offset-8">tool to reclaim your time.</span>
                              </h2>
                         </div>
                     </div>
