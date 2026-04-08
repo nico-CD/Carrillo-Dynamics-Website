@@ -8,13 +8,23 @@ Disallow: /success
 Disallow: /unsubscribed
 Disallow: /api/
 
-# AI CRAWLERS GATING
+# AI CRAWLERS GATING (SAGE-O PHASE 3)
 User-agent: GPTBot
 Allow: /articles/
 Allow: /en/articles/
 Allow: /es/articles/
 
 User-agent: Claude-Web
+Allow: /articles/
+Allow: /en/articles/
+Allow: /es/articles/
+
+User-agent: PerplexityBot
+Allow: /articles/
+Allow: /en/articles/
+Allow: /es/articles/
+
+User-agent: Google-Extended
 Allow: /articles/
 Allow: /en/articles/
 Allow: /es/articles/

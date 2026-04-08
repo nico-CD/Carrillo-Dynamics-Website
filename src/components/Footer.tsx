@@ -16,7 +16,7 @@ const Footer = () => {
                             onClick={() => window.location.href = `/${lang}`}
                         >
                             <img
-                                src="/bull_PNGs/bull-apple-touch-icon.png"
+                                src="/bull_PNGs/bull-apple-touch-icon.webp"
                                 alt="Logo"
                                 className="h-8 w-8 object-contain transition-transform group-hover:scale-105"
                             />
