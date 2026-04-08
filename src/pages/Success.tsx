@@ -4,12 +4,14 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckCircle2 } from "lucide-react";
+import { useTranslation } from "@/components/LanguageProvider";
 
 const Success = () => {
     const navigate = useNavigate();
+    const { lang, t } = useTranslation();
 
     return (
-        <div className="min-h-screen bg-background flex flex-col selection:bg-[#10b981]/30 transition-colors duration-300">
+        <div className="min-h-screen bg-background flex flex-col selection:bg-[#10b981]/30 transition-colors duration-300 font-sans">
             <Navbar />
             
             <main className="flex-1 flex flex-col items-center justify-center px-6 py-24 relative z-10">
@@ -17,7 +19,7 @@ const Success = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="max-w-2xl w-full bg-card/40 backdrop-blur-xl border border-border p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden"
+                    className="max-w-2xl w-full bg-card/40 backdrop-blur-xl border border-border p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden scanner-border"
                 >
                     {/* Decorative Background Element */}
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#10b981] to-transparent opacity-50" />
@@ -30,22 +32,22 @@ const Success = () => {
 
                     <div className="space-y-4">
                         <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-foreground leading-none">
-                            Request <span className="text-[#10b981] italic">Received.</span>
+                            {t.success.title}<span className="text-[#10b981] italic">{t.success.titleItalic}</span>
                         </h1>
                         <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed max-w-lg mx-auto">
-                            I am personally reviewing your workflow right now. Look out for an email from me. I'll be sending over a custom video blueprint addressing your specific bottleneck within 24 hours.
+                            {t.success.description}
                         </p>
                         <p className="text-sm font-black uppercase tracking-[0.1em] text-[#10b981] pt-4">
-                            - Nico Carrillo (Founder of Carrillo Dynamics)
+                            {t.success.founder}
                         </p>
                     </div>
 
                     <div className="pt-8">
                         <Button
-                            onClick={() => navigate("/")}
-                            className="h-14 rounded-none px-8 text-xs font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] text-black transition-all shadow-[0_0_30px_rgba(16,185,129,0.2)] border-none"
+                            onClick={() => navigate(`/${lang}`)}
+                            className="h-14 rounded-none px-8 text-[10px] font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] text-black transition-all shadow-[0_0_30px_rgba(16,185,129,0.2)] border-none"
                         >
-                            Return to Home
+                            {t.success.cta}
                         </Button>
                     </div>
                 </motion.div>

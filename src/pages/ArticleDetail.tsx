@@ -229,7 +229,7 @@ const ArticleDetail = () => {
                                         onClick={() => window.open('https://calendly.com/nico-carrillodynamics/30min', '_blank')}
                                         className="h-20 px-12 bg-[#10b981] text-black font-black uppercase tracking-[0.2em] rounded-none hover:bg-white transition-all flex items-center group"
                                     >
-                                        {lang === 'en' ? 'BOOK STRATEGY SESSION' : 'SESIÓN DE ESTRATEGIA'}
+                                        {t.nav.strategy}
                                         <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
                                     </Button>
                                 </div>

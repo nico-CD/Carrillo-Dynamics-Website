@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PageProgressBar from "./components/PageProgressBar";
 import Breadcrumbs from "./components/Breadcrumbs";
 import Index from "./pages/Index";
-const Success = React.lazy(() => import("./pages/Success"));
+import Success from "./pages/Success";
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 const TermsConditions = React.lazy(() => import("./pages/TermsConditions"));

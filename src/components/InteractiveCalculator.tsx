@@ -118,7 +118,11 @@ const InteractiveCalculator = () => {
                                     ))}
                                 </div>
                                 <motion.div 
-                                    className={`relative h-12 bg-[#10b981] transition-all duration-300 ${isIncreasing ? "shadow-[0_0_50px_rgba(16,185,129,0.7)] z-10" : "z-10"}`}
+                                    className={`relative h-12 transition-all duration-300 z-10 ${
+                                        dynamicWidth > 80 ? "bg-red-500 shadow-[0_0_50px_rgba(239,68,68,0.4)]" : 
+                                        dynamicWidth > 50 ? "bg-orange-500 shadow-[0_0_50px_rgba(249,115,22,0.3)]" : 
+                                        "bg-[#10b981] shadow-[0_0_50px_rgba(16,185,129,0.2)]"
+                                    } ${isIncreasing ? "ring-2 ring-white/20" : ""}`}
                                     initial={{ width: "30%" }}
                                     animate={{ width: `${dynamicWidth}%` }}
                                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
@@ -133,7 +137,7 @@ const InteractiveCalculator = () => {
                                         {Array.from({ length: 3 }).map((_, i) => (
                                             <motion.div 
                                                 key={i}
-                                                className="w-1 h-4 bg-red-500/40"
+                                                className="w-1 h-4 bg-white/40"
                                                 animate={{ 
                                                     opacity: [0.2, 0.8, 0.2],
                                                     height: [4, 8, 4]

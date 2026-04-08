@@ -24,6 +24,13 @@ export interface I18nContent {
         terms: string;
         strategy: string;
     };
+    success: {
+        title: string;
+        titleItalic: string;
+        description: string;
+        founder: string;
+        cta: string;
+    };
     hero: {
         title: string;
         subtitle: string;
@@ -109,7 +116,14 @@ export const i18nData: Record<Language, I18nContent> = {
             blueprint: "GET FREE BLUEPRINT",
             privacy: "Privacy",
             terms: "Terms",
-            strategy: "Book Strategy Session"
+            strategy: "Strategy Session"
+        },
+        success: {
+            title: "Request ",
+            titleItalic: "Received.",
+            description: "I am personally reviewing your workflow right now. Look out for an email from me. I'll be sending over a custom video blueprint addressing your specific bottleneck within 24 hours.",
+            founder: "- Nico Carrillo (Founder of Carrillo Dynamics)",
+            cta: "Return to Home"
         },
         pageTitles: {
             faq: { main: "Operational", accent: "FAQ" },
@@ -135,7 +149,7 @@ export const i18nData: Record<Language, I18nContent> = {
             scaleMonitor: "Scalability Monitor",
             growthPotential: "Growth Potential",
             summaryTemplate: "Reclaiming {ftu} FTU means winning back the actual capacity of over {wholeFtu} additional full-time operator(s). We don't just save time; we recover your team's productive capacity without adding a single dollar to your payroll.",
-            bookStrategy: "Book 1:1 Strategy Session",
+            bookStrategy: "Strategy Session",
             successTitle: "Analysis Complete.",
             successSub: "Your custom ROI breakdown has been engineered. Download the PDF and book your session below."
         },
@@ -296,6 +310,13 @@ export const i18nData: Record<Language, I18nContent> = {
             terms: "Términos",
             strategy: "Sesión de Estrategia"
         },
+        success: {
+            title: "Solicitud ",
+            titleItalic: "Recibida.",
+            description: "Estoy revisando personalmente su flujo de trabajo ahora mismo. Esté atento a un correo mío. Le enviaré un blueprint de video personalizado abordando su cuello de botella específico en menos de 24 horas.",
+            founder: "- Nico Carrillo (Fundador de Carrillo Dynamics)",
+            cta: "Volver al Inicio"
+        },
         pageTitles: {
             faq: { main: "Operaciones", accent: "FAQ" },
             articles: { main: "Archivo", accent: "Técnico" }
@@ -320,7 +341,7 @@ export const i18nData: Record<Language, I18nContent> = {
             scaleMonitor: "Monitor de Escalabilidad",
             growthPotential: "Potencial de Crecimiento",
             summaryTemplate: "Recuperar {ftu} FTU significa recuperar la capacidad real de más de {wholeFtu} operador(es) adicional(es) a tiempo completo. No solo ahorramos tiempo; recuperamos la capacidad productiva de su equipo sin añadir un solo dólar a su nómina.",
-            bookStrategy: "Reservar Sesión de Estrategia 1:1",
+            bookStrategy: "Sesión de Estrategia",
             successTitle: "Análisis Completado.",
             successSub: "Su desglose de ROI personalizado ha sido diseñado. Descargue el PDF y reserve su sesión a continuación."
         },
