@@ -1,14 +1,23 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# CA CARRILLO DYNAMICS | ROBOTS.TXT
+# BILINGUAL SAGE-O CONFIGURATION
+# ------------------------------
 
 User-agent: *
 Allow: /
+Disallow: /success
+Disallow: /unsubscribed
+Disallow: /api/
+
+# AI CRAWLERS GATING
+User-agent: GPTBot
+Allow: /articles/
+Allow: /en/articles/
+Allow: /es/articles/
+
+User-agent: Claude-Web
+Allow: /articles/
+Allow: /en/articles/
+Allow: /es/articles/
+
+# SITEMAP INDEX
+Sitemap: https://carrillodynamics.com/sitemap.xml

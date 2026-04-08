@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/components/LanguageProvider";
+import CalendlyModal from "../CalendlyModal";
 
 interface HeroProps {
     onContactClick: () => void;
 }
 
-const words = ["Sheet Sprawl", "Manual Syncs", "Invoice Chasing", "Email Purgatory", "CRM Bloat", "Lead Leakage"];
-
 const Hero = ({ onContactClick }: HeroProps) => {
+    const { lang, t } = useTranslation();
+    const words = lang === 'en' 
+        ? ["Sheet Sprawl", "Manual Syncs", "Invoice Chasing", "Email Purgatory", "CRM Bloat", "Lead Leakage"]
+        : ["Hojas Caóticas", "Sincros Manuales", "Cobro de Facturas", "Purgatorio de Emails", "CRM Saturado", "Fuga de Leads"];
+
     const [currentWord, setCurrentWord] = useState("");
     const [wordIndex, setWordIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -36,7 +41,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
 
         const timer = setTimeout(handleType, typingSpeed);
         return () => clearTimeout(timer);
-    }, [currentWord, isDeleting, wordIndex, typingSpeed]);
+    }, [currentWord, isDeleting, wordIndex, typingSpeed, words]);
 
     return (
         <section className="relative flex min-h-[85vh] flex-col justify-center px-6 pt-32 md:pt-48 pb-12 md:pb-24 bg-background overflow-hidden transition-colors duration-300">
@@ -49,7 +54,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
                 >
                     <div className="space-y-4 text-left">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-tight leading-[0.85] text-foreground transition-colors duration-300">
-                            Your team is spending hours on{" "}
+                            {lang === 'en' ? 'Your team is spending hours on ' : 'Su equipo está perdiendo horas en '}
                             <span className="text-[#10b981] italic">
                                 {currentWord}
                                 <span className="animate-pulse">|</span>
@@ -60,10 +65,16 @@ const Hero = ({ onContactClick }: HeroProps) => {
                     <div className="space-y-6 text-left max-w-4xl">
                         <div className="flex flex-col gap-4">
                              <p className="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground leading-relaxed transition-colors duration-300">
-                                Manual data entry. Disconnected tools. Repeating the same steps every day.
+                                {lang === 'en' 
+                                    ? "Manual data entry. Disconnected tools. Repeating the same steps every day."
+                                    : "Entrada manual de datos. Herramientas desconectadas. Repitiendo los mismos pasos cada día."}
                              </p>
                              <h2 className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest text-foreground leading-none transition-colors duration-300">
-                                AI automation is not a trend. It's a <span className="text-[#10b981] italic underline decoration-2 underline-offset-8">tool to reclaim your time.</span>
+                                {lang === 'en' ? (
+                                    <>AI automation is not a trend. It's a <span className="text-[#10b981] italic">tool to reclaim your time.</span></>
+                                ) : (
+                                    <>La automatización con IA no es una tendencia. Es una <span className="text-[#10b981] italic">herramienta para recuperar su tiempo.</span></>
+                                )}
                              </h2>
                         </div>
                     </div>
@@ -72,11 +83,11 @@ const Hero = ({ onContactClick }: HeroProps) => {
                         <Button
                             onClick={onContactClick}
                             size="lg"
-                            className="h-16 md:h-24 w-full sm:w-fit rounded-none px-10 md:px-20 text-xs sm:text-sm md:text-xl font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] shadow-[0_0_50px_rgba(16,185,129,0.2)] text-black transition-all group border-none"
+                            className="h-16 md:h-24 w-full sm:w-fit rounded-none px-10 md:px-16 text-xs sm:text-sm md:text-xl font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] shadow-[0_0_50px_rgba(16,185,129,0.2)] text-black transition-all group border-none"
                         >
                             <span className="flex items-center gap-4">
-                                GET IN TOUCH
-                                <ArrowRight className="h-4 w-4 md:h-8 md:w-8 transition-transform group-hover:translate-x-4" />
+                                {t.nav.blueprint}
+                                <ArrowRight className="h-4 w-4 md:h-6 md:w-6 transition-transform group-hover:translate-x-4" />
                             </span>
                         </Button>
                     </div>
@@ -84,7 +95,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
             </div>
             
             {/* Visual background cleanup */}
-            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,#10b981_0,transparent:25%)] blur-3xl" />
+            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,#10b981_0,transparent_25%)] blur-3xl" />
         </section>
     );
 };

@@ -1,6 +1,9 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Terminal } from "lucide-react";
+import { useTranslation } from "./LanguageProvider";
 
 const Footer = () => {
+    const { lang, t } = useTranslation();
+
     return (
         <footer className="px-6 py-16 md:py-24 border-t border-border bg-background transition-colors duration-300">
             <div className="mx-auto max-w-7xl">
@@ -10,7 +13,7 @@ const Footer = () => {
                     <div className="space-y-6 max-w-xs shrink-0">
                         <div 
                             className="flex items-center gap-3 cursor-pointer group"
-                            onClick={() => window.location.href = "/"}
+                            onClick={() => window.location.href = `/${lang}`}
                         >
                             <img
                                 src="/bull_PNGs/bull-apple-touch-icon.png"
@@ -46,12 +49,20 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        {/* LEGAL */}
+                        {/* LEGAL & ALPHA */}
                         <div className="space-y-6 min-w-[200px]">
                              <div className="flex flex-col gap-4 text-[10px] font-black uppercase tracking-widest text-muted-foreground transition-colors duration-300">
-                                <a href="/faq" className="hover:text-foreground transition-colors">FAQ</a>
-                                <a href="/terms" className="hover:text-foreground transition-colors">Terms</a>
-                                <a href="/privacy" className="hover:text-foreground transition-colors">Privacy</a>
+                                <a href={`/${lang}/faq`} className="hover:text-foreground transition-colors">FAQ</a>
+                                <a href={`/${lang}/articles`} className="hover:text-foreground transition-colors">{t.nav.articles}</a>
+                                <a 
+                                    href="https://calendly.com/nico-carrillodynamics/30min" 
+                                    target="_blank" 
+                                    className="text-[#10b981] hover:text-[#0ea672] transition-colors"
+                                >
+                                    Book Strategy Session
+                                </a>
+                                <a href={`/${lang}/terms`} className="hover:text-foreground transition-colors pt-2 border-t border-border mt-2 opacity-50">Terms</a>
+                                <a href={`/${lang}/privacy`} className="hover:text-foreground transition-colors opacity-50">Privacy</a>
                              </div>
                         </div>
 
