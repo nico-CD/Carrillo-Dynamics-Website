@@ -23,6 +23,23 @@ import { useIntake } from "@/hooks/useIntake";
 import { useTranslation } from "@/components/LanguageProvider";
 import { Helmet } from "react-helmet-async";
 
+const INDUSTRIES = [
+    { en: "HVAC / Plumbing / Electrical", es: "HVAC / Plomería / Electricidad" },
+    { en: "Restoration / Contracting", es: "Restauración / Contratación" },
+    { en: "Property Management / Real Estate", es: "Gestión de Propiedades / Inmuebles" },
+    { en: "Logistics / Fleet", es: "Logística / Flota" },
+    { en: "Healthcare / Clinics", es: "Salud / Clínicas" },
+    { en: "Other", es: "Otros" }
+];
+
+const BOTTLENECKS = [
+    { en: "Dispatching & Scheduling", es: "Despacho y Programación" },
+    { en: "Lead Follow-up & Conversion", es: "Seguimiento y Conversión" },
+    { en: "Paperwork & Compliance", es: "Papeleo y Cumplimiento" },
+    { en: "Legacy System Integration", es: "Integración de Sistemas Legacy" },
+    { en: "Other", es: "Otro" }
+];
+
 const Index = () => {
     const { lang, t } = useTranslation();
     const formRef = useRef<HTMLDivElement>(null);
@@ -279,23 +296,9 @@ const Index = () => {
                                                             </SelectTrigger>
                                                         </FormControl>
                                                         <SelectContent className="rounded-none border-2 border-border bg-background">
-                                                            {(lang === 'en' ? [
-                                                                "HVAC / Plumbing / Electrical",
-                                                                "Restoration / Contracting",
-                                                                "Property Management / Real Estate",
-                                                                "Logistics / Fleet",
-                                                                "Healthcare / Clinics",
-                                                                "Other"
-                                                            ] : [
-                                                                "HVAC / Plomería / Electricidad",
-                                                                "Restauración / Contratación",
-                                                                "Gestión de Propiedades / Inmuebles",
-                                                                "Logística / Flota",
-                                                                "Salud / Clínicas",
-                                                                "Otros"
-                                                            ]).map((option) => (
-                                                                <SelectItem key={option} value={option} className="focus:bg-[#10b981] focus:text-black rounded-none">
-                                                                    {option}
+                                                            {INDUSTRIES.map((opt) => (
+                                                                <SelectItem key={opt.en} value={opt.en} className="focus:bg-[#10b981] focus:text-black rounded-none">
+                                                                    {lang === "en" ? opt.en : opt.es}
                                                                 </SelectItem>
                                                             ))}
                                                         </SelectContent>
@@ -318,21 +321,9 @@ const Index = () => {
                                                             </SelectTrigger>
                                                         </FormControl>
                                                         <SelectContent className="rounded-none border-2 border-border bg-background">
-                                                            {(lang === 'en' ? [
-                                                                "Dispatching & Scheduling",
-                                                                "Lead Follow-up & Conversion",
-                                                                "Paperwork & Compliance",
-                                                                "Legacy System Integration",
-                                                                "Other"
-                                                            ] : [
-                                                                "Despacho y Programación",
-                                                                "Seguimiento y Conversión",
-                                                                "Papeleo y Cumplimiento",
-                                                                "Integración de Sistemas Legacy",
-                                                                "Otro"
-                                                            ]).map((option) => (
-                                                                <SelectItem key={option} value={option} className="focus:bg-[#10b981] focus:text-black rounded-none">
-                                                                    {option}
+                                                            {BOTTLENECKS.map((opt) => (
+                                                                <SelectItem key={opt.en} value={opt.en} className="focus:bg-[#10b981] focus:text-black rounded-none">
+                                                                    {lang === "en" ? opt.en : opt.es}
                                                                 </SelectItem>
                                                             ))}
                                                         </SelectContent>
