@@ -132,7 +132,7 @@ export const i18nData: Record<Language, I18nContent> = {
             manualRecovery: "Manual Recovery",
             totalHoursRecovered: "Total Hours Recovered",
             capacityImpact: "Capacity Impact",
-            scaleMonitor: "Scale Monitor",
+            scaleMonitor: "Scalability Monitor",
             growthPotential: "Growth Potential",
             summaryTemplate: "Reclaiming {ftu} FTU means winning back the actual capacity of over {wholeFtu} additional full-time operator(s). We don't just save time; we recover your team's productive capacity without adding a single dollar to your payroll.",
             bookStrategy: "Book 1:1 Strategy Session",
@@ -219,11 +219,11 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "Does your logic replace my CRM (ServiceTitan, Jobber, Housecall Pro)?",
-                a: "No. Actuamos como un 'Multiplicador de Fuerza' para su CRM. Cerramos las brechas donde el software genérico falla, construyendo middleware personalizado que hace que sus herramientas actuales funcionen como su negocio realmente lo requiere."
+                a: "No. We act as a force multiplier for your CRM. We close the gaps where generic software falls short, building custom middleware that makes your current tools work exactly as your business requires."
             },
             {
                 q: "How soon do we see measurable results?",
-                a: "First operational wins are usually live within 14 days. We focus on high-impact bottlenecks first—like intake flow and automated follow-ups—to ensure immediate ROI."
+                a: "First operational wins are usually live within 14 days. We focus on high-impact bottlenecks first, such as intake flow and automated follow-ups, to ensure immediate ROI."
             },
             {
                 q: "Why do you call it a Forensic Lead Audit?",
@@ -250,24 +250,24 @@ export const i18nData: Record<Language, I18nContent> = {
             {
                 id: "60-second-lead-rule",
                 title: "The 60-Second Rule",
-                description: "Response velocity is the only critical variable for profitability.",
-                content: "### Operational Velocity\n\nIn the service industry, seconds are dollars. A lead contacted in <60 seconds closes at an 8x higher rate than one contacted in 5 minutes. Most firms suffer from 'Human Latency'—the gap between a lead arriving and a human noticing. We replace this gap with deterministic logic.\n\n### The Math of Friction\n\nManual dispatch is inherently slow. By the time a dispatcher dials, the customer has already called two competitors. Our 'Forensic Approach' eliminates this friction by injecting lead data directly into the communication pipeline in under 200ms.\n\n### Industrial Execution\n\nWe implement 'Immediate Connect' protocols:\n* **Instant CRM Injection:** No manual typing.\n* **Smart Notification:** Real-time priority alerts.\n* **Automated Engagement:** Immediate SMS/Email touch-points.",
+                description: "In high-volume service, response velocity is the single most critical variable for your bottom line.",
+                content: "### Operational Velocity\n\nIn the service industry, seconds are dollars. A lead contacted in under 60 seconds closes at a rate eight times higher than one contacted even five minutes later. Most firms suffer from what we call Human Latency, which is the costly gap between a lead arriving and your team actually noticing it. We replace this inconsistent gap with deterministic logic that acts instantly.\n\n### The Math of Friction\n\nManual dispatch is inherently slow and prone to failure. By the time a dispatcher dials, the customer has often already called two competitors. Our forensic approach eliminates this friction by injecting lead data directly into your communication pipeline in under 200ms, ensuring you are always the first point of contact.\n\n### Industrial Execution\n\nWe implement immediate connect protocols to maintain this speed. This includes instant CRM injection to eliminate manual typing, real-time priority alerts for your best leads, and automated engagement touch-points that hit the customer's phone the moment they hit submit.",
                 date: "2026-04-01",
                 readTime: "4 min"
             },
             {
                 id: "scaling-without-hiring",
                 title: "Scaling Without Hiring",
-                description: "Increase volume without adding administrative bloat.",
-                content: "### The Staffing Trap\n\nTraditional growth adds overhead. Every new technician usually requires 0.5 additional office staff to manage the paperwork. This is a linear growth model that kills margins. We shift firms to an 'Exponential Logic' model.\n\n### Digital Infrastructure\n\nTo scale without reducing profitability, you must automate low-value tasks. We replace manual data entry, quote following, and scheduling verification with secure, rigid flows that don't sleep and don't make mistakes.\n\n### Operational Integrity\n\nManual errors are the hidden tax on your ROI. Our systems ensure total data integrity from intake to invoice, allowing you to triple your territory volume with the same office headcount.",
+                description: "Increase your service volume without adding to your administrative overhead.",
+                content: "### The Staffing Trap\n\nTraditional growth usually leads to heavy overhead. Historically, every new technician requires a corresponding increase in office staff to manage the resulting paperwork. This linear growth model effectively kills your margins over time. We help firms shift to an exponential logic model where your infrastructure does the heavy lifting.\n\n### Digital Infrastructure\n\nTo scale without reducing your profitability, you must automate low-value repetitive tasks. We replace manual data entry, quote follow-ups, and scheduling verification with secure, rigid flows that never sleep and never make mistakes. This allows your team to focus on high-value strategy rather than data management.\n\n### Operational Integrity\n\nManual errors are the hidden tax on your ROI. Our systems ensure total data integrity from the initial intake all the way to the final invoice. This precision allows you to triple your territory volume with the same office headcount you have today.",
                 date: "2026-04-07",
                 readTime: "5 min"
             },
             {
                 id: "operational-leak-detection",
                 title: "Operations Leak Detection",
-                description: "Eliminating operational leaks in your intake funnel.",
-                content: "### Identifying the Void\n\nIs your marketing budget leaking? Most high-volume firms have 'blind spots' where leads die before they ever reach a technician. Operations Leak Detection is a deep-dive into the technical path of every lead entering your ecosystem.\n\n### Technical Autopsy\n\nWe track every millisecond of the journey:\n* **Form Friction:** Why users drop off before submission.\n* **Triage Velocity:** The actual delay in notification to your team.\n* **Closing Logic:** Identifying which automated follow-ups are failing.\n\nAudit your raw data logs and deliver a Technical Blueprint to plug every leak. No guesswork; just pure operational engineering.",
+                description: "Stop the invisible revenue loss in your intake funnel.",
+                content: "### Identifying the Void\n\nIs your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. Operations Leak Detection is a deep-dive into the technical path of every single lead that enters your ecosystem.\n\n### Technical Autopsy\n\nWe track every millisecond of the journey to find where you are losing money. We analyze form friction to see why users drop off, triage velocity to measure the actual delay in notifications, and closing logic to identify which follow-ups are failing to convert. This data allows us to build a technical blueprint to plug every leak with pure operational engineering.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }
@@ -317,7 +317,7 @@ export const i18nData: Record<Language, I18nContent> = {
             manualRecovery: "Recuperación Manual",
             totalHoursRecovered: "Total de Horas Recuperadas",
             capacityImpact: "Impacto de Capacidad",
-            scaleMonitor: "Monitor de Escala",
+            scaleMonitor: "Monitor de Escalabilidad",
             growthPotential: "Potencial de Crecimiento",
             summaryTemplate: "Recuperar {ftu} FTU significa recuperar la capacidad real de más de {wholeFtu} operador(es) adicional(es) a tiempo completo. No solo ahorramos tiempo; recuperamos la capacidad productiva de su equipo sin añadir un solo dólar a su nómina.",
             bookStrategy: "Reservar Sesión de Estrategia 1:1",
@@ -404,7 +404,7 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "¿Su lógica reemplaza mi CRM (ServiceTitan, Jobber, Housecall Pro)?",
-                a: "No. Actuamos como un 'Multiplicador de Fuerza' para su CRM. Cerramos las brechas donde el software genérico falla, construyendo middleware personalizado que hace que sus herramientas actuales funcionen como su negocio realmente lo requiere."
+                a: "No. Actuamos como un multiplier de fuerza para su CRM. Cerramos las brechas donde el software genérico falla, construyendo middleware personalizado que hace que sus herramientas actuales funcionen como su negocio realmente lo requiere."
             },
             {
                 q: "¿Qué tan pronto podemos ver resultados medibles?",
@@ -435,24 +435,24 @@ export const i18nData: Record<Language, I18nContent> = {
             {
                 id: "60-second-lead-rule",
                 title: "La Regla de los 60 Segundos",
-                description: "La velocidad de respuesta es la única variable crítica para la rentabilidad.",
-                content: "### Velocidad Operativa\n\nEn la industria de servicios, los segundos son dólares. Un lead contactado en <60 segundos cierra con una tasa 8 veces mayor que uno contactado en 5 minutos. La mayoría de las empresas sufren de 'Latencia Humana': el lapso entre que llega un lead y un humano lo nota. Reemplazamos este lapso con lógica determinista.\n\n### La Matemática de la Fricción\n\nEl despacho manual es intrínsecamente lento. Para cuando un despachador marca, el cliente ya ha llamado a dos competidores. Nuestro 'Enfoque Forense' elimina esta fricción inyectando los datos del lead directamente en la tubería de comunicación en menos de 200ms.\n\n### Ejecución Industrial\n\nImplementamos protocolos de 'Conexión Inmediata':\n* **Inyección Instantánea al CRM:** Sin escritura manual.\n* **Notificación Inteligente:** Alertas de prioridad en tiempo real.\n* **Compromiso Automatizado:** Puntos de contacto inmediatos por SMS/Email.",
+                description: "La velocidad de respuesta es la variable más crítica para su rentabilidad.",
+                content: "### Velocidad Operativa\n\nEn la industria de servicios, los segundos se traducen en dólares. Un cliente potenciales contactado en menos de 60 segundos cierra con una tasa ocho veces mayor que uno contactado apenas cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre que llega un prospecto y su equipo lo nota. Reemplazamos este lapso inconsistente con lógica determinista que actúa al instante.\n\n### La Matemática de la Fricción\n\nEl despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque forense elimina esta fricción inyectando los datos del cliente directamente en su flujo de comunicación en menos de 200 ms, asegurando que usted sea siempre el primer punto de contacto.\n\n### Ejecución Industrial\n\nImplementamos protocolos de conexión inmediata para mantener esta velocidad. Esto incluye la inyección instantánea al CRM para eliminar la escritura manual, alertas de prioridad en tiempo real para sus mejores leads y puntos de contacto automatizados que llegan al teléfono del cliente en el momento en que envía su solicitud.",
                 date: "2026-04-01",
                 readTime: "4 min"
             },
             {
                 id: "scaling-without-hiring",
                 title: "Escalar sin Contratar",
-                description: "Aumente el volumen sin añadir lastre administrativo.",
-                content: "### La Trampa del Personal\n\nEl crecimiento tradicional añade gastos generales. Cada nuevo técnico generalmente requiere 0.5 empleados de oficina adicionales para gestionar el papeleo. Este es un modelo de crecimiento lineal que mantiene los márgenes. Cambiamos a las empresas a un modelo de 'Lógica Exponencial'.\n\n### Infraestructura Digital\n\nPara escalar sin reducir la rentabilidad, debe automatizar las tareas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos seguros y rígidos que no duermen y no cometen errores.\n\n### Integridad Operativa\n\nLos errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión hasta la factura, lo que le permite triplicar su volumen de territorio con el mismo personal de oficina.",
+                description: "Aumente su volumen de servicios sin añadir carga administrativa.",
+                content: "### La Trampa del Personal\n\nEl crecimiento tradicional suele conllevar grandes gastos generales. Históricamente, cada nuevo técnico requiere un aumento correspondiente en el personal de oficina para gestionar el papeleo resultante. Este modelo de crecimiento lineal termina matando sus márgenes con el tiempo. Ayudamos a las empresas a cambiar a un modelo de lógica exponencial donde su infraestructura hace el trabajo pesado.\n\n### Infraestructura Digital\n\nPara escalar sin reducir su rentabilidad, debe automatizar las tareas repetitivas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos seguros y rígidos que nunca duermen y nunca cometen errores. Esto permite que su equipo se concentre en la estrategia de alto valor en lugar de en la gestión de datos.\n\n### Integridad Operativa\n\nLos errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión inicial hasta la factura final. Esta precisión le permite triplicar su volumen de territorio con el mismo personal de oficina que tiene hoy.",
                 date: "2026-04-07",
                 readTime: "5 min"
             },
             {
                 id: "operational-leak-detection",
                 title: "Detección de Fugas en Operaciones",
-                description: "Eliminando fugas operativas en su embudo de admisión.",
-                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing? La mayoría de las empresas de alto volumen tienen 'puntos ciegos' donde los leads mueren antes de llegar a un técnico. La Detección de Fugas en Operaciones es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Autopsia Técnica\n\nRastreamos cada milisegundo del viaje:\n* **Fricción del Formulario:** Por qué los usuarios abandonan antes de enviar.\n* **Velocidad de Triaje:** El retraso real en la notificación a su equipo.\n* **Lógica de Cierre:** Identificando qué seguimientos automatizados están fallando.\n\nAuditamos sus registros de datos brutos y entregamos un Blueprint Técnico para tapar cada fuga. Sin adivinanzas; solo pura ingeniería operativa.",
+                description: "Detenga la pérdida invisible de ingresos en su embudo de admisión.",
+                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas de alto volumen tienen puntos ciegos donde los leads mueren silenciosamente antes de llegar a un técnico. La detección de fugas en operaciones es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Autopsia Técnica\n\nRastreamos cada milisegundo del viaje para encontrar dónde está perdiendo dinero. Analizamos la fricción del formulario para ver por qué los usuarios abandonan, la velocidad de triaje para medir el retraso real en las notificaciones y la lógica de cierre para identificar qué seguimientos están fallando al convertir. Estos datos nos permiten construir un blueprint técnico para tapar cada fuga con pura ingeniería operativa.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }

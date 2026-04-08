@@ -28,10 +28,6 @@ const InteractiveCalculator = () => {
     const weightedTotal = (teamSize[0] * 20) + (hoursPerWeek[0] * 10);
     const dynamicWidth = Math.min(100, 30 + (weightedTotal / 1400) * 70);
 
-    const handleBookSession = () => {
-        window.open('https://calendly.com/nico-carrillodynamics/30min', '_blank');
-    };
-
     return (
         <div className="w-full max-w-7xl mx-auto space-y-12">
             <div className="grid grid-cols-1 md:grid-cols-2 bg-border border-2 border-border gap-[2px] overflow-hidden">
@@ -112,18 +108,55 @@ const InteractiveCalculator = () => {
                     
                     <div className="space-y-10">
                         <div className="space-y-6">
-                            <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+                            <div className="flex justify-center items-center text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground w-full">
                                 <span>{t.calculator.scaleMonitor}</span>
-                                <span className="text-[#10b981] underline decoration-[#10b981] underline-offset-4">{t.calculator.growthPotential}</span>
                             </div>
-                            <div className="h-10 bg-secondary border border-border relative overflow-hidden transition-all duration-300">
+                            <div className="h-16 bg-[#050505] border-2 border-border relative overflow-hidden transition-all duration-300 flex items-center px-1 group/bar">
+                                <div className="absolute inset-0 flex opacity-10">
+                                    {Array.from({ length: 40 }).map((_, i) => (
+                                        <div key={i} className="h-full w-px bg-white mx-auto" />
+                                    ))}
+                                </div>
                                 <motion.div 
-                                    className={`absolute inset-y-0 left-0 bg-[#10b981] transition-all duration-300 ${isIncreasing ? "shadow-[0_0_30px_rgba(16,185,129,0.8)] z-10" : ""}`}
+                                    className={`relative h-12 bg-[#10b981] transition-all duration-300 ${isIncreasing ? "shadow-[0_0_50px_rgba(16,185,129,0.7)] z-10" : "z-10"}`}
                                     initial={{ width: "30%" }}
                                     animate={{ width: `${dynamicWidth}%` }}
                                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                                />
-                                <div className="absolute inset-y-0 left-[30%] w-px bg-white z-20 shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                                >
+                                    {/* Scanline effect on the bar itself */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent w-full animate-[shimmer_2s_infinite] pointer-events-none" />
+                                </motion.div>
+                                
+                                {/* LEAKAGE INDICATORS */}
+                                {dynamicWidth > 60 && (
+                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1 z-20">
+                                        {Array.from({ length: 3 }).map((_, i) => (
+                                            <motion.div 
+                                                key={i}
+                                                className="w-1 h-4 bg-red-500/40"
+                                                animate={{ 
+                                                    opacity: [0.2, 0.8, 0.2],
+                                                    height: [4, 8, 4]
+                                                }}
+                                                transition={{ 
+                                                    repeat: Infinity, 
+                                                    duration: 0.5, 
+                                                    delay: i * 0.1 
+                                                }}
+                                            />
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* PRESSURE LABEL */}
+                        <div className="flex flex-col items-center justify-center border-t border-border pt-6 text-center">
+                            <div className="space-y-1">
+                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground">Operational Stress</p>
+                                <p className={`text-4xl font-mono font-black ${dynamicWidth > 80 ? "text-red-500" : dynamicWidth > 50 ? "text-orange-500" : "text-[#10b981]"}`}>
+                                    {Math.round(dynamicWidth)}%
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -131,7 +164,7 @@ const InteractiveCalculator = () => {
             </div>
 
             <div className="p-10 md:p-16 bg-background border-2 border-border group transition-colors duration-300 flex flex-col md:flex-row items-center justify-between gap-12">
-                <div className="space-y-8 max-w-2xl">
+                <div className="space-y-8 max-w-4xl">
                     <p className="text-xl md:text-2xl text-muted-foreground font-bold leading-relaxed transition-colors duration-300">
                         {t.calculator.summaryTemplate
                             .replace('{ftu}', ftuReclaimed)
@@ -149,17 +182,11 @@ const InteractiveCalculator = () => {
                         }
                     </p>
                 </div>
-                <Button 
-                    onClick={handleBookSession}
-                    size="lg" 
-                    className="h-24 px-12 rounded-none bg-[#10b981] text-black font-black uppercase tracking-[0.2em] text-lg hover:bg-white transition-all group shrink-0"
-                >
-                    {t.calculator.bookStrategy}
-                    <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
-                </Button>
             </div>
         </div>
     );
 };
 
+
 export default InteractiveCalculator;
+

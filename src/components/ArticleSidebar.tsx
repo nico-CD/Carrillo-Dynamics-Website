@@ -43,9 +43,6 @@ const ArticleSidebar = () => {
                         >
                             {lang === 'en' ? 'Book Strategy Session' : 'Sesión de Estrategia'}
                         </a>
-                        <Link to={`/${lang}/faq`} className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors">
-                            {t.nav.faq}
-                        </Link>
                         <button 
                             onClick={() => {
                                 const el = document.getElementById('intake');
@@ -54,8 +51,11 @@ const ArticleSidebar = () => {
                             }}
                             className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors text-left w-full"
                         >
-                            {lang === 'en' ? 'Request Audit' : 'Solicitar Auditoría'}
+                            {lang === 'en' ? 'Request Blueprint' : 'Solicitar Blueprint'}
                         </button>
+                        <Link to={`/${lang}/faq`} className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors">
+                            {t.nav.faq}
+                        </Link>
                     </nav>
                 </div>
             </div>

@@ -1,73 +1,74 @@
-# Carrillo Dynamics - Master Implementation Log
+# Automation Agency Blueprint: Carrillo Dynamics Model
+## Master Implementation & Reconstruction Guide
 
-This document is the single source of truth for all architectural, structural, and interactive components implemented in the Carrillo Dynamics platform.
-
----
-
-## [2026-03-07] - Final Systems Audit & Handover (Iteration 21)
-- **Action**: Synchronized all project documentation, roadmaps, and security configurations.
-- **Key Changes**:
-  - `implemented_aspects.md`: Consolidated all iterations (Foundation + Scaling) into this single record.
-  - `task.md`: Set the roadmap for Coolify migration and lead routing engineering.
-  - `walkthrough.md`: Added DevOps/Deployment guides for Google VM & Coolify.
-  - `.gitignore`: Hardened security for `.env` files.
+This document serves as the definitive technical and strategic blueprint for replicating the **Carrillo Dynamics** "High-Authority" automation platform. It is designed to be read by an AI Developer Agent to rebuild this entire system from scratch for a local service business.
 
 ---
 
-## [2026-03-07] - Branding & Security Refinement (Iteration 20)
-- **Action**: Full rebrand and security hardening.
-- **Key Changes**:
-  - `README.md`: Rebranded from boilerplate to Systems Engineering focus.
-  - `index.html`: Optimized Apple Touch Icons and Social metadata (OG/Twitter).
-  - `Navbar.tsx` & `FastTrackNav.tsx`: Integrated official CD Bull logos from `/public/bull_PNGs/`.
-  - `SECURITY.md`: Authored guide on `.env` safety and data minimization.
+## 1. Core Tech Stack (The Engine)
+*   **Framework**: React 18+ with TypeScript (Vite-optimized).
+*   **Styling**: Tailwind CSS with Radix UI (Shadcn/UI components).
+*   **Animations**: `framer-motion` (Spring physics, AnimatePresence, Scroll Tracking).
+*   **Form Logic**: `react-hook-form` + `zod` for strict schema validation.
+*   **State Management**: React Context (Language/Theming).
+*   **External Integration**: n8n Webhook for lead-routing to CRM/HighLevel/Sheets.
 
 ---
 
-## [2026-03-07] - Consultation Form & n8n Integration (Iteration 19)
-- **Action**: Connected the consultation form to an external n8n webhook via an async POST request.
-- **Why**: To automate intake and routing of consultation requests to the founder's backend.
-- **Full Lead-Capture Pipeline**:
-  - **Webhook**: Receives structured JSON from the React frontend.
-  - **AI Triage**: Lead data is processed by an LLM for qualification and prioritization.
-  - **Google Sheets**: Data is logged for long-term operational tracking.
-  - **Telegram**: Instant notification sent to the founder for real-time response.
-  - **HTML Email**: Automated, branded email response scheduled for the prospect.
-- **Key Changes**:
-  - `Index.tsx`: Refactored `onSubmit` to be an `async` function using `fetch`.
-  - **Production Switch**: Updated `.env` to point to the production webhook URL: `https://n8n.carrillodynamics.com/webhook/contact-us-CD`.
-  - **Loading Feedback**: Added `isLoading` state and a `Loader2` spinner to the submit button.
-  - **Environment Security**: Implemented environment variable support via `import.meta.env.VITE_N8N_WEBHOOK_URL`.
+## 2. Branding Philosophy: "Industrial Utility"
+To replicate this aesthetic, follow these strict design constraints:
+- **Color Palette**: Solid Black (`zinc-950`) background. Action Green (`#10b981`) for utility and CTAs. White/Muted Grey for technical data.
+- **Typography**: `font-black` (Inter) for headers with `tracking-tighter`. `JetBrains Mono` for technical readouts and "system loot" (metrics).
+- **Radius**: `0px` border-radius globally. Avoid rounded corners to maintain an "industrial/engineered" feel.
+- **Micro-Animations**: Use "Scanner" light effects (shimmer gradients) on borders and bars. Use `bull.png` with a breathing opacity for loading states.
 
 ---
 
-## [2026-03-05] - Detailed Foundation Phase (Iterations 1-17)
-*Merged from 3.5.2026_implementations.md*
+## 3. Key Hero Components (AI Reconstruction Steps)
 
-### 1. Brand Aesthetic (Engineered Flow)
-- **Visuals**: Premium dark-mode/glassmorphism using `zinc-950` and primary green accents.
-- **Typography**: Heavily focused on `font-black` headers and wide tracking for authority.
+### A. The ROI Capacity Calculator (`InteractiveCalculator.tsx`)
+- **Objective**: Visualize "Human Latency" vs "Operational Flow."
+- **Logic**: Calculate FTU (Full Time Units) saved per week by multiplying `teamSize` by `manualHours`.
+- **Dynamic Visuals**: Use a "Pressure Gauge" style bar. If the waste is high (e.g., >60hrs/wk), trigger a red "Critical Mass" pulse and flickering "Leak" icons.
+- **Human Tone**: Summary text should avoid "AI-speak." Instead of "Winning back time," use "Recovering your team's productive capacity without adding payroll."
 
-### 2. Core Components
-- **Dynamic Hero**: `framer-motion` text cycling for operational bottlenecks: *["Sheet Sprawl", "Manual Syncing", "Invoice Chasing", "Email Purgatory"]*.
-- **Sector Trust Cloud**: Monochromatic industry icons (Finance, Logistics, Healthcare, Energy) with color-restore hover effects.
-- **ROI Calculator**: Dynamic calculation of *Annual Reclaimed Hrs* based on Team Size and Manual Hours input.
-- **Process Blueprint**: Animated SVG diagram showing "Manual Debt" filtering into the "Carrillo Engine" and emerging as "Engineered Flow."
-- **Comparison Slider**: Interactive drag-to-reveal "Chaos" (manual/rotated) vs. "Scale" (automated/orderly) states.
-- **Qualification Bento**: High-contrast grid defining target vs. excluded client profiles.
-- **Snapshots of Success**: Spring-animated `CountUp` stats (e.g., 80% Time Reduction, 4.5x Operational ROI).
+### B. The Forensic Blueprint Intake (`LeadIntake.tsx`)
+- **Objective**: Frictionless lead capture with high perceived value.
+- **Logic**: Multi-step or single-column form that triggers an `async fetch` to an n8n webhook.
+- **UX**: Use `AnimatePresence` to swap the form for a success state inline upon submission. Never redirect to a new page; maintain stay-on-site flow.
 
-### 3. Navigation & UX
-- **Fast-Track Nav**: Scroll-triggered "Pill" navigation with a pixel-perfect scroll progress bar.
-- **Intake System**: Multi-part `react-hook-form` with `framer-motion` AnimatePresence success modal that replaces the form inline on submission.
-- **Performance**: Global scrollbar removal and mobile viewport locking for smooth post-submission feedback.
-
-### 4. Technical Infrastructure
-- **Framework**: React/TypeScript (Vite-optimized).
-- **Animations**: `framer-motion` for AnimatePresence, Scroll Tracking, and Spring Count-ups.
-- **Styling**: Tailwind CSS with custom system tokens for glassmorphism and magnetic spotlight effects.
-- **Validation**: `react-hook-form` + `zod` schema enforcement.
+### C. Technical Archives / Whitepapers (`ArticleDetail.tsx`)
+- **Objective**: Establish domain authority via technical case studies.
+- **Parsing Logic**: Avoid complex markdown libraries if possible to keep it lightweight. Use `.split('\n\n')` to render headers (`###`) and body text.
+- **Visual Hook**: Single "Action Green" drop-cap on the *first* paragraph only. Use `text-balance` for all headers to ensure professional word-wrapping in Spanish/English.
 
 ---
-**Carrillo Dynamics** | *Industrial-Grade Digital Infrastructure*
 
+## 4. Bilingual Implementation (`i18n.ts`)
+- **Architecture**: Store all strings in a centralized `i18nData` object keyed by language ('en' | 'es').
+- **Agency Tip**: Use localized industry terminology. For local service businesses, "Lead Flow" is more effective than "Acquisition Funnel."
+- **Maintenance**: Ensure all new components pull from `useTranslation()` context to avoid hardcoded strings.
+
+---
+
+## 5. Automation Backend (n8n Flow)
+To complete the loop, the AI Agent must configure an n8n workflow with the following nodes:
+1. **Webhook Node**: Listen for POST from the React frontend.
+2. **AI Triage**: Route to an LLM to categorize the lead (e.g., "High-Volume Plumber").
+3. **CRM Integration**: Inject directly into ServiceTitan or Jobber.
+4. **Instant Notification**: Send the owner a Telegram/Slack alert with the lead's "ROI Potential" calculated by the site.
+
+---
+
+## 6. Instructions for the Developer Agent (Self-Correction)
+*If you are an AI agent building a new version of this site, follow these rules:*
+
+1.  **Stop Asterisk Proliferation**: Never allow list items to be prefixed with `*` or `-` in the final UI text. Integrate them into cohesive paragraphs.
+2.  **No Em Dashes**: Avoid `—` in copy. Use commas or colons for a more human, direct tone.
+3.  **Industrial "Stress" Test**: When building data visualizations, make them react to user input. If numbers go up, make the UI "glow" or "vibrate" to show the impact of the data.
+4.  **Dark Mode First**: Do not implement a light mode toggle. The brand identity depends on the "Deep Black" industrial aesthetic.
+5.  **Performance Over Flavor**: Prioritize fast page loads (Vite/Brotli) over heavy SVG illustrations. Use code-based effects (gradients/glassmorphism) instead of images.
+
+---
+**Carrillo Dynamics** | *Automation Agency Reference Framework*
+*Revision: 04.08.26*

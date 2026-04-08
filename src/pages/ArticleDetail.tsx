@@ -135,7 +135,7 @@ const ArticleDetail = () => {
                                         {article.content.split('\n\n').map((paragraph, pIdx) => {
                                             if (paragraph.startsWith('### ')) {
                                                 return (
-                                                    <h3 key={pIdx} className="text-foreground whitespace-normal break-words leading-tight">
+                                                    <h3 key={pIdx} className="text-foreground whitespace-normal break-words text-balance leading-tight">
                                                         {paragraph.replace('### ', '').replace(/\n/g, ' ')}
                                                     </h3>
                                                 );
@@ -147,24 +147,20 @@ const ArticleDetail = () => {
                                                         {items.map((item, iIdx) => (
                                                             <div key={iIdx} className="flex items-start gap-4">
                                                                  <Database className="h-5 w-5 shrink-0 text-[#10b981] mt-1" />
-                                                                 <span className="text-base md:text-lg font-black text-foreground leading-tight uppercase tracking-tight">{item.replace('* ', '')}</span>
+                                                                 <span className="text-base md:text-lg font-black text-foreground break-words leading-tight uppercase tracking-tight">{item.replace('* ', '')}</span>
                                                             </div>
                                                         ))}
                                                     </div>
                                                 );
                                             }
                                             if (paragraph.includes('[LOOM_VIDEO_PLACEHOLDER]')) {
-                                                return (
-                                                    <div key={pIdx} className="scanner-border aspect-video w-full bg-black border-2 border-border my-16 relative overflow-hidden group">
-                                                        <iframe 
-                                                            src="https://www.loom.com/embed/5ef9b8b5c07140da933cefcc317b6544?hide_owner=true&hide_share=true&hide_title=true&hide_status_bar=true"
-                                                            allowFullScreen
-                                                            className="absolute inset-0 w-full h-full grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
-                                                        />
-                                                    </div>
-                                                );
+                                                return null;
                                             }
-                                            return <p key={pIdx} className="whitespace-normal break-words leading-relaxed first-letter:text-6xl first-letter:font-black first-letter:text-[#10b981] first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8]">{paragraph.replace(/\n/g, ' ')}</p>;
+                                            return (
+                                                <p key={pIdx} className={`whitespace-normal break-words text-balance leading-relaxed ${pIdx === 0 ? 'first-letter:text-6xl first-letter:font-black first-letter:text-[#10b981] first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8]' : ''}`}>
+                                                    {paragraph.replace(/\n/g, ' ')}
+                                                </p>
+                                            );
                                         })}
                                     </article>
                                 </div>

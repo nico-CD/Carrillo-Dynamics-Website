@@ -20,7 +20,6 @@ const FAQPage = React.lazy(() => import("./pages/FAQ"));
 const Unsubscribed = React.lazy(() => import("./pages/Unsubscribed"));
 const ArticlesPage = React.lazy(() => import("./pages/Articles"));
 const ArticleDetail = React.lazy(() => import("./pages/ArticleDetail"));
-const ApexResponseCenter = React.lazy(() => import("./pages/ApexResponseCenter"));
 
 const queryClient = new QueryClient();
 
@@ -63,7 +62,7 @@ const App = () => (
                   <Route path="/:lang/unsubscribed" element={<Unsubscribed />} />
                   <Route path="/:lang/articles" element={<ArticlesPage />} />
                   <Route path="/:lang/articles/:id" element={<ArticleDetail />} />
-                  <Route path="/:lang/apex-response-center" element={<ApexResponseCenter />} />
+
                   
                   <Route path="*" element={<NotFound />} />
                 </Routes>
