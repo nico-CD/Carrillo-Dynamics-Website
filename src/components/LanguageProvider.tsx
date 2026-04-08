@@ -45,6 +45,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }, [location.pathname, location.search, navigate, lang]);
 
     const setLanguage = (newLang: Language) => {
+        // Save current scroll position
+        const scrollPos = window.scrollY;
+        
         localStorage.setItem('user-lang', newLang);
         const pathParts = location.pathname.split('/');
         // If path starts with /lang, replace it
@@ -55,7 +58,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
             pathParts.splice(1, 0, newLang);
         }
         const newPath = pathParts.join('/') || `/${newLang}`;
+        
         navigate(newPath + location.search);
+        
+        // Restore scroll position after a short delay to allow for route change
+        setTimeout(() => {
+            window.scrollTo(0, scrollPos);
+        }, 10);
     };
 
     const value = {

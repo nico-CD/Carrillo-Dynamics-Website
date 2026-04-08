@@ -9,18 +9,22 @@ import { Terminal } from "lucide-react";
 import { useTranslation } from "./LanguageProvider";
 
 interface CalendlyModalProps {
-  trigger: React.ReactNode;
+  trigger?: React.ReactNode;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-const CalendlyModal: React.FC<CalendlyModalProps> = ({ trigger }) => {
+const CalendlyModal: React.FC<CalendlyModalProps> = ({ trigger, isOpen, onClose }) => {
   const { lang } = useTranslation();
   const calendlyUrl = "https://calendly.com/nico-carrillodynamics/30min?hide_landing_page_details=1&hide_gdpr_banner=1";
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        {trigger}
-      </DialogTrigger>
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose?.()}>
+      {trigger && (
+        <DialogTrigger asChild>
+          {trigger}
+        </DialogTrigger>
+      )}
       <DialogContent className="max-w-4xl h-[90vh] p-0 bg-background border-border rounded-none gap-0 overflow-hidden outline-none">
         <DialogTitle className="sr-only">
           {lang === 'en' ? 'Book Strategy Session' : 'Programar Sesión de Estrategia'}

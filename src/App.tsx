@@ -9,6 +9,7 @@ import { HelmetProvider, Helmet } from "react-helmet-async";
 import { LanguageProvider } from "./components/LanguageProvider";
 import StructuredData from "./components/StructuredData";
 import ScrollToTop from "./components/ScrollToTop";
+import ExitIntentModal from "./components/ExitIntentModal";
 
 import Index from "./pages/Index";
 const Success = React.lazy(() => import("./pages/Success"));
@@ -32,6 +33,7 @@ const App = () => (
             <ScrollToTop />
             <LanguageProvider>
               <StructuredData />
+              <ExitIntentModal />
               <Suspense fallback={
                 <div className="min-h-screen bg-black flex items-center justify-center">
                   <div className="h-1 w-32 bg-zinc-900 relative overflow-hidden">

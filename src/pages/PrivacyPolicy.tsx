@@ -10,8 +10,7 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-primary/30 font-sans flex flex-col transition-colors duration-300">
-      <FastTrackNav onVisibilityChange={setIsNavbarHidden} onContactClick={() => window.location.href = `/${lang}/#intake`} />
-      {!isNavbarHidden && <Navbar />}
+      <Navbar />
 
       <main className="flex-1 px-6 py-40 mx-auto max-w-4xl w-full">
         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tight mb-12 text-foreground">

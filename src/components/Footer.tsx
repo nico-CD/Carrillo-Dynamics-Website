@@ -59,10 +59,10 @@ const Footer = () => {
                                     target="_blank" 
                                     className="text-[#10b981] hover:text-[#0ea672] transition-colors"
                                 >
-                                    Book Strategy Session
+                                    {t.nav.strategy}
                                 </a>
-                                <a href={`/${lang}/terms`} className="hover:text-foreground transition-colors pt-2 border-t border-border mt-2 opacity-50">Terms</a>
-                                <a href={`/${lang}/privacy`} className="hover:text-foreground transition-colors opacity-50">Privacy</a>
+                                <a href={`/${lang}/terms`} className="hover:text-foreground transition-colors pt-2 border-t border-border mt-2 opacity-50">{t.nav.terms}</a>
+                                <a href={`/${lang}/privacy`} className="hover:text-foreground transition-colors opacity-50">{t.nav.privacy}</a>
                              </div>
                         </div>
 

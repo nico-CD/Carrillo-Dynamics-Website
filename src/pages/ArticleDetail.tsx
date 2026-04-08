@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "../components/LanguageProvider";
 import { ArrowLeft, Clock, Calendar, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import ArticleSidebar from "../components/ArticleSidebar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -12,6 +12,13 @@ const ArticleDetail = () => {
     const { t, lang } = useTranslation();
     
     const article = t.articles.find(a => a.id === id);
+    
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
 
     if (!article) {
         return (
@@ -28,6 +35,10 @@ const ArticleDetail = () => {
 
     return (
         <div className="bg-background min-h-screen font-sans selection:bg-[#10b981]/10">
+            <motion.div
+                className="fixed top-0 left-0 right-0 h-1 bg-[#10b981] origin-left z-[100]"
+                style={{ scaleX }}
+            />
             <Helmet>
                 <title>{article.title} | Carrillo Dynamics</title>
                 <meta name="description" content={article.description} />

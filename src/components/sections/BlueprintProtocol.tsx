@@ -127,27 +127,6 @@ const BlueprintProtocol = () => {
                     </div>
                 </div>
 
-                {/* OUR FORENSIC LEAD AUDIT VIDEO */}
-                <div className="space-y-16">
-                    <div className="flex flex-col items-start gap-4">
-                         <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">
-                             {lang === 'en' ? 'Forensic Lead Audit' : 'Auditoría Forense'}
-                         </h2>
-                         <p className="text-lg md:text-2xl text-muted-foreground font-medium max-w-3xl transition-colors duration-300">
-                             {lang === 'en' 
-                                ? "Watch the process behind our custom automation blueprints. We don't guess—we audit your existing data flow to find the leakage."
-                                : "Vea el proceso detrás de nuestros blueprints de automatización. No adivinamos: auditamos su flujo de datos para encontrar la fuga."}
-                         </p>
-                    </div>
-                    <div className="aspect-video w-full bg-muted/20 border-2 border-border relative overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-                        <iframe 
-                            src="https://www.loom.com/embed/5ef9b8b5c07140da933cefcc317b6544?hide_owner=true&hide_share=true&hide_title=true&hide_status_bar=true"
-                            allowFullScreen
-                            className="absolute inset-0 w-full h-full opacity-90 group-hover:opacity-100 transition-opacity z-10"
-                        ></iframe>
-                    </div>
-                </div>
-
                 {/* Our System Blueprint - HEAVY INDUSTRIAL GRID */}
                 <div className="space-y-20">
                     <div className="flex flex-col items-start gap-4">

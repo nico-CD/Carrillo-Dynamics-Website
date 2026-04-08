@@ -128,24 +128,25 @@ const InteractiveCalculator = () => {
             </div>
 
             <div className="p-10 md:p-16 bg-background border-2 border-border group transition-colors duration-300">
-                <p className="text-xl md:text-2xl text-muted-foreground font-bold leading-relaxed transition-colors duration-300">
-                    {t.calculator.summaryTemplate
-                        .replace('{ftu}', ftuReclaimed)
-                        .split('{wholeFtu}')
-                        .map((part, i, arr) => (
-                            <React.Fragment key={i}>
-                                {part}
-                                {i < arr.length - 1 && (
-                                    <span className="text-foreground underline decoration-muted-foreground decoration-2 underline-offset-8">
-                                        {Math.floor(Number(ftuReclaimed))}
-                                    </span>
-                                )}
-                            </React.Fragment>
-                        ))
-                    }
-                </p>
+                <div className="space-y-8">
+                    <p className="text-xl md:text-2xl text-muted-foreground font-bold leading-relaxed transition-colors duration-300">
+                        {t.calculator.summaryTemplate
+                            .replace('{ftu}', ftuReclaimed)
+                            .split('{wholeFtu}')
+                            .map((part, i, arr) => (
+                                <React.Fragment key={i}>
+                                    {part}
+                                    {i < arr.length - 1 && (
+                                        <span className="text-foreground underline decoration-muted-foreground decoration-2 underline-offset-8">
+                                            {Math.floor(Number(ftuReclaimed))}
+                                        </span>
+                                    )}
+                                </React.Fragment>
+                            ))
+                        }
+                    </p>
+                </div>
             </div>
-            
         </div>
     );
 };

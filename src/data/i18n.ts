@@ -135,37 +135,45 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         privacyPolicy: {
             title: "Privacy Governance Standards",
-            lastUpdated: "Revision: 04.07.2026",
+            lastUpdated: "Revision: 04.08.2026",
             sections: [
                 {
-                    title: "01. Data Governance",
-                    content: "We uphold strict deterministic data protocols. Any information submitted via the Carrillo Dynamics portal is utilized exclusively for the generation of your custom Automation Blueprint and Forensic Audit."
+                    title: "01. Collection & Governance",
+                    content: "We collect specific operational data required to engineer your Automation Blueprint. This includes business metadata, intake volume stats, and technical bottleneck logs. We adhere to SOC-2 principles for data integrity."
                 },
                 {
-                    title: "02. Encryption & Integrity",
-                    content: "All data pipelines utilize industry-standard encryption. We do not store sensitive operational data longer than necessary for active engineering cycles."
+                    title: "02. Internal Usage Protocols",
+                    content: "Your data is used exclusively for technical auditing and system architecture. We do not engage in the sale of client telemetry. Access is restricted to active engineering cycles."
                 },
                 {
-                    title: "03. Third-Party Non-Disclosure",
-                    content: "Carrillo Dynamics does not engage in the sale or distribution of client meta-data. Your operational bottlenecks are treated as proprietary intellectual secrets."
+                    title: "03. Communication Standards",
+                    content: "We strictly follow TCPA guidelines. Mobile information, including SMS opt-in data, is never shared with third parties or affiliates for marketing purposes."
+                },
+                {
+                    title: "04. Data Sovereignty",
+                    content: "Clients retain rights to audit the logic built within their environment. Carrillo Dynamics operates as a technical processor, ensuring your intellectual secrets remain yours."
                 }
             ]
         },
         termsOfService: {
             title: "Engineering Terms of Engagement",
-            lastUpdated: "Revision: 04.07.2026",
+            lastUpdated: "Revision: 04.08.2026",
             sections: [
                 {
-                    title: "01. Service Scope",
-                    content: "Carrillo Dynamics provides Fractional Operations Engineering and custom automation logic. We act as technical executors, not generic business consultants."
+                    title: "01. Professional Scope",
+                    content: "Carrillo Dynamics provides technical execution through Fractional Operations Engineering. Our deliverables are functional logic and architectural blueprints, not passive consulting."
                 },
                 {
                     title: "02. Intellectual Property",
-                    content: "Upon full settlement of project cycles, the client retains 100% ownership of the specific automation logic and middleware engineered for their environment."
+                    content: "Upon full settlement, the client holds 100% perpetual ownership of the specific automation sequences and middleware logic deployed in their stack."
                 },
                 {
-                    title: "03. Liability & Governing Law",
-                    content: "Engineering services are governed by the laws of the State of Illinois. Liability is limited to the value of the active engineering sprint."
+                    title: "03. Engineering Liability",
+                    content: "Services are provided on an 'Engineered Performance' basis. Liability is capped at the value of the current active sprint. Governed by the laws of the State of Illinois."
+                },
+                {
+                    title: "04. Termination Logic",
+                    content: "Either party may pause engineering cycles with 14 days' notice. Any completed logic remains the property of the client post-settlement."
                 }
             ]
         },
@@ -308,39 +316,47 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         privacyPolicy: {
             title: "Estándares de Gobernanza de Privacidad",
-            lastUpdated: "Revisión: 04.07.2026",
+            lastUpdated: "Revisión: 04.08.2026",
             sections: [
                 {
-                    title: "01. Gobernanza de Datos",
-                    content: "Mantenemos protocolos de datos deterministas estrictos. Cualquier información enviada a través del portal de Carrillo Dynamics se utiliza exclusivamente para la generación de su Blueprint de Automatización y Auditoría Forense."
+                    title: "01. Recopilación y Gobernanza",
+                    content: "Recopilamos datos operativos específicos necesarios para diseñar su Blueprint de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de cuellos de botella técnicos. Nos adherimos a los principios de SOC-2 para la integridad de los datos."
                 },
                 {
-                    title: "02. Integridad y Encriptación",
-                    content: "Todas las tuberías de datos utilizan encriptación estándar de la industria. No almacenamos datos operativos sensibles más tiempo del necesario para los ciclos de ingeniería activos."
+                    title: "02. Protocolos de Uso Interno",
+                    content: "Sus datos se utilizan exclusivamente para auditorías técnicas y arquitectura de sistemas. No participamos en la venta de telemetría de clientes. El acceso está restringido a los ciclos de ingeniería activos."
                 },
                 {
-                    title: "03. No Divulgación a Terceros",
-                    content: "Carrillo Dynamics no participa en la venta o distribución de metadatos de clientes. Sus cuellos de botella operativos son tratados como secretos intelectuales patentados."
+                    title: "03. Estándares de Comunicación",
+                    content: "Seguimos estrictamente las directrices de la TCPA. La información móvil, incluidos los datos de consentimiento de SMS, nunca se comparte con terceros o afiliados con fines de marketing."
+                },
+                {
+                    title: "04. Soberanía de Datos",
+                    content: "Los clientes conservan los derechos para auditar la lógica construida en su entorno. Carrillo Dynamics opera como un procesador técnico, asegurando que sus secretos intelectuales sigan siendo suyos."
                 }
             ]
         },
         termsOfService: {
             title: "Términos de Compromiso de Ingeniería",
-            lastUpdated: "Revisión: 04.07.2026",
+            lastUpdated: "Revisión: 04.08.2026",
             sections: [
                 {
-                    title: "01. Alcance del Servicio",
-                    content: "Carrillo Dynamics proporciona Ingeniería de Operaciones Fraccional y lógica de automatización personalizada. Actuamos como ejecutores técnicos."
+                    title: "01. Alcance Profesional",
+                    content: "Carrillo Dynamics proporciona ejecución técnica a través de Ingeniería de Operaciones Fraccional. Nuestros entregables son lógica funcional y blueprints arquitectónicos, no consultoría pasiva."
                 },
                 {
                     title: "02. Propiedad Intelectual",
-                    content: "Tras la liquidación total de los ciclos del proyecto, el cliente conserva el 100% de la propiedad de la lógica de automatización específica diseñada para su entorno."
+                    content: "Tras la liquidación total, el cliente posee el 100% de la propiedad perpetua de las secuencias de automatización específicas y la lógica de middleware desplegada en su infraestructura."
                 },
                 {
-                    title: "03. Responsabilidad y Ley Aplicable",
-                    content: "Los servicios de ingeniería se rigen por las leyes del Estado de Illinois. La responsabilidad se limita al valor del sprint de ingeniería activo."
+                    title: "03. Responsabilidad de Ingeniería",
+                    content: "Los servicios se prestan sobre una base de 'Rendimiento Diseñado'. La responsabilidad está limitada al valor del sprint de ingeniería activo actual. Se rige por las leyes del Estado de Illinois."
+                },
+                {
+                    title: "04. Lógica de Terminación",
+                    content: "Cualquier parte puede pausar los ciclos de ingeniería con un aviso de 14 días. Cualquier lógica completada sigue siendo propiedad del cliente después de la liquidación."
                 }
-            ]
+             ]
         },
         faqs: [
             {

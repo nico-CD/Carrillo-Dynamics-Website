@@ -71,9 +71,9 @@ const Hero = ({ onContactClick }: HeroProps) => {
                              </p>
                              <h2 className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest text-foreground leading-none transition-colors duration-300">
                                 {lang === 'en' ? (
-                                    <>AI automation is not a trend. It's a <span className="text-[#10b981] italic">tool to reclaim your time.</span></>
+                                    <>AI automation is not a trend. It's a <span className="text-[#10b981] italic no-underline">tool to reclaim your time.</span></>
                                 ) : (
-                                    <>La automatización con IA no es una tendencia. Es una <span className="text-[#10b981] italic">herramienta para recuperar su tiempo.</span></>
+                                    <>La automatización con IA no es una tendencia. Es una <span className="text-[#10b981] italic no-underline">herramienta para recuperar su tiempo.</span></>
                                 )}
                              </h2>
                         </div>
