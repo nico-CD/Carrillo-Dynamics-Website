@@ -20,6 +20,10 @@ const ArticlesPage = () => {
             <Helmet>
                 <title>{lang === 'en' ? 'Carrillo Dynamics | Articles' : 'Carrillo Dynamics | Artículos'}</title>
                 <meta name="description" content={lang === 'en' ? 'Forensic analysis and operational blueprints for high-volume trade firms.' : 'Análisis forense y planes operativos para empresas de servicios de alto volumen.'} />
+                <link rel="canonical" href={`https://carrillodynamics.com/${lang}/articles`} />
+                <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles" />
+                <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles" />
+                <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en/articles" />
             </Helmet>
             <Navbar />
             

@@ -15,6 +15,7 @@ import CalendlyModal from "@/components/CalendlyModal";
 import Hero from "@/components/sections/Hero";
 import BlueprintProtocol from "@/components/sections/BlueprintProtocol";
 import Footer from "@/components/Footer";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 // Logic & Types
 import { intakeSchema, IntakeValues } from "@/types/intake";
@@ -94,6 +95,10 @@ const Index = () => {
             <Helmet>
                 <title>Carrillo Dynamics | Automation Agency</title>
                 <meta name="description" content={t.hero.subtitle} />
+                <link rel="canonical" href={`https://carrillodynamics.com/${lang}`} />
+                <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en" />
+                <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es" />
+                <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en" />
             </Helmet>
             <Navbar />
 
@@ -117,7 +122,9 @@ const Index = () => {
                             {t.calculator.subtitle}
                         </p>
                     </div>
-                    <InteractiveCalculator />
+                    <ErrorBoundary name="ROI Calculator">
+                        <InteractiveCalculator />
+                    </ErrorBoundary>
                 </motion.div>
             </section>
 
@@ -149,7 +156,9 @@ const Index = () => {
             </section>
 
             {/* SEGMENT 3: THE BLUEPRINT OVERLAY */}
-            <BlueprintProtocol />
+            <ErrorBoundary name="Blueprint Protocol">
+                <BlueprintProtocol />
+            </ErrorBoundary>
 
             {/* SEGMENT 4: THE INTAKE FORM */}
             <section id="intake" className="px-6 py-48 bg-background relative z-10 transition-colors duration-300">

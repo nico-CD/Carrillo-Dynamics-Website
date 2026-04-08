@@ -21,6 +21,10 @@ const FAQPage = () => {
             <Helmet>
                 <title>{lang === 'en' ? 'Carrillo Dynamics | FAQ' : 'Carrillo Dynamics | FAQ'}</title>
                 <meta name="description" content={lang === 'en' ? 'Everything you need to know about engineering flow and eliminating operational friction.' : 'Todo lo que necesita saber sobre ingeniería de flujo y eliminación de fricción operativa.'} />
+                <link rel="canonical" href={`https://carrillodynamics.com/${lang}/faq`} />
+                <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/faq" />
+                <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/faq" />
+                <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en/faq" />
             </Helmet>
             <Navbar />
             

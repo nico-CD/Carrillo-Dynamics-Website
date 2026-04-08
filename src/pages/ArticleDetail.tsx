@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "../components/LanguageProvider";
 import { ArrowLeft, ArrowRight, Clock, Calendar, FileText, Share2, ShieldCheck, Database, Menu } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
+import ReactMarkdown from "react-markdown";
 import ArticleSidebar from "../components/ArticleSidebar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -15,6 +16,7 @@ const ArticleDetail = () => {
     const { t, lang } = useTranslation();
     
     const article = t.articles.find(a => a.id === id);
+    const canonicalUrl = `https://carrillodynamics.com/${lang}/articles/${id}`;
     
     const { scrollYProgress } = useScroll();
     const scaleX = useSpring(scrollYProgress, {
@@ -46,7 +48,7 @@ const ArticleDetail = () => {
 
     if (!article) {
         return (
-            <div className="min-h-screen flex items-center justify-center p-8 bg-background">
+            <div className="min-h-screen flex items-center justify-center p-8 bg-background font-sans">
                 <div className="text-center space-y-6">
                     <h1 className="text-4xl font-black uppercase tracking-tighter text-foreground">Publication Not Found</h1>
                     <Link to={`/${lang}/articles`} className="text-[#10b981] font-mono uppercase tracking-widest hover:underline flex items-center justify-center gap-2">
@@ -58,11 +60,22 @@ const ArticleDetail = () => {
     }
 
     return (
-        <div className="bg-background min-h-screen selection:bg-[#10b981]/10">
+        <div className="bg-background min-h-screen selection:bg-[#10b981]/10 font-sans">
 
             <Helmet>
                 <title>{article.title} | Technical Whitepaper | Carrillo Dynamics</title>
                 <meta name="description" content={article.description} />
+                <link rel="canonical" href={canonicalUrl} />
+                <link rel="alternate" hreflang="en" href={`https://carrillodynamics.com/en/articles/${id}`} />
+                <link rel="alternate" hreflang="es" href={`https://carrillodynamics.com/es/articles/${id}`} />
+                <link rel="alternate" hreflang="x-default" href={`https://carrillodynamics.com/en/articles/${id}`} />
+                
+                {/* Dynamic OG image for sharing specific articles */}
+                <meta property="og:title" content={`${article.title} | Carrillo Dynamics`} />
+                <meta property="og:description" content={article.description} />
+                <meta property="og:image" content="/bull_PNGs/bull.512x512.webp" />
+                <meta name="twitter:title" content={`${article.title} | Carrillo Dynamics`} />
+                <meta name="twitter:description" content={article.description} />
             </Helmet>
             
             <Navbar />
@@ -132,36 +145,21 @@ const ArticleDetail = () => {
                                         prose-li:text-muted-foreground prose-li:font-medium
                                         space-y-8
                                     ">
-                                        {article.content.split('\n\n').map((paragraph, pIdx) => {
-                                            if (paragraph.startsWith('### ')) {
-                                                return (
-                                                    <h3 key={pIdx} className="text-foreground whitespace-normal break-words text-balance leading-tight">
-                                                        {paragraph.replace('### ', '').replace(/\n/g, ' ')}
-                                                    </h3>
-                                                );
-                                            }
-                                            if (paragraph.startsWith('* ')) {
-                                                const items = paragraph.split('\n').filter(item => item.startsWith('* '));
-                                                return (
-                                                    <div key={pIdx} className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16 bg-muted/5 border-2 border-border p-8 py-12 scanner-border">
-                                                        {items.map((item, iIdx) => (
-                                                            <div key={iIdx} className="flex items-start gap-4">
-                                                                 <Database className="h-5 w-5 shrink-0 text-[#10b981] mt-1" />
-                                                                 <span className="text-base md:text-lg font-black text-foreground break-words leading-tight uppercase tracking-tight">{item.replace('* ', '')}</span>
-                                                            </div>
-                                                        ))}
+                                        <ReactMarkdown
+                                            components={{
+                                                h3: ({node, ...props}) => <h3 {...props} className="text-foreground whitespace-normal break-words text-balance leading-tight" />,
+                                                p: ({node, ...props}) => <p {...props} className="whitespace-normal break-words text-balance leading-relaxed" />,
+                                                ul: ({node, ...props}) => <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16 bg-muted/5 border-2 border-border p-8 py-12 scanner-border"><ul {...props} className="contents" /></div>,
+                                                li: ({node, ...props}) => (
+                                                    <div className="flex items-start gap-4">
+                                                         <Database className="h-5 w-5 shrink-0 text-[#10b981] mt-1" />
+                                                         <span className="text-base md:text-lg font-black text-foreground break-words leading-tight uppercase tracking-tight">{props.children}</span>
                                                     </div>
-                                                );
-                                            }
-                                            if (paragraph.includes('[LOOM_VIDEO_PLACEHOLDER]')) {
-                                                return null;
-                                            }
-                                            return (
-                                                <p key={pIdx} className={`whitespace-normal break-words text-balance leading-relaxed ${pIdx === 0 ? 'first-letter:text-6xl first-letter:font-black first-letter:text-[#10b981] first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8]' : ''}`}>
-                                                    {paragraph.replace(/\n/g, ' ')}
-                                                </p>
-                                            );
-                                        })}
+                                                )
+                                            }}
+                                        >
+                                            {article.content}
+                                        </ReactMarkdown>
                                     </article>
                                 </div>
 

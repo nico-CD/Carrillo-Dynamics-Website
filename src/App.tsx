@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import StructuredData from "./components/StructuredData";
 import ScrollToTop from "./components/ScrollToTop";
 import PageProgressBar from "./components/PageProgressBar";
+import Breadcrumbs from "./components/Breadcrumbs";
 import Index from "./pages/Index";
 const Success = React.lazy(() => import("./pages/Success"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
@@ -33,10 +34,11 @@ const App = () => (
             <LanguageProvider>
               <PageProgressBar />
               <StructuredData />
+              <Breadcrumbs />
               <Suspense fallback={
                 <div className="min-h-screen bg-black flex items-center justify-center">
                   <motion.img 
-                    src="/bull_PNGs/bull.512x512.png" 
+                    src="/bull_PNGs/bull.512x512.webp" 
                     alt="Carrillo Dynamics"
                     className="h-24 w-24 object-contain"
                     initial={{ opacity: 0, scale: 0.9 }}

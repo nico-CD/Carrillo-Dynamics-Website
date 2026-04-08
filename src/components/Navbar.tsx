@@ -19,7 +19,7 @@ const Navbar = () => {
             >
                 <div className="relative h-10 w-10 overflow-hidden">
                     <img
-                        src="/bull_PNGs/bull-apple-touch-icon.png"
+                        src="/bull_PNGs/bull-apple-touch-icon.webp"
                         alt="Carrillo Dynamics Logo"
                         className="h-full w-full object-contain transition-transform group-hover:scale-105"
                     />
@@ -29,14 +29,14 @@ const Navbar = () => {
 
             <div className="flex items-center gap-4 md:gap-6">
                 <nav className="hidden md:flex items-center gap-8 mr-8">
-                    <Link to={`/${lang}/articles`} className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-[#10b981] transition-colors">{t.nav.articles}</Link>
-                    <Link to={`/${lang}/faq`} className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-[#10b981] transition-colors">{t.nav.faq}</Link>
+                    <Link to={`/${lang}/articles`} className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.articles}</Link>
+                    <Link to={`/${lang}/faq`} className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.faq}</Link>
                 </nav>
 
                 <Button
                     variant="ghost"
                     size="sm"
-                    className="h-9 px-4 rounded-none border border-zinc-800 hover:border-[#10b981] hover:bg-zinc-900/50 transition-all text-[10px] font-black uppercase tracking-widest text-zinc-500 hover:text-white"
+                    className="h-9 px-4 rounded-none border border-zinc-800 hover:border-[#10b981] hover:bg-zinc-900/50 transition-all text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-white"
                     onClick={() => setLanguage(lang === 'en' ? 'es' : 'en')}
                 >
                     {lang === 'en' ? 'VER EN ESPAÑOL' : 'VIEW IN ENGLISH'}
