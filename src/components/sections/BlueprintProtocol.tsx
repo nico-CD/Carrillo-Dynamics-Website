@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { useTranslation } from "@/components/LanguageProvider";
 import CalendlyModal from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
+import ForensicBlueprint from "../ForensicBlueprint";
 
 const BlueprintProtocol = () => {
-    const { lang } = useTranslation();
+    const { lang, t } = useTranslation();
     const sectors = lang === 'en' ? [
         { icon: Hammer, label: "CONSTRUCTION" },
         { icon: Truck, label: "LOGISTICS" },
@@ -108,24 +109,7 @@ const BlueprintProtocol = () => {
         <section className="bg-background py-24 md:py-48 px-6 border-y border-zinc-900 transition-colors duration-300">
             <div className="max-w-7xl mx-auto space-y-48">
                 
-                {/* Current Operational Sectors - HEAVY INDUSTRIAL GRID */}
-                <div className="space-y-16">
-                    <div className="flex flex-col items-start gap-4">
-                         <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">{headers.sectors}</h2>
-                         <p className="text-lg md:text-2xl text-muted-foreground font-medium max-w-2xl transition-colors duration-300">
-                             {headers.sectorsSub}
-                         </p>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[2px] bg-border border-2 border-border overflow-hidden">
-                        {sectors.map((s, idx) => (
-                            <div key={idx} className="bg-background p-10 flex flex-col items-center justify-center gap-8 group hover:bg-muted/5 transition-colors h-40">
-                                <s.icon className="h-6 w-6 text-muted-foreground/50 group-hover:text-[#10b981] group-hover:scale-110 transition-all duration-300" />
-                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground/50 group-hover:text-[#10b981] transition-colors">{s.label}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+
 
                 {/* Our System Blueprint - HEAVY INDUSTRIAL GRID */}
                 <div className="space-y-20">
@@ -136,7 +120,7 @@ const BlueprintProtocol = () => {
                          </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 bg-border border-2 border-border gap-[2px] overflow-hidden">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 bg-border border-2 border-border gap-[2px] overflow-hidden scanner-border">
                         {steps.map((p, idx) => (
                             <motion.div 
                                 key={idx}
@@ -192,7 +176,7 @@ const BlueprintProtocol = () => {
                         size="lg"
                         className="h-20 w-full sm:w-fit rounded-none px-12 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-white text-black shadow-[0_0_50px_rgba(16,185,129,0.2)] transition-all border-none group"
                     >
-                        {lang === 'en' ? 'BOOK STRATEGY SESSION' : 'SESIÓN DE ESTRATEGIA'}
+                        {t.nav.strategy}
                         <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
                     </Button>
                 </div>

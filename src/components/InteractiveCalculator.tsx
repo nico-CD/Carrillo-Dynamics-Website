@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Slider } from '@/components/ui/slider';
 import { motion } from 'framer-motion';
 import { useTranslation } from './LanguageProvider';
+import { Button } from './ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const InteractiveCalculator = () => {
     const { t } = useTranslation();
@@ -26,11 +28,13 @@ const InteractiveCalculator = () => {
     const weightedTotal = (teamSize[0] * 20) + (hoursPerWeek[0] * 10);
     const dynamicWidth = Math.min(100, 30 + (weightedTotal / 1400) * 70);
 
+    const handleBookSession = () => {
+        window.open('https://calendly.com/nico-carrillodynamics/30min', '_blank');
+    };
+
     return (
         <div className="w-full max-w-7xl mx-auto space-y-12">
-            
             <div className="grid grid-cols-1 md:grid-cols-2 bg-border border-2 border-border gap-[2px] overflow-hidden">
-                
                 {/* Q1: EFFICIENCY INPUT */}
                 <div className="bg-background p-10 md:p-16 space-y-12 transition-colors duration-300">
                     <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">
@@ -124,11 +128,10 @@ const InteractiveCalculator = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <div className="p-10 md:p-16 bg-background border-2 border-border group transition-colors duration-300">
-                <div className="space-y-8">
+            <div className="p-10 md:p-16 bg-background border-2 border-border group transition-colors duration-300 flex flex-col md:flex-row items-center justify-between gap-12">
+                <div className="space-y-8 max-w-2xl">
                     <p className="text-xl md:text-2xl text-muted-foreground font-bold leading-relaxed transition-colors duration-300">
                         {t.calculator.summaryTemplate
                             .replace('{ftu}', ftuReclaimed)
@@ -146,6 +149,14 @@ const InteractiveCalculator = () => {
                         }
                     </p>
                 </div>
+                <Button 
+                    onClick={handleBookSession}
+                    size="lg" 
+                    className="h-24 px-12 rounded-none bg-[#10b981] text-black font-black uppercase tracking-[0.2em] text-lg hover:bg-white transition-all group shrink-0"
+                >
+                    {t.calculator.bookStrategy}
+                    <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                </Button>
             </div>
         </div>
     );

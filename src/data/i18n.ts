@@ -48,6 +48,9 @@ export interface I18nContent {
         scaleMonitor: string;
         growthPotential: string;
         summaryTemplate: string;
+        bookStrategy: string;
+        successTitle: string;
+        successSub: string;
     };
     intake: {
         title: string;
@@ -68,16 +71,33 @@ export interface I18nContent {
     };
     privacyPolicy: {
         title: string;
+        titleMain: string;
+        titleAccent: string;
         lastUpdated: string;
         sections: { title: string; content: string }[];
     };
     termsOfService: {
         title: string;
+        titleMain: string;
+        titleAccent: string;
         lastUpdated: string;
         sections: { title: string; content: string }[];
     };
     faqs: FAQEntry[];
     articles: ArticleEntry[];
+    articleLabels: {
+        abstract: string;
+        technicalSpecs: string;
+        integrity: string;
+        integrityValue: string;
+        protocol: string;
+        protocolValue: string;
+        latency: string;
+        latencyValue: string;
+        downloadPdf: string;
+        shareEntry: string;
+        backToArchive: string;
+    };
 }
 
 export const i18nData: Record<Language, I18nContent> = {
@@ -92,19 +112,19 @@ export const i18nData: Record<Language, I18nContent> = {
             strategy: "Book Strategy Session"
         },
         pageTitles: {
-            faq: { main: "Operations", accent: "FAQ" },
-            articles: { main: "The", accent: "Articles" }
+            faq: { main: "Operational", accent: "FAQ" },
+            articles: { main: "Technical", accent: "Archives" }
         },
         hero: {
             title: "Engineer Flow. Eliminate Friction.",
-            subtitle: "We build deterministic operating systems for high-volume trade firms.",
+            subtitle: "We build deterministic operating systems for high-volume service businesses.",
             cta: "Get Started",
             audit: "Book Strategy Session"
         },
         calculator: {
             title: "Reclaim ",
             titleItalic: "Every Hour.",
-            subtitle: "Automating your current manual tasks has a direct impact on your bottom line. We calculate your potential ROI before we write a single line of code.",
+            subtitle: "Automating your manual tasks has a direct impact on your bottom line. We calculate your potential ROI before we write a single line of code.",
             efficiencyInput: "Efficiency Input",
             totalPeople: "Total People",
             manualHours: "Manual Hours / Wk",
@@ -114,12 +134,15 @@ export const i18nData: Record<Language, I18nContent> = {
             capacityImpact: "Capacity Impact",
             scaleMonitor: "Scale Monitor",
             growthPotential: "Growth Potential",
-            summaryTemplate: "Reclaiming {ftu} FTU means recovering the actual bandwidth of over {wholeFtu} additional full-time operator(s). We do not just save time; we recover the productive capacity of your team without adding a single dollar to your payroll."
+            summaryTemplate: "Reclaiming {ftu} FTU means winning back the actual capacity of over {wholeFtu} additional full-time operator(s). We don't just save time; we recover your team's productive capacity without adding a single dollar to your payroll.",
+            bookStrategy: "Book 1:1 Strategy Session",
+            successTitle: "Analysis Complete.",
+            successSub: "Your custom ROI breakdown has been engineered. Download the PDF and book your session below."
         },
         intake: {
-            title: "Get Your ",
+            title: "Get your ",
             titleItalic: "Free Custom Blueprint.",
-            subtitle: "Tell me where your manual bottlenecks are. Within 24 hours, I'll send you a custom video analysis and automation blueprint.",
+            subtitle: "Tell me where your manual bottlenecks are. In 24 hours, I'll send you a personalized video analysis and automation blueprint.",
             fullName: "Full Name",
             email: "Business Email",
             companyName: "Company Name",
@@ -128,145 +151,146 @@ export const i18nData: Record<Language, I18nContent> = {
             industryPlaceholder: "Select your industry",
             bottleneck: "Primary Bottleneck",
             bottleneckPlaceholder: "Select bottleneck",
-            consent: "I consent to the Blueprint Analysis and occasional automation strategy updates.",
+            consent: "I consent to the Blueprint Analysis and occasional strategy updates.",
             consentPrivacy: "Data is processed in accordance with our Privacy Governance Standards.",
-            submit: "Get In Touch",
-            submitting: "Initializing_"
+            submit: "Get Blueprint",
+            submitting: "Initiating_"
         },
         privacyPolicy: {
             title: "Privacy Governance Standards",
+            titleMain: "Privacy Governance",
+            titleAccent: "Standards",
             lastUpdated: "Revision: 04.08.2026",
             sections: [
                 {
                     title: "01. Collection & Governance",
-                    content: "We collect specific operational data required to engineer your Automation Blueprint. This includes business metadata, intake volume stats, and technical bottleneck logs. We adhere to SOC-2 principles for data integrity."
+                    content: "We collect specific operational data required to engineer your Automation Blueprint. This includes business metadata, intake volume statistics, and technical bottleneck logs. We adhere to industrial-grade standards for data integrity."
                 },
                 {
                     title: "02. Internal Usage Protocols",
-                    content: "Your data is used exclusively for technical auditing and system architecture. We do not engage in the sale of client telemetry. Access is restricted to active engineering cycles."
+                    content: "Your data is used exclusively for technical auditing and systems architecture. We do not participate in the sale of client telemetry. Access is restricted to active engineering cycles."
                 },
                 {
                     title: "03. Communication Standards",
-                    content: "We strictly follow TCPA guidelines. Mobile information, including SMS opt-in data, is never shared with third parties or affiliates for marketing purposes."
+                    content: "We strictly follow TCPA guidelines. Mobile information, including SMS consent data, is never shared with third parties or affiliates for marketing purposes."
                 },
                 {
                     title: "04. Data Sovereignty",
-                    content: "Clients retain rights to audit the logic built within their environment. Carrillo Dynamics operates as a technical processor, ensuring your intellectual secrets remain yours."
+                    content: "Clients retain the rights to audit the logic built in their environment. Carrillo Dynamics operates as a technical processor, ensuring your intellectual secrets remain yours."
                 }
             ]
         },
         termsOfService: {
-            title: "Engineering Terms of Engagement",
+            title: "Engineering Engagement Terms",
+            titleMain: "Engineering Engagement",
+            titleAccent: "Terms",
             lastUpdated: "Revision: 04.08.2026",
             sections: [
                 {
                     title: "01. Professional Scope",
-                    content: "Carrillo Dynamics provides technical execution through Fractional Operations Engineering. Our deliverables are functional logic and architectural blueprints, not passive consulting."
+                    content: "Carrillo Dynamics provides technical execution via Fractional Operations Engineering. Our deliverables are functional logic and architectural blueprints, not passive consulting."
                 },
                 {
                     title: "02. Intellectual Property",
-                    content: "Upon full settlement, the client holds 100% perpetual ownership of the specific automation sequences and middleware logic deployed in their stack."
+                    content: "Upon full settlement, the client owns 100% of the perpetual ownership of the specific automation sequences and middleware logic deployed within their infrastructure."
                 },
                 {
                     title: "03. Engineering Liability",
-                    content: "Services are provided on an 'Engineered Performance' basis. Liability is capped at the value of the current active sprint. Governed by the laws of the State of Illinois."
+                    content: "Services are provided on an 'As Engineered' performance basis. Liability is limited to the value of the current active engineering sprint. Governed by the laws of the State of Illinois."
                 },
                 {
                     title: "04. Termination Logic",
-                    content: "Either party may pause engineering cycles with 14 days' notice. Any completed logic remains the property of the client post-settlement."
+                    content: "Either party may pause engineering cycles with 14 days notice. Any logic completed remains the property of the client post-settlement."
                 }
             ]
         },
         faqs: [
             {
-                q: "What is the true cost of 'Lead Leakage'?",
-                a: "For high-volume firms, even a 5% leak in the intake funnel can cost $50k-$100k in annual top-line revenue. Our Forensic Audit identifies these 'silent kills'—where leads vanish between your CRM and the field tech."
+                q: "What is the actual cost of 'Lead Leakage'?",
+                a: "For high-volume firms, even a 5% leak in the intake funnel can cost between $50k - $100k in annual revenue. Our Forensic Audit identifies these 'silent kills' where leads disappear between your CRM and the field tech."
             },
             {
-                q: "How does the '60-Second Lead Rule' impact ROI?",
-                a: "A lead contacted in <60 seconds is 8x more likely to book. We engineer automated response logic that bypasses human bottlenecks, ensuring you are the first firm the homeowner hears from, 24/7."
+                q: "How does the '60-Second Rule' impact ROI?",
+                a: "A lead contacted in <60 seconds is 8x more likely to book. We engineer automated response logic that bypasses human bottlenecks, ensuring you're the first company the customer hears from, 24/7."
             },
             {
                 q: "Can we double our service volume without hiring more dispatchers?",
-                a: "Yes. By removing manual data entry and replacing probabilistic dispatch with deterministic logic, your current office staff can manage 3x the territory volume with significantly less stress."
+                a: "Yes. By eliminating manual data entry and replacing probabilistic dispatching with deterministic logic, your current office staff can manage 3x the territory volume with significantly less stress."
             },
             {
                 q: "Does your logic replace my CRM (ServiceTitan, Jobber, Housecall Pro)?",
-                a: "No. We act as a 'Force Multiplier' for your CRM. We bridge the gaps where generic software fails, building custom middleware that makes your existing tools work the way your business actually runs."
+                a: "No. Actuamos como un 'Multiplicador de Fuerza' para su CRM. Cerramos las brechas donde el software genérico falla, construyendo middleware personalizado que hace que sus herramientas actuales funcionen como su negocio realmente lo requiere."
             },
             {
-                q: "How soon can we see measurable results?",
-                a: "Initial operational wins are usually live within 14 days. We focus on high-impact bottlenecks first—typically intake flow and automated follow-ups—to secure immediate ROI for your firm."
+                q: "How soon do we see measurable results?",
+                a: "First operational wins are usually live within 14 days. We focus on high-impact bottlenecks first—like intake flow and automated follow-ups—to ensure immediate ROI."
             },
             {
-                q: "Why do you call it a 'Forensic' Lead Audit?",
-                a: "Because we don't just guess. We dive into your raw data logs to find exactly where timestamps lag and leads drop. It's an engineering autopsy of your current operation."
+                q: "Why do you call it a Forensic Lead Audit?",
+                a: "Because we don't guess. We dive into your raw data logs to find exactly where timestamps lag and where leads drop. It's an engineering autopsy of your current operation."
             },
             {
                 q: "Is my customer data secure during these automations?",
-                a: "Security is non-negotiable. We build secure, encrypted pipelines within your existing ecosystem. Your customer data remains under your control at all times; we just optimize how it flows."
+                a: "Security is non-negotiable. We build secure, encrypted pipelines within your existing ecosystem. Your customer data remains under your control at all times."
             },
             {
                 q: "What is a 'Fractional Operations Engineer'?",
                 a: "Unlike a 'consultant' who just gives advice, we are engineers who build. We act as your on-call CTO/COO, managing your technical infrastructure so you can focus on scaling the business."
             },
             {
-                q: "What happens if we have a sudden spike in volume?",
-                a: "Our systems are built for 'Elastic Scale.' While human dispatchers break under chaos, our logic manages the surge—prioritizing high-value jobs and automating standard inquiries automatically."
+                q: "What happens if we have a sudden volume spike?",
+                a: "Our systems are built for 'Elastic Scale'. While human dispatch collapses under chaos, our logic manages the surge, prioritizing high-value jobs and automating standard inquiries."
             },
             {
-                q: "Do I own the automation logic once it is built?",
+                q: "Do I own the automation logic once built?",
                 a: "100%. You own the intellectual property of the systems we build for you. We provide the engineering and the blueprints; you own the engine."
             }
         ],
         articles: [
             {
                 id: "60-second-lead-rule",
-                title: "The 60-Second Lead Rule",
-                description: "Why speed-to-lead is the only variable that matters for home service profitability.",
-                content: "# The 60-Second Lead Rule\n\nIn home services, seconds are dollars. A lead contacted within 60 seconds is 8x more likely to close than one contacted later. Most firms rely on 'Best Effort'; we engineer 'Deterministic Speed.'\n\n### The Math of Friction\n\nTraditional dispatch involves manual triage. By the time a human dials, the homeowner has already called a competitor. We bridge this via instant VoIP triggers and automated CRM injection.\n\n### Industrial Solution\n\nWe implement 'Instant-Connect' logic. The second a form is sent:\n1. Lead data hits your CRM.\n2. Your dispatch line is pinged.\n3. The prospect receives a personalized SMS.",
+                title: "The 60-Second Rule",
+                description: "Response velocity is the only critical variable for profitability.",
+                content: "### Operational Velocity\n\nIn the service industry, seconds are dollars. A lead contacted in <60 seconds closes at an 8x higher rate than one contacted in 5 minutes. Most firms suffer from 'Human Latency'—the gap between a lead arriving and a human noticing. We replace this gap with deterministic logic.\n\n### The Math of Friction\n\nManual dispatch is inherently slow. By the time a dispatcher dials, the customer has already called two competitors. Our 'Forensic Approach' eliminates this friction by injecting lead data directly into the communication pipeline in under 200ms.\n\n### Industrial Execution\n\nWe implement 'Immediate Connect' protocols:\n* **Instant CRM Injection:** No manual typing.\n* **Smart Notification:** Real-time priority alerts.\n* **Automated Engagement:** Immediate SMS/Email touch-points.",
                 date: "2026-04-01",
-                readTime: "3 min"
+                readTime: "4 min"
             },
             {
                 id: "scaling-without-hiring",
-                title: "Scaling without Hiring",
-                description: "How to increase service volume without industrial-grade administrative drag.",
-                content: "# Scaling without Hiring\n\nGrowth usually adds office drag. Every new tech adds management complexity. We argue it requires more 'logic,' not more 'bodies.'\n\n### Breaking the Ceiling\n\nTo hit higher revenue without shrinking margins, you must automate high-volume, low-value tasks. We replace manual data entry with secure pipelines.\n\n### Precision Integrity\n\nHuman error in address entry or follow-ups kills ROI. Our systems ensure 100% data integrity from intake to invoice, allowing your current team to handle 3x the volume with less stress.",
+                title: "Scaling Without Hiring",
+                description: "Increase volume without adding administrative bloat.",
+                content: "### The Staffing Trap\n\nTraditional growth adds overhead. Every new technician usually requires 0.5 additional office staff to manage the paperwork. This is a linear growth model that kills margins. We shift firms to an 'Exponential Logic' model.\n\n### Digital Infrastructure\n\nTo scale without reducing profitability, you must automate low-value tasks. We replace manual data entry, quote following, and scheduling verification with secure, rigid flows that don't sleep and don't make mistakes.\n\n### Operational Integrity\n\nManual errors are the hidden tax on your ROI. Our systems ensure total data integrity from intake to invoice, allowing you to triple your territory volume with the same office headcount.",
                 date: "2026-04-07",
-                readTime: "3 min"
+                readTime: "5 min"
             },
             {
-                id: "forensic-lead-audit",
-                title: "The Forensic Lead Audit",
-                description: "Detecting and eliminating operational leaks in your intake funnel.",
-                content: "# The Forensic Lead Audit\n\nIs your marketing budget leaking? Most firms have 'blind spots' where leads vanish between the website and the field.\n\n### The Engineering Autopsy\n\nWe track every millisecond of the journey:\n* **Form Friction:** Why they drop off before clicking submit.\n* **Triage Speed:** The actual delay before a tech is notified.\n\n### The Blueprint\n\n[LOOM_VIDEO_PLACEHOLDER]\n\nAfter auditing your raw data, we provide a Technical Blueprint to plug every leak. No more guessing; just engineered performance.",
+                id: "operational-leak-detection",
+                title: "Operations Leak Detection",
+                description: "Eliminating operational leaks in your intake funnel.",
+                content: "### Identifying the Void\n\nIs your marketing budget leaking? Most high-volume firms have 'blind spots' where leads die before they ever reach a technician. Operations Leak Detection is a deep-dive into the technical path of every lead entering your ecosystem.\n\n### Technical Autopsy\n\nWe track every millisecond of the journey:\n* **Form Friction:** Why users drop off before submission.\n* **Triage Velocity:** The actual delay in notification to your team.\n* **Closing Logic:** Identifying which automated follow-ups are failing.\n\nAudit your raw data logs and deliver a Technical Blueprint to plug every leak. No guesswork; just pure operational engineering.",
                 date: "2026-04-07",
-                readTime: "3 min"
-            },
-            {
-                id: "chicagoland-automation-edge",
-                title: "The Chicagoland Edge",
-                description: "Leveraging automation in the competitive Midwest trade landscape.",
-                content: "# The Chicagoland Edge\n\nIn the competitive Midwest market, operational speed is a strategic weapon. Chicago trade firms must differentiate or compete on price alone.\n\n### Local Friction\n\nFrom extreme weather surges to urban logistics, local firms face unique pressure. Automation allows you to absorb these spikes without operational collapse.\n\n### Scaling the City\n\nWhether managing fleets in the Loop or the suburbs, a unified digital operating system provides the top-down visibility required for market dominance.",
-                date: "2026-04-08",
-                readTime: "3 min"
-            },
-            {
-                id: "deterministic-vs-ai",
-                title: "Deterministic vs AI",
-                description: "Why trade firms need precision logic, not generative hype.",
-                content: "# Deterministic vs AI\n\nEveryone is selling AI. We sell Precision. For trade firms, a 'maybe' in your dispatch logic is unacceptable.\n\n### The Failure of Hype\n\nGenerative AI is probabilistic; it guesses. In plumbing or HVAC dispatch, you need deterministic logic—fixed rules that work every single time without exception.\n\n### Engineered Certainty\n\nWe build systems that follow your exact business rules. No hallucinations. No guesses. Just logic that ensures every job is handled according to your highest standards.",
-                date: "2026-04-08",
-                readTime: "3 min"
+                readTime: "6 min"
             }
-        ]
+        ],
+        articleLabels: {
+            abstract: "Abstract",
+            technicalSpecs: "Technical Specs",
+            integrity: "INTEGRITY",
+            integrityValue: "INDUSTRIAL GRADE",
+            protocol: "PROTOCOL",
+            protocolValue: "DETERMINISTIC",
+            latency: "LATENCY",
+            latencyValue: "< 100MS",
+            downloadPdf: "Download PDF",
+            shareEntry: "Share Entry",
+            backToArchive: "TECHNICAL ARCHIVE"
+        }
     },
     es: {
         nav: {
             home: "Inicio",
             faq: "FAQ",
-            articles: "ARTÍCULOS",
+            articles: "Artículos",
             blueprint: "OBTENER BLUEPRINT GRATIS",
             privacy: "Privacidad",
             terms: "Términos",
@@ -274,7 +298,7 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         pageTitles: {
             faq: { main: "Operaciones", accent: "FAQ" },
-            articles: { main: "Los", accent: "Artículos" }
+            articles: { main: "Archivo", accent: "Técnico" }
         },
         hero: {
             title: "Ingeniería de Flujo. Eliminación de Fricción.",
@@ -295,7 +319,10 @@ export const i18nData: Record<Language, I18nContent> = {
             capacityImpact: "Impacto de Capacidad",
             scaleMonitor: "Monitor de Escala",
             growthPotential: "Potencial de Crecimiento",
-            summaryTemplate: "Recuperar {ftu} FTU significa recuperar la capacidad real de más de {wholeFtu} operador(es) adicional(es) a tiempo completo. No solo ahorramos tiempo; recuperamos la capacidad productiva de su equipo sin añadir un solo dólar a su nómina."
+            summaryTemplate: "Recuperar {ftu} FTU significa recuperar la capacidad real de más de {wholeFtu} operador(es) adicional(es) a tiempo completo. No solo ahorramos tiempo; recuperamos la capacidad productiva de su equipo sin añadir un solo dólar a su nómina.",
+            bookStrategy: "Reservar Sesión de Estrategia 1:1",
+            successTitle: "Análisis Completado.",
+            successSub: "Su desglose de ROI personalizado ha sido diseñado. Descargue el PDF y reserve su sesión a continuación."
         },
         intake: {
             title: "Obtenga su ",
@@ -316,11 +343,13 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         privacyPolicy: {
             title: "Estándares de Gobernanza de Privacidad",
+            titleMain: "Gobernanza de",
+            titleAccent: "Privacidad",
             lastUpdated: "Revisión: 04.08.2026",
             sections: [
                 {
                     title: "01. Recopilación y Gobernanza",
-                    content: "Recopilamos datos operativos específicos necesarios para diseñar su Blueprint de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de cuellos de botella técnicos. Nos adherimos a los principios de SOC-2 para la integridad de los datos."
+                    content: "Recopilamos datos operativos específicos necesarios para diseñar su Blueprint de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de cuellos de botella técnicos. Nos adherimos a estándares de grado industrial para la integridad de los datos."
                 },
                 {
                     title: "02. Protocolos de Uso Interno",
@@ -338,6 +367,8 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         termsOfService: {
             title: "Términos de Compromiso de Ingeniería",
+            titleMain: "Compromiso de",
+            titleAccent: "Ingeniería",
             lastUpdated: "Revisión: 04.08.2026",
             sections: [
                 {
@@ -405,42 +436,39 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "60-second-lead-rule",
                 title: "La Regla de los 60 Segundos",
                 description: "La velocidad de respuesta es la única variable crítica para la rentabilidad.",
-                content: "# La Regla de los 60 Segundos\n\nEn servicios, los segundos son dólares. Un lead contactado en <60 segundos cierra 8x más. Operamos con 'Velocidad Determinista.'\n\n### Matemática de Fricción\n\nEl despacho manual es lento. Para cuando un humano marca, el cliente ya llamó a otro. Resolvemos esto con inyección CRM instantánea.\n\n### Solución Industrial\n\nImplementamos 'Conexión Inmediata':\n1. Datos al CRM al instante.\n2. Alerta inmediata al despacho.\n3. SMS automático al prospecto.",
+                content: "### Velocidad Operativa\n\nEn la industria de servicios, los segundos son dólares. Un lead contactado en <60 segundos cierra con una tasa 8 veces mayor que uno contactado en 5 minutos. La mayoría de las empresas sufren de 'Latencia Humana': el lapso entre que llega un lead y un humano lo nota. Reemplazamos este lapso con lógica determinista.\n\n### La Matemática de la Fricción\n\nEl despacho manual es intrínsecamente lento. Para cuando un despachador marca, el cliente ya ha llamado a dos competidores. Nuestro 'Enfoque Forense' elimina esta fricción inyectando los datos del lead directamente en la tubería de comunicación en menos de 200ms.\n\n### Ejecución Industrial\n\nImplementamos protocolos de 'Conexión Inmediata':\n* **Inyección Instantánea al CRM:** Sin escritura manual.\n* **Notificación Inteligente:** Alertas de prioridad en tiempo real.\n* **Compromiso Automatizado:** Puntos de contacto inmediatos por SMS/Email.",
                 date: "2026-04-01",
-                readTime: "3 min"
+                readTime: "4 min"
             },
             {
                 id: "scaling-without-hiring",
                 title: "Escalar sin Contratar",
                 description: "Aumente el volumen sin añadir lastre administrativo.",
-                content: "# Escalar sin Contratar\n\nEl crecimiento suele añadir costo. Cada técnico nuevo suma complejidad. Proponemos más 'lógica', no más 'personal'.\n\n### Rompiendo el Techo\n\nPara crecer sin reducir márgenes, debe automatizar tareas de bajo valor. Reemplazamos la entrada manual con flujos seguros.\n\n### Integridad de Datos\n\nLos errores manuales matan el ROI. Nuestros sistemas aseguran integridad total desde la admisión hasta la factura, permitiendo triplicar el volumen sin estrés.",
+                content: "### La Trampa del Personal\n\nEl crecimiento tradicional añade gastos generales. Cada nuevo técnico generalmente requiere 0.5 empleados de oficina adicionales para gestionar el papeleo. Este es un modelo de crecimiento lineal que mantiene los márgenes. Cambiamos a las empresas a un modelo de 'Lógica Exponencial'.\n\n### Infraestructura Digital\n\nPara escalar sin reducir la rentabilidad, debe automatizar las tareas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos seguros y rígidos que no duermen y no cometen errores.\n\n### Integridad Operativa\n\nLos errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión hasta la factura, lo que le permite triplicar su volumen de territorio con el mismo personal de oficina.",
                 date: "2026-04-07",
-                readTime: "3 min"
+                readTime: "5 min"
             },
             {
-                id: "forensic-lead-audit",
-                title: "La Auditoría Forense",
+                id: "operational-leak-detection",
+                title: "Detección de Fugas en Operaciones",
                 description: "Eliminando fugas operativas en su embudo de admisión.",
-                content: "# La Auditoría Forense\n\n¿Su presupuesto de marketing fuga dinero? La mayoría tiene 'puntos ciegos' donde los leads mueren antes de ser atendidos.\n\n### Autopsia Técnica\n\nRastreamos cada milisegundo:\n* **Fricción del Formulario:** Por qué abandonan.\n* **Velocidad de Triaje:** El retraso real en la notificación.\n\n### El Blueprint\n\n[LOOM_VIDEO_PLACEHOLDER]\n\nAuditamos sus datos brutos y entregamos un Blueprint Técnico para tapar cada fuga. Sin adivinanzas; solo ingeniería.",
+                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing? La mayoría de las empresas de alto volumen tienen 'puntos ciegos' donde los leads mueren antes de llegar a un técnico. La Detección de Fugas en Operaciones es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Autopsia Técnica\n\nRastreamos cada milisegundo del viaje:\n* **Fricción del Formulario:** Por qué los usuarios abandonan antes de enviar.\n* **Velocidad de Triaje:** El retraso real en la notificación a su equipo.\n* **Lógica de Cierre:** Identificando qué seguimientos automatizados están fallando.\n\nAuditamos sus registros de datos brutos y entregamos un Blueprint Técnico para tapar cada fuga. Sin adivinanzas; solo pura ingeniería operativa.",
                 date: "2026-04-07",
-                readTime: "3 min"
-            },
-            {
-                id: "chicagoland-automation-edge",
-                title: "La Ventaja Chicago",
-                description: "Automatización en el competitivo mercado de servicios del Midwest.",
-                content: "# La Ventaja Chicago\n\nEn el Midwest, la velocidad es un arma. Las empresas locales deben diferenciarse o competir solo por precio.\n\n### Fricción Local\n\nDesde picos por el clima hasta logística urbana, Chicago exige resistencia. La automatización permite absorber picos sin colapsar.\n\n### Dominio del Mercado\n\nYa sea en el Loop o suburbios, un sistema operativo digital unificado brinda la visibilidad necesaria para dominar el mercado local.",
-                date: "2026-04-08",
-                readTime: "3 min"
-            },
-            {
-                id: "deterministic-vs-ai",
-                title: "IA vs Determinismo",
-                description: "Por qué necesita lógica de precisión, no hype generativo.",
-                content: "# IA vs Determinismo\n\nTodos venden IA. Nosotros vendemos Precisión. En despacho técnico, un 'tal vez' es inaceptable.\n\n### El Fallo del Hype\n\nLa IA generativa es probabilística; adivina. En servicios críticos, necesita lógica determinista: reglas fijas que funcionen siempre.\n\n### Certeza de Ingeniería\n\nConstruimos sistemas que siguen sus reglas de negocio exactas. Sin alucinaciones. Sin dudas. Solo lógica que asegura que cada trabajo se maneje con excelencia.",
-                date: "2026-04-08",
-                readTime: "3 min"
+                readTime: "6 min"
             }
-        ]
+        ],
+        articleLabels: {
+            abstract: "Resumen",
+            technicalSpecs: "Especificaciones",
+            integrity: "INTEGRIDAD",
+            integrityValue: "GRADO INDUSTRIAL",
+            protocol: "PROTOCOLO",
+            protocolValue: "DETERMINISTA",
+            latency: "LATENCIA",
+            latencyValue: "< 100MS",
+            downloadPdf: "Descargar PDF",
+            shareEntry: "Compartir",
+            backToArchive: "ARCHIVO TÉCNICO"
+        }
     }
 };

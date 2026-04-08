@@ -112,4 +112,26 @@
   .reading-section {
     @apply py-48 px-6 max-w-4xl mx-auto w-full; /* 12rem vertical whitespace */
   }
+
+  @keyframes border-scan {
+    0%, 100% { clip-path: inset(0 0 98% 0); }
+    25% { clip-path: inset(0 98% 0 0); }
+    50% { clip-path: inset(98% 0 0 0); }
+    75% { clip-path: inset(0 0 0 98%); }
+  }
+
+  .scanner-border {
+    position: relative;
+  }
+
+  .scanner-border::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border: 1px solid #10b981;
+    opacity: 0.15;
+    animation: border-scan 8s linear infinite;
+    pointer-events: none;
+    z-index: 50;
+  }
 }

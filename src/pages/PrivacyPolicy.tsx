@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
 
       <main className="flex-1 px-6 py-40 mx-auto max-w-4xl w-full">
         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tight mb-12 text-foreground">
-          {t.privacyPolicy.title.split(' ').slice(0, -1).join(' ')} <span className="text-[#10b981] italic">{t.privacyPolicy.title.split(' ').slice(-1)}</span>
+          {t.privacyPolicy.titleMain} <span className="text-[#10b981] italic">{t.privacyPolicy.titleAccent}</span>
         </h1>
         
         <div className="space-y-16 text-muted-foreground font-medium leading-relaxed">

@@ -7,10 +7,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "./components/theme-provider";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import { LanguageProvider } from "./components/LanguageProvider";
+import { motion } from "framer-motion";
 import StructuredData from "./components/StructuredData";
 import ScrollToTop from "./components/ScrollToTop";
-import ExitIntentModal from "./components/ExitIntentModal";
-
+import PageProgressBar from "./components/PageProgressBar";
 import Index from "./pages/Index";
 const Success = React.lazy(() => import("./pages/Success"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
@@ -32,13 +32,22 @@ const App = () => (
           <BrowserRouter>
             <ScrollToTop />
             <LanguageProvider>
+              <PageProgressBar />
               <StructuredData />
-              <ExitIntentModal />
               <Suspense fallback={
                 <div className="min-h-screen bg-black flex items-center justify-center">
-                  <div className="h-1 w-32 bg-zinc-900 relative overflow-hidden">
-                    <div className="absolute inset-y-0 left-0 w-1/3 bg-[#10b981] animate-[infinite-scroll_2s_linear_infinite]" />
-                  </div>
+                  <motion.img 
+                    src="/bull_PNGs/bull.512x512.png" 
+                    alt="Carrillo Dynamics"
+                    className="h-24 w-24 object-contain"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ 
+                      duration: 0.8,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    }}
+                  />
                 </div>
               }>
                 <Routes>

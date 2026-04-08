@@ -1,11 +1,14 @@
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "../components/LanguageProvider";
-import { ArrowLeft, Clock, Calendar, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Calendar, FileText, Share2, ShieldCheck, Database, Menu } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import ArticleSidebar from "../components/ArticleSidebar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet-async";
+import ForensicBlueprint from "../components/ForensicBlueprint";
+import { Button } from "../components/ui/button";
 
 const ArticleDetail = () => {
     const { id } = useParams();
@@ -20,11 +23,32 @@ const ArticleDetail = () => {
         restDelta: 0.001
     });
 
+    const handlePrint = () => {
+        window.print();
+    };
+
+    const handleShare = async () => {
+        try {
+            if (navigator.share) {
+                await navigator.share({
+                    title: article?.title,
+                    text: article?.description,
+                    url: window.location.href,
+                });
+            } else {
+                await navigator.clipboard.writeText(window.location.href);
+                alert(lang === 'en' ? "Link copied to clipboard." : "Enlace copiado al portapapeles.");
+            }
+        } catch (err) {
+            console.error("Share failed:", err);
+        }
+    };
+
     if (!article) {
         return (
             <div className="min-h-screen flex items-center justify-center p-8 bg-background">
                 <div className="text-center space-y-6">
-                    <h1 className="text-4xl font-black uppercase tracking-tighter">Publication Not Found</h1>
+                    <h1 className="text-4xl font-black uppercase tracking-tighter text-foreground">Publication Not Found</h1>
                     <Link to={`/${lang}/articles`} className="text-[#10b981] font-mono uppercase tracking-widest hover:underline flex items-center justify-center gap-2">
                         <ArrowLeft className="h-4 w-4" /> Return to Archives
                     </Link>
@@ -34,13 +58,10 @@ const ArticleDetail = () => {
     }
 
     return (
-        <div className="bg-background min-h-screen font-sans selection:bg-[#10b981]/10">
-            <motion.div
-                className="fixed top-0 left-0 right-0 h-1 bg-[#10b981] origin-left z-[100]"
-                style={{ scaleX }}
-            />
+        <div className="bg-background min-h-screen selection:bg-[#10b981]/10">
+
             <Helmet>
-                <title>{article.title} | Carrillo Dynamics</title>
+                <title>{article.title} | Technical Whitepaper | Carrillo Dynamics</title>
                 <meta name="description" content={article.description} />
             </Helmet>
             
@@ -49,107 +70,174 @@ const ArticleDetail = () => {
             <div className="flex flex-col lg:flex-row min-h-screen bg-background pt-20">
                 <ArticleSidebar />
                 
-                <main className="flex-1 lg:ml-80 overflow-x-hidden">
-                    <div className="max-w-4xl mx-auto px-6 md:px-12 py-12 md:py-24 pt-12 md:pt-24 w-full">
+                <main className="flex-1 lg:ml-80 overflow-x-hidden relative">
+                    {/* BACKGROUND SCHEMATIC OVERLAY */}
+                    <div className="absolute inset-x-0 top-0 h-screen opacity-[0.03] pointer-events-none overflow-hidden grayscale">
+                        <ForensicBlueprint />
+                    </div>
+
+                    <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-24 relative z-10 space-y-24">
+                        
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="space-y-12"
+                            className="space-y-16"
                         >
-                            <Link 
-                                to={`/${lang}/articles`}
-                                className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground hover:text-[#10b981] transition-colors"
-                            >
-                                <ArrowLeft className="h-3 w-3" />
-                                {lang === 'en' ? 'Back to Publications' : 'Volver a Publicaciones'}
-                            </Link>
+                            {/* TECHNICAL HEADER BLOCK */}
+                            <div className="space-y-8 border-l-4 border-[#10b981] pl-8">
+                                <Link 
+                                    to={`/${lang}/articles`}
+                                    className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#10b981] hover:text-foreground transition-colors"
+                                >
+                                    <ArrowLeft className="h-3 w-3" />
+                                    {t.articleLabels.backToArchive}
+                                </Link>
 
-                            <header className="space-y-8">
-                                <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-foreground text-balance break-words">
-                                    {article.title}
-                                </h1>
-                                
-                                <div className="flex flex-wrap items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-muted-foreground pt-4 border-t border-border">
-                                    <div className="flex items-center gap-2">
+                                <div className="space-y-4">
+                                    <div className="text-[10px] font-black uppercase tracking-[0.5em] text-muted-foreground/30 font-mono">
+                                        CD-OPS // INTERNAL WHITEPAPER_{id?.toUpperCase()}
+                                    </div>
+                                    <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.8] text-foreground text-balance break-words">
+                                        {article.title}
+                                    </h1>
+                                </div>
+
+                                <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-border/50 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground font-mono">
+                                    <div className="flex items-center gap-3">
                                         <Calendar className="h-3 w-3 text-[#10b981]" />
-                                        {article.date}
+                                        <span>RELEASED: {article.date}</span>
                                     </div>
-                                    <div className="flex items-center gap-2 text-[#10b981]">
-                                        <Clock className="h-3 w-3" />
-                                        {article.readTime} {lang === 'en' ? 'READ' : 'LECTURA'}
+                                    <div className="flex items-center gap-3">
+                                        <Clock className="h-3 w-3 text-[#10b981]" />
+                                        <span>METRIC: {article.readTime} LXP</span>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <ShieldCheck className="h-3 w-3 text-[#10b981]" />
+                                        <span>VERIFIED ARCHITECTURE</span>
                                     </div>
                                 </div>
-                            </header>
+                            </div>
 
-                            <article className="
-                                prose prose-zinc dark:prose-invert 
-                                max-w-none 
-                                prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter
-                                prose-h1:hidden 
-                                prose-h3:text-lg prose-h3:md:text-xl prose-h3:font-bold prose-h3:tracking-tight prose-h3:text-[#10b981] prose-h3:break-words
-                                prose-p:text-base prose-p:md:text-lg prose-p:leading-relaxed prose-p:text-muted-foreground prose-p:whitespace-normal prose-p:break-words
-                                prose-li:text-muted-foreground
-                                space-y-8
-                            ">
-                                {article.content.split('\n\n').map((paragraph, pIdx) => {
-                                    if (paragraph.startsWith('### ')) {
-                                        return (
-                                            <h3 key={pIdx} className="pt-8 text-foreground whitespace-normal break-words leading-tight">
-                                                {paragraph.replace('### ', '').replace(/\n/g, ' ')}
-                                            </h3>
-                                        );
-                                    }
-                                    if (paragraph.startsWith('* ')) {
-                                        const items = paragraph.split('\n').filter(item => item.startsWith('* '));
-                                        return (
-                                            <ul key={pIdx} className="space-y-4 my-8 list-none p-0 m-0">
-                                                {items.map((item, iIdx) => (
-                                                    <li key={iIdx} className="flex items-start gap-4 text-muted-foreground whitespace-normal break-words">
-                                                        <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#10b981]" />
-                                                        <span className="text-base md:text-lg">{item.replace('* ', '')}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        );
-                                    }
-                                    if (paragraph.includes('[LOOM_VIDEO_PLACEHOLDER]')) {
-                                        return (
-                                            <div key={pIdx} className="aspect-video w-full bg-muted border-2 border-border my-12 relative overflow-hidden group shadow-[0_0_50px_rgba(16,185,129,0.1)]">
-                                                <iframe 
-                                                    src="https://www.loom.com/embed/5ef9b8b5c07140da933cefcc317b6544?hide_owner=true&hide_share=true&hide_title=true&hide_status_bar=true"
-                                                    allowFullScreen
-                                                    className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
-                                                />
+                            {/* WHITEPAPER CONTENT GRID */}
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                                {/* MAIN CONTENT: HIGH-DENSITY TEXT */}
+                                <div className="lg:col-span-9 space-y-12">
+                                    <article className="
+                                        prose prose-zinc dark:prose-invert 
+                                        max-w-none 
+                                        prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter
+                                        prose-h1:hidden 
+                                        prose-h3:text-2xl prose-h3:md:text-3xl prose-h3:font-black prose-h3:tracking-tighter prose-h3:text-foreground prose-h3:border-b prose-h3:border-border prose-h3:pb-4 prose-h3:mt-16
+                                        prose-p:text-lg prose-p:md:text-xl prose-p:leading-[1.6] prose-p:text-muted-foreground prose-p:font-medium prose-p:mb-8
+                                        prose-li:text-muted-foreground prose-li:font-medium
+                                        space-y-8
+                                    ">
+                                        {article.content.split('\n\n').map((paragraph, pIdx) => {
+                                            if (paragraph.startsWith('### ')) {
+                                                return (
+                                                    <h3 key={pIdx} className="text-foreground whitespace-normal break-words leading-tight">
+                                                        {paragraph.replace('### ', '').replace(/\n/g, ' ')}
+                                                    </h3>
+                                                );
+                                            }
+                                            if (paragraph.startsWith('* ')) {
+                                                const items = paragraph.split('\n').filter(item => item.startsWith('* '));
+                                                return (
+                                                    <div key={pIdx} className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16 bg-muted/5 border-2 border-border p-8 py-12 scanner-border">
+                                                        {items.map((item, iIdx) => (
+                                                            <div key={iIdx} className="flex items-start gap-4">
+                                                                 <Database className="h-5 w-5 shrink-0 text-[#10b981] mt-1" />
+                                                                 <span className="text-base md:text-lg font-black text-foreground leading-tight uppercase tracking-tight">{item.replace('* ', '')}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                );
+                                            }
+                                            if (paragraph.includes('[LOOM_VIDEO_PLACEHOLDER]')) {
+                                                return (
+                                                    <div key={pIdx} className="scanner-border aspect-video w-full bg-black border-2 border-border my-16 relative overflow-hidden group">
+                                                        <iframe 
+                                                            src="https://www.loom.com/embed/5ef9b8b5c07140da933cefcc317b6544?hide_owner=true&hide_share=true&hide_title=true&hide_status_bar=true"
+                                                            allowFullScreen
+                                                            className="absolute inset-0 w-full h-full grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                                                        />
+                                                    </div>
+                                                );
+                                            }
+                                            return <p key={pIdx} className="whitespace-normal break-words leading-relaxed first-letter:text-6xl first-letter:font-black first-letter:text-[#10b981] first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8]">{paragraph.replace(/\n/g, ' ')}</p>;
+                                        })}
+                                    </article>
+                                </div>
+
+                                {/* SIDEBAR: METADATA & QUICK LINKS (Below on mobile, Right on desktop) */}
+                                <aside className="lg:col-span-3 space-y-12 shrink-0">
+                                    <div className="space-y-6 pt-2">
+                                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#10b981]">{t.articleLabels.abstract}</h4>
+                                        <p className="text-sm text-muted-foreground font-medium leading-relaxed italic">
+                                            "{article.description}"
+                                        </p>
+                                    </div>
+
+                                    <div className="space-y-6 border-t border-border pt-8">
+                                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground">{t.articleLabels.technicalSpecs}</h4>
+                                        <div className="space-y-4 font-mono">
+                                            <div className="flex justify-between items-center text-[10px] font-bold">
+                                                <span className="text-muted-foreground">{t.articleLabels.integrity}</span>
+                                                <span className="text-[#10b981]">{t.articleLabels.integrityValue}</span>
                                             </div>
-                                        );
-                                    }
-                                    return <p key={pIdx} className="whitespace-normal break-words leading-relaxed">{paragraph.replace(/\n/g, ' ')}</p>;
-                                })}
-                            </article>
+                                            <div className="flex justify-between items-center text-[10px] font-bold">
+                                                <span className="text-muted-foreground">{t.articleLabels.protocol}</span>
+                                                <span className="text-foreground">{t.articleLabels.protocolValue}</span>
+                                            </div>
+                                            <div className="flex justify-between items-center text-[10px] font-bold">
+                                                <span className="text-muted-foreground">{t.articleLabels.latency}</span>
+                                                <span className="text-foreground">{t.articleLabels.latencyValue}</span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <section className="bg-muted/10 border-2 border-border p-6 md:p-16 mt-24 space-y-12 transition-colors relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 p-8 opacity-5">
-                                    <ExternalLink className="h-32 w-32" />
-                                </div>
-                                
-                                <div className="space-y-6 relative z-10">
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground leading-none">
-                                        {lang === 'en' ? 'Stop the leak.' : 'Detén la fuga.'} <span className="italic text-[#10b981]">{lang === 'en' ? 'Start the engine.' : 'Arranca el motor.'}</span>
+                                    <div className="space-y-4 pt-4">
+                                        <Button 
+                                            onClick={handlePrint}
+                                            variant="outline" 
+                                            className="w-full justify-start rounded-none h-12 text-[10px] font-black uppercase tracking-widest border-border hover:bg-muted/5 transition-all"
+                                        >
+                                            <FileText className="mr-3 h-4 w-4 text-[#10b981]" />
+                                            {t.articleLabels.downloadPdf}
+                                        </Button>
+                                        <Button 
+                                            onClick={handleShare}
+                                            variant="outline" 
+                                            className="w-full justify-start rounded-none h-12 text-[10px] font-black uppercase tracking-widest border-border hover:bg-muted/5 transition-all"
+                                        >
+                                            <Share2 className="mr-3 h-4 w-4 text-[#10b981]" />
+                                            {t.articleLabels.shareEntry}
+                                        </Button>
+                                    </div>
+                                </aside>
+                            </div>
+
+                            {/* FOOTER CTA SECTION */}
+                            <section className="bg-foreground text-background p-8 md:p-16 mt-24 space-y-12 transition-colors relative overflow-hidden flex flex-col items-start scanner-border print:hidden">
+                                <div className="space-y-6 relative z-10 w-full">
+
+                                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none max-w-xl">
+                                        {lang === 'en' ? 'Plug Your Operational Leaks.' : 'Tape sus Fugas Operativas.'}
                                     </h2>
-                                    <p className="text-muted-foreground font-medium max-w-2xl text-lg whitespace-normal break-words">
+                                    <p className="font-bold max-w-2xl text-lg md:text-xl opacity-60">
                                         {lang === 'en' 
-                                            ? 'Every high-volume firm has operational friction. Our Forensic Lead Audit identifies exactly where your ROI is draining. Get your custom blueprint today.'
-                                            : 'Toda empresa de alto volumen tiene fricción operativa. Nuestra Auditoría Forense identifica dónde se drena su ROI. Obtenga su blueprint hoy.'}
+                                            ? 'Stop relying on human systems for deterministic problems. Book a strategy session to map your architecture.'
+                                            : 'Deje de confiar en sistemas humanos para problemas deterministas. Reserve una sesión para mapear su arquitectura.'}
                                     </p>
                                 </div>
-                                <div className="flex flex-col sm:flex-row gap-6 relative z-10">
-                                    <Link 
-                                        to={`/${lang}#intake`}
-                                        className="h-14 px-10 bg-[#10b981] text-black font-black uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-white transition-all group"
+                                <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">
+                                    <Button 
+                                        onClick={() => window.open('https://calendly.com/nico-carrillodynamics/30min', '_blank')}
+                                        className="h-20 px-12 bg-[#10b981] text-black font-black uppercase tracking-[0.2em] rounded-none hover:bg-white transition-all flex items-center group"
                                     >
-                                        {lang === 'en' ? 'Get Free Blueprint' : 'Obtener Blueprint Gratis'}
-                                        <ArrowLeft className="h-4 w-4 rotate-180 group-hover:translate-x-1 transition-transform" />
-                                    </Link>
+                                        {lang === 'en' ? 'BOOK STRATEGY SESSION' : 'SESIÓN DE ESTRATEGIA'}
+                                        <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                                    </Button>
                                 </div>
                             </section>
                         </motion.div>
