@@ -52,8 +52,7 @@ const App = () => (
                 </div>
               }>
                 <Routes>
-                  {/* LanguageProvider handles root redirect based on browser/local storage */}
-                  <Route path="/" element={<Navigate to="/en" replace />} />
+                  {/* LanguageProvider handles root redirect based on user preference or English default */}
                   
                   {/* Bilingual Routes */}
                   <Route path="/:lang" element={<Index />} />
