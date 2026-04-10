@@ -22,7 +22,7 @@ const StructuredData = () => {
         "url": "https://carrillodynamics.com",
         "image": "https://carrillodynamics.com/bull_PNGs/bull-apple-touch-icon.png",
         "priceRange": "$$$",
-        "telephone": "+17089059254",
+        "telephone": "+17087227876",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Chicago",

@@ -38,9 +38,9 @@ const Footer = () => {
                                     <Mail className="h-3 w-3 opacity-60 group-hover:text-[#10b981] transition-colors" />
                                     engineering@carrillodynamics.com
                                 </a>
-                                <a href="tel:7089059254" className="flex items-center gap-3 hover:text-foreground transition-colors group">
+                                <a href="tel:7087227876" className="flex items-center gap-3 hover:text-foreground transition-colors group">
                                     <Phone className="h-3 w-3 opacity-60 group-hover:text-[#10b981] transition-colors" />
-                                    708-905-9254
+                                    708-722-7876
                                 </a>
                                 <div className="flex items-center gap-3 group text-muted-foreground opacity-60">
                                     <MapPin className="h-3 w-3" />
