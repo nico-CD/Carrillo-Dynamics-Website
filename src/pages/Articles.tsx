@@ -17,13 +17,18 @@ const ArticlesPage = () => {
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans transition-colors duration-300">
-            <Helmet>
-                <title>{lang === 'en' ? 'Carrillo Dynamics | Articles' : 'Carrillo Dynamics | Artículos'}</title>
-                <meta name="description" content={lang === 'en' ? 'Forensic analysis and operational blueprints for high-volume trade firms.' : 'Análisis forense y planes operativos para empresas de servicios de alto volumen.'} />
+            <Helmet htmlAttributes={{ lang: lang }}>
+                <title>{lang === 'en' ? 'Technical Archives | Carrillo Dynamics' : 'Archivos Técnicos | Carrillo Dynamics'}</title>
+                <meta name="description" content={lang === 'en' ? 'Explorations in engineering flow, eliminating friction, and industrial-grade automation blueprints.' : 'Exploraciones en ingeniería de flujo, eliminación de fricción y planos de automatización de grado industrial.'} />
                 <link rel="canonical" href={`https://carrillodynamics.com/${lang}/articles`} />
                 <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles" />
                 <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles" />
                 <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en/articles" />
+                
+                {/* Social Standardization */}
+                <meta property="og:title" content={lang === 'en' ? 'Technical Archives | Carrillo Dynamics' : 'Archivos Técnicos | Carrillo Dynamics'} />
+                <meta property="og:description" content="Forensic analysis and operational blueprints for high-volume trade firms." />
+                <meta property="og:url" content={`https://carrillodynamics.com/${lang}/articles`} />
             </Helmet>
             <Navbar />
             

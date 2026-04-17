@@ -18,13 +18,18 @@ const FAQPage = () => {
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans transition-colors duration-300">
-            <Helmet>
-                <title>{lang === 'en' ? 'Carrillo Dynamics | FAQ' : 'Carrillo Dynamics | FAQ'}</title>
+            <Helmet htmlAttributes={{ lang: lang }}>
+                <title>{lang === 'en' ? 'Support & Intelligence FAQ | Carrillo Dynamics' : 'FAQ de Soporte e Inteligencia | Carrillo Dynamics'}</title>
                 <meta name="description" content={lang === 'en' ? 'Everything you need to know about engineering flow and eliminating operational friction.' : 'Todo lo que necesita saber sobre ingeniería de flujo y eliminación de fricción operativa.'} />
                 <link rel="canonical" href={`https://carrillodynamics.com/${lang}/faq`} />
                 <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/faq" />
                 <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/faq" />
                 <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en/faq" />
+                
+                {/* Social Standardization */}
+                <meta property="og:title" content={lang === 'en' ? 'Support & Intelligence FAQ' : 'FAQ de Soporte e Inteligencia'} />
+                <meta property="og:description" content="Operational excellence through deterministic digital systems." />
+                <meta property="og:url" content={`https://carrillodynamics.com/${lang}/faq`} />
             </Helmet>
             <Navbar />
             

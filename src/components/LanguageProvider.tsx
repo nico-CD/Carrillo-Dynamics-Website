@@ -41,6 +41,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
             if (location.pathname !== `/${targetLang}`) {
                 navigate(`/${targetLang}${location.search}`, { replace: true });
             }
+        } 
+        // URL Sanitization: Enforce "No Trailing Slash" standard
+        else if (location.pathname.length > 1 && location.pathname.endsWith('/')) {
+            const cleanPath = location.pathname.slice(0, -1);
+            navigate(`${cleanPath}${location.search}`, { replace: true });
         }
     }, [location.pathname, location.search, navigate, lang]);
 

@@ -109,13 +109,20 @@ const Index = () => {
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans overflow-x-hidden transition-colors duration-300">
-            <Helmet>
-                <title>Carrillo Dynamics | Automation Agency</title>
-                <meta name="description" content={t.hero.subtitle} />
+            <Helmet htmlAttributes={{ lang: lang }}>
+                <title>{lang === 'en' ? 'Carrillo Dynamics | Industrial-Grade Automation Agency' : 'Carrillo Dynamics | Agencia de Automatización Industrial'}</title>
+                <meta name="description" content={lang === 'en' ? 'Eliminating operational friction through engineered digital systems and high-fidelity automation.' : 'Eliminando fricción operativa a través de sistemas digitales de ingeniería y automatización de alta fidelidad.'} />
                 <link rel="canonical" href={`https://carrillodynamics.com/${lang}`} />
                 <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en" />
                 <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es" />
                 <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en" />
+                
+                {/* Social Standardization */}
+                <meta property="og:title" content="Carrillo Dynamics | Automation Engineering" />
+                <meta property="og:description" content="Eliminate friction. Engineer flow." />
+                <meta property="og:url" content={`https://carrillodynamics.com/${lang}`} />
+                <meta name="twitter:title" content="Carrillo Dynamics | Automation Engineering" />
+                <meta name="twitter:description" content="Operational excellence through deterministic digital systems." />
             </Helmet>
             <Navbar />
 

@@ -62,7 +62,7 @@ const ArticleDetail = () => {
     return (
         <div className="bg-background min-h-screen selection:bg-[#10b981]/10 font-sans">
 
-            <Helmet>
+            <Helmet htmlAttributes={{ lang: lang }}>
                 <title>{article.title} | Technical Whitepaper | Carrillo Dynamics</title>
                 <meta name="description" content={article.description} />
                 <link rel="canonical" href={canonicalUrl} />
@@ -70,11 +70,12 @@ const ArticleDetail = () => {
                 <link rel="alternate" hreflang="es" href={`https://carrillodynamics.com/es/articles/${id}`} />
                 <link rel="alternate" hreflang="x-default" href={`https://carrillodynamics.com/en/articles/${id}`} />
                 
-                {/* Dynamic OG image for sharing specific articles */}
-                <meta property="og:title" content={`${article.title} | Carrillo Dynamics`} />
+                {/* Social Standardization */}
+                <meta property="og:title" content={`${article.title} | Technical Analysis | CD`} />
                 <meta property="og:description" content={article.description} />
+                <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:image" content="/bull_PNGs/bull.512x512.webp" />
-                <meta name="twitter:title" content={`${article.title} | Carrillo Dynamics`} />
+                <meta name="twitter:title" content={`${article.title} | Technical Analysis | CD`} />
                 <meta name="twitter:description" content={article.description} />
             </Helmet>
             

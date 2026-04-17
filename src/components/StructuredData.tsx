@@ -47,6 +47,20 @@ const StructuredData = () => {
         ]
     };
 
+    // New Breadcrumb Schema for search result trails
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": lang === 'en' ? "Home" : "Inicio",
+                "item": `https://carrillodynamics.com/${lang}`
+            }
+        ]
+    };
+
     return (
         <>
             <script type="application/ld+json">
@@ -54,6 +68,9 @@ const StructuredData = () => {
             </script>
             <script type="application/ld+json">
                 {JSON.stringify(professionalServiceSchema)}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify(breadcrumbSchema)}
             </script>
         </>
     );
