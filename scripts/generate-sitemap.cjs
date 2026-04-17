@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * CARRILO DYNAMICS | SITEMAP ENGINE v1.0
+ * CARRILO DYNAMICS | SITEMAP ENGINE v1.1
  * This script extracts article IDs directly from the i18n source
  * and generates a strictly formatted XML sitemap.
  */
@@ -12,18 +12,17 @@ const OUTPUT_PATH = path.join(__dirname, '../public/sitemap.xml');
 const BASE_URL = 'https://carrillodynamics.com';
 
 function generate() {
-    console.log('--- CD SITEMAP ENGINE: STARTING ---');
+    console.log('--- CD SITEMAP ENGINE [v1.1]: STARTING ---');
     
     try {
         const content = fs.readFileSync(I18N_PATH, 'utf8');
         
-        // Extract IDs using regex to avoid complex TS/ESM compilation in build script
-        // Specifically look for the English articles array segment
-        const enSection = content.split("en: {")[1].split("es: {")[0];
-        const idMatches = enSection.match(/id:\s*"(.*?)"/g);
-        const articleIds = idMatches ? idMatches.map(m => m.match(/"(.*?)"/)[1]) : [];
+        // Robust ID extraction: Scan entire file, then uniqueify
+        const idMatches = content.match(/id:\s*["'](.*?)["']/g);
+        const allIds = idMatches ? idMatches.map(m => m.match(/["'](.*?)["']/)[1]) : [];
+        const articleIds = [...new Set(allIds)];
         
-        console.log(`Detected Articles: ${articleIds.length}`);
+        console.log(`Detected Unique Articles: ${articleIds.length}`);
 
         const staticPages = [
             { path: '', freq: 'weekly', priority: '1.0' },
