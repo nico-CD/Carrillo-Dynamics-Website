@@ -57,6 +57,7 @@ function generate() {
                 xml += `  <url>\n`;
                 xml += `    <loc>${BASE_URL}/${lang}/articles/${id}</loc>\n`;
                 xml += `    <lastmod>${today}</lastmod>\n`;
+                xml += `    <changefreq>weekly</changefreq>\n`;
                 xml += `    <priority>0.8</priority>\n`;
                 xml += `    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/articles/${id}"/>\n`;
                 xml += `    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es/articles/${id}"/>\n`;
