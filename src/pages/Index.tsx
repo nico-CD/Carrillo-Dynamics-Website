@@ -49,8 +49,8 @@ const Index = () => {
     const form = useForm<IntakeValues>({
         resolver: zodResolver(intakeSchema),
         defaultValues: {
-            firstName: "", 
-            email: "", 
+            firstName: "",
+            email: "",
             companyName: "",
             companyWebsite: "",
             industry: undefined,
@@ -118,7 +118,7 @@ const Index = () => {
 
             {/* SEGMENT 2: THE PROOF (CALCULATOR) */}
             <section id="calculator" className="border-b border-border bg-background transition-colors duration-300">
-                <motion.div 
+                <motion.div
                     className="reading-section py-32"
                     {...revealProps}
                 >
@@ -139,7 +139,7 @@ const Index = () => {
 
             {/* Bridge CTA */}
             <section className="bg-background py-24 px-6 border-b border-border transition-colors duration-300">
-                <motion.div 
+                <motion.div
                     {...revealProps}
                     className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
                 >
@@ -157,7 +157,7 @@ const Index = () => {
                             size="lg"
                             className="h-20 w-full sm:w-fit rounded-none px-12 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] text-black shadow-[0_0_50px_rgba(16,185,129,0.2)] transition-all border-none"
                         >
-                            {lang === 'en' ? 'GET FREE BLUEPRINT' : 'OBTENER BLUEPRINT GRATIS'}
+                            {lang === 'en' ? 'GET FREE BLUEPRINT' : 'CONSIGUE BLUEPRINT GRATIS'}
                             <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
                         </Button>
                     </div>
@@ -171,8 +171,8 @@ const Index = () => {
 
             {/* SEGMENT 4: THE INTAKE FORM */}
             <section id="intake" className="px-6 py-48 bg-background relative z-10 transition-colors duration-300">
-                <motion.div 
-                    ref={formRef} 
+                <motion.div
+                    ref={formRef}
                     className="mx-auto max-w-4xl scroll-mt-24"
                     {...revealProps}
                 >
@@ -200,13 +200,13 @@ const Index = () => {
                                                         {t.intake.fullName}
                                                     </FormLabel>
                                                     <FormControl>
-                                                        <Input 
+                                                        <Input
                                                             id="lead_name"
                                                             name="lead_name"
-                                                            required 
-                                                            placeholder={lang === 'en' ? "John Doe" : "Juan Martinez"} 
-                                                            className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/30" 
-                                                            {...field} 
+                                                            required
+                                                            placeholder={lang === 'en' ? "John Doe" : "Juan Martinez"}
+                                                            className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/30"
+                                                            {...field}
                                                         />
                                                     </FormControl>
                                                     <FormMessage />
@@ -218,14 +218,14 @@ const Index = () => {
                                                         {t.intake.email}
                                                     </FormLabel>
                                                     <FormControl>
-                                                        <Input 
+                                                        <Input
                                                             id="email"
                                                             name="email"
-                                                            required 
-                                                            type="email" 
-                                                            placeholder="john@company.com" 
-                                                            className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/30" 
-                                                            {...field} 
+                                                            required
+                                                            type="email"
+                                                            placeholder="john@company.com"
+                                                            className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/30"
+                                                            {...field}
                                                         />
                                                     </FormControl>
                                                     <FormMessage />
@@ -240,13 +240,13 @@ const Index = () => {
                                                         {t.intake.companyName}
                                                     </FormLabel>
                                                     <FormControl>
-                                                        <Input 
+                                                        <Input
                                                             id="company_name"
                                                             name="company_name"
-                                                            required 
-                                                            placeholder="ACME Corp" 
-                                                            className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/30" 
-                                                            {...field} 
+                                                            required
+                                                            placeholder="ACME Corp"
+                                                            className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/30"
+                                                            {...field}
                                                         />
                                                     </FormControl>
                                                     <FormMessage />
@@ -258,13 +258,13 @@ const Index = () => {
                                                         {t.intake.companyWebsite}
                                                     </FormLabel>
                                                     <FormControl>
-                                                        <Input 
+                                                        <Input
                                                             id="company_website"
                                                             name="company_website"
-                                                            required 
-                                                            placeholder="https://company.com" 
-                                                            className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/30" 
-                                                            {...field} 
+                                                            required
+                                                            placeholder="https://company.com"
+                                                            className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium placeholder:text-muted-foreground/30"
+                                                            {...field}
                                                         />
                                                     </FormControl>
                                                     <FormMessage />
@@ -280,11 +280,11 @@ const Index = () => {
                                                     </FormLabel>
                                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                                         <FormControl>
-                                                            <SelectTrigger 
+                                                            <SelectTrigger
                                                                 id="service_type"
                                                                 className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium"
                                                             >
-                                                                 <SelectValue placeholder={t.intake.industryPlaceholder} />
+                                                                <SelectValue placeholder={t.intake.industryPlaceholder} />
                                                             </SelectTrigger>
                                                         </FormControl>
                                                         <SelectContent className="rounded-none border-2 border-border bg-background">
@@ -305,7 +305,7 @@ const Index = () => {
                                                     </FormLabel>
                                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                                         <FormControl>
-                                                            <SelectTrigger 
+                                                            <SelectTrigger
                                                                 id="bottleneck"
                                                                 className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium"
                                                             >
@@ -328,11 +328,11 @@ const Index = () => {
                                         <FormField control={form.control} name="consent" render={({ field }) => (
                                             <FormItem className="flex flex-row items-start space-x-4 space-y-0 p-4 bg-muted/20 border border-border transition-colors duration-300">
                                                 <FormControl>
-                                                    <Checkbox 
+                                                    <Checkbox
                                                         id="consent"
-                                                        checked={field.value} 
-                                                        onCheckedChange={field.onChange} 
-                                                        className="mt-1 border-border data-[state=checked]:bg-[#10b981] data-[state=checked]:border-[#10b981] rounded-none transition-colors" 
+                                                        checked={field.value}
+                                                        onCheckedChange={field.onChange}
+                                                        className="mt-1 border-border data-[state=checked]:bg-[#10b981] data-[state=checked]:border-[#10b981] rounded-none transition-colors"
                                                     />
                                                 </FormControl>
                                                 <div className="space-y-1 leading-none">
@@ -352,7 +352,7 @@ const Index = () => {
                                         type="submit"
                                         size="lg"
                                         disabled={isLoading}
-                                        className="w-full h-20 md:h-24 rounded-none bg-[#10b981] hover:bg-[#0ea672] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] text-black text-xl font-black uppercase tracking-[0.3em] transition-all px-4 disabled:opacity-50 disabled:cursor-not-allowed group border-none"
+                                        className="w-full h-20 md:h-24 rounded-none bg-[#10b981] hover:bg-[#0ea672] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] text-black text-base md:text-xl font-black uppercase tracking-[0.1em] md:tracking-[0.3em] transition-all px-4 disabled:opacity-50 disabled:cursor-not-allowed group border-none"
                                     >
                                         {isLoading ? (
                                             <div className="flex items-center gap-4">

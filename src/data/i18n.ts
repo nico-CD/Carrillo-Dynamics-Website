@@ -313,7 +313,7 @@ export const i18nData: Record<Language, I18nContent> = {
         success: {
             title: "Solicitud ",
             titleItalic: "Recibida.",
-            description: "Estoy revisando personalmente su flujo de trabajo ahora mismo. Esté atento a un correo mío. Le enviaré un blueprint de video personalizado abordando su cuello de botella específico en menos de 24 horas.",
+            description: "Estoy revisando personalmente su flujo de trabajo ahora mismo. Esté atento a un correo mío. Le enviaré un blueprint de video personalizado abordando su obstáculo principal específico en menos de 24 horas.",
             founder: "- Nico Carrillo (Fundador de Carrillo Dynamics)",
             cta: "Volver al Inicio"
         },
@@ -348,7 +348,7 @@ export const i18nData: Record<Language, I18nContent> = {
         intake: {
             title: "Obtenga su ",
             titleItalic: "Blueprint Personalizado Gratis.",
-            subtitle: "Dígame dónde están sus cuellos de botella manuales. En 24 horas, le enviaré un análisis de video personalizado y un blueprint de automatización.",
+            subtitle: "Dígame dónde están sus obstáculos principales manuales. En 24 horas, le enviaré un análisis de video personalizado y un blueprint de automatización.",
             fullName: "Nombre Completo",
             email: "Email de Negocios",
             companyName: "Nombre de la Empresa",
@@ -356,7 +356,7 @@ export const i18nData: Record<Language, I18nContent> = {
             industry: "Industria",
             industryPlaceholder: "Seleccione su industria",
             bottleneck: "Obstáculo Principal",
-            bottleneckPlaceholder: "Seleccionar cuello de botella",
+            bottleneckPlaceholder: "Seleccionar obstáculo principal",
             consent: "Doy mi consentimiento para el Análisis del Blueprint y actualizaciones ocasionales de estrategia.",
             consentPrivacy: "Los datos se procesan de acuerdo con nuestros Estándares de Gobernanza de Privacidad.",
             submit: "Consigue Blueprint",
@@ -370,7 +370,7 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Recopilación y Gobernanza",
-                    content: "Recopilamos datos operativos específicos necesarios para diseñar su Blueprint de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de cuellos de botella técnicos. Nos adherimos a estándares de grado industrial para la integridad de los datos."
+                    content: "Recopilamos datos operativos específicos necesarios para diseñar su Blueprint de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de obstáculos principales técnicos. Nos adherimos a estándares de grado industrial para la integridad de los datos."
                 },
                 {
                     title: "02. Protocolos de Uso Interno",
@@ -417,7 +417,7 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "¿Cómo impacta la 'Regla de los 60 Segundos' en el ROI?",
-                a: "Un lead contactado en <60 segundos tiene 8 veces más probabilidades de reservar. Diseñamos lógica de respuesta automatizada que evita los cuellos de botella humanos, asegurando que sea la primera empresa que el cliente escuche, 24/7."
+                a: "Un lead contactado en <60 segundos tiene 8 veces más probabilidades de reservar. Diseñamos lógica de respuesta automatizada que evita los obstáculos principales humanos, asegurando que sea la primera empresa que el cliente escuche, 24/7."
             },
             {
                 q: "¿Podemos duplicar nuestro volumen de servicios sin contratar más despachadores?",
@@ -429,7 +429,7 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "¿Qué tan pronto podemos ver resultados medibles?",
-                a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los cuellos de botella de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
+                a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los obstáculos principales de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
             },
             {
                 q: "¿Por qué lo llaman Blueprint de Automatización?",
