@@ -62,9 +62,9 @@ const BlueprintProtocol = () => {
             icon: Search,
             step: "01",
             title: "Análisis",
-            desc: "Mapeo del caos de programación, cuellos de botella en el despacho e ineficiencias de seguimiento.",
+            desc: "Mapeo del caos de programación, obstáculos principales en el despacho e ineficiencias de seguimiento.",
             bullets: [
-                "Descubrimiento de Cuellos de Botella Operativos",
+                "Descubrimiento de Obstáculos Principales Operativos",
                 "Auditoría de Integridad del Flujo de Datos",
                 "Identificación de Fugas en la Fuerza Laboral"
             ]
