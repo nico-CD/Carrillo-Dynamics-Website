@@ -130,7 +130,7 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Technical", accent: "Archives" }
         },
         hero: {
-            title: "Engineered Precision. Industrial Grit.",
+            title: "Your team is spending hours on",
             subtitle: "We build deterministic operating systems for high-volume service businesses.",
             cta: "Get Started",
             audit: "Book Strategy Session"
@@ -305,7 +305,7 @@ export const i18nData: Record<Language, I18nContent> = {
             home: "Inicio",
             faq: "FAQ",
             articles: "Artículos",
-            blueprint: "OBTENER BLUEPRINT GRATIS",
+            blueprint: "CONSIGUE BLUEPRINT GRATIS",
             privacy: "Privacidad",
             terms: "Términos",
             strategy: "Sesión de Estrategia"
@@ -322,7 +322,7 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Archivo", accent: "Técnico" }
         },
         hero: {
-            title: "Precisión de Ingeniería. Tesón Industrial.",
+            title: "Tu equipo gasta horas en",
             subtitle: "Construimos sistemas operativos deterministas para empresas de servicios de alto volumen.",
             cta: "Comenzar",
             audit: "Sesión de Estrategia"
@@ -355,11 +355,11 @@ export const i18nData: Record<Language, I18nContent> = {
             companyWebsite: "Sitio Web de la Empresa",
             industry: "Industria",
             industryPlaceholder: "Seleccione su industria",
-            bottleneck: "Cuello de Botella Principal",
+            bottleneck: "Obstáculo Principal",
             bottleneckPlaceholder: "Seleccionar cuello de botella",
             consent: "Doy mi consentimiento para el Análisis del Blueprint y actualizaciones ocasionales de estrategia.",
             consentPrivacy: "Los datos se procesan de acuerdo con nuestros Estándares de Gobernanza de Privacidad.",
-            submit: "Contactar",
+            submit: "Consigue Blueprint",
             submitting: "Iniciando_"
         },
         privacyPolicy: {

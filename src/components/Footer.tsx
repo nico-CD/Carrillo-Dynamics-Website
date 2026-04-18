@@ -26,7 +26,8 @@ const Footer = () => {
                         </div>
                         <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] leading-relaxed transition-colors duration-300">
                             {lang === 'en' ? 'Engineered Precision. Industrial Grit.' : 'Precisión de Ingeniería. Tesón Industrial.'}<br />
-                            Chicago, IL. {new Date().getFullYear()}
+                            211 W. Wacker Dr, Ste 120, Chicago, IL 60606<br />
+                            Managing Member: Nicolas S. Carrillo
                         </p>
                     </div>
 
@@ -46,7 +47,7 @@ const Footer = () => {
                                 </a>
                                 <div className="flex items-center gap-3 group text-muted-foreground opacity-60">
                                     <MapPin className="h-3 w-3" />
-                                    Chicago Metropolitan Area
+                                    Loop, Chicago, IL
                                 </div>
                             </div>
                         </div>
