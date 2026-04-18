@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { Loader2, ArrowRight, Calendar } from "lucide-react";
+import { Loader2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -10,18 +10,17 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import Navbar from "@/components/Navbar";
 import InteractiveCalculator from "@/components/InteractiveCalculator";
-import { useNavigate } from "react-router-dom";
-import CalendlyModal from "@/components/CalendlyModal";
+import { useNavigate, useLocation } from "react-router-dom";
 import Hero from "@/components/sections/Hero";
 import BlueprintProtocol from "@/components/sections/BlueprintProtocol";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import SEOManager from "@/components/SEOManager";
 
 // Logic & Types
 import { intakeSchema, IntakeValues } from "@/types/intake";
 import { useIntake } from "@/hooks/useIntake";
 import { useTranslation } from "@/components/LanguageProvider";
-import { Helmet } from "react-helmet-async";
 
 const INDUSTRIES = [
     { en: "HVAC / Plumbing / Electrical", es: "HVAC / Plomería / Electricidad" },
@@ -44,6 +43,7 @@ const Index = () => {
     const { lang, t } = useTranslation();
     const formRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
+    const location = useLocation();
     const { isLoading, submitIntake } = useIntake();
 
     const form = useForm<IntakeValues>({
@@ -80,8 +80,7 @@ const Index = () => {
 
     // Funnel Logic: Hash Check for redirect continuity
     useEffect(() => {
-        if (window.location.hash === '#intake') {
-            // Small timeout to ensure hydration/rendering is complete
+        if (location.hash === '#intake') {
             const timer = setTimeout(() => scrollToForm(), 500);
             return () => clearTimeout(timer);
         }
@@ -95,7 +94,7 @@ const Index = () => {
         const success = await submitIntake(data);
         if (success) {
             localStorage.removeItem('carrillo_dynamics_intake');
-            navigate(`/${lang}/success`);
+            navigate(`/success`);
             window.scrollTo(0, 0);
         }
     };
@@ -109,21 +108,7 @@ const Index = () => {
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans overflow-x-hidden transition-colors duration-300">
-            <Helmet htmlAttributes={{ lang: lang }}>
-                <title>{lang === 'en' ? 'Carrillo Dynamics | Industrial-Grade Automation Agency' : 'Carrillo Dynamics | Agencia de Automatización Industrial'}</title>
-                <meta name="description" content={lang === 'en' ? 'Eliminating operational friction through engineered digital systems and high-fidelity automation.' : 'Eliminando fricción operativa a través de sistemas digitales de ingeniería y automatización de alta fidelidad.'} />
-                <link rel="canonical" href={`https://carrillodynamics.com/${lang}`} />
-                <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en" />
-                <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es" />
-                <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en" />
-                
-                {/* Social Standardization */}
-                <meta property="og:title" content="Carrillo Dynamics | Automation Engineering" />
-                <meta property="og:description" content="Eliminate friction. Engineer flow." />
-                <meta property="og:url" content={`https://carrillodynamics.com/${lang}`} />
-                <meta name="twitter:title" content="Carrillo Dynamics | Automation Engineering" />
-                <meta name="twitter:description" content="Operational excellence through deterministic digital systems." />
-            </Helmet>
+            <SEOManager />
             <Navbar />
 
             {/* SEGMENT 1: HERO */}
@@ -299,7 +284,7 @@ const Index = () => {
                                                                 id="service_type"
                                                                 className="h-16 rounded-none border-2 border-border bg-background px-6 text-foreground focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] transition-all font-medium"
                                                             >
-                                                                <SelectValue placeholder={t.intake.industryPlaceholder} />
+                                                                 <SelectValue placeholder={t.intake.industryPlaceholder} />
                                                             </SelectTrigger>
                                                         </FormControl>
                                                         <SelectContent className="rounded-none border-2 border-border bg-background">

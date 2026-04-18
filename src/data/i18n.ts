@@ -130,7 +130,7 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Technical", accent: "Archives" }
         },
         hero: {
-            title: "Engineer Flow. Eliminate Friction.",
+            title: "Engineered Precision. Industrial Grit.",
             subtitle: "We build deterministic operating systems for high-volume service businesses.",
             cta: "Get Started",
             audit: "Book Strategy Session"
@@ -190,7 +190,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 },
                 {
                     title: "04. Data Sovereignty",
-                    content: "Clients retain the rights to audit the logic built in their environment. Carrillo Dynamics operates as a technical processor, ensuring your intellectual secrets remain yours."
+                    content: "Clients retain the rights to audit the logic built in their environment. Carrillo Dynamics LLC operates as a technical processor, ensuring your intellectual secrets remain yours."
                 }
             ]
         },
@@ -202,7 +202,7 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Professional Scope",
-                    content: "Carrillo Dynamics provides technical execution via Fractional Operations Engineering. Our deliverables are functional logic and architectural blueprints, not passive consulting."
+                    content: "Carrillo Dynamics LLC provides technical execution via Fractional Operations Engineering. Our deliverables are functional logic and architectural blueprints, not passive consulting."
                 },
                 {
                     title: "02. Intellectual Property",
@@ -221,7 +221,7 @@ export const i18nData: Record<Language, I18nContent> = {
         faqs: [
             {
                 q: "What is the actual cost of 'Lead Leakage'?",
-                a: "For high-volume firms, even a 5% leak in the intake funnel can cost between $50k - $100k in annual revenue. Our Forensic Audit identifies these 'silent kills' where leads disappear between your CRM and the field tech."
+                a: "For high-volume firms, even a 5% leak in the intake funnel can cost between an estimated $50k - $100k in annual revenue. Our Automation Blueprint identifies these 'silent kills' where leads disappear between your CRM and the field tech."
             },
             {
                 q: "How does the '60-Second Rule' impact ROI?",
@@ -229,7 +229,7 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "Can we double our service volume without hiring more dispatchers?",
-                a: "Yes. By eliminating manual data entry and replacing probabilistic dispatching with deterministic logic, your current office staff can manage 3x the territory volume with significantly less stress."
+                a: "Positioned for growth. By automating manual data entry and replacing probabilistic dispatching with deterministic logic, your current office staff can manage 3x the territory volume with significantly less stress."
             },
             {
                 q: "Does your logic replace my CRM (ServiceTitan, Jobber, Housecall Pro)?",
@@ -237,11 +237,11 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "How soon do we see measurable results?",
-                a: "First operational wins are usually live within 14 days. We focus on high-impact bottlenecks first, such as intake flow and automated follow-ups, to ensure immediate ROI."
+                a: "First operational wins are usually live within 14 days. We focus on high-impact bottlenecks first, such as intake flow and automated follow-ups, to drive measurable ROI."
             },
             {
-                q: "Why do you call it a Forensic Lead Audit?",
-                a: "Because we don't guess. We dive into your raw data logs to find exactly where timestamps lag and where leads drop. It's an engineering autopsy of your current operation."
+                q: "Why do you call it an Automation Blueprint?",
+                a: "Because we don't guess. We dive into your raw data logs to find exactly where timestamps lag and where leads drop. It's an engineering blueprint of your current operation."
             },
             {
                 q: "Is my customer data secure during these automations?",
@@ -265,7 +265,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "60-second-lead-rule",
                 title: "The 60-Second Rule",
                 description: "In high-volume service, response velocity is the single most critical variable for your bottom line.",
-                content: "### Operational Velocity\n\nIn the service industry, seconds are dollars. A lead contacted in under 60 seconds closes at a rate eight times higher than one contacted even five minutes later. Most firms suffer from what we call Human Latency, which is the costly gap between a lead arriving and your team actually noticing it. We replace this inconsistent gap with deterministic logic that acts instantly.\n\n### The Math of Friction\n\nManual dispatch is inherently slow and prone to failure. By the time a dispatcher dials, the customer has often already called two competitors. Our forensic approach eliminates this friction by injecting lead data directly into your communication pipeline in under 200ms, ensuring you are always the first point of contact.\n\n### Industrial Execution\n\nWe implement immediate connect protocols to maintain this speed. This includes instant CRM injection to eliminate manual typing, real-time priority alerts for your best leads, and automated engagement touch-points that hit the customer's phone the moment they hit submit.",
+                content: "### Operational Velocity\n\nIn the service industry, seconds are dollars. A lead contacted in under 60 seconds closes at a rate eight times higher than one contacted even five minutes later. Most firms suffer from what we call Human Latency, which is the costly gap between a lead arriving and your team actually noticing it. We replace this inconsistent gap with deterministic logic that acts instantly.\n\n### The Math of Friction\n\nManual dispatch is inherently slow and prone to failure. By the time a dispatcher dials, the customer has often already called two competitors. Our engineered approach minimizes this friction by injecting lead data directly into your communication pipeline in under 200ms, ensuring you are always the first point of contact.\n\n### Industrial Execution\n\nWe implement immediate connect protocols to maintain this speed. This includes instant CRM injection to automate manual typing, real-time priority alerts for your best leads, and automated engagement touch-points that hit the customer's phone the moment they hit submit.",
                 date: "2026-04-01",
                 readTime: "4 min"
             },
@@ -281,7 +281,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "operational-leak-detection",
                 title: "Operations Leak Detection",
                 description: "Stop the invisible revenue loss in your intake funnel.",
-                content: "### Identifying the Void\n\nIs your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. Operations Leak Detection is a deep-dive into the technical path of every single lead that enters your ecosystem.\n\n### Technical Autopsy\n\nWe track every millisecond of the journey to find where you are losing money. We analyze form friction to see why users drop off, triage velocity to measure the actual delay in notifications, and closing logic to identify which follow-ups are failing to convert. This data allows us to build a technical blueprint to plug every leak with pure operational engineering.",
+                content: "### Identifying the Void\n\nIs your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. Automation Blueprint is a deep-dive into the technical path of every single lead that enters your ecosystem.\n\n### Technical Analysis\n\nWe track every millisecond of the journey to find where you are losing money. We analyze form friction to see why users drop off, triage velocity to measure the actual delay in notifications, and closing logic to identify which follow-ups are failing to convert. This data allows us to build a technical blueprint to plug every leak with pure operational engineering.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }
@@ -322,7 +322,7 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Archivo", accent: "Técnico" }
         },
         hero: {
-            title: "Ingeniería de Flujo. Eliminación de Fricción.",
+            title: "Precisión de Ingeniería. Tesón Industrial.",
             subtitle: "Construimos sistemas operativos deterministas para empresas de servicios de alto volumen.",
             cta: "Comenzar",
             audit: "Sesión de Estrategia"
@@ -382,7 +382,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 },
                 {
                     title: "04. Soberanía de Datos",
-                    content: "Los clientes conservan los derechos para auditar la lógica construida en su entorno. Carrillo Dynamics opera como un procesador técnico, asegurando que sus secretos intelectuales sigan siendo suyos."
+                    content: "Los clientes conservan los derechos para auditar la lógica construida en su entorno. Carrillo Dynamics LLC opera como un procesador técnico, asegurando que sus secretos intelectuales sigan siendo suyos."
                 }
             ]
         },
@@ -394,7 +394,7 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Alcance Profesional",
-                    content: "Carrillo Dynamics proporciona ejecución técnica a través de Ingeniería de Operaciones Fraccional. Nuestros entregables son lógica funcional y blueprints arquitectónicos, no consultoría pasiva."
+                    content: "Carrillo Dynamics LLC proporciona ejecución técnica a través de Ingeniería de Operaciones Fraccional. Nuestros entregables son lógica funcional y blueprints arquitectónicos, no consultoría pasiva."
                 },
                 {
                     title: "02. Propiedad Intelectual",
@@ -413,7 +413,7 @@ export const i18nData: Record<Language, I18nContent> = {
         faqs: [
             {
                 q: "¿Cuál es el costo real de la 'Fuga de Leads'?",
-                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar entre $50k y $100k en ingresos anuales. Nuestra Auditoría Forense identifica estas 'muertes silenciosas', donde los leads desaparecen entre su CRM y el técnico de campo."
+                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar entre un estimado de $50k y $100k en ingresos anuales. Nuestro Blueprint de Automatización identifica estas 'muertes silenciosas', donde los leads desaparecen entre su CRM y el técnico de campo."
             },
             {
                 q: "¿Cómo impacta la 'Regla de los 60 Segundos' en el ROI?",
@@ -421,7 +421,7 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "¿Podemos duplicar nuestro volumen de servicios sin contratar más despachadores?",
-                a: "Sí. Al eliminar la entrada manual de datos y reemplazar el despacho probabilístico con lógica determinista, su personal de oficina actual puede gestionar 3 veces el volumen de territorio con significativamente menos estrés."
+                a: "Posicionados para el crecimiento. Al automatizar la entrada manual de datos y reemplazar el despacho probabilístico con lógica determinista, su personal de oficina actual puede gestionar 3 veces el volumen de territorio con significativamente menos estrés."
             },
             {
                 q: "¿Su lógica reemplaza mi CRM (ServiceTitan, Jobber, Housecall Pro)?",
@@ -429,11 +429,11 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "¿Qué tan pronto podemos ver resultados medibles?",
-                a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los cuellos de botella de alto impacto, como el flujo de admisión y los seguimientos automatizados, para asegurar un ROI inmediato."
+                a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los cuellos de botella de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
             },
             {
-                q: "¿Por qué lo llaman Auditoría Forense de Leads?",
-                a: "Porque no adivinamos. Nos sumergimos en sus registros de datos brutos para encontrar exactamente dónde se retrasan los tiempos y dónde se pierden los leads. Es una autopsia de ingeniería de su operación actual."
+                q: "¿Por qué lo llaman Blueprint de Automatización?",
+                a: "Porque no adivinamos. Nos sumergimos en sus registros de datos brutos para encontrar exactamente dónde se retrasan los tiempos y dónde se pierden los leads. Es un blueprint de ingeniería de su operación actual."
             },
             {
                 q: "¿Están seguros los datos de mis clientes durante estas automatizaciones?",
@@ -457,7 +457,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "60-second-lead-rule",
                 title: "La Regla de los 60 Segundos",
                 description: "La velocidad de respuesta es la variable más crítica para su rentabilidad.",
-                content: "### Velocidad Operativa\n\nEn la industria de servicios, los segundos se traducen en dólares. Un cliente potenciales contactado en menos de 60 segundos cierra con una tasa ocho veces mayor que uno contactado apenas cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre que llega un prospecto y su equipo lo nota. Reemplazamos este lapso inconsistente con lógica determinista que actúa al instante.\n\n### La Matemática de la Fricción\n\nEl despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque forense elimina esta fricción inyectando los datos del cliente directamente en su flujo de comunicación en menos de 200 ms, asegurando que usted sea siempre el primer punto de contacto.\n\n### Ejecución Industrial\n\nImplementamos protocolos de conexión inmediata para mantener esta velocidad. Esto incluye la inyección instantánea al CRM para eliminar la escritura manual, alertas de prioridad en tiempo real para sus mejores leads y puntos de contacto automatizados que llegan al teléfono del cliente en el momento en que envía su solicitud.",
+                content: "### Velocidad Operativa\n\nEn la industria de servicios, los segundos se traducen en dólares. Un cliente potenciales contactado en menos de 60 segundos cierra con una tasa ocho veces mayor que uno contactado apenas cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre que llega un prospecto y su equipo lo nota. Reemplazamos este lapso inconsistente con lógica determinista que actúa al instante.\n\n### La Matemática de la Fricción\n\nEl despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque de ingeniería minimiza esta fricción inyectando los datos del cliente directamente en su flujo de comunicación en menos de 200 ms, asegurando que usted sea siempre el primer punto de contacto.\n\n### Ejecución Industrial\n\nImplementamos protocolos de conexión inmediata para mantener esta velocidad. Esto incluye la inyección instantánea al CRM para automatizar la escritura manual, alertas de prioridad en tiempo real para sus mejores leads y puntos de contacto automatizados que llegan al teléfono del cliente en el momento en que envía su solicitud.",
                 date: "2026-04-01",
                 readTime: "4 min"
             },
@@ -473,7 +473,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "operational-leak-detection",
                 title: "Detección de Fugas en Operaciones",
                 description: "Detenga la pérdida invisible de ingresos en su embudo de admisión.",
-                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas de alto volumen tienen puntos ciegos donde los leads mueren silenciosamente antes de llegar a un técnico. La detección de fugas en operaciones es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Autopsia Técnica\n\nRastreamos cada milisegundo del viaje para encontrar dónde está perdiendo dinero. Analizamos la fricción del formulario para ver por qué los usuarios abandonan, la velocidad de triaje para medir el retraso real en las notificaciones y la lógica de cierre para identificar qué seguimientos están fallando al convertir. Estos datos nos permiten construir un blueprint técnico para tapar cada fuga con pura ingeniería operativa.",
+                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas de alto volumen tienen puntos ciegos donde los leads mueren silenciosamente antes de llegar a un técnico. El Blueprint de Automatización es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Análisis Técnico\n\nRastreamos cada milisegundo del viaje para encontrar dónde está perdiendo dinero. Analizamos la fricción del formulario para ver por qué los usuarios abandonan, la velocidad de triaje para medir el retraso real en las notificaciones y la lógica de cierre para identificar qué seguimientos están fallando al convertir. Estos datos nos permiten construir un blueprint técnico para tapar cada fuga con pura ingeniería operativa.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }

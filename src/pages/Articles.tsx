@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import { useTranslation } from "@/components/LanguageProvider";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, FileText } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import { ArrowRight, Clock } from "lucide-react";
+import SEOManager from "@/components/SEOManager";
 
 const ArticlesPage = () => {
     const { lang, t } = useTranslation();
@@ -17,19 +17,10 @@ const ArticlesPage = () => {
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans transition-colors duration-300">
-            <Helmet htmlAttributes={{ lang: lang }}>
-                <title>{lang === 'en' ? 'Technical Archives | Carrillo Dynamics' : 'Archivos Técnicos | Carrillo Dynamics'}</title>
-                <meta name="description" content={lang === 'en' ? 'Explorations in engineering flow, eliminating friction, and industrial-grade automation blueprints.' : 'Exploraciones en ingeniería de flujo, eliminación de fricción y planos de automatización de grado industrial.'} />
-                <link rel="canonical" href={`https://carrillodynamics.com/${lang}/articles`} />
-                <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles" />
-                <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles" />
-                <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en/articles" />
-                
-                {/* Social Standardization */}
-                <meta property="og:title" content={lang === 'en' ? 'Technical Archives | Carrillo Dynamics' : 'Archivos Técnicos | Carrillo Dynamics'} />
-                <meta property="og:description" content="Forensic analysis and operational blueprints for high-volume trade firms." />
-                <meta property="og:url" content={`https://carrillodynamics.com/${lang}/articles`} />
-            </Helmet>
+            <SEOManager 
+                title={lang === 'en' ? 'Technical Archive' : 'Archivo Técnico'}
+                description={lang === 'en' ? 'Explorations in engineering flow, industrial grit, and automation blueprints.' : 'Exploraciones en ingeniería de flujo, tesón industrial y blueprints de automatización.'}
+            />
             <Navbar />
             
             <main className="pt-32 pb-24 px-6 max-w-6xl mx-auto w-full">
@@ -40,8 +31,8 @@ const ArticlesPage = () => {
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed">
                             {lang === 'en' 
-                                ? 'Technical documentation on engineering flow and eliminating industrial-grade friction.'
-                                : 'Documentación técnica sobre ingeniería de flujo y eliminación de fricción de grado industrial.'}
+                                ? 'Technical documentation and engineering insights from Chicago-based automation cycles.'
+                                : 'Documentación técnica y conocimientos de ingeniería de los ciclos de automatización con sede en Chicago.'}
                         </p>
                     </div>
 
@@ -49,7 +40,7 @@ const ArticlesPage = () => {
                         {t.articles.map((article, idx) => (
                             <Link 
                                 key={article.id}
-                                to={`/${lang}/articles/${article.id}`}
+                                to={`/articles/${article.id}`}
                                 className={`group bg-background p-8 md:p-12 hover:bg-muted/50 transition-all flex flex-col justify-between h-full space-y-12 ${idx === 0 ? 'md:col-span-2' : ''}`}
                             >
                                 <div className="space-y-6">

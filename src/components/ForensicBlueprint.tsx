@@ -33,7 +33,7 @@ export default function ForensicBlueprint() {
                     
                     {/* Process Node */}
                     <rect x="350" y="240" width="100" height="80" />
-                    <text x="360" y="285" className="fill-emerald-500 stroke-none text-[10px] font-mono font-bold">CORE_AUDIT</text>
+                    <text x="360" y="285" className="fill-emerald-500 stroke-none text-[10px] font-mono font-bold">BLUEPRINT</text>
                     
                     {/* Output Node */}
                     <rect x="600" y="250" width="100" height="60" />

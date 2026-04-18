@@ -54,7 +54,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
                 >
                     <div className="space-y-4 text-left">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-tight leading-[0.85] text-foreground transition-colors duration-300">
-                            {lang === 'en' ? 'Your team is spending hours on ' : 'Su equipo está perdiendo horas en '}
+                            {t.hero.title}<br />
                             <span className="text-[#10b981] italic">
                                 {currentWord}
                                 <span className="animate-pulse">|</span>

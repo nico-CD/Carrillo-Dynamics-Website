@@ -16,8 +16,8 @@ export default function WorkflowAnimation() {
         { 
             id: 'audit', 
             icon: Search, 
-            label: lang === 'en' ? 'FORENSIC AUDIT' : 'AUDITORÍA',
-            metrics: ['SCAN: ACTIVE', 'LEAK: DETECTED']
+            label: lang === 'en' ? 'AUTO BLUEPRINT' : 'BLUEPRINT AUTOM.',
+            metrics: ['MAP: ACTIVE', 'LEAK: DETECTED']
         },
         { 
             id: 'blueprint', 

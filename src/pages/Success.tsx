@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckCircle2 } from "lucide-react";
 import { useTranslation } from "@/components/LanguageProvider";
-import { Helmet } from "react-helmet-async";
+import SEOManager from "@/components/SEOManager";
 
 const Success = () => {
     const navigate = useNavigate();
@@ -13,11 +13,10 @@ const Success = () => {
 
     return (
         <div className="min-h-screen bg-background flex flex-col selection:bg-[#10b981]/30 transition-colors duration-300 font-sans">
-            <Helmet htmlAttributes={{ lang: lang }}>
-                <title>{lang === 'en' ? 'Submission Received | Success' : 'Solicitud Recibida | Éxito'}</title>
-                <meta name="robots" content="noindex" />
-                <link rel="canonical" href={`https://carrillodynamics.com/${lang}/success`} />
-            </Helmet>
+            <SEOManager 
+                title={lang === 'en' ? 'Submission Received | Success' : 'Solicitud Recibida | Éxito'}
+                isNoindex={true}
+            />
             <Navbar />
             
             <main className="flex-1 flex flex-col items-center justify-center px-6 py-24 relative z-10">
@@ -50,7 +49,7 @@ const Success = () => {
 
                     <div className="pt-8">
                         <Button
-                            onClick={() => navigate(`/${lang}`)}
+                            onClick={() => navigate('/')}
                             className="h-14 rounded-none px-8 text-[10px] font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] text-black transition-all shadow-[0_0_30px_rgba(16,185,129,0.2)] border-none"
                         >
                             {t.success.cta}

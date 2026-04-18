@@ -122,8 +122,12 @@ const ExitIntentModal = () => {
                                     animate={{ opacity: 1 }}
                                     className="bg-muted/10 border-2 border-[#10b981]/30 p-12 text-center space-y-6"
                                 >
-                                    <div className="text-[#10b981] font-black uppercase tracking-widest">TRANSMISSION SUCCESSFUL</div>
-                                    <p className="text-muted-foreground">Check your email for the Forensic Checklist.</p>
+                                    <div className="text-[#10b981] font-black uppercase tracking-widest">{lang === 'en' ? 'TRANSMISSION SUCCESSFUL' : 'TRANSMISIÓN EXITOSA'}</div>
+                                    <p className="text-muted-foreground">
+                                        {lang === 'en' 
+                                            ? 'Check your email for the Automation Checklist.' 
+                                            : 'Revise su correo para la Lista de Automatización.'}
+                                    </p>
                                 </motion.div>
                             )}
                         </motion.div>

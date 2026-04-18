@@ -1,99 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home / Intake -->
   <url>
-    <loc>https://carrillodynamics.com/en</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://carrillodynamics.com/</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/"/>
   </url>
+
+  <!-- FAQ Section -->
   <url>
-    <loc>https://carrillodynamics.com/es</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es"/>
-  </url>
-  <url>
-    <loc>https://carrillodynamics.com/en/faq</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://carrillodynamics.com/faq</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/faq"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/faq"/>
   </url>
+
+  <!-- Technical Archives -->
   <url>
-    <loc>https://carrillodynamics.com/es/faq</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/faq"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/faq"/>
-  </url>
-  <url>
-    <loc>https://carrillodynamics.com/en/articles</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://carrillodynamics.com/articles</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/articles"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/articles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/articles"/>
   </url>
+
+  <!-- Article: 60-Second Rule -->
   <url>
-    <loc>https://carrillodynamics.com/es/articles</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles"/>
-  </url>
-  <url>
-    <loc>https://carrillodynamics.com/en/articles/60-second-lead-rule</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://carrillodynamics.com/articles/60-second-lead-rule</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles/60-second-lead-rule"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles/60-second-lead-rule"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/articles/60-second-lead-rule"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/articles/60-second-lead-rule"/>
   </url>
+
+  <!-- Article: Scaling Without Hiring -->
   <url>
-    <loc>https://carrillodynamics.com/es/articles/60-second-lead-rule</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://carrillodynamics.com/articles/scaling-without-hiring</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles/60-second-lead-rule"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles/60-second-lead-rule"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/articles/scaling-without-hiring"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/articles/scaling-without-hiring"/>
   </url>
+
+  <!-- Article: Operational Leak Detection -->
   <url>
-    <loc>https://carrillodynamics.com/en/articles/scaling-without-hiring</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://carrillodynamics.com/articles/operational-leak-detection</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles/scaling-without-hiring"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles/scaling-without-hiring"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/articles/operational-leak-detection"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/articles/operational-leak-detection"/>
   </url>
+
+  <!-- Privacy Governance -->
   <url>
-    <loc>https://carrillodynamics.com/es/articles/scaling-without-hiring</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles/scaling-without-hiring"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles/scaling-without-hiring"/>
+    <loc>https://carrillodynamics.com/privacy</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/privacy"/>
   </url>
+
+  <!-- Terms of Service -->
   <url>
-    <loc>https://carrillodynamics.com/en/articles/operational-leak-detection</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles/operational-leak-detection"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles/operational-leak-detection"/>
-  </url>
-  <url>
-    <loc>https://carrillodynamics.com/es/articles/operational-leak-detection</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/articles/operational-leak-detection"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/articles/operational-leak-detection"/>
+    <loc>https://carrillodynamics.com/terms</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carrillodynamics.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://carrillodynamics.com/terms"/>
   </url>
 </urlset>

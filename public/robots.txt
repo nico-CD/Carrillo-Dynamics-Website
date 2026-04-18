@@ -1,5 +1,5 @@
-# CA CARRILLO DYNAMICS | ROBOTS.TXT
-# BILINGUAL SAGE-O CONFIGURATION
+# CARRILLO DYNAMICS LLC | ROBOTS.TXT
+# AEO/GEO OPTIMIZED CONFIGURATION
 # ------------------------------
 
 User-agent: *
@@ -8,26 +8,26 @@ Disallow: /success
 Disallow: /unsubscribed
 Disallow: /api/
 
-# AI CRAWLERS GATING (SAGE-O PHASE 3)
+# AI CRAWLERS GATING (AEO/GEO FINAL)
 User-agent: GPTBot
 Allow: /articles/
-Allow: /en/articles/
-Allow: /es/articles/
+Allow: /faq
+
+User-agent: ClaudeBot
+Allow: /articles/
+Allow: /faq
 
 User-agent: Claude-Web
 Allow: /articles/
-Allow: /en/articles/
-Allow: /es/articles/
+Allow: /faq
 
 User-agent: PerplexityBot
 Allow: /articles/
-Allow: /en/articles/
-Allow: /es/articles/
+Allow: /faq
 
 User-agent: Google-Extended
 Allow: /articles/
-Allow: /en/articles/
-Allow: /es/articles/
+Allow: /faq
 
-# SITEMAP INDEX
+# SITE MAP INDEX
 Sitemap: https://carrillodynamics.com/sitemap.xml

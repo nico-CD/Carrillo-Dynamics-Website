@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "../components/LanguageProvider";
-import { ArrowLeft, ArrowRight, Clock, Calendar, FileText, Share2, ShieldCheck, Database, Menu } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Calendar, ShieldCheck, Database } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import ArticleSidebar from "../components/ArticleSidebar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Helmet } from "react-helmet-async";
+import SEOManager from "../components/SEOManager";
 import ForensicBlueprint from "../components/ForensicBlueprint";
 import { Button } from "../components/ui/button";
 
@@ -16,7 +16,6 @@ const ArticleDetail = () => {
     const { t, lang } = useTranslation();
     
     const article = t.articles.find(a => a.id === id);
-    const canonicalUrl = `https://carrillodynamics.com/${lang}/articles/${id}`;
     
     const { scrollYProgress } = useScroll();
     const scaleX = useSpring(scrollYProgress, {
@@ -51,7 +50,7 @@ const ArticleDetail = () => {
             <div className="min-h-screen flex items-center justify-center p-8 bg-background font-sans">
                 <div className="text-center space-y-6">
                     <h1 className="text-4xl font-black uppercase tracking-tighter text-foreground">Publication Not Found</h1>
-                    <Link to={`/${lang}/articles`} className="text-[#10b981] font-mono uppercase tracking-widest hover:underline flex items-center justify-center gap-2">
+                    <Link to="/articles" className="text-[#10b981] font-mono uppercase tracking-widest hover:underline flex items-center justify-center gap-2">
                         <ArrowLeft className="h-4 w-4" /> Return to Archives
                     </Link>
                 </div>
@@ -61,23 +60,10 @@ const ArticleDetail = () => {
 
     return (
         <div className="bg-background min-h-screen selection:bg-[#10b981]/10 font-sans">
-
-            <Helmet htmlAttributes={{ lang: lang }}>
-                <title>{article.title} | Technical Whitepaper | Carrillo Dynamics</title>
-                <meta name="description" content={article.description} />
-                <link rel="canonical" href={canonicalUrl} />
-                <link rel="alternate" hreflang="en" href={`https://carrillodynamics.com/en/articles/${id}`} />
-                <link rel="alternate" hreflang="es" href={`https://carrillodynamics.com/es/articles/${id}`} />
-                <link rel="alternate" hreflang="x-default" href={`https://carrillodynamics.com/en/articles/${id}`} />
-                
-                {/* Social Standardization */}
-                <meta property="og:title" content={`${article.title} | Technical Analysis | CD`} />
-                <meta property="og:description" content={article.description} />
-                <meta property="og:url" content={canonicalUrl} />
-                <meta property="og:image" content="/bull_PNGs/bull.512x512.webp" />
-                <meta name="twitter:title" content={`${article.title} | Technical Analysis | CD`} />
-                <meta name="twitter:description" content={article.description} />
-            </Helmet>
+            <SEOManager 
+                title={article.title}
+                description={article.description}
+            />
             
             <Navbar />
             
@@ -100,7 +86,7 @@ const ArticleDetail = () => {
                             {/* TECHNICAL HEADER BLOCK */}
                             <div className="space-y-8 border-l-4 border-[#10b981] pl-8">
                                 <Link 
-                                    to={`/${lang}/articles`}
+                                    to="/articles"
                                     className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#10b981] hover:text-foreground transition-colors"
                                 >
                                     <ArrowLeft className="h-3 w-3" />
@@ -155,7 +141,7 @@ const ArticleDetail = () => {
                                                     <div className="flex items-start gap-4">
                                                          <Database className="h-5 w-5 shrink-0 text-[#10b981] mt-1" />
                                                          <span className="text-base md:text-lg font-black text-foreground break-words leading-tight uppercase tracking-tight">{props.children}</span>
-                                                    </div>
+                                                     </div>
                                                 )
                                             }}
                                         >
@@ -197,7 +183,7 @@ const ArticleDetail = () => {
                                             variant="outline" 
                                             className="w-full justify-start rounded-none h-12 text-[10px] font-black uppercase tracking-widest border-border hover:bg-muted/5 transition-all"
                                         >
-                                            <FileText className="mr-3 h-4 w-4 text-[#10b981]" />
+                                            <ShieldCheck className="mr-3 h-4 w-4 text-[#10b981]" />
                                             {t.articleLabels.downloadPdf}
                                         </Button>
                                         <Button 
@@ -205,7 +191,7 @@ const ArticleDetail = () => {
                                             variant="outline" 
                                             className="w-full justify-start rounded-none h-12 text-[10px] font-black uppercase tracking-widest border-border hover:bg-muted/5 transition-all"
                                         >
-                                            <Share2 className="mr-3 h-4 w-4 text-[#10b981]" />
+                                            <ShieldCheck className="mr-3 h-4 w-4 text-[#10b981]" />
                                             {t.articleLabels.shareEntry}
                                         </Button>
                                     </div>
@@ -217,12 +203,12 @@ const ArticleDetail = () => {
                                 <div className="space-y-6 relative z-10 w-full">
 
                                     <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none max-w-xl">
-                                        {lang === 'en' ? 'Plug Your Operational Leaks.' : 'Tape sus Fugas Operativas.'}
+                                        {lang === 'en' ? 'Engineered Precision. Industrial Grit.' : 'Precisión de Ingeniería. Tesón Industrial.'}
                                     </h2>
                                     <p className="font-bold max-w-2xl text-lg md:text-xl opacity-60">
                                         {lang === 'en' 
-                                            ? 'Stop relying on human systems for deterministic problems. Book a strategy session to map your architecture.'
-                                            : 'Deje de confiar en sistemas humanos para problemas deterministas. Reserve una sesión para mapear su arquitectura.'}
+                                            ? 'Request your custom Automation Blueprint to identify and solve operational leaks.'
+                                            : 'Solicite su Blueprint de Automatización personalizado para identificar y resolver fugas operativas.'}
                                     </p>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">

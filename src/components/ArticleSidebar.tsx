@@ -17,7 +17,7 @@ const ArticleSidebar = () => {
                         {t.articles.map((article) => (
                             <Link
                                 key={article.id}
-                                to={`/${lang}/articles/${article.id}`}
+                                to={`/articles/${article.id}`}
                                 className={cn(
                                     "block px-4 py-3 text-sm font-bold uppercase tracking-tight transition-all border-l-2",
                                     id === article.id
@@ -47,13 +47,13 @@ const ArticleSidebar = () => {
                             onClick={() => {
                                 const el = document.getElementById('intake');
                                 if (el) el.scrollIntoView({ behavior: 'smooth' });
-                                else window.location.href = `/${lang}#intake`;
+                                else window.location.href = "/#intake";
                             }}
                             className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors text-left w-full"
                         >
                             {lang === 'en' ? 'Request Blueprint' : 'Solicitar Blueprint'}
                         </button>
-                        <Link to={`/${lang}/faq`} className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors">
+                        <Link to="/faq" className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors">
                             {t.nav.faq}
                         </Link>
                     </nav>

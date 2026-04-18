@@ -12,6 +12,7 @@ import StructuredData from "./components/StructuredData";
 import ScrollToTop from "./components/ScrollToTop";
 import PageProgressBar from "./components/PageProgressBar";
 import Breadcrumbs from "./components/Breadcrumbs";
+import SEOManager from "./components/SEOManager";
 import Index from "./pages/Index";
 import Success from "./pages/Success";
 const NotFound = React.lazy(() => import("./pages/NotFound"));
@@ -32,6 +33,7 @@ const App = () => (
           <BrowserRouter>
             <ScrollToTop />
             <LanguageProvider>
+              <SEOManager />
               <PageProgressBar />
               <StructuredData />
               <Breadcrumbs />
@@ -52,18 +54,14 @@ const App = () => (
                 </div>
               }>
                 <Routes>
-                  {/* LanguageProvider handles root redirect based on user preference or English default */}
-                  
-                  {/* Bilingual Routes */}
-                  <Route path="/:lang" element={<Index />} />
-                  <Route path="/:lang/success" element={<Success />} />
-                  <Route path="/:lang/privacy" element={<PrivacyPolicy />} />
-                  <Route path="/:lang/terms" element={<TermsConditions />} />
-                  <Route path="/:lang/faq" element={<FAQPage />} />
-                  <Route path="/:lang/unsubscribed" element={<Unsubscribed />} />
-                  <Route path="/:lang/articles" element={<ArticlesPage />} />
-                  <Route path="/:lang/articles/:id" element={<ArticleDetail />} />
-
+                  <Route path="/" element={<Index />} />
+                  <Route path="/success" element={<Success />} />
+                  <Route path="/privacy" element={<PrivacyPolicy />} />
+                  <Route path="/terms" element={<TermsConditions />} />
+                  <Route path="/faq" element={<FAQPage />} />
+                  <Route path="/unsubscribed" element={<Unsubscribed />} />
+                  <Route path="/articles" element={<ArticlesPage />} />
+                  <Route path="/articles/:id" element={<ArticleDetail />} />
                   
                   <Route path="*" element={<NotFound />} />
                 </Routes>

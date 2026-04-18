@@ -4,18 +4,17 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { UserMinus } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import SEOManager from "@/components/SEOManager";
 
 const Unsubscribed = () => {
     const navigate = useNavigate();
 
     return (
         <div className="min-h-screen bg-background flex flex-col selection:bg-[#10b981]/30 transition-colors duration-300">
-            <Helmet htmlAttributes={{ lang: 'en' }}>
-                <title>Unsubscribed | Carrillo Dynamics</title>
-                <meta name="robots" content="noindex" />
-                <link rel="canonical" href={`https://carrillodynamics.com/en/unsubscribed`} />
-            </Helmet>
+            <SEOManager 
+                title="Unsubscribed | Carrillo Dynamics"
+                isNoindex={true}
+            />
             <Navbar />
             
             <main className="flex-1 flex flex-col items-center justify-center px-6 py-24 relative z-10">

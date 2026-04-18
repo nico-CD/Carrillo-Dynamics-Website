@@ -1,23 +1,17 @@
-import FastTrackNav from "@/components/FastTrackNav";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useState } from "react";
 import { useTranslation } from "@/components/LanguageProvider";
-import { Helmet } from "react-helmet-async";
+import SEOManager from "@/components/SEOManager";
 
 const TermsConditions = () => {
   const { lang, t } = useTranslation();
-  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-primary/30 font-sans flex flex-col transition-colors duration-300">
-      <Helmet htmlAttributes={{ lang: lang }}>
-          <title>{lang === 'en' ? 'Terms & Conditions | Carrillo Dynamics' : 'Términos y Condiciones | Carrillo Dynamics'}</title>
-          <meta name="description" content={t.termsOfService.titleMain} />
-          <link rel="canonical" href={`https://carrillodynamics.com/${lang}/terms`} />
-          <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/terms" />
-          <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/terms" />
-      </Helmet>
+      <SEOManager 
+        title={lang === 'en' ? 'Terms of Service' : 'Términos de Servicio'}
+        description={t.termsOfService.titleMain}
+      />
       <Navbar />
       <main className="flex-1 px-6 py-40 mx-auto max-w-4xl w-full">
         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tight mb-12 text-foreground">

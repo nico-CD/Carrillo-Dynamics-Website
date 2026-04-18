@@ -1,23 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FastTrackNav from "@/components/FastTrackNav";
-import { useState } from "react";
 import { useTranslation } from "@/components/LanguageProvider";
-import { Helmet } from "react-helmet-async";
+import SEOManager from "@/components/SEOManager";
 
 const PrivacyPolicy = () => {
   const { lang, t } = useTranslation();
-  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-primary/30 font-sans flex flex-col transition-colors duration-300">
-      <Helmet htmlAttributes={{ lang: lang }}>
-          <title>{lang === 'en' ? 'Privacy Policy | Carrillo Dynamics' : 'Política de Privacidad | Carrillo Dynamics'}</title>
-          <meta name="description" content={t.privacyPolicy.titleMain} />
-          <link rel="canonical" href={`https://carrillodynamics.com/${lang}/privacy`} />
-          <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/privacy" />
-          <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/privacy" />
-      </Helmet>
+      <SEOManager 
+        title={lang === 'en' ? 'Privacy Policy' : 'Política de Privacidad'}
+        description={t.privacyPolicy.titleMain}
+      />
       <Navbar />
 
       <main className="flex-1 px-6 py-40 mx-auto max-w-4xl w-full">

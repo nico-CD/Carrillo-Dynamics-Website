@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/components/LanguageProvider";
-import { Helmet } from "react-helmet-async";
+import SEOManager from "@/components/SEOManager";
 
 const FAQPage = () => {
     const { lang, t } = useTranslation();
@@ -18,19 +18,12 @@ const FAQPage = () => {
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans transition-colors duration-300">
-            <Helmet htmlAttributes={{ lang: lang }}>
-                <title>{lang === 'en' ? 'Support & Intelligence FAQ | Carrillo Dynamics' : 'FAQ de Soporte e Inteligencia | Carrillo Dynamics'}</title>
-                <meta name="description" content={lang === 'en' ? 'Everything you need to know about engineering flow and eliminating operational friction.' : 'Todo lo que necesita saber sobre ingeniería de flujo y eliminación de fricción operativa.'} />
-                <link rel="canonical" href={`https://carrillodynamics.com/${lang}/faq`} />
-                <link rel="alternate" hreflang="en" href="https://carrillodynamics.com/en/faq" />
-                <link rel="alternate" hreflang="es" href="https://carrillodynamics.com/es/faq" />
-                <link rel="alternate" hreflang="x-default" href="https://carrillodynamics.com/en/faq" />
-                
-                {/* Social Standardization */}
-                <meta property="og:title" content={lang === 'en' ? 'Support & Intelligence FAQ' : 'FAQ de Soporte e Inteligencia'} />
-                <meta property="og:description" content="Operational excellence through deterministic digital systems." />
-                <meta property="og:url" content={`https://carrillodynamics.com/${lang}/faq`} />
-            </Helmet>
+            <SEOManager 
+                title={lang === 'en' ? 'Support & Intelligence FAQ' : 'FAQ de Soporte e Inteligencia'}
+                description={lang === 'en' 
+                    ? 'Everything you need to know about our industrial-grade automation blueprints and systems engineering.' 
+                    : 'Todo lo que necesita saber sobre nuestros blueprints de automatización de grado industrial e ingeniería de sistemas.'}
+            />
             <Navbar />
             
             <main className="pt-32 pb-24 px-6 max-w-4xl mx-auto w-full">
@@ -41,8 +34,8 @@ const FAQPage = () => {
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed max-w-2xl">
                             {lang === 'en' 
-                                ? 'Everything you need to know about engineering flow and eliminating operational friction.'
-                                : 'Todo lo que necesita saber sobre ingeniería de flujo y eliminación de fricción operativa.'}
+                                ? 'Technical documentation and answers regarding our industrial-grade systems engineering protocol.'
+                                : 'Documentación técnica y respuestas sobre nuestro protocolo de ingeniería de sistemas de grado industrial.'}
                         </p>
                     </div>
 
@@ -69,4 +62,3 @@ const FAQPage = () => {
 };
 
 export default FAQPage;
-

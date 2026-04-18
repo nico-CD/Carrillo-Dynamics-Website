@@ -14,7 +14,7 @@ const Navbar = () => {
             className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b border-border bg-background/95 backdrop-blur-sm transition-all duration-300"
         >
             <Link 
-                to={`/${lang}`}
+                to="/"
                 className="flex items-center gap-4 cursor-pointer group"
             >
                 <div className="relative h-10 w-10 overflow-hidden">
@@ -29,8 +29,8 @@ const Navbar = () => {
 
             <div className="flex items-center gap-4 md:gap-6">
                 <nav className="hidden md:flex items-center gap-8 mr-8">
-                    <Link to={`/${lang}/articles`} className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.articles}</Link>
-                    <Link to={`/${lang}/faq`} className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.faq}</Link>
+                    <Link to="/articles" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.articles}</Link>
+                    <Link to="/faq" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.faq}</Link>
                 </nav>
 
                 <Button
