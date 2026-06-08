@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
@@ -45,6 +45,7 @@ const Index = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { isLoading, submitIntake } = useIntake();
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const form = useForm<IntakeValues>({
         resolver: zodResolver(intakeSchema),
@@ -94,13 +95,13 @@ const Index = () => {
         const success = await submitIntake(data);
         if (success) {
             localStorage.removeItem('carrillo_dynamics_intake');
-            navigate(`/success`);
-            window.scrollTo(0, 0);
+            setIsSubmitted(true);
+            scrollToForm();
         }
     };
 
     const revealProps = {
-        initial: { opacity: 0, y: 10 },
+        initial: { opacity: 0, y: 20 },
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true, margin: "-100px" },
         transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }
@@ -112,14 +113,14 @@ const Index = () => {
             <Navbar />
 
             {/* SEGMENT 1: HERO */}
-            <section className="border-b border-border">
+            <section className="border-b border-foreground/5">
                 <Hero onContactClick={scrollToForm} />
             </section>
 
             {/* SEGMENT 2: THE PROOF (CALCULATOR) */}
-            <section id="calculator" className="border-b border-border bg-background transition-colors duration-300">
+            <section id="calculator" className="border-b border-foreground/5 bg-background transition-colors duration-300">
                 <motion.div
-                    className="reading-section py-32"
+                    className="reading-section py-32 md:py-40"
                     {...revealProps}
                 >
                     <div className="mb-20 text-left">
@@ -138,7 +139,7 @@ const Index = () => {
             </section>
 
             {/* Bridge CTA */}
-            <section className="bg-background py-24 px-6 border-b border-border transition-colors duration-300">
+            <section className="bg-background py-32 md:py-40 px-6 border-b border-foreground/5 transition-colors duration-300">
                 <motion.div
                     {...revealProps}
                     className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
@@ -170,7 +171,7 @@ const Index = () => {
             </ErrorBoundary>
 
             {/* SEGMENT 4: THE INTAKE FORM */}
-            <section id="intake" className="px-6 py-48 bg-background relative z-10 transition-colors duration-300">
+            <section id="intake" className="px-6 py-32 md:py-40 bg-background relative z-10 transition-colors duration-300">
                 <motion.div
                     ref={formRef}
                     className="mx-auto max-w-4xl scroll-mt-24"
@@ -189,6 +190,26 @@ const Index = () => {
                     <div className="bg-muted/10 border-2 border-border p-8 md:p-16 relative overflow-hidden flex flex-col justify-center transition-colors duration-300 shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(0,0,0,0.3)]">
                         <div className="absolute top-0 left-0 w-full h-[2px] bg-foreground opacity-5" />
 
+                        {isSubmitted ? (
+                            <div className="w-full min-h-[400px] flex flex-col items-center justify-center animate-in fade-in duration-1000 text-center">
+                                <h3 className="text-2xl md:text-3xl font-black uppercase mb-4 text-[#10b981] tracking-widest">
+                                    {lang === 'en' ? 'Processing Complete' : 'Procesamiento Completo'}
+                                </h3>
+                                <p className="text-muted-foreground font-medium mb-12 max-w-md">
+                                    {lang === 'en' 
+                                        ? 'Your operational blueprint has been initialized. Proceed to schedule your strategy session.' 
+                                        : 'Su blueprint operativo ha sido inicializado. Proceda a programar su sesión de estrategia.'}
+                                </p>
+                                <Button
+                                    onClick={() => navigate('/book')}
+                                    size="lg"
+                                    className="h-20 w-full sm:w-fit rounded-none px-12 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-foreground hover:text-background text-black shadow-[0_0_50px_rgba(16,185,129,0.2)] transition-all border-none group"
+                                >
+                                    {lang === 'en' ? 'CONTINUE TO SCHEDULING' : 'CONTINUAR A PROGRAMACIÓN'}
+                                    <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
+                                </Button>
+                            </div>
+                        ) : (
                         <div className="w-full">
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-12">
@@ -369,6 +390,7 @@ const Index = () => {
                                 </form>
                             </Form>
                         </div>
+                        )}
                     </div>
                 </motion.div>
             </section>

@@ -1,152 +1,119 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { UserPlus, Search, FileText, ArrowRight } from 'lucide-react';
 import { useTranslation } from './LanguageProvider';
 
 export default function WorkflowAnimation() {
     const { lang } = useTranslation();
 
-    const nodes = [
-        { 
-            id: 'lead', 
-            icon: UserPlus, 
-            label: lang === 'en' ? 'LEAD INTAKE' : 'CAPTACIÓN',
-            metrics: ['PING: 14ms', 'VOL: HIGH']
-        },
-        { 
-            id: 'audit', 
-            icon: Search, 
-            label: lang === 'en' ? 'AUTO BLUEPRINT' : 'BLUEPRINT AUTOM.',
-            metrics: ['MAP: ACTIVE', 'LEAK: DETECTED']
-        },
-        { 
-            id: 'blueprint', 
-            icon: FileText, 
-            label: lang === 'en' ? 'TECHNICAL BLUEPRINT' : 'BLUEPRINT TÉCNICO',
-            metrics: ['OS: READY', 'FLOW: OPTIMAL']
-        }
-    ];
-
     return (
-        <div className="w-full h-full min-h-[500px] bg-black flex flex-col items-center justify-center p-8 overflow-hidden relative font-mono">
-            
-            {/* Background Grid - More subtle and technical */}
-            <div className="absolute inset-0 pointer-events-none opacity-10">
-                <div className="absolute inset-0" style={{ 
-                    backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)',
-                    backgroundSize: '40px 40px'
-                }} />
-            </div>
-
-            <div className="relative flex flex-col md:flex-row items-center justify-between w-full max-w-5xl gap-16 md:gap-4 z-10">
-                
-                {nodes.map((node, idx) => (
-                    <React.Fragment key={node.id}>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.4 }}
-                            className="relative flex flex-col items-center gap-8 w-full md:w-auto"
-                        >
-                            {/* The Node Box */}
-                            <div className="relative group">
-                                {/* Outer Glow */}
-                                <div className="absolute -inset-4 bg-[#10b981]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                
-                                {/* Main Container */}
-                                <div className="w-32 h-32 md:w-40 md:h-40 bg-zinc-950 border-2 border-zinc-800 flex flex-col items-center justify-center relative overflow-hidden group-hover:border-[#10b981]/50 transition-colors duration-500">
-                                    
-                                    {/* Scanner Beam */}
-                                    <motion.div 
-                                        className="absolute left-0 right-0 h-[2px] bg-[#10b981]/40 z-20 shadow-[0_0_15px_#10b981]"
-                                        animate={{ top: ['0%', '100%', '0%'] }}
-                                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                                    />
-
-                                    {/* Corner Accents */}
-                                    <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-zinc-700" />
-                                    <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-zinc-700" />
-                                    <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-zinc-700" />
-                                    <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-zinc-700" />
-
-                                    <node.icon className="w-12 h-12 md:w-16 md:h-16 text-white group-hover:text-[#10b981] transition-colors duration-500 z-10" />
-                                    
-                                    {/* Background Detail */}
-                                    <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
-                                        <div className="text-[120px] font-black leading-none">{idx + 1}</div>
-                                    </div>
-                                </div>
-
-                                {/* Floating Metrics - Technical Detail */}
-                                <div className="absolute -right-8 md:-right-12 top-0 flex flex-col gap-1">
-                                    {node.metrics.map((m, i) => (
-                                        <motion.span 
-                                            key={i}
-                                            animate={{ opacity: [0.2, 0.8, 0.2] }}
-                                            transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
-                                            className="text-[8px] md:text-[9px] text-[#10b981] font-bold tracking-tighter whitespace-nowrap bg-black/50 px-1"
-                                        >
-                                            {m}
-                                        </motion.span>
-                                    ))}
-                                </div>
-                            </div>
-                            
-                            {/* Label Area */}
-                            <div className="text-center space-y-2">
-                                <div className="flex items-center justify-center gap-2">
-                                    <div className="h-px w-4 bg-zinc-800" />
-                                    <span className="text-[10px] text-[#10b981] font-black tracking-[0.3em]">NODE_0{idx + 1}</span>
-                                    <div className="h-px w-4 bg-zinc-800" />
-                                </div>
-                                <h3 className="text-sm md:text-base font-black uppercase tracking-[0.2em] text-white">
-                                    {node.label}
-                                </h3>
-                            </div>
-                        </motion.div>
-
-                        {/* Connection Bridge */}
-                        {idx < nodes.length - 1 && (
-                            <div className="relative flex items-center justify-center h-20 md:h-auto md:w-32 shrink-0">
-                                {/* Desktop Horizontal Connection */}
-                                <div className="hidden md:block w-full h-px bg-zinc-800 relative">
-                                    {/* Data Particles */}
-                                    <motion.div 
-                                        className="absolute top-1/2 -translate-y-1/2 w-8 h-[2px] bg-gradient-to-r from-transparent via-[#10b981] to-transparent shadow-[0_0_10px_#10b981]"
-                                        animate={{ left: ['-20%', '120%'] }}
-                                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: idx * 0.5 }}
-                                    />
-                                    <motion.div 
-                                        className="absolute top-1/2 -translate-y-1/2 w-4 h-[1px] bg-white"
-                                        animate={{ left: ['-10%', '110%'] }}
-                                        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: idx * 0.2 }}
-                                    />
-                                </div>
-
-                                {/* Mobile Vertical Connection */}
-                                <div className="md:hidden w-px h-full bg-zinc-800 relative">
-                                    <motion.div 
-                                        className="absolute left-1/2 -translate-x-1/2 w-[2px] h-8 bg-gradient-to-b from-transparent via-[#10b981] to-transparent"
-                                        animate={{ top: ['-20%', '120%'] }}
-                                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: idx * 0.5 }}
-                                    />
-                                </div>
-                            </div>
-                        )}
-                    </React.Fragment>
-                ))}
-            </div>
-
-            {/* Bottom Status Feed */}
-            <div className="absolute bottom-4 left-8 right-8 h-8 flex items-center justify-between border-t border-zinc-900 pt-4 hidden lg:flex">
-                <div className="flex gap-8">
-                    <span className="text-[9px] text-zinc-600 font-bold uppercase tracking-widest">ENCRYPTION: AES-256</span>
-                    <span className="text-[9px] text-zinc-600 font-bold uppercase tracking-widest">PIPELINE: DETERMINISTIC</span>
+        <div className="w-full bg-zinc-950/40 border border-[#10b981]/10 shadow-[inset_0_0_50px_rgba(16,185,129,0.05)] rounded-lg flex flex-col p-6 md:p-8 overflow-hidden relative font-sans backdrop-blur-sm mt-8 lg:mt-0">
+            {/* Terminal Header */}
+            <div className="h-10 border-b border-[#10b981]/10 bg-black/40 flex items-center px-4 gap-2 absolute top-0 left-0 right-0 z-20">
+                <div className="w-2.5 h-2.5 rounded-full bg-zinc-800" />
+                <div className="w-2.5 h-2.5 rounded-full bg-zinc-800" />
+                <div className="w-2.5 h-2.5 rounded-full bg-zinc-800" />
+                <span className="text-[10px] text-[#10b981]/50 ml-4 font-mono tracking-widest uppercase font-bold">
+                    {lang === 'en' ? 'sys.telemetry_dashboard' : 'sys.telemetry_dashboard'}
+                </span>
+                <div className="ml-auto flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#10b981] animate-pulse" />
+                    <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">operational analysis</span>
                 </div>
-                <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#10b981] rounded-full animate-pulse" />
-                    <span className="text-[9px] text-[#10b981] font-bold uppercase tracking-widest">SYSTEM_LIVE</span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full pt-8 z-10 mt-2">
+                {/* Left Side: Legacy (Latency Risk) */}
+                <div className="flex flex-col bg-zinc-950/50 border border-red-500/10 p-5 relative overflow-hidden group scanner-border-red">
+                    <div className="flex justify-between items-center mb-4 border-b border-red-500/15 pb-2">
+                        <span className="text-[9px] font-mono text-red-500/80 font-bold uppercase tracking-wider">[ PIPELINE_LEGACY ]</span>
+                        <span className="text-[9px] font-mono text-red-500/40 uppercase tracking-widest">ID_9748 // CRIT</span>
+                    </div>
+
+                    {/* Jagged Graph */}
+                    <div className="h-20 w-full flex items-center justify-center bg-black/30 border border-red-500/5 p-2 mb-4 relative">
+                        <svg viewBox="0 0 100 40" className="w-full h-full text-red-500/40 opacity-70">
+                            <path 
+                                d="M 0,30 L 10,10 L 20,35 L 30,5 L 40,28 L 50,15 L 60,37 L 70,12 L 80,32 L 90,8 L 100,30" 
+                                fill="none" 
+                                stroke="currentColor" 
+                                strokeWidth="1.5" 
+                                strokeDasharray="2 2" 
+                            />
+                        </svg>
+                        <div className="absolute inset-0 bg-red-500/[0.02] pointer-events-none" />
+                    </div>
+
+                    {/* Raw data rows */}
+                    <div className="space-y-2 mb-4 font-mono text-[9px] text-zinc-500">
+                        <div className="flex justify-between border-b border-zinc-900 pb-1">
+                            <span className="uppercase">ERR_DISPATCH_OVERFLOW</span>
+                            <span className="text-red-500 font-bold">FAIL_408</span>
+                        </div>
+                        <div className="flex justify-between border-b border-zinc-900 pb-1">
+                            <span className="uppercase">INVOICE_LAG_ALERT</span>
+                            <span className="text-red-500 font-bold">WARN_SYNC</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span className="uppercase">MANUAL_REKEY_REQ</span>
+                            <span className="text-red-500 font-bold">SYS_HALT</span>
+                        </div>
+                    </div>
+
+                    {/* Red Alert Banner */}
+                    <div className="mt-auto">
+                        <div className="bg-red-500/10 text-red-500 border border-red-500/20 px-2 py-2 text-[9px] tracking-wider font-mono font-black uppercase text-center rounded-none shadow-[0_0_15px_rgba(239,68,68,0.05)]">
+                            [LATENCY RISK // UNLINKED PIPELINE]
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right Side: Automated (Deterministic Architecture) */}
+                <div className="flex flex-col bg-zinc-950/50 border border-[#10b981]/20 p-5 relative overflow-hidden group scanner-border">
+                    <div className="flex justify-between items-center mb-4 border-b border-[#10b981]/20 pb-2">
+                        <span className="text-[9px] font-mono text-[#10b981] font-bold uppercase tracking-wider">[ PIPELINE_ACTIVE ]</span>
+                        <span className="text-[9px] font-mono text-[#10b981]/40 uppercase tracking-widest">ID_0028 // OK</span>
+                    </div>
+
+                    {/* Smooth Chart Vector */}
+                    <div className="h-20 w-full flex items-center justify-center bg-black/30 border border-[#10b981]/10 p-2 mb-4 relative">
+                        <svg viewBox="0 0 100 40" className="w-full h-full text-[#10b981] opacity-90">
+                            {/* Grid Lines */}
+                            <line x1="0" y1="10" x2="100" y2="10" stroke="#10b981" strokeWidth="0.2" strokeOpacity="0.2" />
+                            <line x1="0" y1="20" x2="100" y2="20" stroke="#10b981" strokeWidth="0.2" strokeOpacity="0.2" />
+                            <line x1="0" y1="30" x2="100" y2="30" stroke="#10b981" strokeWidth="0.2" strokeOpacity="0.2" />
+                            
+                            <path 
+                                d="M 0,30 Q 25,30 50,15 T 100,5" 
+                                fill="none" 
+                                stroke="currentColor" 
+                                strokeWidth="2" 
+                            />
+                            <circle cx="100" cy="5" r="2" fill="#10b981" />
+                        </svg>
+                        <div className="absolute inset-0 bg-emerald-500/[0.02] pointer-events-none" />
+                    </div>
+
+                    {/* Operational Rows */}
+                    <div className="space-y-2 mb-4 font-mono text-[9px] text-zinc-400">
+                        <div className="flex justify-between border-b border-zinc-900 pb-1">
+                            <span className="uppercase text-zinc-500">AUTO_DISPATCH_ROUTE</span>
+                            <span className="text-[#10b981] font-bold">100% OK</span>
+                        </div>
+                        <div className="flex justify-between border-b border-zinc-900 pb-1">
+                            <span className="uppercase text-zinc-500">DATA_INTEGRITY_INDEX</span>
+                            <span className="text-[#10b981] font-bold">SIGMA_1.0</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span className="uppercase text-zinc-500">REALTIME_SYNC_LATENCY</span>
+                            <span className="text-[#10b981] font-bold">0.02 MS</span>
+                        </div>
+                    </div>
+
+                    {/* Emerald Success Banner */}
+                    <div className="mt-auto">
+                        <div className="bg-emerald-500/10 text-[#10b981] border border-[#10b981]/30 px-2 py-2 text-[9px] tracking-wider font-mono font-black uppercase text-center rounded-none shadow-[0_0_15px_rgba(16,185,129,0.05)]">
+                            [DETERMINISTIC ARCHITECTURE ONLINE]
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

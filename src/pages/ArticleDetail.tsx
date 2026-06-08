@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "../components/LanguageProvider";
 import { ArrowLeft, ArrowRight, Clock, Calendar, ShieldCheck, Database } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
@@ -14,6 +14,7 @@ import { Button } from "../components/ui/button";
 const ArticleDetail = () => {
     const { id } = useParams();
     const { t, lang } = useTranslation();
+    const navigate = useNavigate();
     
     const article = t.articles.find(a => a.id === id);
     
@@ -213,7 +214,7 @@ const ArticleDetail = () => {
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">
                                     <Button 
-                                        onClick={() => window.open('https://calendly.com/nico-carrillodynamics/30min', '_blank')}
+                                        onClick={() => navigate('/book')}
                                         className="h-20 px-12 bg-[#10b981] text-black font-black uppercase tracking-[0.2em] rounded-none hover:bg-white transition-all flex items-center group"
                                     >
                                         {t.nav.strategy}

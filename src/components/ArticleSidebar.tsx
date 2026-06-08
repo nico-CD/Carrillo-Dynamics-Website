@@ -36,13 +36,12 @@ const ArticleSidebar = () => {
                         {lang === 'en' ? 'Core Resources' : 'Recursos Principales'}
                     </h3>
                     <nav className="space-y-4">
-                        <a 
-                            href="https://calendly.com/nico-carrillodynamics/30min" 
-                            target="_blank" 
+                        <Link 
+                            to="/book" 
                             className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-[#10b981] hover:text-[#0ea672] transition-colors"
                         >
                             {lang === 'en' ? 'Book Strategy Session' : 'Sesión de Estrategia'}
-                        </a>
+                        </Link>
                         <button 
                             onClick={() => {
                                 const el = document.getElementById('intake');

@@ -111,10 +111,10 @@ const InteractiveCalculator = () => {
                             <div className="flex justify-center items-center text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground w-full">
                                 <span>{t.calculator.scaleMonitor}</span>
                             </div>
-                            <div className="h-16 bg-[#050505] border-2 border-border relative overflow-hidden transition-all duration-300 flex items-center px-1 group/bar">
+                            <div className="h-16 bg-card border-2 border-border relative overflow-hidden transition-all duration-300 flex items-center px-1 group/bar">
                                 <div className="absolute inset-0 flex opacity-10">
                                     {Array.from({ length: 40 }).map((_, i) => (
-                                        <div key={i} className="h-full w-px bg-white mx-auto" />
+                                        <div key={i} className="h-full w-px bg-foreground mx-auto" />
                                     ))}
                                 </div>
                                 <motion.div 
@@ -122,13 +122,13 @@ const InteractiveCalculator = () => {
                                         dynamicWidth > 80 ? "bg-red-500 shadow-[0_0_50px_rgba(239,68,68,0.4)]" : 
                                         dynamicWidth > 50 ? "bg-orange-500 shadow-[0_0_50px_rgba(249,115,22,0.3)]" : 
                                         "bg-[#10b981] shadow-[0_0_50px_rgba(16,185,129,0.2)]"
-                                    } ${isIncreasing ? "ring-2 ring-white/20" : ""}`}
+                                    } ${isIncreasing ? "ring-2 ring-foreground/20" : ""}`}
                                     initial={{ width: "30%" }}
                                     animate={{ width: `${dynamicWidth}%` }}
                                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                                 >
                                     {/* Scanline effect on the bar itself */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent w-full animate-[shimmer_2s_infinite] pointer-events-none" />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/20 to-transparent w-full animate-[shimmer_2s_infinite] pointer-events-none" />
                                 </motion.div>
                                 
                                 {/* LEAKAGE INDICATORS */}
@@ -137,7 +137,7 @@ const InteractiveCalculator = () => {
                                         {Array.from({ length: 3 }).map((_, i) => (
                                             <motion.div 
                                                 key={i}
-                                                className="w-1 h-4 bg-white/40"
+                                                className="w-1 h-4 bg-foreground/40"
                                                 animate={{ 
                                                     opacity: [0.2, 0.8, 0.2],
                                                     height: [4, 8, 4]

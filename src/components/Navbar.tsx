@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ModeToggle } from "./mode-toggle";
+
 import { useTranslation } from "./LanguageProvider";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
@@ -41,8 +41,6 @@ const Navbar = () => {
                 >
                     {lang === 'en' ? 'VER EN ESPAÑOL' : 'VIEW IN ENGLISH'}
                 </Button>
-                
-                <ModeToggle />
             </div>
         </motion.nav>
     );

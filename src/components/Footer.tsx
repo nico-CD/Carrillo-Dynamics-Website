@@ -26,8 +26,7 @@ const Footer = () => {
                         </div>
                         <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] leading-relaxed transition-colors duration-300">
                             {lang === 'en' ? 'Engineered Precision. Industrial Grit.' : 'Precisión de Ingeniería. Tesón Industrial.'}<br />
-                            211 W. Wacker Dr, Ste 120, Chicago, IL 60606<br />
-                            Managing Member: Nicolas S. Carrillo
+                            CHICAGO, IL <span className="mx-2 opacity-50">|</span> <a href="https://www.linkedin.com/in/nico-c-3b4b571aa" target="_blank" rel="noreferrer" className="hover:text-[#10b981] transition-colors">LINKEDIN</a>
                         </p>
                     </div>
 
@@ -47,7 +46,7 @@ const Footer = () => {
                                 </a>
                                 <div className="flex items-center gap-3 group text-muted-foreground opacity-60">
                                     <MapPin className="h-3 w-3" />
-                                    Loop, Chicago, IL
+                                    Chicago, IL
                                 </div>
                             </div>
                         </div>
@@ -58,8 +57,8 @@ const Footer = () => {
                                 <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('/faq'); }} className="hover:text-foreground transition-colors">FAQ</a>
                                 <a href="/articles" onClick={(e) => { e.preventDefault(); navigate('/articles'); }} className="hover:text-foreground transition-colors">{t.nav.articles}</a>
                                 <a 
-                                    href="https://calendly.com/nico-carrillodynamics/30min" 
-                                    target="_blank" 
+                                    href="/book" 
+                                    onClick={(e) => { e.preventDefault(); navigate('/book'); }} 
                                     className="text-[#10b981] hover:text-[#0ea672] transition-colors"
                                 >
                                     {t.nav.strategy}

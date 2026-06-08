@@ -1,12 +1,14 @@
 import { Search, Layers, Rocket, Hammer, Truck, Factory, Thermometer, Droplets, TreePine, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/components/LanguageProvider";
+import { useNavigate } from "react-router-dom";
 import CalendlyModal from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import ForensicBlueprint from "../ForensicBlueprint";
 
 const BlueprintProtocol = () => {
     const { lang, t } = useTranslation();
+    const navigate = useNavigate();
     const sectors = lang === 'en' ? [
         { icon: Hammer, label: "CONSTRUCTION" },
         { icon: Truck, label: "LOGISTICS" },
@@ -106,12 +108,9 @@ const BlueprintProtocol = () => {
     };
 
     return (
-        <section className="bg-background py-24 md:py-48 px-6 border-y border-zinc-900 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto space-y-48">
-                
-
-
-                {/* Our System Blueprint - HEAVY INDUSTRIAL GRID */}
+        <section className="bg-background py-32 md:py-40 px-6 border-b border-foreground/5 transition-colors duration-300">
+            <div className="max-w-7xl mx-auto space-y-40">
+                {/* Our System Blueprint - Z-PATTERN BENTO */}
                 <div className="space-y-20">
                     <div className="flex flex-col items-start gap-4">
                          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">{headers.blueprint}</h2>
@@ -120,66 +119,89 @@ const BlueprintProtocol = () => {
                          </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 bg-border border-2 border-border gap-[2px] overflow-hidden scanner-border">
+                    <div className="space-y-24">
                         {steps.map((p, idx) => (
-                            <motion.div 
+                            <div 
                                 key={idx}
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="bg-background p-10 md:p-14 flex flex-col gap-10 hover:bg-muted/5 transition-all group"
+                                className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
                             >
-                                <div className="flex justify-between items-center">
-                                    <div className="flex items-center gap-4">
-                                        <span className="text-muted-foreground/30 text-lg font-black group-hover:text-[#10b981] transition-colors">{p.step}.</span>
-                                        <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">{p.title}</h3>
+                                {/* Bento Card - Visual/Metric side */}
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6 }}
+                                    className="flex-1 w-full bg-card border border-foreground/10 p-8 md:p-16 shadow-sm rounded-none relative group overflow-hidden"
+                                >
+                                    <div className="absolute -top-8 -right-8 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-700">
+                                        <p.icon className="w-64 h-64 text-foreground" />
                                     </div>
-                                    <p.icon className="h-10 w-10 text-muted-foreground/20 group-hover:text-[#10b981] transition-all duration-500 shrink-0" />
-                                </div>
-                                <div className="space-y-8 h-full flex flex-col">
-                                    <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                                    <div className="relative z-10 flex flex-col gap-6">
+                                        <div className="flex items-center gap-4 border-b border-border/50 pb-6">
+                                            <span className="text-muted-foreground/30 text-5xl md:text-6xl font-black tracking-tighter">
+                                                {p.step}.
+                                            </span>
+                                            <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-foreground">
+                                                {p.title}
+                                            </h3>
+                                        </div>
+                                        <ul className="space-y-4 pt-4">
+                                            {p.bullets.map((point, bIdx) => (
+                                                <li key={bIdx} className="flex items-center gap-4 text-sm md:text-base font-bold text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                                                    <div className="h-2 w-2 bg-[#10b981] rounded-none shrink-0" />
+                                                    {point}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </motion.div>
+
+                                {/* Explanatory Copy Side */}
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.2 }}
+                                    className="flex-1 space-y-6 w-full"
+                                >
+                                    <p className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-tight text-foreground/90">
                                         {p.desc}
                                     </p>
-                                    
-                                    <ul className="space-y-4 pt-4 border-t border-border flex-grow">
-                                        {p.bullets.map((point, bIdx) => (
-                                            <li key={bIdx} className="flex items-center gap-3 text-xs md:text-sm font-bold text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                                                <div className="h-1 w-1 bg-[#10b981] rounded-full shrink-0" />
-                                                {point}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </motion.div>
+                                </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
-            </div>
 
-            {/* STRATEGY SESSION PIVOT - HIGH-CONVERSION CTA BLOCK */}
-            <div className="max-w-7xl mx-auto mt-48 py-24 border-t-2 border-border flex flex-col items-center text-center space-y-12">
-                <div className="space-y-4">
-                    <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">
-                        {lang === 'en' ? 'Direct Engineering Access.' : 'Acceso Directo a Ingeniería.'}
-                    </h3>
-                    <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto transition-colors duration-300">
-                        {lang === 'en' 
-                            ? "Skip the guesswork. Book a 30-minute strategy session to map your specific operational architecture and identify immediate wins."
-                            : "Evite las adivinanzas. Reserve una sesión de estrategia de 30 minutos para mapear su arquitectura operativa específica e identificar mejoras inmediatas."}
-                    </p>
-                </div>
-                
-                <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-                    <Button
-                        onClick={() => window.open("https://calendly.com/nico-carrillodynamics/30min", "_blank")}
-                        size="lg"
-                        className="h-20 w-full sm:w-fit rounded-none px-12 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-white text-black shadow-[0_0_50px_rgba(16,185,129,0.2)] transition-all border-none group"
-                    >
-                        {t.nav.strategy}
-                        <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
-                    </Button>
-                </div>
+                {/* STRATEGY SESSION PIVOT - HIGH-CONVERSION CTA BLOCK */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="max-w-7xl mx-auto py-24 border-t border-foreground/5 flex flex-col items-center text-center space-y-12"
+                >
+                    <div className="space-y-4">
+                        <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">
+                            {lang === 'en' ? 'Direct Engineering Access.' : 'Acceso Directo a Ingeniería.'}
+                        </h3>
+                        <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto transition-colors duration-300">
+                            {lang === 'en' 
+                                ? "Skip the guesswork. Book a 30-minute strategy session to map your specific operational architecture and identify immediate wins."
+                                : "Evite las adivinanzas. Reserve una sesión de estrategia de 30 minutos para mapear su arquitectura operativa específica e identificar mejoras inmediatas."}
+                        </p>
+                    </div>
+                    
+                    <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto mt-12">
+                        <Button
+                            onClick={() => navigate('/book')}
+                            size="lg"
+                            className="h-20 w-full sm:w-fit rounded-none px-12 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-foreground hover:text-background text-black shadow-[0_0_50px_rgba(16,185,129,0.2)] transition-all border-none group"
+                        >
+                            {t.nav.strategy}
+                            <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
+                        </Button>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
