@@ -28,6 +28,7 @@ function generate() {
             { path: '', freq: 'weekly', priority: '1.0' },
             { path: 'faq', freq: 'monthly', priority: '0.8' },
             { path: 'articles', freq: 'weekly', priority: '0.9' },
+            { path: 'book', freq: 'weekly', priority: '0.9' },
             { path: 'privacy', freq: 'monthly', priority: '0.5' },
             { path: 'terms', freq: 'monthly', priority: '0.5' }
         ];

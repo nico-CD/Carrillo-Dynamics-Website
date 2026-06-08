@@ -4,30 +4,24 @@
 
 User-agent: *
 Allow: /
-Disallow: /success
 Disallow: /unsubscribed
 Disallow: /api/
 
 # AI CRAWLERS GATING (AEO/GEO FINAL)
 User-agent: GPTBot
-Allow: /articles/
-Allow: /faq
+Allow: /
 
 User-agent: ClaudeBot
-Allow: /articles/
-Allow: /faq
+Allow: /
 
 User-agent: Claude-Web
-Allow: /articles/
-Allow: /faq
+Allow: /
 
 User-agent: PerplexityBot
-Allow: /articles/
-Allow: /faq
+Allow: /
 
 User-agent: Google-Extended
-Allow: /articles/
-Allow: /faq
+Allow: /
 
 # SITE MAP INDEX
 Sitemap: https://carrillodynamics.com/sitemap.xml

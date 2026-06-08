@@ -33,8 +33,8 @@ const SEOManager: React.FC<SEOManagerProps> = ({
         : `${brandName} | ${slogan}`;
         
     const siteDescription = lang === 'en' 
-        ? 'Chicago-based Systems Engineering for high-stakes industrial environments. Engineered precision for service firms.'
-        : 'Ingeniería de sistemas con sede en Chicago para entornos industriales de alto riesgo. Precisión diseñada para empresas de servicios.';
+        ? 'Carrillo Dynamics engineers and builds custom automated systems and backend infrastructure for trade and service companies to optimize operations and protect margins.'
+        : 'Carrillo Dynamics diseña y construye sistemas automatizados personalizados e infraestructura de backend para que las empresas comerciales y de servicios optimicen sus operaciones y protejan sus márgenes.';
     
     const baseUrl = 'https://carrillodynamics.com';
     
