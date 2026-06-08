@@ -90,11 +90,28 @@ const Book = () => {
                         </p>
                     </div>
 
-                    <div className="w-full bg-background border border-border min-h-[950px] relative overflow-hidden rounded-sm">
+                    <div className="w-full bg-background border border-border min-h-[950px] relative overflow-visible rounded-sm" style={{ overflow: 'visible' }}>
                         <div 
                             id="calendly-target-container"
                             style={{ width: '100%', minHeight: '950px' }} 
                         />
+                        
+                        {/* Fallback Fail-Safe Banner */}
+                        <div className="border-t border-border p-6 bg-black/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <span className="text-xs md:text-sm font-mono text-muted-foreground">
+                                {lang === 'en' 
+                                    ? "Experiencing script latency? Open the scheduling terminal directly."
+                                    : "¿Experimenta latencia de script? Abra la terminal de programación directamente."}
+                            </span>
+                            <a 
+                                href="https://calendly.com/nico-carrillodynamics/15-minute-strategy-session"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-6 py-3 text-xs uppercase tracking-widest border border-emerald-500/30 text-emerald-400 bg-emerald-950/20 hover:bg-emerald-500 hover:text-black font-mono transition-all shrink-0 text-center"
+                            >
+                                {lang === 'en' ? "Open Scheduler" : "Abrir Programador"}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
