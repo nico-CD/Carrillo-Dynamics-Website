@@ -113,20 +113,20 @@ const BlueprintProtocol = () => {
                 {/* Our System Blueprint - Z-PATTERN BENTO */}
                 <div className="space-y-20">
                     <div className="flex flex-col items-start gap-4">
-                         <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">{headers.blueprint}</h2>
-                         <p className="text-lg md:text-2xl text-muted-foreground font-medium max-w-2xl transition-colors duration-300">
-                             {headers.blueprintSub}
-                         </p>
+                        <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">{headers.blueprint}</h2>
+                        <p className="text-lg md:text-2xl text-muted-foreground font-medium max-w-2xl transition-colors duration-300">
+                            {headers.blueprintSub}
+                        </p>
                     </div>
 
                     <div className="space-y-24">
                         {steps.map((p, idx) => (
-                            <div 
+                            <div
                                 key={idx}
                                 className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
                             >
                                 {/* Bento Card - Visual/Metric side */}
-                                <motion.div 
+                                <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -157,7 +157,7 @@ const BlueprintProtocol = () => {
                                 </motion.div>
 
                                 {/* Explanatory Copy Side */}
-                                <motion.div 
+                                <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -174,7 +174,7 @@ const BlueprintProtocol = () => {
                 </div>
 
                 {/* STRATEGY SESSION PIVOT - HIGH-CONVERSION CTA BLOCK */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -185,12 +185,12 @@ const BlueprintProtocol = () => {
                             {lang === 'en' ? 'Direct Engineering Access.' : 'Acceso Directo a Ingeniería.'}
                         </h3>
                         <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto transition-colors duration-300">
-                            {lang === 'en' 
-                                ? "Skip the guesswork. Book a 30-minute strategy session to map your specific operational architecture and identify immediate wins."
+                            {lang === 'en'
+                                ? "Skip the guesswork. Book a 15-minute strategy session to map your specific operational architecture and identify immediate wins."
                                 : "Evite las adivinanzas. Reserve una sesión de estrategia de 30 minutos para mapear su arquitectura operativa específica e identificar mejoras inmediatas."}
                         </p>
                     </div>
-                    
+
                     <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto mt-12">
                         <Button
                             onClick={() => navigate('/book')}
