@@ -90,10 +90,10 @@ const Book = () => {
                         </p>
                     </div>
 
-                    <div className="w-full bg-background border border-border min-h-[750px] relative overflow-hidden rounded-sm">
+                    <div className="w-full bg-background border border-border min-h-[950px] relative overflow-hidden rounded-sm">
                         <div 
                             id="calendly-target-container"
-                            style={{ width: '100%', minHeight: '750px' }} 
+                            style={{ width: '100%', minHeight: '950px' }} 
                         />
                     </div>
                 </div>
