@@ -19,6 +19,7 @@ declare global {
                     backgroundColor?: string;
                     textColor?: string;
                     primaryColor?: string;
+                    height?: string;
                 };
             }) => void;
         };
@@ -44,7 +45,8 @@ const Book = () => {
                     styles: {
                         backgroundColor: '09090b',
                         textColor: 'ffffff',
-                        primaryColor: '10b981'
+                        primaryColor: '10b981',
+                        height: '1000px'
                     }
                 });
             }
@@ -90,10 +92,10 @@ const Book = () => {
                         </p>
                     </div>
 
-                    <div className="w-full bg-background border border-border min-h-[950px] relative overflow-visible rounded-sm" style={{ overflow: 'visible' }}>
+                    <div className="w-full bg-background border border-border min-h-[1000px] relative overflow-visible rounded-sm" style={{ overflow: 'visible' }}>
                         <div 
                             id="calendly-target-container"
-                            style={{ width: '100%', minHeight: '950px' }} 
+                            style={{ width: '100%', height: '1000px', display: 'block', minHeight: '1000px' }} 
                         />
                         
                         {/* Fallback Fail-Safe Banner */}
