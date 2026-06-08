@@ -81,7 +81,7 @@ const ExitIntentModal = () => {
                             <div className="space-y-6">
                                 <div className="text-[#10b981] font-black text-xs tracking-[0.3em] uppercase flex items-center gap-3">
                                     <span className="h-2 w-2 bg-[#10b981] rounded-full" />
-                                    OPERATIONAL LEAK DETECTION
+                                    {lang === 'en' ? 'OPERATIONAL LEAK DETECTION' : 'DETECCIÓN DE FUGAS OPERATIVAS'}
                                 </div>
                                 <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-foreground leading-none">
                                     {lang === 'en' ? 'Plug Your Funnel.' : 'Tape sus Fugas.'}

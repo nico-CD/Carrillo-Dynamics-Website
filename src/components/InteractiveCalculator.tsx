@@ -6,7 +6,7 @@ import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const InteractiveCalculator = () => {
-    const { t } = useTranslation();
+    const { t, lang } = useTranslation();
     const [teamSize, setTeamSize] = useState([8]);
     const [hoursPerWeek, setHoursPerWeek] = useState([12]);
     const [prevHours, setPrevHours] = useState(12);
@@ -157,7 +157,7 @@ const InteractiveCalculator = () => {
                         {/* PRESSURE LABEL */}
                         <div className="flex flex-col items-center justify-center border-t border-border pt-6 text-center">
                             <div className="space-y-1">
-                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground">Operational Stress</p>
+                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground">{t.calculator.operationalStress}</p>
                                 <p className={`text-4xl font-mono font-black ${dynamicWidth > 80 ? "text-red-500" : dynamicWidth > 50 ? "text-orange-500" : "text-[#10b981]"}`}>
                                     {Math.round(dynamicWidth)}%
                                 </p>

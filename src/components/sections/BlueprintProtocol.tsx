@@ -187,7 +187,7 @@ const BlueprintProtocol = () => {
                         <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto transition-colors duration-300">
                             {lang === 'en'
                                 ? "Skip the guesswork. Book a 15-minute strategy session to map your specific operational architecture and identify immediate wins."
-                                : "Evite las adivinanzas. Reserve una sesión de estrategia de 30 minutos para mapear su arquitectura operativa específica e identificar mejoras inmediatas."}
+                                : "Evite las adivinanzas. Reserve una sesión de estrategia de 15 minutos para mapear su arquitectura operativa específica e identificar mejoras inmediatas."}
                         </p>
                     </div>
 

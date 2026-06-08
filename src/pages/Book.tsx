@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SEOManager from '@/components/SEOManager';
@@ -28,6 +28,7 @@ declare global {
 
 const Book = () => {
     const { lang } = useTranslation();
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const scriptId = 'calendly-script';
@@ -38,7 +39,8 @@ const Book = () => {
             if (window.Calendly && targetEl) {
                 targetEl.innerHTML = '';
                 window.Calendly.initInlineWidget({
-                    url: 'https://calendly.com/nico-carrillodynamics/15-minute-strategy-session',
+                    // Dynamic locale parameter appended to ensure bilingual support
+                    url: `https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?locale=${lang}`,
                     parentElement: targetEl,
                     hideEventTypeDetails: true,
                     hideGdprBanner: true,
@@ -49,6 +51,18 @@ const Book = () => {
                         height: '1000px'
                     }
                 });
+
+                // Listening to iframe load events to hide the loading overlay
+                const iframe = targetEl.querySelector('iframe');
+                if (iframe) {
+                    iframe.addEventListener('load', () => {
+                        setIsLoading(false);
+                    });
+                    // Fail-safe fallback in case load event fires early or fails
+                    setTimeout(() => setIsLoading(false), 4000);
+                } else {
+                    setIsLoading(false);
+                }
             }
         };
 
@@ -88,7 +102,7 @@ const Book = () => {
                         <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto">
                             {lang === 'en' 
                                 ? 'Select a time below for your 15-minute strategy session.' 
-                                : 'Seleccione una hora a continuación para su sesión de estrategia de 15 minutos.'}
+                                : 'Seleccione un horario a continuación para su sesión de estrategia de 15 minutos.'}
                         </p>
                     </div>
 
@@ -97,6 +111,19 @@ const Book = () => {
                             id="calendly-target-container"
                             style={{ width: '100%', height: '1000px', display: 'block', minHeight: '1000px' }} 
                         />
+                        
+                        {/* Themed telemetry loading spinner */}
+                        {isLoading && (
+                            <div className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-[#09090b] pointer-events-none transition-opacity duration-300">
+                                <div className="relative h-12 w-12 flex items-center justify-center">
+                                    <div className="absolute inset-0 rounded-full border-2 border-emerald-500/10 animate-pulse" />
+                                    <div className="absolute inset-0 rounded-full border-2 border-t-[#10b981] animate-spin" />
+                                </div>
+                                <span className="font-mono text-[10px] text-[#10b981] uppercase tracking-[0.2em] animate-pulse">
+                                    {lang === 'en' ? 'Connecting Secure Pipeline...' : 'Conectando Canal Seguro...'}
+                                </span>
+                            </div>
+                        )}
                         
                         {/* Fallback Fail-Safe Banner */}
                         <div className="border-t border-border p-6 bg-black/20 flex flex-col sm:flex-row items-center justify-between gap-4">

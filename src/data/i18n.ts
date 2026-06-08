@@ -36,6 +36,9 @@ export interface I18nContent {
         subtitle: string;
         cta: string;
         audit: string;
+        badge1: string;
+        badge2: string;
+        badge3: string;
     };
     pageTitles: {
         faq: { main: string; accent: string };
@@ -58,6 +61,7 @@ export interface I18nContent {
         bookStrategy: string;
         successTitle: string;
         successSub: string;
+        operationalStress: string;
     };
     intake: {
         title: string;
@@ -131,9 +135,12 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         hero: {
             title: "Your team is spending hours on",
-            subtitle: "We build deterministic operating systems for high-volume service businesses.",
+            subtitle: "We engineer and build custom automated systems for trade and service companies to optimize their operations, protect their margins, and reclaim their time.",
             cta: "Get Started",
-            audit: "Book Strategy Session"
+            audit: "Book Strategy Session",
+            badge1: "CHICAGO-BASED ENGINEERING",
+            badge2: "< 60s RESPONSE LATENCY",
+            badge3: "DETERMINISTIC DATA ROUTING"
         },
         calculator: {
             title: "Reclaim ",
@@ -151,7 +158,8 @@ export const i18nData: Record<Language, I18nContent> = {
             summaryTemplate: "Reclaiming {ftu} FTU means winning back the actual capacity of over {wholeFtu} additional full-time operator(s). We don't just save time; we recover your team's productive capacity without adding a single dollar to your payroll.",
             bookStrategy: "Strategy Session",
             successTitle: "Analysis Complete.",
-            successSub: "Your custom ROI breakdown has been engineered. Download the PDF and book your session below."
+            successSub: "Your custom ROI breakdown has been engineered. Download the PDF and book your session below.",
+            operationalStress: "Operational Stress"
         },
         intake: {
             title: "Get your ",
@@ -305,7 +313,7 @@ export const i18nData: Record<Language, I18nContent> = {
             home: "Inicio",
             faq: "FAQ",
             articles: "Artículos",
-            blueprint: "CONSIGUE BLUEPRINT GRATIS",
+            blueprint: "OBTENGA SU BLUEPRINT GRATIS",
             privacy: "Privacidad",
             terms: "Términos",
             strategy: "Sesión de Estrategia"
@@ -313,7 +321,7 @@ export const i18nData: Record<Language, I18nContent> = {
         success: {
             title: "Solicitud ",
             titleItalic: "Recibida.",
-            description: "Estoy revisando personalmente su flujo de trabajo ahora mismo. Esté atento a un correo mío. Le enviaré un blueprint de video personalizado abordando su obstáculo principal específico en menos de 24 horas.",
+            description: "Estoy revisando personalmente su flujo de trabajo ahora mismo. Esté atento a un correo mío. Le enviaré un blueprint en video personalizado abordando su cuello de botella específico en menos de 24 horas.",
             founder: "- Nico Carrillo (Fundador de Carrillo Dynamics)",
             cta: "Volver al Inicio"
         },
@@ -322,10 +330,13 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Archivo", accent: "Técnico" }
         },
         hero: {
-            title: "Tu equipo gasta horas en",
-            subtitle: "Construimos sistemas operativos deterministas para empresas de servicios de alto volumen.",
+            title: "Su equipo dedica horas a",
+            subtitle: "Diseñamos y construimos sistemas automatizados personalizados para que las empresas comerciales y de servicios optimicen sus operaciones, protejan sus márgenes y recuperen su tiempo.",
             cta: "Comenzar",
-            audit: "Sesión de Estrategia"
+            audit: "Sesión de Estrategia",
+            badge1: "INGENIERÍA BASADA EN CHICAGO",
+            badge2: "LATENCIA DE RESPUESTA < 60s",
+            badge3: "ENRUTAMIENTO DETERMINISTA DE DATOS"
         },
         calculator: {
             title: "Recupere ",
@@ -340,26 +351,27 @@ export const i18nData: Record<Language, I18nContent> = {
             capacityImpact: "Impacto de Capacidad",
             scaleMonitor: "Monitor de Escalabilidad",
             growthPotential: "Potencial de Crecimiento",
-            summaryTemplate: "Recuperar {ftu} FTU significa recuperar la capacidad real de más de {wholeFtu} operador(es) adicional(es) a tiempo completo. No solo ahorramos tiempo; recuperamos la capacidad productiva de su equipo sin añadir un solo dólar a su nómina.",
+            summaryTemplate: "Recuperar {ftu} FTU significa liberar la capacidad real de más de {wholeFtu} operador(es) adicional(es) a tiempo completo. No solo ahorramos tiempo; recuperamos la capacidad productiva de su equipo sin añadir un solo dólar a su nómina.",
             bookStrategy: "Sesión de Estrategia",
             successTitle: "Análisis Completado.",
-            successSub: "Su desglose de ROI personalizado ha sido diseñado. Descargue el PDF y reserve su sesión a continuación."
+            successSub: "Su desglose de ROI personalizado ha sido diseñado. Descargue el PDF y reserve su sesión a continuación.",
+            operationalStress: "Estrés Operativo"
         },
         intake: {
             title: "Obtenga su ",
             titleItalic: "Blueprint Personalizado Gratis.",
-            subtitle: "Dígame dónde están sus obstáculos principales manuales. En 24 horas, le enviaré un análisis de video personalizado y un blueprint de automatización.",
+            subtitle: "Dígame dónde están sus cuellos de botella manuales. En 24 horas, le enviaré un análisis en video y un blueprint de automatización personalizado.",
             fullName: "Nombre Completo",
             email: "Email de Negocios",
             companyName: "Nombre de la Empresa",
             companyWebsite: "Sitio Web de la Empresa",
             industry: "Industria",
             industryPlaceholder: "Seleccione su industria",
-            bottleneck: "Obstáculo Principal",
-            bottleneckPlaceholder: "Seleccionar obstáculo principal",
+            bottleneck: "Cuello de Botella Principal",
+            bottleneckPlaceholder: "Seleccione su cuello de botella",
             consent: "Doy mi consentimiento para el Análisis del Blueprint y actualizaciones ocasionales de estrategia.",
             consentPrivacy: "Los datos se procesan de acuerdo con nuestros Estándares de Gobernanza de Privacidad.",
-            submit: "Consigue Blueprint",
+            submit: "Obtenga su Blueprint",
             submitting: "Iniciando_"
         },
         privacyPolicy: {
@@ -370,11 +382,11 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Recopilación y Gobernanza",
-                    content: "Recopilamos datos operativos específicos necesarios para diseñar su Blueprint de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de obstáculos principales técnicos. Nos adherimos a estándares de grado industrial para la integridad de los datos."
+                    content: "Recopilamos datos operativos específicos necesarios para diseñar su Blueprint de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de cuellos de botella técnicos. Nos adherimos a estándares de grado industrial para la integridad de los datos."
                 },
                 {
                     title: "02. Protocolos de Uso Interno",
-                    content: "Sus datos se utilizan exclusivamente para auditorías técnicas y arquitectura de sistemas. No participamos en la venta de telemetría de clientes. El acceso está restringido a los ciclos de ingeniería activos."
+                    content: "Sus datos se utilizan exclusivamente para auditorías técnicas y arquitectura de sistemas. No vendemos la telemetría de nuestros clientes. El acceso está restringido a los ciclos de ingeniería activos."
                 },
                 {
                     title: "03. Estándares de Comunicación",
@@ -382,7 +394,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 },
                 {
                     title: "04. Soberanía de Datos",
-                    content: "Los clientes conservan los derechos para auditar la lógica construida en su entorno. Carrillo Dynamics LLC opera como un procesador técnico, asegurando que sus secretos intelectuales sigan siendo suyos."
+                    content: "Los clientes conservan el derecho de auditar la lógica desarrollada en su entorno. Carrillo Dynamics LLC opera como un procesador técnico, asegurando que sus secretos de propiedad intelectual sigan siendo suyos."
                 }
             ]
         },
@@ -398,26 +410,26 @@ export const i18nData: Record<Language, I18nContent> = {
                 },
                 {
                     title: "02. Propiedad Intelectual",
-                    content: "Tras la liquidación total, el cliente posee el 100% de la propiedad perpetua de las secuencias de automatización específicas y la lógica de middleware desplegada en su infraestructura."
+                    content: "Tras la liquidación total, el cliente es propietario del 100% de los derechos perpetuos sobre las secuencias de automatización específicas y la lógica de middleware desplegada en su infraestructura."
                 },
                 {
                     title: "03. Responsabilidad de Ingeniería",
-                    content: "Los servicios se prestan sobre una base de 'Rendimiento Diseñado'. La responsabilidad está limitada al valor del sprint de ingeniería activo actual. Se rige por las leyes del Estado de Illinois."
+                    content: "Los servicios se prestan bajo la premisa de 'Rendimiento Diseñado'. La responsabilidad se limita al valor del sprint de ingeniería activo actual. Se rige por las leyes del Estado de Illinois."
                 },
                 {
                     title: "04. Lógica de Terminación",
-                    content: "Cualquier parte puede pausar los ciclos de ingeniería con un aviso de 14 días. Cualquier lógica completada sigue siendo propiedad del cliente después de la liquidación."
+                    content: "Cualquiera de las partes puede pausar los ciclos de ingeniería con un aviso previo de 14 días. Toda lógica completada seguirá siendo propiedad del cliente tras el pago correspondiente."
                 }
              ]
         },
         faqs: [
             {
                 q: "¿Cuál es el costo real de la 'Fuga de Leads'?",
-                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar entre un estimado de $50k y $100k en ingresos anuales. Nuestro Blueprint de Automatización identifica estas 'muertes silenciosas', donde los leads desaparecen entre su CRM y el técnico de campo."
+                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar un estimado de $50k - $100k en ingresos anuales. Nuestro Blueprint de Automatización identifica estas 'muertes silenciosas', donde los leads desaparecen entre su CRM y el técnico de campo."
             },
             {
                 q: "¿Cómo impacta la 'Regla de los 60 Segundos' en el ROI?",
-                a: "Un lead contactado en <60 segundos tiene 8 veces más probabilidades de reservar. Diseñamos lógica de respuesta automatizada que evita los obstáculos principales humanos, asegurando que sea la primera empresa que el cliente escuche, 24/7."
+                a: "Un lead contactado en <60 segundos tiene 8 veces más probabilidades de reservar. Diseñamos lógica de respuesta automatizada que evita los cuellos de botella humanos, asegurando que sea la primera empresa que el cliente escuche, 24/7."
             },
             {
                 q: "¿Podemos duplicar nuestro volumen de servicios sin contratar más despachadores?",
@@ -425,11 +437,11 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "¿Su lógica reemplaza mi CRM (ServiceTitan, Jobber, Housecall Pro)?",
-                a: "No. Actuamos como un multiplier de fuerza para su CRM. Cerramos las brechas donde el software genérico falla, construyendo middleware personalizado que hace que sus herramientas actuales funcionen como su negocio realmente lo requiere."
+                a: "No. Actuamos como un multiplicador de fuerza para su CRM. Cerramos las brechas donde el software genérico falla, construyendo middleware personalizado que hace que sus herramientas actuales funcionen como su negocio realmente lo requiere."
             },
             {
                 q: "¿Qué tan pronto podemos ver resultados medibles?",
-                a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los obstáculos principales de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
+                a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los cuellos de botella de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
             },
             {
                 q: "¿Por qué lo llaman Blueprint de Automatización?",
@@ -437,19 +449,19 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "¿Están seguros los datos de mis clientes durante estas automatizaciones?",
-                a: "La seguridad no es negociable. Construimos tuberías seguras y encriptadas dentro de su ecosistema existente. Los datos de sus clientes permanecen bajo su control en todo momento."
+                a: "La seguridad no es negociable. Construimos canales de datos seguros y encriptados dentro de su ecosistema existente. Los datos de sus clientes permanecen bajo su control en todo momento."
             },
             {
                 q: "¿Qué es un 'Ingeniero de Operaciones Fraccional'?",
-                a: "A diferencia de un 'consultor' que solo da consejos, somos ingenieros que construyen. Actuamos como su CTO/COO de guardia, gestionando su infraestructura técnica para que usted pueda enfocarse en escalar el negocio."
+                a: "A diferencia de un 'consultor' que solo da consejos, somos ingenieros que construyen. Actuamos como su CTO/COO externo, gestionando su infraestructura técnica para que usted pueda enfocarse en escalar el negocio."
             },
             {
-                q: "¿Qué sucede si tenemos un pico repentino de volumen?",
-                a: "Nuestros sistemas están construidos para una 'Escala Elástica'. Mientras que el despacho humano colapsa bajo el caos, nuestra lógica gestiona el aumento, priorizando trabajos de alto valor y automatizando consultas estándar."
+                q: "¿Qué sucede si tenemos un pico de volumen repentino?",
+                a: "Nuestros sistemas están construidos para una 'Escala Elástica'. Mientras que el despacho humano colapsa bajo el caos, nuestra lógica genera el pico de demanda, priorizando trabajos de alto valor y automatizando consultas estándar."
             },
             {
                 q: "¿Soy el dueño de la lógica de automatización una vez construida?",
-                a: "100%. Usted es el dueño de la propiedad intelectual de los sistemas que construimos para usted. Nosotros proporcionamos la ingeniería y los planos; usted es el dueño del motor."
+                a: "100%. Usted posee la propiedad intelectual de los sistemas que construimos para usted. Nosotros proporcionamos la ingeniería y los blueprints; usted es el dueño del motor."
             }
         ],
         articles: [
@@ -457,7 +469,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "60-second-lead-rule",
                 title: "La Regla de los 60 Segundos",
                 description: "La velocidad de respuesta es la variable más crítica para su rentabilidad.",
-                content: "### Velocidad Operativa\n\nEn la industria de servicios, los segundos se traducen en dólares. Un cliente potenciales contactado en menos de 60 segundos cierra con una tasa ocho veces mayor que uno contactado apenas cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre que llega un prospecto y su equipo lo nota. Reemplazamos este lapso inconsistente con lógica determinista que actúa al instante.\n\n### La Matemática de la Fricción\n\nEl despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque de ingeniería minimiza esta fricción inyectando los datos del cliente directamente en su flujo de comunicación en menos de 200 ms, asegurando que usted sea siempre el primer punto de contacto.\n\n### Ejecución Industrial\n\nImplementamos protocolos de conexión inmediata para mantener esta velocidad. Esto incluye la inyección instantánea al CRM para automatizar la escritura manual, alertas de prioridad en tiempo real para sus mejores leads y puntos de contacto automatizados que llegan al teléfono del cliente en el momento en que envía su solicitud.",
+                content: "### Velocidad Operativa\n\nEn la industria de servicios, los segundos se traducen en dólares. Un cliente potencial contactado en menos de 60 segundos tiene una probabilidad de cierre ocho veces mayor que uno contactado apenas cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre la llegada de un prospecto y el momento en que su equipo lo detecta. Reemplazamos este lapso inconsistente con lógica determinista que actúa al instante.\n\n### La Matemática de la Fricción\n\nEl despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque de ingeniería minimiza esta fricción inyectando los datos del prospecto directamente en su flujo de comunicación en menos de 200 ms, asegurando que usted sea siempre el primer punto de contacto.\n\n### Ejecución Industrial\n\nImplementamos protocolos de conexión inmediata para mantener esta velocidad. Esto incluye la inyección instantánea en el CRM para automatizar la escritura manual, alertas de prioridad en tiempo real para sus mejores leads y puntos de contacto automatizados que llegan al teléfono del cliente en el momento en que envía su solicitud.",
                 date: "2026-04-01",
                 readTime: "4 min"
             },
@@ -465,7 +477,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "scaling-without-hiring",
                 title: "Escalar sin Contratar",
                 description: "Aumente su volumen de servicios sin añadir carga administrativa.",
-                content: "### La Trampa del Personal\n\nEl crecimiento tradicional suele conllevar grandes gastos generales. Históricamente, cada nuevo técnico requiere un aumento correspondiente en el personal de oficina para gestionar el papeleo resultante. Este modelo de crecimiento lineal termina matando sus márgenes con el tiempo. Ayudamos a las empresas a cambiar a un modelo de lógica exponencial donde su infraestructura hace el trabajo pesado.\n\n### Infraestructura Digital\n\nPara escalar sin reducir su rentabilidad, debe automatizar las tareas repetitivas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos seguros y rígidos que nunca duermen y nunca cometen errores. Esto permite que su equipo se concentre en la estrategia de alto valor en lugar de en la gestión de datos.\n\n### Integridad Operativa\n\nLos errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión inicial hasta la factura final. Esta precisión le permite triplicar su volumen de territorio con el mismo personal de oficina que tiene hoy.",
+                content: "### La Trampa del Personal\n\nEl crecimiento tradicional suele conllevar grandes gastos generales. Históricamente, cada nuevo técnico requiere un aumento correspondiente en el personal de oficina para gestionar el papeleo resultante. Este modelo de crecimiento lineal termina erosionando sus márgenes con el tiempo. Ayudamos a las empresas a cambiar a un modelo de lógica exponencial donde su infraestructura hace el trabajo pesado.\n\n### Infraestructura Digital\n\nPara escalar sin reducir su rentabilidad, debe automatizar las tareas repetitivas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos seguros y robustos que nunca duermen y nunca cometen errores. Esto permite que su equipo se concentre en la estrategia de alto valor en lugar de en la gestión de datos.\n\n### Integridad Operativa\n\nLos errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión inicial hasta la factura final. Esta precisión le permite triplicar su volumen de territorio con el mismo personal de oficina que tiene actualmente.",
                 date: "2026-04-07",
                 readTime: "5 min"
             },
@@ -473,7 +485,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "operational-leak-detection",
                 title: "Detección de Fugas en Operaciones",
                 description: "Detenga la pérdida invisible de ingresos en su embudo de admisión.",
-                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas de alto volumen tienen puntos ciegos donde los leads mueren silenciosamente antes de llegar a un técnico. El Blueprint de Automatización es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Análisis Técnico\n\nRastreamos cada milisegundo del viaje para encontrar dónde está perdiendo dinero. Analizamos la fricción del formulario para ver por qué los usuarios abandonan, la velocidad de triaje para medir el retraso real en las notificaciones y la lógica de cierre para identificar qué seguimientos están fallando al convertir. Estos datos nos permiten construir un blueprint técnico para tapar cada fuga con pura ingeniería operativa.",
+                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas de alto volumen tienen puntos ciegos donde los leads mueren silenciosamente antes de llegar a un técnico. El Blueprint de Automatización es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Análisis Técnico\n\nRastreamos cada milisegundo del viaje para encontrar dónde está perdiendo dinero. Analizamos la fricción del formulario para ver por qué los usuarios abandonan, la velocidad de triaje para medir el retraso real en las notificaciones y la lógica de cierre para identificar qué seguimientos no logran convertir. Estos datos nos permiten construir un blueprint técnico para sellar cada fuga con pura ingeniería operativa.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }

@@ -146,10 +146,10 @@ const Index = () => {
                 >
                     <div className="flex flex-col items-start gap-4">
                         <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">
-                            {lang === 'en' ? 'Stop the leak.' : 'Detén la fuga.'}
+                            {lang === 'en' ? 'Stop the leak.' : 'Detenga la fuga.'}
                         </h2>
                         <p className="text-lg md:text-xl font-bold text-[#10b981] uppercase tracking-widest">
-                            {lang === 'en' ? 'Start the engine.' : 'Arranca el motor.'}
+                            {lang === 'en' ? 'Start the engine.' : 'Arranque el motor.'}
                         </p>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
@@ -158,7 +158,7 @@ const Index = () => {
                             size="lg"
                             className="h-20 w-full sm:w-fit rounded-none px-12 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] text-black shadow-[0_0_50px_rgba(16,185,129,0.2)] transition-all border-none"
                         >
-                            {lang === 'en' ? 'GET FREE BLUEPRINT' : 'CONSIGUE BLUEPRINT GRATIS'}
+                            {t.nav.blueprint}
                             <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
                         </Button>
                     </div>

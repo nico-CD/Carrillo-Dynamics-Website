@@ -38,32 +38,25 @@ function generate() {
 
         const today = new Date().toISOString().split('T')[0];
 
-        // Generate URLs for each language
-        ['en', 'es'].forEach(lang => {
-            // Static Pages
-            staticPages.forEach(p => {
-                const url = p.path ? `${BASE_URL}/${lang}/${p.path}` : `${BASE_URL}/${lang}`;
-                xml += `  <url>\n`;
-                xml += `    <loc>${url}</loc>\n`;
-                xml += `    <lastmod>${today}</lastmod>\n`;
-                xml += `    <changefreq>${p.freq}</changefreq>\n`;
-                xml += `    <priority>${p.priority}</priority>\n`;
-                xml += `    <xhtml:link rel="alternate" hreflang="en" href="${p.path ? `${BASE_URL}/en/${p.path}` : `${BASE_URL}/en`}"/>\n`;
-                xml += `    <xhtml:link rel="alternate" hreflang="es" href="${p.path ? `${BASE_URL}/es/${p.path}` : `${BASE_URL}/es`}"/>\n`;
-                xml += `  </url>\n`;
-            });
+        // Static Pages
+        staticPages.forEach(p => {
+            const url = p.path ? `${BASE_URL}/${p.path}` : `${BASE_URL}`;
+            xml += `  <url>\n`;
+            xml += `    <loc>${url}</loc>\n`;
+            xml += `    <lastmod>${today}</lastmod>\n`;
+            xml += `    <changefreq>${p.freq}</changefreq>\n`;
+            xml += `    <priority>${p.priority}</priority>\n`;
+            xml += `  </url>\n`;
+        });
 
-            // Dynamic Articles
-            articleIds.forEach(id => {
-                xml += `  <url>\n`;
-                xml += `    <loc>${BASE_URL}/${lang}/articles/${id}</loc>\n`;
-                xml += `    <lastmod>${today}</lastmod>\n`;
-                xml += `    <changefreq>weekly</changefreq>\n`;
-                xml += `    <priority>0.8</priority>\n`;
-                xml += `    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/articles/${id}"/>\n`;
-                xml += `    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es/articles/${id}"/>\n`;
-                xml += `  </url>\n`;
-            });
+        // Dynamic Articles
+        articleIds.forEach(id => {
+            xml += `  <url>\n`;
+            xml += `    <loc>${BASE_URL}/articles/${id}</loc>\n`;
+            xml += `    <lastmod>${today}</lastmod>\n`;
+            xml += `    <changefreq>weekly</changefreq>\n`;
+            xml += `    <priority>0.8</priority>\n`;
+            xml += `  </url>\n`;
         });
 
         xml += `</urlset>`;

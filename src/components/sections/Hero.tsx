@@ -63,9 +63,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
                         </div>
 
                         <p className="text-sm sm:text-base md:text-lg font-medium text-muted-foreground max-w-2xl text-center leading-relaxed">
-                            {lang === 'en' 
-                                ? "We engineer and build custom automated systems for trade and service companies to optimize their operations, protect their margins, and reclaim their time."
-                                : "Diseñamos y construimos sistemas automatizados personalizados para que las empresas comerciales y de servicios optimicen sus operaciones, protejan sus márgenes y recuperen su tiempo."}
+                            {t.hero.subtitle}
                         </p>
 
                         <div className="pt-4 text-center">
@@ -83,11 +81,11 @@ const Hero = ({ onContactClick }: HeroProps) => {
 
                         {/* Telemetry Trust Badges */}
                         <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 font-mono text-[9px] md:text-xs font-bold text-muted-foreground uppercase tracking-widest">
-                            <span>CHICAGO-BASED ENGINEERING</span>
+                            <span>{t.hero.badge1}</span>
                             <span className="opacity-30">|</span>
-                            <span>&lt; 60s RESPONSE LATENCY</span>
+                            <span>{t.hero.badge2}</span>
                             <span className="opacity-30">|</span>
-                            <span>DETERMINISTIC DATA ROUTING</span>
+                            <span>{t.hero.badge3}</span>
                         </div>
                     </motion.div>
                 </div>
