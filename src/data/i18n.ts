@@ -135,7 +135,7 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         hero: {
             title: "Your team is spending hours on",
-            subtitle: "We engineer and build custom automated systems for trade and service companies to optimize their operations, protect their margins, and reclaim their time.",
+            subtitle: "We engineer and build custom automated systems for trade and service companies to optimize operations, protect margins, and reclaim time.",
             cta: "Get Started",
             audit: "Book Strategy Session",
             badge1: "CHICAGO-BASED ENGINEERING",
@@ -420,7 +420,7 @@ export const i18nData: Record<Language, I18nContent> = {
                     title: "04. Lógica de Terminación",
                     content: "Cualquiera de las partes puede pausar los ciclos de ingeniería con un aviso previo de 14 días. Toda lógica completada seguirá siendo propiedad del cliente tras el pago correspondiente."
                 }
-             ]
+            ]
         },
         faqs: [
             {
