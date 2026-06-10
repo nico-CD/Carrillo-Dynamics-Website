@@ -331,7 +331,7 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         hero: {
             title: "Su equipo dedica horas a",
-            subtitle: "Diseñamos y construimos sistemas automatizados personalizados para que las empresas comerciales y de servicios optimicen sus operaciones, protejan sus márgenes y recuperen su tiempo.",
+            subtitle: "Diseñamos y construimos sistemas automatizados personalizados para que las empresas comerciales y de servicios optimicen operaciones, protejan márgenes y recuperen tiempo.",
             cta: "Comenzar",
             audit: "Sesión de Estrategia",
             badge1: "INGENIERÍA BASADA EN CHICAGO",
