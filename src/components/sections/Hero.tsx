@@ -10,9 +10,9 @@ interface HeroProps {
 
 const Hero = ({ onContactClick }: HeroProps) => {
     const { lang, t } = useTranslation();
-    const words = lang === 'en' 
-        ? ["...BLEEDING EMERGENCY LEADS.", "...SLOW DISPATCH TIMES.", "...MANUAL QUOTING.", "...BROKEN CONTACT FORMS.", "...CRASHING WEBSITES."]
-        : ["...FUGAS DE LEADS DE EMERGENCIA.", "...DESPACHOS LENTOS.", "...COTIZACIONES MANUALES.", "...FORMULARIOS DE CONTACTO ROTOS.", "...SITIOS WEB CAÍDOS."];
+    const words = lang === 'en'
+        ? ["BLEEDING EMERGENCY LEADS.", "SLOW DISPATCH TIMES.", "MANUAL QUOTING.", "BROKEN CONTACT FORMS.", "CRASHING WEBSITES."]
+        : ["FUGAS DE LEADS DE EMERGENCIA.", "DESPACHOS LENTOS.", "COTIZACIONES MANUALES.", "FORMULARIOS DE CONTACTO ROTOS.", "SITIOS WEB CAÍDOS."];
 
     const [currentWord, setCurrentWord] = useState("");
     const [wordIndex, setWordIndex] = useState(0);
@@ -90,7 +90,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
                     </motion.div>
                 </div>
             </div>
-            
+
             {/* Visual background cleanup */}
             <div className="absolute inset-0 z-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,#10b981_0,transparent_25%)] blur-3xl" />
         </section>
