@@ -135,7 +135,7 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         hero: {
             title: "Your business is losing money on",
-            subtitle: "We build high-speed digital infrastructure for trade and service companies so your site stops crashing, phone keeps ringing, and you stop losing jobs to your competitors.",
+            subtitle: "We build high-speed digital infrastructure for trade and service companies so your site stops crashing, phone keeps ringing, and stop losing jobs to competitors.",
             cta: "Get Started",
             audit: "Book Strategy Session",
             badge1: "CHICAGO-BASED ENGINEERING",
