@@ -33,8 +33,8 @@ const SEOManager: React.FC<SEOManagerProps> = ({
         : `${brandName} | ${slogan}`;
         
     const siteDescription = lang === 'en' 
-        ? 'Carrillo Dynamics engineers and builds custom automated systems and backend infrastructure for trade and service companies to optimize operations and protect margins.'
-        : 'Carrillo Dynamics diseña y construye sistemas automatizados personalizados e infraestructura de backend para que las empresas comerciales y de servicios optimicen sus operaciones y protejan sus márgenes.';
+        ? 'Carrillo Dynamics builds high-speed digital infrastructure for trade and service companies so your site stops crashing, your phone keeps ringing, and you stop losing jobs to your competitors.'
+        : 'Carrillo Dynamics construye infraestructura digital de alta velocidad para empresas de servicios, para que su sitio web deje de caerse, su teléfono no pare de sonar y deje de perder trabajos frente a sus competidores.';
     
     const baseUrl = 'https://carrillodynamics.com';
     

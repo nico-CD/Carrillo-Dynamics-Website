@@ -2,11 +2,9 @@ import { Search, Layers, Rocket, Hammer, Truck, Factory, Thermometer, Droplets, 
 import { motion } from "framer-motion";
 import { useTranslation } from "@/components/LanguageProvider";
 import { useNavigate } from "react-router-dom";
-import CalendlyModal from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
-import ForensicBlueprint from "../ForensicBlueprint";
 
-const BlueprintProtocol = () => {
+const DiagnosticProtocol = () => {
     const { lang, t } = useTranslation();
     const navigate = useNavigate();
     const sectors = lang === 'en' ? [
@@ -98,19 +96,19 @@ const BlueprintProtocol = () => {
     const headers = lang === 'en' ? {
         sectors: "Current Operational Sectors",
         sectorsSub: "Custom-engineered automation for high-stakes industrial environments.",
-        blueprint: "Our System Blueprint",
+        blueprint: "Our System Diagnostic",
         blueprintSub: "A scientific approach to operational engineering that scales with your business."
     } : {
         sectors: "Sectores Operativos Actuales",
         sectorsSub: "Automatización diseñada a medida para entornos industriales de alto riesgo.",
-        blueprint: "Blueprint de Nuestro Sistema",
+        blueprint: "Diagnóstico de Nuestro Sistema",
         blueprintSub: "Un enfoque científico para la ingeniería operativa que escala con su negocio."
     };
 
     return (
         <section className="bg-background py-32 md:py-40 px-6 border-b border-foreground/5 transition-colors duration-300">
             <div className="max-w-7xl mx-auto space-y-40">
-                {/* Our System Blueprint - Z-PATTERN BENTO */}
+                {/* Our System Diagnostic - Z-PATTERN BENTO */}
                 <div className="space-y-20">
                     <div className="flex flex-col items-start gap-4">
                         <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">{headers.blueprint}</h2>
@@ -207,4 +205,4 @@ const BlueprintProtocol = () => {
     );
 };
 
-export default BlueprintProtocol;
+export default DiagnosticProtocol;

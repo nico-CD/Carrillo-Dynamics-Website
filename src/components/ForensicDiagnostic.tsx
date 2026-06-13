@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function ForensicBlueprint() {
+export default function ForensicDiagnostic() {
     return (
         <div className="w-full h-full bg-zinc-950/50 border border-zinc-900 flex items-center justify-center p-4 md:p-12 relative overflow-hidden group">
             {/* Background Grid Detail */}
@@ -33,7 +33,7 @@ export default function ForensicBlueprint() {
                     
                     {/* Process Node */}
                     <rect x="350" y="240" width="100" height="80" />
-                    <text x="360" y="285" className="fill-emerald-500 stroke-none text-[10px] font-mono font-bold">BLUEPRINT</text>
+                    <text x="360" y="285" className="fill-emerald-500 stroke-none text-[10px] font-mono font-bold">DIAGNOSTIC</text>
                     
                     {/* Output Node */}
                     <rect x="600" y="250" width="100" height="60" />

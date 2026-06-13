@@ -12,7 +12,7 @@ import Navbar from "@/components/Navbar";
 import InteractiveCalculator from "@/components/InteractiveCalculator";
 import { useNavigate, useLocation } from "react-router-dom";
 import Hero from "@/components/sections/Hero";
-import BlueprintProtocol from "@/components/sections/BlueprintProtocol";
+import DiagnosticProtocol from "@/components/sections/DiagnosticProtocol";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import SEOManager from "@/components/SEOManager";
@@ -165,9 +165,9 @@ const Index = () => {
                 </motion.div>
             </section>
 
-            {/* SEGMENT 3: THE BLUEPRINT OVERLAY */}
-            <ErrorBoundary name="Blueprint Protocol">
-                <BlueprintProtocol />
+            {/* SEGMENT 3: THE DIAGNOSTIC OVERLAY */}
+            <ErrorBoundary name="Diagnostic Protocol">
+                <DiagnosticProtocol />
             </ErrorBoundary>
 
             {/* SEGMENT 4: THE INTAKE FORM */}
@@ -197,8 +197,8 @@ const Index = () => {
                                 </h3>
                                 <p className="text-muted-foreground font-medium mb-12 max-w-md">
                                     {lang === 'en' 
-                                        ? 'Your operational blueprint has been initialized. Proceed to schedule your strategy session.' 
-                                        : 'Su blueprint operativo ha sido inicializado. Proceda a programar su sesión de estrategia.'}
+                                        ? 'Your operational diagnostic has been initialized. Proceed to schedule your strategy session.' 
+                                        : 'Su diagnóstico operativo ha sido inicializado. Proceda a programar su sesión de estrategia.'}
                                 </p>
                                 <Button
                                     onClick={() => navigate('/book')}

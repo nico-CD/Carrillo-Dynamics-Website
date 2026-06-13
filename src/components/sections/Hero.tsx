@@ -11,8 +11,8 @@ interface HeroProps {
 const Hero = ({ onContactClick }: HeroProps) => {
     const { lang, t } = useTranslation();
     const words = lang === 'en' 
-        ? ["Sheet Sprawl", "Manual Syncs", "Invoice Lag", "Email Limbo", "CRM Bloat", "Lead Leakage"]
-        : ["Hojas Caóticas", "Sincros Manuales", "Retraso en Facturas", "Limbo de Emails", "CRM Saturado", "Fuga de Leads"];
+        ? ["...BLEEDING EMERGENCY LEADS.", "...SLOW DISPATCH TIMES.", "...MANUAL QUOTING.", "...BROKEN CONTACT FORMS.", "...CRASHING WEBSITES."]
+        : ["...FUGAS DE LEADS DE EMERGENCIA.", "...DESPACHOS LENTOS.", "...COTIZACIONES MANUALES.", "...FORMULARIOS DE CONTACTO ROTOS.", "...SITIOS WEB CAÍDOS."];
 
     const [currentWord, setCurrentWord] = useState("");
     const [wordIndex, setWordIndex] = useState(0);

@@ -19,7 +19,7 @@ export interface I18nContent {
         home: string;
         faq: string;
         articles: string;
-        blueprint: string;
+        blueprint: string; // We keep this key name to prevent breaking component imports
         privacy: string;
         terms: string;
         strategy: string;
@@ -117,7 +117,7 @@ export const i18nData: Record<Language, I18nContent> = {
             home: "Home",
             faq: "FAQ",
             articles: "Articles",
-            blueprint: "GET FREE BLUEPRINT",
+            blueprint: "GET FREE DIAGNOSTIC",
             privacy: "Privacy",
             terms: "Terms",
             strategy: "Strategy Session"
@@ -125,7 +125,7 @@ export const i18nData: Record<Language, I18nContent> = {
         success: {
             title: "Request ",
             titleItalic: "Received.",
-            description: "I am personally reviewing your workflow right now. Look out for an email from me. I'll be sending over a custom video blueprint addressing your specific bottleneck within 24 hours.",
+            description: "I am personally reviewing your workflow right now. Look out for an email from me. I'll be sending over a custom video diagnostic addressing your specific bottleneck within 24 hours.",
             founder: "- Nico Carrillo (Founder of Carrillo Dynamics)",
             cta: "Return to Home"
         },
@@ -134,13 +134,13 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Technical", accent: "Archives" }
         },
         hero: {
-            title: "Your team is spending hours on",
-            subtitle: "We engineer and build custom automated systems for trade and service companies to optimize operations, protect margins, and reclaim time.",
+            title: "Your business is losing money on",
+            subtitle: "We build high-speed digital infrastructure for trade and service companies so your site stops crashing, your phone keeps ringing, and you stop losing jobs to your competitors.",
             cta: "Get Started",
             audit: "Book Strategy Session",
             badge1: "CHICAGO-BASED ENGINEERING",
-            badge2: "< 60s RESPONSE LATENCY",
-            badge3: "DETERMINISTIC DATA ROUTING"
+            badge2: "ZERO LOAD-TIME LAG",
+            badge3: "BUILT FOR MOBILE"
         },
         calculator: {
             title: "Reclaim ",
@@ -163,8 +163,8 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         intake: {
             title: "Get your ",
-            titleItalic: "Free Custom Blueprint.",
-            subtitle: "Tell me where your manual bottlenecks are. In 24 hours, I'll send you a personalized video analysis and automation blueprint.",
+            titleItalic: "Free Custom Diagnostic.",
+            subtitle: "Tell me where your manual bottlenecks are. In 24 hours, I'll send you a personalized video analysis and automation diagnostic.",
             fullName: "Full Name",
             email: "Business Email",
             companyName: "Company Name",
@@ -173,9 +173,9 @@ export const i18nData: Record<Language, I18nContent> = {
             industryPlaceholder: "Select your industry",
             bottleneck: "Primary Bottleneck",
             bottleneckPlaceholder: "Select bottleneck",
-            consent: "I consent to the Blueprint Analysis and occasional strategy updates.",
+            consent: "I consent to the Diagnostic Analysis and occasional strategy updates.",
             consentPrivacy: "Data is processed in accordance with our Privacy Governance Standards.",
-            submit: "Get Blueprint",
+            submit: "Get Diagnostic",
             submitting: "Initiating_"
         },
         privacyPolicy: {
@@ -186,11 +186,11 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Collection & Governance",
-                    content: "We collect specific operational data required to engineer your Automation Blueprint. This includes business metadata, intake volume statistics, and technical bottleneck logs. We adhere to industrial-grade standards for data integrity."
+                    content: "We collect specific operational data required to engineer your Automation Diagnostic. This includes business metadata, intake volume statistics, and technical bottleneck logs. We adhere to industrial-grade standards for data integrity."
                 },
                 {
                     title: "02. Internal Usage Protocols",
-                    content: "Your data is used exclusively for technical auditing and systems architecture. We do not participate in the sale of client telemetry. Access is restricted to active engineering cycles."
+                    content: "Your data is used exclusively for technical auditing and systems architecture. We do not sell the telemetry of our clients. Access is restricted to active engineering cycles."
                 },
                 {
                     title: "03. Communication Standards",
@@ -210,7 +210,7 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Professional Scope",
-                    content: "Carrillo Dynamics LLC provides technical execution via Fractional Operations Engineering. Our deliverables are functional logic and architectural blueprints, not passive consulting."
+                    content: "Carrillo Dynamics LLC provides technical execution via Fractional Operations Engineering. Our deliverables are functional logic and architectural diagnostics, not passive consulting."
                 },
                 {
                     title: "02. Intellectual Property",
@@ -229,7 +229,7 @@ export const i18nData: Record<Language, I18nContent> = {
         faqs: [
             {
                 q: "What is the actual cost of 'Lead Leakage'?",
-                a: "For high-volume firms, even a 5% leak in the intake funnel can cost between an estimated $50k - $100k in annual revenue. Our Automation Blueprint identifies these 'silent kills' where leads disappear between your CRM and the field tech."
+                a: "For high-volume firms, even a 5% leak in the intake funnel can cost between an estimated $50k - $100k in annual revenue. Our Automation Diagnostic identifies these 'silent kills' where leads disappear between your CRM and the field tech."
             },
             {
                 q: "How does the '60-Second Rule' impact ROI?",
@@ -248,8 +248,8 @@ export const i18nData: Record<Language, I18nContent> = {
                 a: "First operational wins are usually live within 14 days. We focus on high-impact bottlenecks first, such as intake flow and automated follow-ups, to drive measurable ROI."
             },
             {
-                q: "Why do you call it an Automation Blueprint?",
-                a: "Because we don't guess. We dive into your raw data logs to find exactly where timestamps lag and where leads drop. It's an engineering blueprint of your current operation."
+                q: "Why do you call it an Automation Diagnostic?",
+                a: "Because we don't guess. We dive into your raw data logs to find exactly where timestamps lag and where leads drop. It's an engineering diagnostic of your current operation."
             },
             {
                 q: "Is my customer data secure during these automations?",
@@ -265,7 +265,7 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "Do I own the automation logic once built?",
-                a: "100%. You own the intellectual property of the systems we build for you. We provide the engineering and the blueprints; you own the engine."
+                a: "100%. You own the intellectual property of the systems we build for you. We provide the engineering and the diagnostics; you own the engine."
             }
         ],
         articles: [
@@ -289,7 +289,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "operational-leak-detection",
                 title: "Operations Leak Detection",
                 description: "Stop the invisible revenue loss in your intake funnel.",
-                content: "### Identifying the Void\n\nIs your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. Automation Blueprint is a deep-dive into the technical path of every single lead that enters your ecosystem.\n\n### Technical Analysis\n\nWe track every millisecond of the journey to find where you are losing money. We analyze form friction to see why users drop off, triage velocity to measure the actual delay in notifications, and closing logic to identify which follow-ups are failing to convert. This data allows us to build a technical blueprint to plug every leak with pure operational engineering.",
+                content: "### Identifying the Void\n\nIs your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. Automation Diagnostic is a deep-dive into the technical path of every single lead that enters your ecosystem.\n\n### Technical Analysis\n\nWe track every millisecond of the journey to find where you are losing money. We analyze form friction to see why users drop off, triage velocity to measure the actual delay in notifications, and closing logic to identify which follow-ups are failing to convert. This data allows us to conduct a technical diagnostic to plug every leak with pure operational engineering.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }
@@ -313,7 +313,7 @@ export const i18nData: Record<Language, I18nContent> = {
             home: "Inicio",
             faq: "FAQ",
             articles: "Artículos",
-            blueprint: "OBTENGA SU BLUEPRINT GRATIS",
+            blueprint: "OBTENGA SU DIAGNÓSTICO GRATIS",
             privacy: "Privacidad",
             terms: "Términos",
             strategy: "Sesión de Estrategia"
@@ -321,7 +321,7 @@ export const i18nData: Record<Language, I18nContent> = {
         success: {
             title: "Solicitud ",
             titleItalic: "Recibida.",
-            description: "Estoy revisando personalmente su flujo de trabajo ahora mismo. Esté atento a un correo mío. Le enviaré un blueprint en video personalizado abordando su cuello de botella específico en menos de 24 horas.",
+            description: "Estoy revisando personalmente su flujo de trabajo ahora mismo. Esté atento a un correo mío. Le enviaré un diagnóstico en video personalizado abordando su cuello de botella específico en menos de 24 horas.",
             founder: "- Nico Carrillo (Fundador de Carrillo Dynamics)",
             cta: "Volver al Inicio"
         },
@@ -330,13 +330,13 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Archivo", accent: "Técnico" }
         },
         hero: {
-            title: "Su equipo dedica horas a",
-            subtitle: "Diseñamos y construimos sistemas automatizados personalizados para que las empresas comerciales y de servicios optimicen operaciones, protejan márgenes y recuperen tiempo.",
+            title: "Su negocio está perdiendo dinero en",
+            subtitle: "Construimos infraestructura digital de alta velocidad para empresas de servicios, para que su sitio web deje de caerse, su teléfono no pare de sonar y deje de perder trabajos frente a sus competidores.",
             cta: "Comenzar",
             audit: "Sesión de Estrategia",
             badge1: "INGENIERÍA BASADA EN CHICAGO",
-            badge2: "LATENCIA DE RESPUESTA < 60s",
-            badge3: "ENRUTAMIENTO DETERMINISTA DE DATOS"
+            badge2: "SIN RETRASOS DE CARGA",
+            badge3: "OPTIMIZADO PARA MÓVILES"
         },
         calculator: {
             title: "Recupere ",
@@ -351,7 +351,7 @@ export const i18nData: Record<Language, I18nContent> = {
             capacityImpact: "Impacto de Capacidad",
             scaleMonitor: "Monitor de Escalabilidad",
             growthPotential: "Potencial de Crecimiento",
-            summaryTemplate: "Recuperar {ftu} FTU significa liberar la capacidad real de más de {wholeFtu} operador(es) adicional(es) a tiempo completo. No solo ahorramos tiempo; recuperamos la capacidad productiva de su equipo sin añadir un solo dólar a su nómina.",
+            summaryTemplate: "Recuperar {ftu} FTU significa liberar la capacidad real de más de {wholeFtu} operador(es) adicional(es) a tiempo completo. No solo ahorramos tiempo; recuperamos la capacidad productiva de su equipo sin añadir un solo dólara su nómina.",
             bookStrategy: "Sesión de Estrategia",
             successTitle: "Análisis Completado.",
             successSub: "Su desglose de ROI personalizado ha sido diseñado. Descargue el PDF y reserve su sesión a continuación.",
@@ -359,8 +359,8 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         intake: {
             title: "Obtenga su ",
-            titleItalic: "Blueprint Personalizado Gratis.",
-            subtitle: "Dígame dónde están sus cuellos de botella manuales. En 24 horas, le enviaré un análisis en video y un blueprint de automatización personalizado.",
+            titleItalic: "Diagnóstico Personalizado Gratis.",
+            subtitle: "Dígame dónde están sus cuellos de botella manuales. En 24 horas, le enviaré un análisis en video y un diagnóstico de automatización personalizado.",
             fullName: "Nombre Completo",
             email: "Email de Negocios",
             companyName: "Nombre de la Empresa",
@@ -369,9 +369,9 @@ export const i18nData: Record<Language, I18nContent> = {
             industryPlaceholder: "Seleccione su industria",
             bottleneck: "Cuello de Botella Principal",
             bottleneckPlaceholder: "Seleccione su cuello de botella",
-            consent: "Doy mi consentimiento para el Análisis del Blueprint y actualizaciones ocasionales de estrategia.",
+            consent: "Doy mi consentimiento para el Análisis de Diagnóstico y actualizaciones ocasionales de estrategia.",
             consentPrivacy: "Los datos se procesan de acuerdo con nuestros Estándares de Gobernanza de Privacidad.",
-            submit: "Obtenga su Blueprint",
+            submit: "Obtenga su Diagnóstico",
             submitting: "Iniciando_"
         },
         privacyPolicy: {
@@ -382,7 +382,7 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Recopilación y Gobernanza",
-                    content: "Recopilamos datos operativos específicos necesarios para diseñar su Blueprint de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de cuellos de botella técnicos. Nos adherimos a estándares de grado industrial para la integridad de los datos."
+                    content: "Recopilamos datos operativos específicos necesarios para realizar su Diagnóstico de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de cuellos de botella técnicos. Nos adherimos a estándares de grado industrial para la integridad de los datos."
                 },
                 {
                     title: "02. Protocolos de Uso Interno",
@@ -393,7 +393,7 @@ export const i18nData: Record<Language, I18nContent> = {
                     content: "Seguimos estrictamente las directrices de la TCPA. La información móvil, incluidos los datos de consentimiento de SMS, nunca se comparte con terceros o afiliados con fines de marketing."
                 },
                 {
-                    title: "04. Soberanía de Datos",
+                    title: "04. Data Sovereignty",
                     content: "Los clientes conservan el derecho de auditar la lógica desarrollada en su entorno. Carrillo Dynamics LLC opera como un procesador técnico, asegurando que sus secretos de propiedad intelectual sigan siendo suyos."
                 }
             ]
@@ -406,7 +406,7 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Alcance Profesional",
-                    content: "Carrillo Dynamics LLC proporciona ejecución técnica a través de Ingeniería de Operaciones Fraccional. Nuestros entregables son lógica funcional y blueprints arquitectónicos, no consultoría pasiva."
+                    content: "Carrillo Dynamics LLC proporciona ejecución técnica a través de Ingeniería de Operaciones Fraccional. Nuestros entregables son lógica funcional y diagnósticos arquitectónicos, no consultoría pasiva."
                 },
                 {
                     title: "02. Propiedad Intelectual",
@@ -420,12 +420,12 @@ export const i18nData: Record<Language, I18nContent> = {
                     title: "04. Lógica de Terminación",
                     content: "Cualquiera de las partes puede pausar los ciclos de ingeniería con un aviso previo de 14 días. Toda lógica completada seguirá siendo propiedad del cliente tras el pago correspondiente."
                 }
-            ]
+             ]
         },
         faqs: [
             {
                 q: "¿Cuál es el costo real de la 'Fuga de Leads'?",
-                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar un estimado de $50k - $100k en ingresos anuales. Nuestro Blueprint de Automatización identifica estas 'muertes silenciosas', donde los leads desaparecen entre su CRM y el técnico de campo."
+                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar un estimado de $50k - $100k en ingresos anuales. Nuestro Diagnóstico de Automatización identifica estas 'muertes silenciosas', donde los leads desaparecen entre su CRM y el técnico de campo."
             },
             {
                 q: "¿Cómo impacta la 'Regla de los 60 Segundos' en el ROI?",
@@ -444,8 +444,8 @@ export const i18nData: Record<Language, I18nContent> = {
                 a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los cuellos de botella de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
             },
             {
-                q: "¿Por qué lo llaman Blueprint de Automatización?",
-                a: "Porque no adivinamos. Nos sumergimos en sus registros de datos brutos para encontrar exactamente dónde se retrasan los tiempos y dónde se pierden los leads. Es un blueprint de ingeniería de su operación actual."
+                q: "¿Por qué lo llaman Diagnóstico de Automatización?",
+                a: "Porque no adivinamos. Nos sumergimos en sus registros de datos brutos para encontrar exactamente dónde se retrasan los tiempos y dónde se pierden los leads. Es un diagnóstico de ingeniería de su operación actual."
             },
             {
                 q: "¿Están seguros los datos de mis clientes durante estas automatizaciones?",
@@ -456,12 +456,12 @@ export const i18nData: Record<Language, I18nContent> = {
                 a: "A diferencia de un 'consultor' que solo da consejos, somos ingenieros que construyen. Actuamos como su CTO/COO externo, gestionando su infraestructura técnica para que usted pueda enfocarse en escalar el negocio."
             },
             {
-                q: "¿Qué sucede si tenemos un pico de volumen repentino?",
+                q: "¿Qué sucede si tenemos un pico de volumen de demanda?",
                 a: "Nuestros sistemas están construidos para una 'Escala Elástica'. Mientras que el despacho humano colapsa bajo el caos, nuestra lógica genera el pico de demanda, priorizando trabajos de alto valor y automatizando consultas estándar."
             },
             {
                 q: "¿Soy el dueño de la lógica de automatización una vez construida?",
-                a: "100%. Usted posee la propiedad intelectual de los sistemas que construimos para usted. Nosotros proporcionamos la ingeniería y los blueprints; usted es el dueño del motor."
+                a: "100%. Usted posee la propiedad intelectual de los sistemas que construimos para usted. Nosotros proporcionamos la ingeniería y los diagnósticos; usted es el dueño del motor."
             }
         ],
         articles: [
@@ -485,7 +485,7 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "operational-leak-detection",
                 title: "Detección de Fugas en Operaciones",
                 description: "Detenga la pérdida invisible de ingresos en su embudo de admisión.",
-                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas de alto volumen tienen puntos ciegos donde los leads mueren silenciosamente antes de llegar a un técnico. El Blueprint de Automatización es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Análisis Técnico\n\nRastreamos cada milisegundo del viaje para encontrar dónde está perdiendo dinero. Analizamos la fricción del formulario para ver por qué los usuarios abandonan, la velocidad de triaje para medir el retraso real en las notificaciones y la lógica de cierre para identificar qué seguimientos no logran convertir. Estos datos nos permiten construir un blueprint técnico para sellar cada fuga con pura ingeniería operativa.",
+                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas de alto volumen tienen puntos ciegos donde los leads mueren silenciosamente antes de llegar a un técnico. El Diagnóstico de Automatización es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Análisis Técnico\n\nRastreamos cada milisegundo del viaje para encontrar dónde está perdiendo dinero. Analizamos la fricción del formulario para ver por qué los usuarios abandonan, la velocidad de triaje para medir el retraso real en las notificaciones y la lógica de cierre para identificar qué seguimientos no logran convertir. Estos datos nos permiten desarrollar un diagnóstico técnico para sellar cada fuga con pura ingeniería operativa.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }

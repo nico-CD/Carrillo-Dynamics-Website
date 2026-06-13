@@ -50,7 +50,7 @@ const ArticleSidebar = () => {
                             }}
                             className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors text-left w-full"
                         >
-                            {lang === 'en' ? 'Request Blueprint' : 'Solicitar Blueprint'}
+                            {lang === 'en' ? 'Request Diagnostic' : 'Solicitar Diagnóstico'}
                         </button>
                         <Link to="/faq" className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors">
                             {t.nav.faq}

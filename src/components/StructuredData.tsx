@@ -82,10 +82,10 @@ const StructuredData = () => {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "What is a Carrillo Dynamics Automation Blueprint?",
+                "name": "What is a Carrillo Dynamics Automation Diagnostic?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The Automation Blueprint is a scientific technical audit that identifies operational leaks and engineers deterministic digital systems to replace manual bottlenecks."
+                    "text": "The Automation Diagnostic is a scientific technical audit that identifies operational leaks and engineers deterministic digital systems to replace manual bottlenecks."
                 }
             },
             {

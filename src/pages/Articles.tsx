@@ -19,7 +19,7 @@ const ArticlesPage = () => {
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans transition-colors duration-300">
             <SEOManager 
                 title={lang === 'en' ? 'Technical Archive' : 'Archivo Técnico'}
-                description={lang === 'en' ? 'Explorations in engineering flow, industrial grit, and automation blueprints.' : 'Exploraciones en ingeniería de flujo, tesón industrial y blueprints de automatización.'}
+                description={lang === 'en' ? 'Explorations in engineering flow, industrial grit, and automation diagnostics.' : 'Exploraciones en ingeniería de flujo, tesón industrial y diagnósticos de automatización.'}
             />
             <Navbar />
             

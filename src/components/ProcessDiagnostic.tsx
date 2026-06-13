@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Box, Cpu, Workflow } from "lucide-react";
 
-const ProcessBlueprint = () => {
+const ProcessDiagnostic = () => {
     return (
         <div className="w-full max-w-5xl mx-auto py-20 px-4 relative flex flex-col md:flex-row items-center justify-between gap-12">
 
@@ -76,4 +76,4 @@ const ProcessBlueprint = () => {
     );
 };
 
-export default ProcessBlueprint;
+export default ProcessDiagnostic;

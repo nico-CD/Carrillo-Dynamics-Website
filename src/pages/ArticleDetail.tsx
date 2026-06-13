@@ -8,7 +8,7 @@ import ArticleSidebar from "../components/ArticleSidebar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SEOManager from "../components/SEOManager";
-import ForensicBlueprint from "../components/ForensicBlueprint";
+import ForensicDiagnostic from "../components/ForensicDiagnostic";
 import { Button } from "../components/ui/button";
 
 const ArticleDetail = () => {
@@ -72,9 +72,8 @@ const ArticleDetail = () => {
                 <ArticleSidebar />
                 
                 <main className="flex-1 lg:ml-80 overflow-x-hidden relative">
-                    {/* BACKGROUND SCHEMATIC OVERLAY */}
                     <div className="absolute inset-x-0 top-0 h-screen opacity-[0.03] pointer-events-none overflow-hidden grayscale">
-                        <ForensicBlueprint />
+                        <ForensicDiagnostic />
                     </div>
 
                     <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-24 relative z-10 space-y-24">
@@ -208,8 +207,8 @@ const ArticleDetail = () => {
                                     </h2>
                                     <p className="font-bold max-w-2xl text-lg md:text-xl opacity-60">
                                         {lang === 'en' 
-                                            ? 'Request your custom Automation Blueprint to identify and solve operational leaks.'
-                                            : 'Solicite su Blueprint de Automatización personalizado para identificar y resolver fugas operativas.'}
+                                             ? 'Request your custom Automation Diagnostic to identify and solve operational leaks.'
+                                             : 'Solicite su Diagnóstico de Automatización personalizado para identificar y resolver fugas operativas.'}
                                     </p>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">

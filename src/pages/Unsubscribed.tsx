@@ -38,7 +38,7 @@ const Unsubscribed = () => {
                             Un<span className="text-[#10b981] italic">subscribed.</span>
                         </h1>
                         <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed max-w-lg mx-auto">
-                            You have successfully opted out of the Carrillo Dynamics flow. Transmissions of engineering insights and workflow blueprints have been halted. We respect your focus.
+                            You have successfully opted out of the Carrillo Dynamics flow. Transmissions of engineering insights and workflow diagnostics have been halted. We respect your focus.
                         </p>
                         <p className="text-sm font-black uppercase tracking-[0.1em] text-[#10b981] pt-4">
                             - Nico Carrillo (Founder of Carrillo Dynamics)

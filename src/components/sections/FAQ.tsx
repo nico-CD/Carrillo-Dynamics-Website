@@ -21,7 +21,7 @@ const FAQ = () => {
                     },
                     {
                         q: "What if our processes are currently manual?",
-                        a: "That is our ideal starting point. We do not automate chaos; we engineer clarity. Our first step is a rigorous Blueprint phase where we map out dispatch and quoting flows."
+                        a: "That is our ideal starting point. We do not automate chaos; we engineer clarity. Our first step is a rigorous Diagnostic phase where we map out dispatch and quoting flows."
                     },
                     {
                         q: "Do we need internal IT to maintain this?",
