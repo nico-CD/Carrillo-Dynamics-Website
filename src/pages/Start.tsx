@@ -110,7 +110,15 @@ const Start = () => {
 
             {/* VIDEO SECTION */}
             <section className="px-6 py-20 bg-background relative z-10 transition-colors duration-300">
-                <div className="mx-auto max-w-5xl">
+                {/* Engineering Graph Paper Background */}
+                <div 
+                    className="absolute inset-0 pointer-events-none opacity-[0.25]"
+                    style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
+                    }}
+                />
+                
+                <div className="mx-auto max-w-5xl relative z-10">
                     <div className="mb-12 text-center space-y-4">
                         <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
                             {lang === 'en' ? (
@@ -144,7 +152,7 @@ const Start = () => {
                 <div 
                     className="absolute inset-0 pointer-events-none opacity-[0.25]"
                     style={{
-                        backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAnIGhlaWdodD0nMjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nTSAyMCAwIEwgMCAwIDAgMjAnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzEwYjk4MScgc3Ryb2tlLXdpZHRoPScwLjUnIHN0cm9rZS1vcGFjaXR5PScwLjgnLz48L3N2Zz4=")`
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
                     }}
                 />
                 

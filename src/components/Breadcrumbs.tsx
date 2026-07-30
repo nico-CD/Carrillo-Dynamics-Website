@@ -9,7 +9,7 @@ const Breadcrumbs = () => {
   
   const pathnames = pathname.split("/").filter((x) => x);
 
-  if (pathname === '/' || pathname === '') return null;
+  if (pathname === '/' || pathname === '' || pathname === '/start') return null;
 
   return (
     <nav 
