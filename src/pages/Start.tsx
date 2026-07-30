@@ -99,12 +99,12 @@ const Start = () => {
             {/* Clean Header - No distracting navigation, just the logo */}
             <header className="w-full border-b border-foreground/10 bg-background/80 backdrop-blur-md z-50 sticky top-0 h-20 flex items-center px-6">
                 <div className="max-w-7xl mx-auto flex w-full items-center justify-center">
-                    <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <div className="flex items-center gap-2">
                         <img src="/bull_PNGs/vect.bull.svg" alt="Carrillo Dynamics Logo" className="h-10 w-10" />
                         <span className="font-black text-xl tracking-tighter">
-                            CARRILLO<span className="text-[#10b981]">DYNAMICS</span>
+                            CARRILLO <span className="text-[#10b981]">DYNAMICS</span>
                         </span>
-                    </a>
+                    </div>
                 </div>
             </header>
 
@@ -144,7 +144,7 @@ const Start = () => {
                 <div 
                     className="absolute inset-0 pointer-events-none opacity-[0.25]"
                     style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
+                        backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAnIGhlaWdodD0nMjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nTSAyMCAwIEwgMCAwIDAgMjAnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzEwYjk4MScgc3Ryb2tlLXdpZHRoPScwLjUnIHN0cm9rZS1vcGFjaXR5PScwLjgnLz48L3N2Zz4=")`
                     }}
                 />
                 
