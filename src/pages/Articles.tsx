@@ -55,7 +55,7 @@ const ArticlesPage = () => {
                             <Link 
                                 key={article.id}
                                 to={`/resources/${article.id}`}
-                                className={`group bg-background p-8 md:p-12 hover:bg-muted/50 transition-all flex flex-col justify-between h-full space-y-12 ${idx === 0 ? 'md:col-span-2' : ''}`}
+                                className="group bg-background p-8 md:p-12 hover:bg-muted/50 transition-all flex flex-col justify-between h-full space-y-12"
                             >
                                 <div className="space-y-6">
                                     {insightImages[article.id] && (
