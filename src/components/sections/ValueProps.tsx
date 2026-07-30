@@ -36,7 +36,7 @@ const ValueProps = () => {
             
             {/* Topographical Contour Map Background */}
             <div 
-                className="absolute inset-0 pointer-events-none opacity-[0.03]"
+                className="absolute inset-0 pointer-events-none opacity-[0.1]"
                 style={{
                     backgroundImage: `
                         repeating-radial-gradient(circle at 0% 0%, transparent 0, transparent 40px, #10b981 40px, #10b981 41px),

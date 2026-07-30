@@ -46,7 +46,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
         <section className="relative flex min-h-[85vh] flex-col justify-center px-6 pt-32 md:pt-48 pb-12 md:pb-24 bg-background overflow-hidden transition-colors duration-300 border-b border-foreground/5">
             {/* Engineering Graph Paper Background */}
             <div 
-                className="absolute inset-0 pointer-events-none opacity-[0.25] bg-repeat"
+                className="absolute inset-0 pointer-events-none opacity-[0.4] bg-repeat"
                 style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
                 }}
