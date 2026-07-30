@@ -117,30 +117,30 @@ export const i18nData: Record<Language, I18nContent> = {
             home: "Home",
             faq: "FAQ",
             articles: "Articles",
-            blueprint: "GET FREE DIAGNOSTIC",
+            blueprint: "GET STARTED",
             privacy: "Privacy",
             terms: "Terms",
-            strategy: "Strategy Session"
+            strategy: "Book a Call"
         },
         success: {
             title: "Request ",
             titleItalic: "Received.",
-            description: "I am personally reviewing your workflow right now. Look out for an email from me. I'll be sending over a custom video diagnostic addressing your specific bottleneck within 24 hours.",
-            founder: "- Nico Carrillo (Founder of Carrillo Dynamics)",
+            description: "We'll review your details and get back to you within 24 hours.",
+            founder: "- Nico Carrillo",
             cta: "Return to Home"
         },
         pageTitles: {
-            faq: { main: "Operational", accent: "FAQ" },
-            articles: { main: "Technical", accent: "Archives" }
+            faq: { main: "Frequently Asked", accent: "Questions" },
+            articles: { main: "Our", accent: "Blog" }
         },
         hero: {
-            title: "Your business is losing money on",
-            subtitle: "We build high-speed digital infrastructure for trade and service companies so your site stops crashing, phone keeps ringing, and stop losing jobs to competitors.",
+            title: "Stop losing customers to",
+            subtitle: "We build modern, fast websites and straightforward lead-generation systems for local service businesses. Get more jobs and streamline your operations.",
             cta: "Get Started",
-            audit: "Book Strategy Session",
-            badge1: "CHICAGO-BASED ENGINEERING",
-            badge2: "ZERO LOAD-TIME LAG",
-            badge3: "BUILT FOR MOBILE"
+            audit: "Book a Call",
+            badge1: "TRUSTED LOCALLY",
+            badge2: "FAST & RELIABLE",
+            badge3: "MOBILE FRIENDLY"
         },
         calculator: {
             title: "Reclaim ",
@@ -228,38 +228,22 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         faqs: [
             {
-                q: "What is the actual cost of 'Lead Leakage'?",
-                a: "For high-volume firms, even a 5% leak in the intake funnel can cost between an estimated $50k - $100k in annual revenue. Our Automation Diagnostic identifies these 'silent kills' where leads disappear between your CRM and the field tech."
+                q: "How long until I see results?",
+                a: "We aim to have your new system live within a few weeks. You'll start seeing an increase in lead capture immediately once it's up."
             },
             {
-                q: "How does the '60-Second Rule' impact ROI?",
-                a: "A lead contacted in <60 seconds is 8x more likely to book. We engineer automated response logic that bypasses human bottlenecks, ensuring you're the first company the customer hears from, 24/7."
+                q: "Do I need to be tech-savvy?",
+                a: "Not at all. We handle all the technical heavy lifting. You just need to focus on answering the phone and doing the work you're good at."
             },
             {
-                q: "Can we double our service volume without hiring more dispatchers?",
-                a: "Positioned for growth. By automating manual data entry and replacing probabilistic dispatching with deterministic logic, your current office staff can manage 3x the territory volume with significantly less stress."
+                q: "Will this replace my current tools like Jobber or ServiceTitan?",
+                a: "No, we work alongside your current tools to make sure you're getting the most out of them. We build the website and the lead generation engine that feeds into your existing CRM."
             },
             {
-                q: "Does your logic replace my CRM (ServiceTitan, Jobber, Housecall Pro)?",
-                a: "No. We act as a force multiplier for your CRM. We close the gaps where generic software falls short, building custom middleware that makes your current tools work exactly as your business requires."
-            },
-            {
-                q: "How soon do we see measurable results?",
-                a: "First operational wins are usually live within 14 days. We focus on high-impact bottlenecks first, such as intake flow and automated follow-ups, to drive measurable ROI."
-            },
-            {
-                q: "Why do you call it an Automation Diagnostic?",
-                a: "Because we don't guess. We dive into your raw data logs to find exactly where timestamps lag and where leads drop. It's an engineering diagnostic of your current operation."
-            },
-            {
-                q: "Is my customer data secure during these automations?",
-                a: "Security is non-negotiable. We build secure, encrypted pipelines within your existing ecosystem. Your customer data remains under your control at all times."
-            },
-            {
-                q: "What is a 'Fractional Operations Engineer'?",
-                a: "Unlike a 'consultant' who just gives advice, we are engineers who build. We act as your on-call CTO/COO, managing your technical infrastructure so you can focus on scaling the business."
-            },
-            {
+                q: "What types of businesses do you work with?",
+                a: "We specialize in local service businesses like plumbers, HVAC technicians, electricians, and contractors."
+            }
+        ],
                 q: "What happens if we have a sudden volume spike?",
                 a: "Our systems are built for 'Elastic Scale'. While human dispatch collapses under chaos, our logic manages the surge, prioritizing high-value jobs and automating standard inquiries."
             },

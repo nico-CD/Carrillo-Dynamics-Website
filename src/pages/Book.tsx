@@ -83,47 +83,40 @@ const Book = () => {
 
         return () => {
             if (script) {
-                script.removeEventListener('load', initWidget);
-            }
+            document.body.removeChild(script);
         };
-    }, [lang]);
+    }, []);
 
     return (
-        <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans overflow-x-hidden">
+        <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans">
             <SEOManager />
             <Navbar />
             
-            <section className="pt-32 pb-16 px-6 border-b border-foreground/5 min-h-[80vh] flex flex-col items-center justify-center">
-                <div className="w-full max-w-5xl mx-auto space-y-8">
-                    <div className="text-center space-y-4">
-                        <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
-                            {lang === 'en' ? 'Direct Engineering Access.' : 'Acceso Directo a Ingeniería.'}
-                        </h1>
-                        <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto">
-                            {lang === 'en' 
-                                ? 'Select a time below for your 15-minute strategy session.' 
-                                : 'Seleccione un horario a continuación para su sesión de estrategia de 15 minutos.'}
-                        </p>
-                    </div>
+            <section className="pt-32 pb-24 px-6 relative border-b border-foreground/5">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-4xl mx-auto text-center"
+                >
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight leading-none mb-6 text-foreground">
+                        {lang === 'en' ? 'Book a ' : 'Agende una '} <br/>
+                        <span className="italic text-[#10b981]">
+                            {lang === 'en' ? 'Strategy Session' : 'Sesión de Estrategia'}
+                        </span>
+                    </h1>
+                    <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto">
+                        {lang === 'en' 
+                            ? "Let's discuss your business, find the bottlenecks, and see how our automation systems can help you scale." 
+                            : "Hablemos sobre su negocio, identifiquemos los cuellos de botella y veamos cómo nuestros sistemas de automatización pueden ayudarle a escalar."}
+                    </p>
+                </motion.div>
+            </section>
 
-                    <div className="w-full bg-background border border-border min-h-[1000px] relative overflow-visible rounded-sm" style={{ overflow: 'visible' }}>
-                        <div 
-                            id="calendly-target-container"
-                            style={{ width: '100%', height: '1000px', display: 'block', minHeight: '1000px' }} 
-                        />
-                        
-                        {/* Themed telemetry loading spinner */}
-                        {isLoading && (
-                            <div className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-[#09090b] pointer-events-none transition-opacity duration-300">
-                                <div className="relative h-12 w-12 flex items-center justify-center">
-                                    <div className="absolute inset-0 rounded-full border-2 border-emerald-500/10 animate-pulse" />
-                                    <div className="absolute inset-0 rounded-full border-2 border-t-[#10b981] animate-spin" />
-                                </div>
-                                <span className="font-mono text-[10px] text-[#10b981] uppercase tracking-[0.2em] animate-pulse">
-                                    {lang === 'en' ? 'Connecting Secure Pipeline...' : 'Conectando Canal Seguro...'}
-                                </span>
-                            </div>
-                        )}
+            <section className="py-24 px-6 bg-muted/10 relative">
+                <div className="max-w-4xl mx-auto">
+                    <div className="bg-background border-2 border-border p-4 md:p-8 shadow-[0_0_50px_rgba(0,0,0,0.1)]">
+                        <div id="calendly-target-container" style={{ minWidth: '320px', height: '700px' }} />
                         
                         {/* Fallback Fail-Safe Banner */}
                         <div className="border-t border-border p-6 bg-black/20 flex flex-col sm:flex-row items-center justify-between gap-4">

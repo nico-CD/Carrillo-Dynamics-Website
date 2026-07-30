@@ -11,8 +11,8 @@ interface HeroProps {
 const Hero = ({ onContactClick }: HeroProps) => {
     const { lang, t } = useTranslation();
     const words = lang === 'en'
-        ? ["BLEEDING EMERGENCY LEADS.", "SLOW DISPATCH TIMES.", "MANUAL QUOTING.", "BROKEN CONTACT FORMS.", "CRASHING WEBSITES."]
-        : ["FUGAS DE LEADS DE EMERGENCIA.", "DESPACHOS LENTOS.", "COTIZACIONES MANUALES.", "FORMULARIOS DE CONTACTO ROTOS.", "SITIOS WEB CAÍDOS."];
+        ? ["SLOW RESPONSE TIMES.", "OUTDATED WEBSITES.", "MISSED LEADS.", "YOUR COMPETITORS."]
+        : ["TIEMPOS DE RESPUESTA LENTOS.", "SITIOS WEB DESACTUALIZADOS.", "CLIENTES PERDIDOS.", "TUS COMPETIDORES."];
 
     const [currentWord, setCurrentWord] = useState("");
     const [wordIndex, setWordIndex] = useState(0);

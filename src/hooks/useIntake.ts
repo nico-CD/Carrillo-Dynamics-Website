@@ -22,41 +22,38 @@ export const useIntake = () => {
         setIsLoading(true);
         try {
             const sanitizedData = sanitizeData(data);
-            const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
+            // Use Formspree URL from env or fallback to the provided one
+            const webhookUrl = import.meta.env.VITE_FORMSPREE_URL || "https://formspree.io/f/mzdnwklv";
 
-            // The Handshake: n8n Lead Generation Payload
             const payload = {
-                lead_name: sanitizedData.firstName,
-                lead_email: sanitizedData.email,
-                company_name: sanitizedData.companyName,
-                company_website: sanitizedData.companyWebsite,
-                industry: sanitizedData.industry,
-                bottleneck: sanitizedData.bottleneck,
-                submittedAt: new Date().toISOString(),
-                source: window.location.hostname,
-                event_type: "lead_gen"
+                Name: sanitizedData.firstName,
+                Email: sanitizedData.email,
+                Company: sanitizedData.companyName,
+                Website: sanitizedData.companyWebsite,
+                Industry: sanitizedData.industry,
+                Bottleneck: sanitizedData.bottleneck,
+                SubmittedAt: new Date().toISOString(),
+                Source: window.location.hostname
             };
 
-            if (webhookUrl) {
-                try {
-                    await fetch(webhookUrl, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify(payload)
-                    });
-                } catch (e) {
-                    console.error("Webhook failure (silent):", e);
-                }
-            } else {
-                console.log(`[Industrial Mono 2.7] Mock Submission (Step ${step}):`, payload);
+            try {
+                await fetch(webhookUrl, {
+                    method: "POST",
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+            } catch (e) {
+                console.error("Formspree submission failure:", e);
             }
 
-            // Simulate delay for high-agency processing feel
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Simulate slight delay for UX
+            await new Promise(resolve => setTimeout(resolve, 1000));
             return true;
         } catch (error) {
             console.error("Form submission error:", error);
-            // We still return true to allow the user to proceed to the next step of the funnel
             return true;
         } finally {
             setIsLoading(false);

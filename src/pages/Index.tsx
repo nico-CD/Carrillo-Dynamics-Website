@@ -9,10 +9,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import Navbar from "@/components/Navbar";
-import InteractiveCalculator from "@/components/InteractiveCalculator";
+import HowItWorks from "@/components/sections/HowItWorks";
+import SocialProof from "@/components/sections/SocialProof";
 import { useNavigate, useLocation } from "react-router-dom";
 import Hero from "@/components/sections/Hero";
-import DiagnosticProtocol from "@/components/sections/DiagnosticProtocol";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import SEOManager from "@/components/SEOManager";
@@ -117,58 +117,9 @@ const Index = () => {
                 <Hero onContactClick={scrollToForm} />
             </section>
 
-            {/* SEGMENT 2: THE PROOF (CALCULATOR) */}
-            <section id="calculator" className="border-b border-foreground/5 bg-background transition-colors duration-300">
-                <motion.div
-                    className="reading-section py-32 md:py-40"
-                    {...revealProps}
-                >
-                    <div className="mb-20 text-left">
-                        <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight mb-8 leading-none text-foreground lg:max-w-3xl transition-colors duration-300">
-                            {t.calculator.title}
-                            <span className="italic text-[#10b981]">{t.calculator.titleItalic}</span>
-                        </h2>
-                        <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl leading-relaxed transition-colors duration-300">
-                            {t.calculator.subtitle}
-                        </p>
-                    </div>
-                    <ErrorBoundary name="ROI Calculator">
-                        <InteractiveCalculator />
-                    </ErrorBoundary>
-                </motion.div>
-            </section>
-
-            {/* Bridge CTA */}
-            <section className="bg-background py-32 md:py-40 px-6 border-b border-foreground/5 transition-colors duration-300">
-                <motion.div
-                    {...revealProps}
-                    className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
-                >
-                    <div className="flex flex-col items-start gap-4">
-                        <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-foreground transition-colors duration-300">
-                            {lang === 'en' ? 'Stop the leak.' : 'Detenga la fuga.'}
-                        </h2>
-                        <p className="text-lg md:text-xl font-bold text-[#10b981] uppercase tracking-widest">
-                            {lang === 'en' ? 'Start the engine.' : 'Arranque el motor.'}
-                        </p>
-                    </div>
-                    <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-                        <Button
-                            onClick={() => document.getElementById('intake')?.scrollIntoView({ behavior: 'smooth' })}
-                            size="lg"
-                            className="h-20 w-full sm:w-fit rounded-none px-12 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] text-black shadow-[0_0_50px_rgba(16,185,129,0.2)] transition-all border-none"
-                        >
-                            {t.nav.blueprint}
-                            <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
-                        </Button>
-                    </div>
-                </motion.div>
-            </section>
-
-            {/* SEGMENT 3: THE DIAGNOSTIC OVERLAY */}
-            <ErrorBoundary name="Diagnostic Protocol">
-                <DiagnosticProtocol />
-            </ErrorBoundary>
+            {/* SEGMENT 2: HOW IT WORKS & SOCIAL PROOF */}
+            <HowItWorks />
+            <SocialProof />
 
             {/* SEGMENT 4: THE INTAKE FORM */}
             <section id="intake" className="px-6 py-32 md:py-40 bg-background relative z-10 transition-colors duration-300">
