@@ -23,6 +23,7 @@ const Unsubscribed = React.lazy(() => import("./pages/Unsubscribed"));
 const ArticlesPage = React.lazy(() => import("./pages/Articles"));
 const ArticleDetail = React.lazy(() => import("./pages/ArticleDetail"));
 const Book = React.lazy(() => import("./pages/Book"));
+const Start = React.lazy(() => import("./pages/Start"));
 
 const queryClient = new QueryClient();
 
@@ -64,6 +65,7 @@ const App = () => (
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/book" element={<Book />} />
+                  <Route path="/start" element={<Start />} />
 
                   <Route path="/privacy" element={<PrivacyPolicy />} />
                   <Route path="/terms" element={<TermsConditions />} />
