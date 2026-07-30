@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PageProgressBar from "./components/PageProgressBar";
 import Breadcrumbs from "./components/Breadcrumbs";
 import SEOManager from "./components/SEOManager";
+import CustomCursor from "./components/CustomCursor";
 import Index from "./pages/Index";
 
 const NotFound = React.lazy(() => import("./pages/NotFound"));
@@ -34,6 +35,7 @@ const App = () => (
         <TooltipProvider>
           <BrowserRouter>
             <ScrollToTop />
+            <CustomCursor />
             <LanguageProvider>
               <SEOManager />
               <PageProgressBar />

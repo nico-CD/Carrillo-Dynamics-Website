@@ -1,12 +1,14 @@
-import { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import Navbar from "@/components/Navbar";
-import HowItWorks from "@/components/sections/HowItWorks";
-import ValueProps from "@/components/sections/ValueProps";
 import Hero from "@/components/sections/Hero";
 import Footer from "@/components/Footer";
 import SEOManager from "@/components/SEOManager";
-import VideoGate from "@/components/sections/VideoGate";
 import { useLocation } from "react-router-dom";
+
+// Lazy load below-the-fold components
+const HowItWorks = React.lazy(() => import("@/components/sections/HowItWorks"));
+const ValueProps = React.lazy(() => import("@/components/sections/ValueProps"));
+const VideoGate = React.lazy(() => import("@/components/sections/VideoGate"));
 
 const Index = () => {
     const location = useLocation();
@@ -36,12 +38,12 @@ const Index = () => {
                 <Hero onContactClick={scrollToForm} />
             </section>
 
-            {/* SEGMENT 2: HOW IT WORKS & VALUE PROPS */}
-            <HowItWorks />
-            <ValueProps />
-
-            {/* SEGMENT 3: VIDEO GATE (Replaced old Intake) */}
-            <VideoGate />
+            {/* SEGMENT 2 & 3: BELOW THE FOLD */}
+            <Suspense fallback={<div className="min-h-screen bg-background" />}>
+                <HowItWorks />
+                <ValueProps />
+                <VideoGate />
+            </Suspense>
 
             <Footer />
         </div>
