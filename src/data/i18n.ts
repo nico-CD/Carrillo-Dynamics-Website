@@ -163,8 +163,8 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         intake: {
             title: "Get your ",
-            titleItalic: "Free Custom Diagnostic.",
-            subtitle: "Tell me where your manual bottlenecks are. In 24 hours, I'll send you a personalized video analysis and automation diagnostic.",
+            titleItalic: "Free Automation Diagnostic.",
+            subtitle: "Tell us where your manual bottlenecks are. In 24 hours, we'll send you a personalized video analysis and automation diagnostic.",
             fullName: "Full Name",
             email: "Business Email",
             companyName: "Company Name",
@@ -340,9 +340,9 @@ Measure the time it takes for a new lead to receive a response. Measure the time
                 readTime: "7 min"
             },
             {
-                id: "founders-perspective",
-                title: "Why I Built Carrillo Dynamics: A Founder's Perspective",
-                description: "From ripping apart engines and pitching in college to engineering enterprise-grade service systems.",
+                id: "engineering-philosophy",
+                title: "The Engineering Philosophy",
+                description: "Why I built Carrillo Dynamics: deterministic logic for service businesses.",
                 content: `### The Gritty Reality of Service
 
 I didn't start my career in a cushy tech office. I spent time in professional landscaping, working customer service at hardware and automotive stores, and acting as a Project Engineer in high-rise tenant improvement projects. I've also spent countless hours in the garage ripping apart my own car engines and dropping transmissions. I know what the gritty, blue-collar reality of physical work looks like, and I know how chaotic the back-office operations can get when you're trying to dispatch crews, manage inventory, and keep clients happy simultaneously.
@@ -427,8 +427,8 @@ Technology and AI shouldn't replace the human element of your business; they sho
         },
         intake: {
             title: "Obtenga su ",
-            titleItalic: "Diagnóstico Personalizado Gratis.",
-            subtitle: "Dígame dónde están sus cuellos de botella manuales. En 24 horas, le enviaré un análisis en video y un diagnóstico de automatización personalizado.",
+            titleItalic: "Diagnóstico de Automatización Gratuito.",
+            subtitle: "Díganos dónde están sus cuellos de botella manuales. En 24 horas, le enviaremos un análisis en video personalizado y un diagnóstico de automatización.",
             fullName: "Nombre Completo",
             email: "Email de Negocios",
             companyName: "Nombre de la Empresa",
@@ -605,7 +605,7 @@ Mida el tiempo que tarda un nuevo lead en recibir una respuesta. Mida el tiempo 
             },
             {
                 id: "founders-perspective",
-                title: "Por Qué Construí Carrillo Dynamics: Perspectiva del Fundador",
+                title: "Por Qué Construí Carrillo Dynamics",
                 description: "Desde desarmar motores y lanzar béisbol universitario hasta diseñar sistemas empresariales.",
                 content: `### La Realidad del Trabajo Fuerte
 

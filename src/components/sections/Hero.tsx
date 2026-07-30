@@ -46,7 +46,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
         <section className="relative flex min-h-[85vh] flex-col justify-center px-6 pt-32 md:pt-48 pb-12 md:pb-24 bg-background overflow-hidden transition-colors duration-300 border-b border-foreground/5">
             {/* Engineering Graph Paper Background */}
             <div 
-                className="absolute inset-0 pointer-events-none opacity-[0.15]"
+                className="absolute inset-0 pointer-events-none opacity-[0.07]"
                 style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.5'/%3E%3C/svg%3E")`
                 }}
@@ -100,9 +100,8 @@ const Hero = ({ onContactClick }: HeroProps) => {
             </div>
 
             {/* Rich Emerald Background Glows */}
-            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-1/4 left-1/4 w-[30rem] h-[30rem] bg-[#10b981]/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-                <div className="absolute bottom-1/4 right-1/4 w-[40rem] h-[40rem] bg-[#10b981]/5 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-full pointer-events-none opacity-30">
+                {/* Glows removed per user request */}
             </div>
         </section>
     );

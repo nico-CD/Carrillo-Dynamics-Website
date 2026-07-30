@@ -119,20 +119,18 @@ const ArticleDetail = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                                 {/* MAIN CONTENT: HIGH-DENSITY TEXT */}
                                 <div className="lg:col-span-9 space-y-12">
-                                    <article className="
-                                        prose prose-zinc dark:prose-invert 
-                                        max-w-none 
-                                        prose-headings:font-bold
-                                        prose-h1:hidden 
-                                        prose-h3:text-2xl prose-h3:md:text-3xl prose-h3:font-bold prose-h3:text-foreground prose-h3:mt-16 prose-h3:mb-8
-                                        prose-p:text-lg prose-p:md:text-xl prose-p:leading-loose prose-p:text-zinc-300 prose-p:mb-10
-                                        prose-li:text-lg prose-li:text-zinc-300 prose-li:mb-2
-                                        prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-10
-                                    ">
-                                        <ReactMarkdown>
+                                        <ReactMarkdown
+                                            components={{
+                                                p: ({node, ...props}) => <p className="text-lg md:text-xl leading-[2.2] text-zinc-300 mb-12" {...props} />,
+                                                h3: ({node, ...props}) => <h3 className="text-3xl md:text-4xl font-black text-foreground mt-20 mb-8 uppercase tracking-tight" {...props} />,
+                                                ul: ({node, ...props}) => <ul className="list-disc pl-6 mb-12 space-y-4" {...props} />,
+                                                li: ({node, ...props}) => <li className="text-lg text-zinc-300" {...props} />,
+                                                h1: ({node, ...props}) => <h1 className="hidden" {...props} />,
+                                                h2: ({node, ...props}) => <h2 className="text-4xl font-black text-foreground mt-24 mb-10" {...props} />
+                                            }}
+                                        >
                                             {article.content}
                                         </ReactMarkdown>
-                                    </article>
                                 </div>
 
                                 {/* SIDEBAR: METADATA & QUICK LINKS (Below on mobile, Right on desktop) */}
