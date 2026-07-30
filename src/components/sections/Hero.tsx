@@ -53,9 +53,9 @@ const Hero = ({ onContactClick }: HeroProps) => {
                         className="space-y-8 md:space-y-12 flex flex-col items-center"
                     >
                         <div className="space-y-4 text-center">
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-[0.85] text-foreground transition-colors duration-300">
-                                {t.hero.title}<br />
-                                <span className="text-[#10b981] italic">
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-[0.9] text-foreground transition-colors duration-300">
+                                <span className="block mb-2 md:mb-4 text-balance">{t.hero.title}</span>
+                                <span className="block text-[#10b981] italic min-h-[1.2em]">
                                     {currentWord}
                                     <span className="animate-pulse">|</span>
                                 </span>
@@ -70,7 +70,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
                             <Button
                                 onClick={onContactClick}
                                 size="lg"
-                                className="h-16 md:h-20 w-full sm:w-fit rounded-none px-10 md:px-12 text-xs sm:text-sm md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] shadow-[0_0_50px_rgba(16,185,129,0.2)] text-black transition-all group border-none"
+                                className="h-16 md:h-20 w-full sm:w-fit rounded-none px-10 md:px-12 text-xs sm:text-sm md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-[#0ea672] shadow-[0_0_50px_rgba(16,185,129,0.3)] text-black transition-all group border-none"
                             >
                                 <span className="flex items-center gap-4">
                                     {t.nav.blueprint}
@@ -91,8 +91,11 @@ const Hero = ({ onContactClick }: HeroProps) => {
                 </div>
             </div>
 
-            {/* Visual background cleanup */}
-            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,#10b981_0,transparent_25%)] blur-3xl" />
+            {/* Rich Emerald Background Glows */}
+            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-1/4 left-1/4 w-[30rem] h-[30rem] bg-[#10b981]/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-1/4 right-1/4 w-[40rem] h-[40rem] bg-[#10b981]/5 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
+            </div>
         </section>
     );
 };

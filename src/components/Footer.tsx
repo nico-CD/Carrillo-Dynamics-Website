@@ -51,7 +51,7 @@ const Footer = () => {
                         <div className="space-y-6 min-w-[200px]">
                              <div className="flex flex-col gap-4 text-[10px] font-black uppercase tracking-widest text-muted-foreground transition-colors duration-300">
                                 <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('/faq'); }} className="hover:text-foreground transition-colors">FAQ</a>
-                                <a href="/articles" onClick={(e) => { e.preventDefault(); navigate('/articles'); }} className="hover:text-foreground transition-colors">{t.nav.articles}</a>
+                                <a href="/resources" onClick={(e) => { e.preventDefault(); navigate('/resources'); }} className="hover:text-foreground transition-colors">{t.nav.articles}</a>
                                 <a 
                                     href="/book" 
                                     onClick={(e) => { e.preventDefault(); navigate('/book'); }} 

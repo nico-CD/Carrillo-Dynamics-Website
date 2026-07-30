@@ -30,8 +30,11 @@ const SocialProof = () => {
     ];
 
     return (
-        <section className="py-24 bg-muted/5 border-y border-border">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="relative py-32 bg-muted/5 border-b border-border overflow-hidden">
+            {/* Darker background with top subtle line to separate from How It Works */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/20 to-transparent" />
+
+            <div className="relative max-w-7xl mx-auto px-6 z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
                         {lang === 'en' ? "Built for " : "Construido para "}
@@ -47,13 +50,15 @@ const SocialProof = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.2 }}
-                            className="p-8 border border-border bg-background flex flex-col space-y-4 hover:border-[#10b981]/50 transition-colors"
+                            className="p-8 border border-border/50 bg-background/40 backdrop-blur-md rounded-2xl flex flex-col space-y-6 hover:border-[#10b981]/50 transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(16,185,129,0.1)] group relative overflow-hidden"
                         >
-                            <div className="h-12 w-12 bg-[#10b981]/10 flex items-center justify-center mb-4">
-                                <pillar.icon className="w-6 h-6 text-[#10b981]" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#10b981]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                            
+                            <div className="h-14 w-14 rounded-xl bg-[#10b981]/10 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                <pillar.icon className="w-7 h-7 text-[#10b981]" />
                             </div>
-                            <h3 className="text-xl font-bold uppercase">{pillar.title}</h3>
-                            <p className="text-muted-foreground leading-relaxed">{pillar.description}</p>
+                            <h3 className="text-xl font-bold uppercase tracking-tight relative z-10">{pillar.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed text-lg relative z-10">{pillar.description}</p>
                         </motion.div>
                     ))}
                 </div>

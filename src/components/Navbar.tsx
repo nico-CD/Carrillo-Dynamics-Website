@@ -29,7 +29,7 @@ const Navbar = () => {
 
             <div className="flex items-center gap-4 md:gap-6">
                 <nav className="hidden md:flex items-center gap-8 mr-8">
-                    <Link to="/articles" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.articles}</Link>
+                    <Link to="/resources" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.articles}</Link>
                     <Link to="/faq" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-[#10b981] transition-colors">{t.nav.faq}</Link>
                 </nav>
 

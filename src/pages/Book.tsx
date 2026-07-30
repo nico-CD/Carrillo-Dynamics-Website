@@ -31,19 +31,13 @@ const Book = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const scriptId = 'calendly-script';
-        let script = document.getElementById(scriptId) as HTMLScriptElement | null;
-
         const initWidget = () => {
             const targetEl = document.getElementById('calendly-target-container');
             if (window.Calendly && targetEl) {
                 targetEl.innerHTML = '';
                 window.Calendly.initInlineWidget({
-                    // Dynamic locale parameter appended to ensure bilingual support
-                    url: `https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?locale=${lang}`,
+                    url: `https://calendly.com/nico-carrillodynamics/30min?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang}`,
                     parentElement: targetEl,
-                    hideEventTypeDetails: true,
-                    hideGdprBanner: true,
                     styles: {
                         backgroundColor: '09090b',
                         textColor: 'ffffff',
@@ -51,20 +45,12 @@ const Book = () => {
                         height: '1000px'
                     }
                 });
-
-                // Listening to iframe load events to hide the loading overlay
-                const iframe = targetEl.querySelector('iframe');
-                if (iframe) {
-                    iframe.addEventListener('load', () => {
-                        setIsLoading(false);
-                    });
-                    // Fail-safe fallback in case load event fires early or fails
-                    setTimeout(() => setIsLoading(false), 4000);
-                } else {
-                    setIsLoading(false);
-                }
+                setTimeout(() => setIsLoading(false), 1500);
             }
         };
+
+        const scriptId = 'calendly-script';
+        let script = document.getElementById(scriptId) as HTMLScriptElement | null;
 
         if (!script) {
             script = document.createElement('script');
@@ -80,13 +66,7 @@ const Book = () => {
                 script.addEventListener('load', initWidget);
             }
         }
-
-        return () => {
-            if (script) {
-                document.body.removeChild(script);
-            }
-        };
-    }, []);
+    }, [lang]);
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans">
