@@ -34,9 +34,10 @@ const SocialProof = () => {
             {/* Darker background with top subtle line to separate from How It Works */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/20 to-transparent" />
             
-            {/* Abstract Background Glow & Logo Integration */}
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.02]">
-                <img src="/bull_PNGs/bull.512x512.webp" alt="Background" className="w-[1000px] h-[1000px] object-contain grayscale opacity-50" />
+            {/* Abstract Mesh Background Glow */}
+            <div className="absolute inset-0 pointer-events-none opacity-30">
+                <div className="absolute top-0 left-1/4 w-[50rem] h-[50rem] bg-gradient-to-br from-[#10b981]/10 to-transparent rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 right-1/4 w-[60rem] h-[60rem] bg-gradient-to-tl from-[#0ea672]/10 to-transparent rounded-full blur-[150px] translate-x-1/4 translate-y-1/4" />
             </div>
 
             <div className="relative max-w-7xl mx-auto px-6 z-10">

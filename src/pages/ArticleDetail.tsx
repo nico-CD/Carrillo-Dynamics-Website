@@ -51,7 +51,7 @@ const ArticleDetail = () => {
             <div className="min-h-screen flex items-center justify-center p-8 bg-background font-sans">
                 <div className="text-center space-y-6">
                     <h1 className="text-4xl font-black uppercase tracking-tighter text-foreground">Publication Not Found</h1>
-                    <Link to="/articles" className="text-[#10b981] font-mono uppercase tracking-widest hover:underline flex items-center justify-center gap-2">
+                    <Link to="/resources" className="text-[#10b981] font-mono uppercase tracking-widest hover:underline flex items-center justify-center gap-2">
                         <ArrowLeft className="h-4 w-4" /> Return to Archives
                     </Link>
                 </div>
@@ -86,7 +86,7 @@ const ArticleDetail = () => {
                             {/* TECHNICAL HEADER BLOCK */}
                             <div className="space-y-8 border-l-4 border-[#10b981] pl-8">
                                 <Link 
-                                    to="/articles"
+                                    to="/resources"
                                     className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#10b981] hover:text-foreground transition-colors"
                                 >
                                     <ArrowLeft className="h-3 w-3" />
@@ -94,9 +94,6 @@ const ArticleDetail = () => {
                                 </Link>
 
                                 <div className="space-y-4">
-                                    <div className="text-[10px] font-black uppercase tracking-[0.5em] text-muted-foreground/30 font-mono">
-                                        RESOURCE_{id?.toUpperCase()}
-                                    </div>
                                     <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.8] text-foreground text-balance break-words">
                                         {article.title}
                                     </h1>
@@ -127,10 +124,10 @@ const ArticleDetail = () => {
                                         max-w-none 
                                         prose-headings:font-bold
                                         prose-h1:hidden 
-                                        prose-h3:text-2xl prose-h3:md:text-3xl prose-h3:font-bold prose-h3:text-foreground prose-h3:mt-12 prose-h3:mb-6
-                                        prose-p:text-lg prose-p:md:text-xl prose-p:leading-[1.7] prose-p:text-muted-foreground prose-p:mb-8
-                                        prose-li:text-lg prose-li:text-muted-foreground
-                                        prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-8
+                                        prose-h3:text-2xl prose-h3:md:text-3xl prose-h3:font-bold prose-h3:text-foreground prose-h3:mt-16 prose-h3:mb-8
+                                        prose-p:text-lg prose-p:md:text-xl prose-p:leading-loose prose-p:text-zinc-300 prose-p:mb-10
+                                        prose-li:text-lg prose-li:text-zinc-300 prose-li:mb-2
+                                        prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-10
                                     ">
                                         <ReactMarkdown>
                                             {article.content}
@@ -187,16 +184,17 @@ const ArticleDetail = () => {
                             </div>
 
                             {/* FOOTER CTA SECTION */}
-                            <section className="bg-foreground text-background p-8 md:p-16 mt-24 space-y-12 transition-colors relative overflow-hidden flex flex-col items-start print:hidden">
+                            <section className="bg-zinc-950 border border-border/50 shadow-[0_0_50px_rgba(16,185,129,0.05)] rounded-3xl p-8 md:p-16 mt-24 space-y-12 transition-colors relative overflow-hidden flex flex-col items-start print:hidden">
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-[#10b981]/10 rounded-full blur-[100px] pointer-events-none" />
                                 <div className="space-y-6 relative z-10 w-full">
 
-                                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none max-w-xl">
+                                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none max-w-xl text-foreground">
                                         {lang === 'en' ? 'Engineered Precision. Industrial Grit.' : 'Precisión de Ingeniería. Tesón Industrial.'}
                                     </h2>
-                                    <p className="font-bold max-w-2xl text-lg md:text-xl opacity-60">
+                                    <p className="font-bold max-w-2xl text-lg md:text-xl text-zinc-400">
                                         {lang === 'en' 
-                                             ? 'Request your custom Automation Diagnostic to identify and solve operational leaks.'
-                                             : 'Solicite su Diagnóstico de Automatización personalizado para identificar y resolver fugas operativas.'}
+                                             ? 'Request your free diagnostic to identify and plug operational leaks.'
+                                             : 'Solicite su diagnóstico gratuito para identificar y tapar fugas operativas.'}
                                     </p>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">
@@ -204,7 +202,7 @@ const ArticleDetail = () => {
                                         onClick={() => navigate('/#intake')}
                                         className="h-20 px-12 bg-[#10b981] text-black font-black uppercase tracking-[0.2em] rounded-none hover:bg-white transition-all flex items-center group"
                                     >
-                                        {t.nav.strategy}
+                                        {lang === 'en' ? 'Get Started' : 'Comenzar'}
                                         <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
                                     </Button>
                                 </div>

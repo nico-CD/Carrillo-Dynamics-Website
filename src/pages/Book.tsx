@@ -35,16 +35,24 @@ const Book = () => {
                 </motion.div>
             </section>
 
-            <section className="py-24 px-6 bg-muted/10 relative overflow-hidden">
+            <section className="py-24 px-6 bg-zinc-950 relative overflow-hidden">
+                {/* Engineering Grid Background */}
+                <div 
+                    className="absolute inset-0 pointer-events-none opacity-20"
+                    style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z' fill='%2310b981' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E")`
+                    }}
+                />
+                
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-full pointer-events-none opacity-20">
-                    <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#10b981]/10 rounded-full blur-[100px]" />
-                    <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#10b981]/5 rounded-full blur-[100px]" />
+                    <div className="absolute top-1/4 left-0 w-[40rem] h-[40rem] bg-[#10b981]/15 rounded-full blur-[120px]" />
+                    <div className="absolute bottom-1/4 right-0 w-[30rem] h-[30rem] bg-[#10b981]/10 rounded-full blur-[100px]" />
                 </div>
 
                 <div className="max-w-4xl mx-auto relative z-10">
-                    <div className="bg-background border border-border/50 rounded-2xl p-2 md:p-4 shadow-[0_20px_50px_-15px_rgba(16,185,129,0.2)]">
+                    <div className="bg-transparent w-full">
                         <InlineWidget 
-                            url={`https://calendly.com/nico-carrillodynamics/30min?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang}`}
+                            url={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang}`}
                             styles={{
                                 height: '700px',
                                 minWidth: '320px'
@@ -57,6 +65,17 @@ const Book = () => {
                                 textColor: 'ffffff'
                             }}
                         />
+                    </div>
+                    
+                    <div className="mt-8 text-center">
+                        <a 
+                            href={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?locale=${lang}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-muted-foreground hover:text-[#10b981] transition-colors"
+                        >
+                            {lang === 'en' ? 'Widget not loading? Click here to book directly.' : '¿El widget no carga? Haga clic aquí para agendar directamente.'}
+                        </a>
                     </div>
                 </div>
             </section>

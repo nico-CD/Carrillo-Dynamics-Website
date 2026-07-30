@@ -17,7 +17,7 @@ const ArticleSidebar = () => {
                         {t.articles.map((article) => (
                             <Link
                                 key={article.id}
-                                to={`/articles/${article.id}`}
+                                to={`/resources/${article.id}`}
                                 className={cn(
                                     "block px-4 py-3 text-sm font-bold uppercase tracking-tight transition-all border-l-2",
                                     id === article.id

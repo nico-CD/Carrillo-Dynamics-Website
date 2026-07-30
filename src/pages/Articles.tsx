@@ -23,7 +23,12 @@ const ArticlesPage = () => {
             />
             <Navbar />
             
-            <main className="pt-32 pb-24 px-6 max-w-6xl mx-auto w-full">
+            {/* Faded Bull Watermark Background */}
+            <div className="fixed inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] z-0">
+                <img src="/bull_PNGs/bull.512x512.webp" alt="Background" className="w-[800px] h-[800px] object-contain grayscale" />
+            </div>
+            
+            <main className="pt-32 pb-24 px-6 max-w-6xl mx-auto w-full relative z-10">
                 <motion.div {...revealProps} className="space-y-16">
                     <div className="space-y-4 max-w-3xl">
                         <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-foreground transition-colors break-words text-balance">

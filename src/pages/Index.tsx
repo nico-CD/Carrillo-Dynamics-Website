@@ -139,8 +139,16 @@ const Index = () => {
                         </p>
                     </div>
 
-                    <div className="bg-muted/10 border-2 border-border p-8 md:p-16 relative overflow-hidden flex flex-col justify-center transition-colors duration-300 shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(0,0,0,0.3)]">
-                        <div className="absolute top-0 left-0 w-full h-[2px] bg-foreground opacity-5" />
+                    <div className="bg-zinc-950/50 backdrop-blur-xl border-2 border-border/50 p-8 md:p-16 relative overflow-hidden flex flex-col justify-center transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(16,185,129,0.15)] rounded-3xl">
+                        {/* Engineering Grid Background */}
+                        <div 
+                            className="absolute inset-0 pointer-events-none opacity-20"
+                            style={{
+                                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z' fill='%2310b981' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E")`
+                            }}
+                        />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#10b981]/10 rounded-full blur-[100px] pointer-events-none" />
+                        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#10b981]/50 to-transparent opacity-30" />
 
                         {isSubmitted ? (
                             <div className="w-full min-h-[700px] flex flex-col items-center justify-center animate-in fade-in duration-1000 text-center pt-8">
@@ -154,7 +162,7 @@ const Index = () => {
                                 </p>
                                 <div className="w-full">
                                     <InlineWidget 
-                                        url={`https://calendly.com/nico-carrillodynamics/30min?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`}
+                                        url={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`}
                                         styles={{
                                             height: '700px',
                                             minWidth: '320px'
