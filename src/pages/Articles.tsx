@@ -34,10 +34,17 @@ const ArticlesPage = () => {
             
             {/* Faded Bull Watermark Background */}
             <div className="fixed inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] z-0">
-                <img src="/bull_PNGs/bull.512x512.webp" alt="Background" className="w-[800px] h-[800px] object-contain grayscale" />
+                <img src="/bull_PNGs/vect.bull.svg" alt="Background" className="w-[800px] h-[800px] object-contain grayscale" />
             </div>
             
             <main className="pt-32 pb-24 px-6 max-w-6xl mx-auto w-full relative z-10">
+                {/* Engineering Graph Paper Background */}
+                <div 
+                    className="absolute inset-0 pointer-events-none opacity-[0.25] bg-repeat"
+                    style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
+                    }}
+                />
                 <motion.div {...revealProps} className="space-y-16">
                     <div className="space-y-4 max-w-3xl">
                         <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-foreground transition-colors break-words text-balance">

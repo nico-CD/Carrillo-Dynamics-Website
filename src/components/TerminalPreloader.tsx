@@ -36,9 +36,9 @@ export default function TerminalPreloader() {
                         className="relative w-24 h-24 sm:w-32 sm:h-32"
                     >
                         <img 
-                            src="/bull_PNGs/bull.512x512.png" 
-                            alt="Carrillo Dynamics Logo" 
-                            className="w-full h-full object-contain brightness-100 invert"
+                            src="/bull_PNGs/vect.bull.svg" 
+                            alt="Carrillo Dynamics" 
+                            className="h-full w-full object-contain grayscale opacity-80"
                         />
                     </motion.div>
                 </motion.div>

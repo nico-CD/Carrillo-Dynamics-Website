@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HowItWorks from "@/components/sections/HowItWorks";
-import SocialProof from "@/components/sections/SocialProof";
+import ValueProps from "@/components/sections/ValueProps";
 import Hero from "@/components/sections/Hero";
 import Footer from "@/components/Footer";
 import SEOManager from "@/components/SEOManager";
@@ -36,9 +36,9 @@ const Index = () => {
                 <Hero onContactClick={scrollToForm} />
             </section>
 
-            {/* SEGMENT 2: HOW IT WORKS & SOCIAL PROOF */}
+            {/* SEGMENT 2: HOW IT WORKS & VALUE PROPS */}
             <HowItWorks />
-            <SocialProof />
+            <ValueProps />
 
             {/* SEGMENT 3: VIDEO GATE (Replaced old Intake) */}
             <VideoGate />

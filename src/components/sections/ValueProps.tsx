@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Zap, Target, Wrench } from "lucide-react";
 import { useTranslation } from "@/components/LanguageProvider";
 
-const SocialProof = () => {
+const ValueProps = () => {
     const { lang } = useTranslation();
 
     const pillars = [
@@ -84,4 +84,4 @@ const SocialProof = () => {
     );
 };
 
-export default SocialProof;
+export default ValueProps;

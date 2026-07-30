@@ -24,8 +24,8 @@ const StructuredData = () => {
         "@type": "ProfessionalService",
         "name": "Carrillo Dynamics LLC",
         "url": "https://carrillodynamics.com",
-        "logo": "https://carrillodynamics.com/bull_PNGs/bull.512x512.webp",
-        "image": "https://carrillodynamics.com/bull_PNGs/bull-apple-touch-icon.png",
+        "logo": "https://carrillodynamics.com/bull_PNGs/vect.bull.png",
+        "image": "https://carrillodynamics.com/bull_PNGs/vect.bull.png",
         "description": lang === 'en' 
             ? "Chicago-based Systems Engineering firm serving the Greater Chicago Area and industrial clients nationwide. Specialized in high-stakes automation."
             : "Empresa de ingeniería de sistemas con sede en Chicago que sirve al área metropolitana de Chicago y clientes industriales en todo el país.",

@@ -68,14 +68,14 @@ const SEOManager: React.FC<SEOManagerProps> = ({
             <meta property="og:url" content={finalCanonical} />
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={description || siteDescription} />
-            <meta property="og:image" content={`${baseUrl}/bull_PNGs/bull.512x512.webp`} />
+            <meta property="og:image" content={`${baseUrl}/bull_PNGs/vect.bull.png`} />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content={finalCanonical} />
             <meta property="twitter:title" content={fullTitle} />
             <meta property="twitter:description" content={description || siteDescription} />
-            <meta property="twitter:image" content={`${baseUrl}/bull_PNGs/bull.512x512.webp`} />
+            <meta property="twitter:image" content={`${baseUrl}/bull_PNGs/vect.bull.png`} />
             
             {/* Language Attribute */}
             <html lang={lang} />
