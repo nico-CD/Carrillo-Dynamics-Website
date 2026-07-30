@@ -140,7 +140,7 @@ const Index = () => {
                     <div className="mb-20 text-center space-y-8">
                         <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-none text-foreground transition-colors duration-300 mx-auto">
                             {t.intake.title}
-                            <span className="italic text-[#10b981]">{t.intake.titleItalic}</span>
+                            <span className="text-[#10b981]">{t.intake.titleItalic}</span>
                         </h2>
                         <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl leading-relaxed transition-colors duration-300 mx-auto">
                             {t.intake.subtitle}
