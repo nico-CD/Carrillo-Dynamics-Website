@@ -136,7 +136,7 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         hero: {
             title: "Stop losing clients to",
-            subtitle: "We build high-performance websites and digital systems for service businesses. Get more jobs, eliminate manual work, and scale without the headaches.",
+            subtitle: "We engineer websites and systems that help service businesses scale. Get more jobs. Automate the busywork. Cut the headaches.",
             cta: "Get Started",
             audit: "Book a Call",
             badge1: "TRUSTED LOCALLY",
@@ -403,7 +403,7 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
         },
         hero: {
             title: "Su negocio está perdiendo clientes por",
-            subtitle: "Construimos sitios web de alto rendimiento y sistemas digitales para empresas de servicios. Consiga más trabajos, elimine el trabajo manual y escale sin dolores de cabeza.",
+            subtitle: "Diseñamos sitios web y sistemas que ayudan a las empresas de servicios a escalar. Consiga más trabajos. Automatice el trabajo manual. Reduzca los dolores de cabeza.",
             cta: "Comenzar",
             audit: "Sesión de Estrategia",
             badge1: "INGENIERÍA BASADA EN CHICAGO",
