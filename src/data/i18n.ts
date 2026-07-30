@@ -261,11 +261,11 @@ export const i18nData: Record<Language, I18nContent> = {
                 description: "In high-volume service, response velocity is the single most critical variable for your bottom line.",
                 content: `### Operational Velocity
 
-In the service industry, seconds are dollars. A lead contacted in under 60 seconds closes at a rate eight times higher than one contacted even five minutes later. Most firms suffer from what we call Human Latency, which is the costly gap between a lead arriving and your team actually noticing it. We replace this inconsistent gap with deterministic logic that acts instantly.
+In the service industry, seconds are dollars. A lead contacted in under 60 seconds closes at a rate higher than one contacted even five minutes later. Most firms suffer from what we call Human Latency, which is the costly gap between a lead arriving and your team actually noticing it. We replace this inconsistent gap with automated workflows designed to respond immediately.
 
 ### The Math of Friction
 
-Manual dispatch is inherently slow and prone to failure. By the time a dispatcher dials, the customer has often already called two competitors. Our engineered approach minimizes this friction by injecting lead data directly into your communication pipeline in under 200ms, ensuring you are always the first point of contact.
+Manual dispatch is inherently slow and prone to failure. By the time a dispatcher dials, the customer has often already called two competitors. Our engineered approach minimizes this friction by injecting lead data directly into your communication pipeline in under 200ms, positioning your team to respond ahead of competitors.
 
 ### Industrial Execution
 
@@ -283,11 +283,11 @@ Traditional growth usually leads to heavy overhead. Historically, every new tech
 
 ### Digital Infrastructure
 
-To scale without reducing your profitability, you must automate low-value repetitive tasks. We replace manual data entry, quote follow-ups, and scheduling verification with secure, rigid flows that never sleep and never make mistakes. This allows your team to focus on high-value strategy rather than data management.
+To scale without reducing your profitability, you must automate low-value repetitive tasks. We replace manual data entry, quote follow-ups, and scheduling verification with automated flows built to eliminate repetitive manual steps and minimize human error. This allows your team to focus on high-value strategy rather than data management.
 
 ### Operational Integrity
 
-Manual errors are the hidden tax on your ROI. Our systems ensure total data integrity from the initial intake all the way to the final invoice. This precision allows you to triple your territory volume with the same office headcount you have today.`,
+Manual errors are the hidden tax on your ROI. Our systems ensure total data integrity from the initial intake all the way to the final invoice. This operational efficiency allows your team to handle significantly higher job volume without proportionally increasing office overhead.`,
                 date: "2026-04-07",
                 readTime: "5 min"
             },
@@ -301,7 +301,7 @@ Is your marketing budget leaking through cracks in your process? Most high-volum
 
 ### System Analysis
 
-We track every step of the journey to find where you are losing money. We analyze form friction to see why users drop off, measure the actual delay in notifications, and identify which follow-ups are failing to convert. This data allows us to plug every leak with reliable, automated processes.`,
+We analyze your intake workflows to identify latency and operational friction points. We analyze form friction to see why users drop off, measure the actual delay in notifications, and identify which follow-ups are failing to convert. This data enables us to implement automated processes designed to capture and route leads before they go cold.`,
                 date: "2026-04-07",
                 readTime: "6 min"
             },
@@ -315,11 +315,11 @@ Every time an employee copies a customer's address from an email into your CRM, 
 
 ### Error Propagation
 
-A single typo in an address or phone number doesn't just waste office time; it sends a $150/hr field crew to the wrong location. Manual entry is fundamentally a probabilistic system. It guarantees failure at scale. 
+A single typo in an address or phone number doesn't just waste office time; it sends a $150/hr field crew to the wrong location. Manual data re-entry introduces risk and unnecessary delay into every ticket. 
 
 ### Engineered Precision
 
-By replacing human keystrokes with API-level integrations, we guarantee 100% data fidelity. Lead information flows directly from the web form, into the CRM, and onto the technician's mobile device instantly. The result? Zero lost tickets, zero wrong addresses, and maximum field efficiency.`,
+By replacing human keystrokes with API-level integrations, we engineer direct API connections that virtually eliminate manual transcription errors. Lead information flows directly from the web form, into the CRM, and onto the technician's mobile device instantly. The result: streamlined dispatching, higher data accuracy, and improved field efficiency.`,
                 date: "2026-04-12",
                 readTime: "5 min"
             },
@@ -337,7 +337,7 @@ Look for "Swivel Chair Integration": moments where an employee has to look at on
 
 ### Calculate the Latency
 
-Measure the time it takes for a new lead to receive a response. Measure the time it takes to generate and send a quote after a site visit. If these metrics rely on a human remembering to do them, you have an operational leak. The solution is removing the human from the trigger, and letting the system enforce the action.`,
+Measure the time it takes for a new lead to receive a response. Measure the time it takes to generate and send a quote after a site visit. If these metrics rely on a human remembering to do them, you have an operational leak. The solution is automating routine triggers so your team can focus on execution rather than administration.`,
                 date: "2026-04-18",
                 readTime: "7 min"
             },
@@ -351,11 +351,11 @@ I didn't start my career in a cushy tech office. I spent time in professional la
 
 ### The Engineering Discipline
 
-While earning my B.S. in Engineering Management (with a specialization in Mechanical Engineering) from the Illinois Institute of Technology, I learned how to build rigid, scalable systems out of chaos. You can't guess your way through an engine rebuild or a high-rise TI project; it requires exact tolerances, deterministic logic, and flawless execution. Most local service businesses are running on guesswork and manual labor when they should be running like a tuned engine. 
+While earning my B.S. in Engineering Management (with a specialization in Mechanical Engineering) from the Illinois Institute of Technology, I learned how to build rigid, scalable systems out of chaos. You can't guess your way through an engine rebuild or a high-rise TI project; it requires exact tolerances, systematic logic, rigorous standards, and disciplined execution. Most local service businesses are running on guesswork and manual labor when they should be running like a tuned engine. 
 
 ### The Athletic Drive
 
-As a starting collegiate pitcher for the Illinois Tech baseball team, I learned that raw talent means nothing without absolute discipline, focus, and the ability to execute under pressure. That competitive drive is why I founded Carrillo Dynamics here in the Chicagoland area. I don't build "pretty websites." I build industrial-grade, no-BS digital systems designed to dominate local markets.
+As a starting collegiate pitcher for the Illinois Tech baseball team, I learned that raw talent means nothing without absolute discipline, focus, and the ability to execute under pressure. That competitive drive is why I founded Carrillo Dynamics here in the Chicagoland area. I don't build "pretty websites." I build pragmatic, industrial-grade digital systems engineered to help local trade businesses operate efficiently and grow.
 
 ### The Core Philosophy
 
@@ -526,11 +526,11 @@ Technology and AI shouldn't replace the human element of your business; they sho
                 description: "La velocidad de respuesta es la variable más crítica para su rentabilidad.",
                 content: `### Velocidad Operativa
 
-En la industria de servicios, los segundos se traducen en dólares. Un cliente potencial contactado en menos de 60 segundos tiene una probabilidad de cierre ocho veces mayor que uno contactado apenas cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre la llegada de un prospecto y el momento en que su equipo lo detecta. Reemplazamos este lapso inconsistente con lógica determinista que actúa al instante.
+En la industria de servicios, los segundos se traducen en dólares. Un cliente potencial contactado en menos de 60 segundos tiene una tasa de cierre superior a la de uno contactado cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre la llegada de un prospecto y el momento en que su equipo lo detecta. Reemplazamos este lapso inconsistente con flujos de trabajo automatizados diseñados para responder de inmediato.
 
 ### La Matemática de la Fricción
 
-El despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque de ingeniería minimiza esta fricción inyectando los datos del prospecto directamente en su flujo de comunicación en menos de 200 ms, asegurando que usted sea siempre el primer punto de contacto.
+El despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque de ingeniería minimiza esta fricción inyectando los datos del prospecto directamente en su flujo de comunicación en menos de 200 ms, posicionando a su equipo para responder antes que la competencia.
 
 ### Ejecución Industrial
 
@@ -548,11 +548,11 @@ El crecimiento tradicional suele conllevar grandes gastos generales. Históricam
 
 ### Infraestructura Digital
 
-Para escalar sin reducir su rentabilidad, debe automatizar las tareas repetitivas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos seguros y robustos que nunca duermen y nunca cometen errores. Esto permite que su equipo se concentre en la estrategia de alto valor en lugar de en la gestión de datos.
+Para escalar sin reducir su rentabilidad, debe automatizar las tareas repetitivas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos automatizados diseñados para eliminar pasos manuales repetitivos y minimizar el error humano. Esto permite que su equipo se concentre en la estrategia de alto valor en lugar de en la gestión de datos.
 
 ### Integridad Operativa
 
-Los errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión inicial hasta la factura final. Esta precisión le permite triplicar su volumen de territorio con el mismo personal de oficina que tiene actualmente.`,
+Los errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión inicial hasta la factura final. Esta eficiencia operativa le permite a su equipo gestionar un volumen de trabajo significativamente mayor sin aumentar proporcionalmente la carga administrativa.`,
                 date: "2026-04-07",
                 readTime: "5 min"
             },
@@ -566,7 +566,7 @@ Los errores manuales son el impuesto oculto en su ROI. Nuestros sistemas asegura
 
 ### Análisis de Sistemas
 
-Rastreamos cada paso del viaje para encontrar dónde está perdiendo dinero. Analizamos por qué los usuarios abandonan, medimos el retraso real en las notificaciones e identificamos qué seguimientos no logran convertir. Estos datos nos permiten sellar cada fuga con procesos automatizados confiables.`,
+Analizamos sus flujos de trabajo de admisión para identificar puntos de latencia y fricción operativa. Analizamos por qué los usuarios abandonan, medimos el retraso real en las notificaciones e identificamos qué seguimientos no logran convertir. Estos datos nos permiten implementar procesos automatizados diseñados para capturar y enrutar prospectos antes de que se enfríen.`,
                 date: "2026-04-07",
                 readTime: "6 min"
             },
@@ -580,11 +580,11 @@ Cada vez que un empleado copia la dirección de un cliente de un correo electró
 
 ### Propagación de Errores
 
-Un solo error en una dirección o número de teléfono no solo hace perder tiempo en la oficina; envía a un equipo de campo de $150/hr a la ubicación equivocada. El ingreso manual es fundamentalmente un sistema probabilístico. Garantiza el fracaso a escala.
+Un solo error en una dirección o número de teléfono no solo hace perder tiempo en la oficina; envía a un equipo de campo de $150/hr a la ubicación equivocada. El reingreso manual de datos introduce riesgos y retrasos innecesarios en cada ticket.
 
 ### Precisión Diseñada
 
-Al reemplazar las pulsaciones humanas con integraciones a nivel de API, garantizamos el 100% de fidelidad de los datos. La información de los leads fluye directamente desde el formulario web, hacia el CRM y hacia el dispositivo móvil del técnico al instante. ¿El resultado? Cero tickets perdidos, cero direcciones equivocadas y máxima eficiencia de campo.`,
+Al reemplazar las pulsaciones humanas con integraciones a nivel de API, diseñamos conexiones directas de API que eliminan prácticamente los errores de transcripción manual. La información de los leads fluye directamente desde el formulario web, hacia el CRM y hacia el dispositivo móvil del técnico al instante. El resultado: despacho optimizado, mayor precisión de datos y mejor eficiencia de campo.`,
                 date: "2026-04-12",
                 readTime: "5 min"
             },
@@ -602,12 +602,12 @@ Busque "Integraciones de Silla Giratoria": momentos en los que un empleado tiene
 
 ### Calcular la Latencia
 
-Mida el tiempo que tarda un nuevo lead en recibir una respuesta. Mida el tiempo que tarda en generar y enviar una cotización después de una visita al sitio. Si estas métricas dependen de que un humano recuerde hacerlas, tiene una fuga operativa. La solución es eliminar al humano del disparador y dejar que el sistema aplique la acción.`,
+Mida el tiempo que tarda un nuevo lead en recibir una respuesta. Mida el tiempo que tarda en generar y enviar una cotización después de una visita al sitio. Si estas métricas dependen de que un humano recuerde hacerlas, tiene una fuga operativa. La solución es automatizar los disparadores rutinarios para que su equipo pueda enfocarse en la ejecución en lugar de la administración.`,
                 date: "2026-04-18",
                 readTime: "7 min"
             },
             {
-                id: "founders-perspective",
+                id: "engineering-philosophy",
                 title: "Por Qué Construí Carrillo Dynamics",
                 description: "Desde desarmar motores y lanzar béisbol universitario hasta diseñar sistemas empresariales.",
                 content: `### La Realidad del Trabajo Fuerte
@@ -616,11 +616,11 @@ No comencé mi carrera en una cómoda oficina de tecnología. Pasé tiempo en pa
 
 ### La Disciplina de Ingeniería
 
-Mientras obtenía mi Licenciatura en Gestión de Ingeniería (con especialización en Ingeniería Mecánica) del Illinois Institute of Technology, aprendí a construir sistemas rígidos y escalables a partir del caos. No se puede adivinar al reconstruir un motor o un proyecto de gran altura: requiere tolerancias exactas, lógica determinista y ejecución impecable. La mayoría de las empresas de servicios locales funcionan con conjeturas y trabajo manual cuando deberían funcionar como un motor afinado.
+Mientras obtenía mi Licenciatura en Gestión de Ingeniería (con especialización en Ingeniería Mecánica) del Illinois Institute of Technology, aprendí a construir sistemas rígidos y escalables a partir del caos. No se puede adivinar al reconstruir un motor o un proyecto de gran altura: requiere tolerancias exactas, lógica sistemática, estándares rigurosos y ejecución disciplinada. La mayoría de las empresas de servicios locales funcionan con conjeturas y trabajo manual cuando deberían funcionar como un motor afinado.
 
 ### El Impulso Atlético
 
-Como lanzador abridor titular en el equipo de béisbol de Illinois Tech, aprendí que el talento puro no significa nada sin una disciplina y un enfoque absolutos para ejecutar bajo presión. Ese impulso competitivo es la razón por la que fundé Carrillo Dynamics aquí en el área de Chicago. No construyo "sitios web bonitos". Construyo sistemas digitales de grado industrial diseñados para dominar los mercados locales.
+Como lanzador abridor titular en el equipo de béisbol de Illinois Tech, aprendí que el talento puro no significa nada sin una disciplina y un enfoque absolutos para ejecutar bajo presión. Ese impulso competitivo es la razón por la que fundé Carrillo Dynamics aquí en el área de Chicago. No construyo "sitios web bonitos". Construyo sistemas digitales pragmáticos de grado industrial diseñados para ayudar a las empresas de servicios locales a operar con eficiencia y crecer.
 
 ### La Filosofía Central
 

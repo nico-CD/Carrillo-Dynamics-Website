@@ -6,6 +6,15 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Clock } from "lucide-react";
 import SEOManager from "@/components/SEOManager";
 
+const insightImages: Record<string, string> = {
+    '60-second-lead-rule': '/insights/insight-1.png',
+    'scaling-without-hiring': '/insights/insight-2.png',
+    'stop-losing-leads': '/insights/insight-3.png',
+    'true-cost-manual-entry': '/insights/insight-4.png',
+    'audit-your-operations': '/insights/insight-5.png',
+    'engineering-philosophy': '/insights/insight-6.png'
+};
+
 const ArticlesPage = () => {
     const { lang, t } = useTranslation();
 
@@ -48,7 +57,16 @@ const ArticlesPage = () => {
                                 to={`/resources/${article.id}`}
                                 className={`group bg-background p-8 md:p-12 hover:bg-muted/50 transition-all flex flex-col justify-between h-full space-y-12 ${idx === 0 ? 'md:col-span-2' : ''}`}
                             >
-                                <div className="space-y-4">
+                                <div className="space-y-6">
+                                    {insightImages[article.id] && (
+                                        <div className="w-full h-48 md:h-56 bg-[#0B132B] rounded-xl overflow-hidden border border-border/50">
+                                            <img 
+                                                src={insightImages[article.id]} 
+                                                alt={article.title} 
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                            />
+                                        </div>
+                                    )}
                                     <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight group-hover:text-[#10b981] transition-colors leading-tight text-foreground">
                                         {article.title}
                                     </h2>

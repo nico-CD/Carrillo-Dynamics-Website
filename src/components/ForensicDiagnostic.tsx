@@ -74,7 +74,7 @@ export default function ForensicDiagnostic() {
             {/* Corner Status Accents */}
             <div className="absolute top-4 right-4 flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-[10px] text-emerald-500/50 font-mono tracking-tighter">DATA_INTEGRITY: 100%</span>
+                <span className="text-[10px] text-emerald-500/50 font-mono tracking-tighter">DATA_INTEGRITY: HIGH_FIDELITY</span>
             </div>
             
             {/* Legend */}

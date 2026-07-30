@@ -96,7 +96,7 @@ export default function WorkflowAnimation() {
                     <div className="space-y-2 mb-4 font-mono text-[9px] text-zinc-400">
                         <div className="flex justify-between border-b border-zinc-900 pb-1">
                             <span className="uppercase text-zinc-500">AUTO_DISPATCH_ROUTE</span>
-                            <span className="text-[#10b981] font-bold">100% OK</span>
+                            <span className="text-[#10b981] font-bold">VERIFIED_OK</span>
                         </div>
                         <div className="flex justify-between border-b border-zinc-900 pb-1">
                             <span className="uppercase text-zinc-500">DATA_INTEGRITY_INDEX</span>

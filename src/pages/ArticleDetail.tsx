@@ -10,12 +10,15 @@ import Footer from "../components/Footer";
 import SEOManager from "../components/SEOManager";
 import ForensicDiagnostic from "../components/ForensicDiagnostic";
 import { Button } from "../components/ui/button";
-import { Rule60Diagram } from "../components/diagrams/Rule60Diagram";
-import { ScalingDiagram } from "../components/diagrams/ScalingDiagram";
-import { IntakeDiagram } from "../components/diagrams/IntakeDiagram";
-import { LatencyTaxDiagram } from "../components/diagrams/LatencyTaxDiagram";
-import { SwivelChairDiagram } from "../components/diagrams/SwivelChairDiagram";
-import { FounderBlueprintDiagram } from "../components/diagrams/FounderBlueprintDiagram";
+
+const insightImages: Record<string, string> = {
+    '60-second-lead-rule': '/insights/insight-1.png',
+    'scaling-without-hiring': '/insights/insight-2.png',
+    'stop-losing-leads': '/insights/insight-3.png',
+    'true-cost-manual-entry': '/insights/insight-4.png',
+    'audit-your-operations': '/insights/insight-5.png',
+    'engineering-philosophy': '/insights/insight-6.png'
+};
 
 const ArticleDetail = () => {
     const { id } = useParams();
@@ -133,13 +136,16 @@ const ArticleDetail = () => {
                                 {/* MAIN CONTENT: HIGH-DENSITY TEXT */}
                                 <div className="lg:col-span-9 space-y-12">
                                         
-                                        {/* DYNAMIC DIAGRAM INJECTION (MODULAR) */}
-                                        {article.id === '60-second-lead-rule' && <Rule60Diagram />}
-                                        {article.id === 'scaling-without-hiring' && <ScalingDiagram />}
-                                        {article.id === 'diagnostic-intake-automation' && <IntakeDiagram />}
-                                        {article.id === 'human-latency-tax' && <LatencyTaxDiagram />}
-                                        {article.id === 'swivel-chair-integration' && <SwivelChairDiagram />}
-                                        {article.id === 'why-i-built-carrillo-dynamics' && <FounderBlueprintDiagram />}
+                                        {/* GENERATED VISUAL DIAGRAM */}
+                                        {insightImages[article.id] && (
+                                            <div className="w-full rounded-2xl overflow-hidden border border-border/50 bg-[#0B132B] mb-12 shadow-2xl">
+                                                <img 
+                                                    src={insightImages[article.id]} 
+                                                    alt={article.title}
+                                                    className="w-full h-auto object-contain max-h-[550px] mx-auto"
+                                                />
+                                            </div>
+                                        )}
 
                                         <ReactMarkdown
                                             components={{
