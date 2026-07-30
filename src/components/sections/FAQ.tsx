@@ -14,7 +14,7 @@ const FAQ = () => {
 
             <Accordion type="single" collapsible className="w-full space-y-4">
                 {t.faqs.map((faq, idx) => (
-                    <AccordionItem key={idx} value={`item-${idx}`} className="border border-border/50 bg-zinc-950/50 backdrop-blur-md rounded-xl px-4 md:px-8 data-[state=open]:border-[#10b981]/50 data-[state=open]:shadow-[0_0_30px_rgba(16,185,129,0.1)] transition-all overflow-hidden">
+                    <AccordionItem key={idx} value={`item-${idx}`} className="border border-border/50 bg-zinc-950 rounded-xl px-4 md:px-8 data-[state=open]:border-[#10b981]/50 data-[state=open]:shadow-[0_0_30px_rgba(16,185,129,0.1)] transition-all overflow-hidden relative z-10">
                         <AccordionTrigger className="text-left text-lg md:text-xl font-bold hover:no-underline py-8 text-foreground hover:text-[#10b981] data-[state=open]:text-white transition-colors uppercase tracking-tight leading-snug">
                             <span className="max-w-[90%] break-words">{faq.q}</span>
                         </AccordionTrigger>

@@ -60,7 +60,14 @@ const ArticleDetail = () => {
     }
 
     return (
-        <div className="bg-background min-h-screen selection:bg-[#10b981]/10 font-sans">
+        <div className="bg-background min-h-screen selection:bg-[#10b981]/10 font-sans relative overflow-hidden">
+            {/* Engineering Graph Paper Background */}
+            <div 
+                className="absolute inset-0 pointer-events-none opacity-[0.25] z-0"
+                style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
+                }}
+            />
             <SEOManager 
                 title={article.title}
                 description={article.description}
@@ -94,7 +101,7 @@ const ArticleDetail = () => {
                                 </Link>
 
                                 <div className="space-y-4">
-                                    <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.8] text-foreground text-balance break-words">
+                                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[1] text-foreground text-balance break-words">
                                         {article.title}
                                     </h1>
                                 </div>

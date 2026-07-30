@@ -245,7 +245,7 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "How soon will we see measurable results?",
-                a: "Initial operational wins are usually live within 14 days. We target high-friction bottlenecks first—like the intake flow and automated follow-ups—to drive immediate, measurable ROI."
+                a: "Initial operational wins are usually live within 14 days. We target high-friction bottlenecks first, like the intake flow and automated follow-ups, to drive immediate, measurable ROI."
             },
             {
                 q: "What is a 'Fractional Operations Engineer'?",
@@ -309,7 +309,7 @@ We track every step of the journey to find where you are losing money. We analyz
                 description: "Why paying a human to copy-paste data is destroying your margins.",
                 content: `### The Hidden Tax
 
-Every time an employee copies a customer's address from an email into your CRM, you are bleeding money. It's not just the 30 seconds of labor—it's the context switching, the inevitable typos, and the compounding delay across hundreds of tickets a week.
+Every time an employee copies a customer's address from an email into your CRM, you are bleeding money. It's not just the 30 seconds of labor: it's the context switching, the inevitable typos, and the compounding delay across hundreds of tickets a week.
 
 ### Error Propagation
 
@@ -331,7 +331,7 @@ The first step in any engineering audit is mapping the existing state. You must 
 
 ### Identify the Friction
 
-Look for "Swivel Chair Integration"—moments where an employee has to look at one screen and manually type the information into another. Look for instances where a technician has to call the office for details that should already be on their device. These are your friction points.
+Look for "Swivel Chair Integration": moments where an employee has to look at one screen and manually type the information into another. Look for instances where a technician has to call the office for details that should already be on their device. These are your friction points.
 
 ### Calculate the Latency
 
@@ -349,7 +349,7 @@ I didn't start my career in a cushy tech office. I spent time in professional la
 
 ### The Engineering Discipline
 
-While earning my B.S. in Engineering Management (with a specialization in Mechanical Engineering) from the Illinois Institute of Technology, I learned how to build rigid, scalable systems out of chaos. You can't guess your way through an engine rebuild or a high-rise TI project—it requires exact tolerances, deterministic logic, and flawless execution. Most local service businesses are running on guesswork and manual labor when they should be running like a tuned engine. 
+While earning my B.S. in Engineering Management (with a specialization in Mechanical Engineering) from the Illinois Institute of Technology, I learned how to build rigid, scalable systems out of chaos. You can't guess your way through an engine rebuild or a high-rise TI project; it requires exact tolerances, deterministic logic, and flawless execution. Most local service businesses are running on guesswork and manual labor when they should be running like a tuned engine. 
 
 ### The Athletic Drive
 
@@ -357,7 +357,7 @@ As a starting collegiate pitcher for the Illinois Tech baseball team, I learned 
 
 ### The Core Philosophy
 
-Technology and AI shouldn't replace the human element of your business; they should amplify the human spirit, grit, and vision that you poured into building it. When we engineer a system to handle your dispatching and lead flow, we aren't removing the soul of your company—we're freeing you and your team to focus on the high-value work that actually matters.`,
+Technology and AI shouldn't replace the human element of your business; they should amplify the human spirit, grit, and vision that you poured into building it. When we engineer a system to handle your dispatching and lead flow, we aren't removing the soul of your company: we're freeing you and your team to focus on the high-value work that actually matters.`,
                 date: "2026-04-24",
                 readTime: "6 min"
             }
