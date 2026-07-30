@@ -62,16 +62,24 @@ const VideoGate = () => {
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#10b981]/50 to-transparent opacity-30" />
 
                     {isUnlocked ? (
-                        <div className="w-full h-full animate-in fade-in zoom-in-95 duration-1000 flex items-center justify-center bg-black rounded-xl overflow-hidden relative">
-                            {/* Placeholder Video Embed - Replace src when ready */}
+                        <div className="w-full h-full animate-in fade-in zoom-in-95 duration-1000 flex flex-col items-center justify-center bg-black rounded-xl overflow-hidden relative">
                             <iframe 
-                                className="w-full h-full absolute inset-0"
+                                className="w-full h-[calc(100%-80px)] absolute top-0 inset-x-0"
                                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1" 
                                 title="Engineering Breakdown" 
                                 frameBorder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowFullScreen
                             ></iframe>
+                            <div className="absolute bottom-0 w-full h-[80px] bg-zinc-950 flex items-center justify-center border-t border-border/50">
+                                <Button 
+                                    onClick={() => window.location.href = '/start'}
+                                    className="h-12 bg-[#10b981] hover:bg-[#0ea672] text-black font-black uppercase tracking-widest rounded-none border-none px-8 flex items-center gap-2"
+                                >
+                                    {lang === 'en' ? "Next Step: Free Diagnostic" : "Siguiente Paso: Diagnóstico Gratuito"}
+                                    <ArrowRight className="w-5 h-5" />
+                                </Button>
+                            </div>
                         </div>
                     ) : (
                         <div className="w-full h-full flex flex-col items-center justify-center text-center">

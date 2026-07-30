@@ -49,7 +49,7 @@ const App = () => (
               <Suspense fallback={
                 <div className="min-h-screen bg-black flex items-center justify-center">
                   <motion.img 
-                    src="/bull_PNGs/bull.512x512.webp" 
+                    src="/bull_PNGs/vect.bull.svg" 
                     alt="Carrillo Dynamics"
                     className="h-24 w-24 object-contain"
                     initial={{ opacity: 0, scale: 0.9 }}

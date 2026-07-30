@@ -18,7 +18,7 @@ const Footer = () => {
                             onClick={() => navigate('/')}
                         >
                             <img
-                                src="/bull_PNGs/bull-apple-touch-icon.webp"
+                                src="/bull_PNGs/vect.bull.svg"
                                 alt="Logo"
                                 className="h-8 w-8 object-contain transition-transform group-hover:scale-105"
                             />

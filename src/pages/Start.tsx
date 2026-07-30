@@ -95,12 +95,15 @@ const Start = () => {
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans overflow-x-hidden transition-colors duration-300">
-            <SEOManager />
+            <SEOManager isNoindex={true} />
             {/* Clean Header - No distracting navigation, just the logo */}
             <header className="w-full border-b border-foreground/10 bg-background/80 backdrop-blur-md z-50 sticky top-0 h-20 flex items-center px-6">
-                <div className="max-w-7xl mx-auto flex w-full items-center justify-between">
-                    <a href="/" className="font-black text-xl tracking-tighter hover:text-[#10b981] transition-colors">
-                        CARRILLO<span className="text-[#10b981]">DYNAMICS</span>
+                <div className="max-w-7xl mx-auto flex w-full items-center justify-center">
+                    <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                        <img src="/bull_PNGs/vect.bull.svg" alt="Carrillo Dynamics Logo" className="h-10 w-10" />
+                        <span className="font-black text-xl tracking-tighter">
+                            CARRILLO<span className="text-[#10b981]">DYNAMICS</span>
+                        </span>
                     </a>
                 </div>
             </header>
@@ -110,7 +113,11 @@ const Start = () => {
                 <div className="mx-auto max-w-5xl">
                     <div className="mb-12 text-center space-y-4">
                         <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
-                            {lang === 'en' ? 'The Engineering Breakdown' : 'El Análisis de Ingeniería'}
+                            {lang === 'en' ? (
+                                <>The <span className="text-[#10b981]">Engineering</span> Breakdown</>
+                            ) : (
+                                <>El Análisis de <span className="text-[#10b981]">Ingeniería</span></>
+                            )}
                         </h1>
                         <p className="text-muted-foreground font-medium max-w-2xl mx-auto">
                             {lang === 'en' 

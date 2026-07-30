@@ -19,7 +19,7 @@ const Navbar = () => {
             >
                 <div className="relative h-10 w-10 overflow-hidden">
                     <img
-                        src="/bull_PNGs/bull-apple-touch-icon.webp"
+                        src="/bull_PNGs/vect.bull.svg"
                         alt="Carrillo Dynamics Logo"
                         className="h-full w-full object-contain transition-transform group-hover:scale-105"
                     />

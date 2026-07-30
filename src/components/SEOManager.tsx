@@ -33,8 +33,8 @@ const SEOManager: React.FC<SEOManagerProps> = ({
         : `${brandName} | ${slogan}`;
         
     const siteDescription = lang === 'en' 
-        ? 'Carrillo Dynamics builds high-speed digital infrastructure for trade and service companies so your site stops crashing, your phone keeps ringing, and you stop losing jobs to your competitors.'
-        : 'Carrillo Dynamics construye infraestructura digital de alta velocidad para empresas de servicios, para que su sitio web deje de caerse, su teléfono no pare de sonar y deje de perder trabajos frente a sus competidores.';
+        ? 'We engineer websites and systems that help service businesses scale. Get more jobs. Automate the busywork. Cut the headaches.'
+        : 'Diseñamos sitios web y sistemas que ayudan a las empresas de servicios a escalar. Consiga más trabajos. Automatice el trabajo manual. Reduzca los dolores de cabeza.';
     
     const baseUrl = 'https://carrillodynamics.com';
     
