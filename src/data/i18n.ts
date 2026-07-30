@@ -345,21 +345,23 @@ Measure the time it takes for a new lead to receive a response. Measure the time
                 id: "engineering-philosophy",
                 title: "The Engineering Philosophy",
                 description: "Why I built Carrillo Dynamics: deterministic logic for service businesses.",
-                content: `### The Gritty Reality of Service
+                content: `### Real World Operations
 
-I didn't start my career in a cushy tech office. I spent time in professional landscaping, working customer service at hardware and automotive stores, and acting as a Project Engineer in high-rise tenant improvement projects. I've also spent countless hours in the garage ripping apart my own car engines and dropping transmissions. I know what the gritty, blue-collar reality of physical work looks like, and I know how chaotic the back-office operations can get when you're trying to dispatch crews, manage inventory, and keep clients happy simultaneously.
+I didn't start my career sitting behind a desk. My background is in the field—from landscaping and automotive work, to managing high-rise tenant improvement projects. I know what physical work actually entails. I also know how chaotic the back-office gets when you're juggling dispatch, inventory, and demanding clients all at once.
 
-### The Engineering Discipline
+### Systems Thinking
 
-While earning my B.S. in Engineering Management (with a specialization in Mechanical Engineering) from the Illinois Institute of Technology, I learned how to build rigid, scalable systems out of chaos. You can't guess your way through an engine rebuild or a high-rise TI project; it requires exact tolerances, systematic logic, rigorous standards, and disciplined execution. Most local service businesses are running on guesswork and manual labor when they should be running like a tuned engine. 
+While earning my Engineering degree at Illinois Tech, I learned how to build reliable systems out of chaos. Whether you're rebuilding an engine or managing a complex project, guesswork doesn't cut it. You need exact tolerances and disciplined execution. Too many local service businesses are running on manual effort and sticky notes when they should be running like a well-tuned machine.
 
-### The Athletic Drive
+### Building What Works
 
-As a starting collegiate pitcher for the Illinois Tech baseball team, I learned that raw talent means nothing without absolute discipline, focus, and the ability to execute under pressure. That competitive drive is why I founded Carrillo Dynamics here in the Chicagoland area. I don't build "pretty websites." I build pragmatic, industrial-grade digital systems engineered to help local trade businesses operate efficiently and grow.
+That's why I started Carrillo Dynamics. I'm not here to build "pretty websites" or pitch abstract tech buzzwords. I'm here to build functional, industrial-grade digital tools that actually help trade businesses operate more efficiently. We build the infrastructure so you can handle more volume without the headaches.
 
-### The Core Philosophy
+### The Bottom Line
 
-Technology and AI shouldn't replace the human element of your business; they should amplify the human spirit, grit, and vision that you poured into building it. When we engineer a system to handle your dispatching and lead flow, we aren't removing the soul of your company: we're freeing you and your team to focus on the high-value work that actually matters.`,
+Technology shouldn't complicate your life; it should amplify the hard work you've already put into your business. When we streamline your operations, we aren't changing who you are, we're just freeing you and your team up to do the real work that pays the bills.
+
+— Nico Carrillo, Owner/Engineer`,
                 date: "2026-04-24",
                 readTime: "6 min"
             }
@@ -610,21 +612,23 @@ Mida el tiempo que tarda un nuevo lead en recibir una respuesta. Mida el tiempo 
                 id: "engineering-philosophy",
                 title: "Por Qué Construí Carrillo Dynamics",
                 description: "Desde desarmar motores y lanzar béisbol universitario hasta diseñar sistemas empresariales.",
-                content: `### La Realidad del Trabajo Fuerte
+                content: `### Operaciones en el Mundo Real
 
-No comencé mi carrera en una cómoda oficina de tecnología. Pasé tiempo en paisajismo profesional, trabajando en servicio al cliente en tiendas automotrices y ferreterías, y actuando como Ingeniero de Proyectos. También he pasado incontables horas en el garaje desarmando los motores de mis propios autos y quitando transmisiones. Sé cómo es la realidad física y fuerte del trabajo manual, y sé lo caóticas que pueden llegar a ser las operaciones cuando intentas despachar equipos, administrar el inventario y mantener contentos a los clientes al mismo tiempo.
+No comencé mi carrera detrás de un escritorio. Mi experiencia está en el campo: desde paisajismo y mecánica automotriz, hasta la gestión de proyectos en rascacielos. Sé lo que realmente implica el trabajo físico. También sé lo caótica que se vuelve la oficina cuando estás haciendo malabarismos con despachos, inventario y clientes exigentes al mismo tiempo.
 
-### La Disciplina de Ingeniería
+### Pensamiento Sistémico
 
-Mientras obtenía mi Licenciatura en Gestión de Ingeniería (con especialización en Ingeniería Mecánica) del Illinois Institute of Technology, aprendí a construir sistemas rígidos y escalables a partir del caos. No se puede adivinar al reconstruir un motor o un proyecto de gran altura: requiere tolerancias exactas, lógica sistemática, estándares rigurosos y ejecución disciplinada. La mayoría de las empresas de servicios locales funcionan con conjeturas y trabajo manual cuando deberían funcionar como un motor afinado.
+Mientras obtenía mi título de Ingeniería en Illinois Tech, aprendí a construir sistemas confiables a partir del caos. Ya sea que estés reconstruyendo un motor o gestionando un proyecto complejo, adivinar no sirve. Necesitas tolerancias exactas y una ejecución disciplinada. Demasiadas empresas de servicios locales funcionan con esfuerzo manual y notas adhesivas cuando deberían funcionar como una máquina bien afinada.
 
-### El Impulso Atlético
+### Construyendo lo que Funciona
 
-Como lanzador abridor titular en el equipo de béisbol de Illinois Tech, aprendí que el talento puro no significa nada sin una disciplina y un enfoque absolutos para ejecutar bajo presión. Ese impulso competitivo es la razón por la que fundé Carrillo Dynamics aquí en el área de Chicago. No construyo "sitios web bonitos". Construyo sistemas digitales pragmáticos de grado industrial diseñados para ayudar a las empresas de servicios locales a operar con eficiencia y crecer.
+Por eso comencé Carrillo Dynamics. No estoy aquí para construir "sitios web bonitos" o vender palabras de moda tecnológicas abstractas. Estoy aquí para construir herramientas digitales funcionales de grado industrial que realmente ayuden a las empresas a operar de manera más eficiente. Construimos la infraestructura para que puedas manejar más volumen sin dolores de cabeza.
 
-### La Filosofía Central
+### En Conclusión
 
-La tecnología y la IA no deberían reemplazar el elemento humano de su negocio; deberían amplificar el espíritu, la fuerza y la visión humana que usted invirtió en construirlo. Cuando diseñamos un sistema para manejar su flujo de leads, no estamos quitando el alma de su empresa: lo estamos liberando a usted y a su equipo para enfocarse en el trabajo de alto valor que realmente importa.`,
+La tecnología no debería complicar tu vida; debería amplificar el arduo trabajo que ya has puesto en tu negocio. Cuando optimizamos tus operaciones, no estamos cambiando quién eres, solo te estamos liberando a ti y a tu equipo para hacer el trabajo real que paga las cuentas.
+
+— Nico Carrillo, Owner/Engineer`,
                 date: "2026-04-24",
                 readTime: "6 min"
             }
