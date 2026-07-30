@@ -44,11 +44,11 @@ const Hero = ({ onContactClick }: HeroProps) => {
 
     return (
         <section className="relative flex min-h-[85vh] flex-col justify-center px-6 pt-32 md:pt-48 pb-12 md:pb-24 bg-background overflow-hidden transition-colors duration-300 border-b border-foreground/5">
-            {/* Engineering Grid Background */}
+            {/* Engineering Graph Paper Background */}
             <div 
-                className="absolute inset-0 pointer-events-none opacity-[0.03]"
+                className="absolute inset-0 pointer-events-none opacity-[0.15]"
                 style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z' fill='%2310b981' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E")`
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.5'/%3E%3C/svg%3E")`
                 }}
             />
             

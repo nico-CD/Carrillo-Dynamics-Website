@@ -1,8 +1,11 @@
 import {
     Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useTranslation } from "@/components/LanguageProvider";
 
 const FAQ = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="space-y-16 max-w-4xl mx-auto w-full overflow-hidden">
             <div className="space-y-4 text-center">
@@ -10,29 +13,12 @@ const FAQ = () => {
             </div>
 
             <Accordion type="single" collapsible className="w-full space-y-4">
-                {[
-                    {
-                        q: "Is this just another software application?",
-                        a: "No. We build invisible systems that integrate with your existing tools. Your field crew won't have to learn another app; we just make the ones they already use communicate deterministically."
-                    },
-                    {
-                        q: "How long until we see reduced friction?",
-                        a: "We target high-friction bottlenecks first (duplicate entry, missed follow-ups). Systems typically start reclaiming hours and reducing dispatch chaos within 14-21 days of deployment."
-                    },
-                    {
-                        q: "What if our processes are currently manual?",
-                        a: "That is our ideal starting point. We do not automate chaos; we engineer clarity. Our first step is a rigorous Diagnostic phase where we map out dispatch and quoting flows."
-                    },
-                    {
-                        q: "Do we need internal IT to maintain this?",
-                        a: "Zero internal maintenance. We act as your fractional operations engineering department, providing structural oversight and iterative scaling."
-                    }
-                ].map((faq, idx) => (
-                    <AccordionItem key={idx} value={`item-${idx}`} className="border border-zinc-700 bg-white/[0.01] rounded-none px-4 md:px-8 data-[state=open]:bg-white/[0.03] transition-all overflow-hidden">
-                        <AccordionTrigger className="text-left text-lg md:text-xl font-bold hover:no-underline py-8 data-[state=open]:text-white transition-colors uppercase tracking-tight leading-snug">
+                {t.faqs.map((faq, idx) => (
+                    <AccordionItem key={idx} value={`item-${idx}`} className="border border-border/50 bg-zinc-950/50 backdrop-blur-md rounded-xl px-4 md:px-8 data-[state=open]:border-[#10b981]/50 data-[state=open]:shadow-[0_0_30px_rgba(16,185,129,0.1)] transition-all overflow-hidden">
+                        <AccordionTrigger className="text-left text-lg md:text-xl font-bold hover:no-underline py-8 text-foreground hover:text-[#10b981] data-[state=open]:text-white transition-colors uppercase tracking-tight leading-snug">
                             <span className="max-w-[90%] break-words">{faq.q}</span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-zinc-400 font-medium text-base md:text-lg leading-relaxed pb-8 border-t border-zinc-800 pt-6 mt-2 overflow-hidden">
+                        <AccordionContent className="text-zinc-300 font-medium text-base md:text-lg leading-relaxed pb-8 pt-2 overflow-hidden">
                             <div className="break-words whitespace-normal">
                                 {faq.a}
                             </div>

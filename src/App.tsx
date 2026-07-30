@@ -14,6 +14,7 @@ import PageProgressBar from "./components/PageProgressBar";
 import Breadcrumbs from "./components/Breadcrumbs";
 import SEOManager from "./components/SEOManager";
 import Index from "./pages/Index";
+import MobileCTA from "./components/MobileCTA";
 
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
@@ -75,6 +76,7 @@ const App = () => (
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
+              <MobileCTA />
               <Toaster />
               <Sonner />
             </LanguageProvider>

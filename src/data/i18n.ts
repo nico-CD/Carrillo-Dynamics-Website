@@ -228,20 +228,28 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         faqs: [
             {
-                q: "How long until I see results?",
-                a: "We aim to have your new system live within a few weeks. You'll start seeing an increase in lead capture immediately once it's up."
+                q: "What is the real cost of 'Lead Leakage'?",
+                a: "For high-volume firms, even a 5% leak in the intake funnel can cost an estimated $50k - $100k in annual revenue. Our Automation Diagnostic identifies these 'silent kills', where leads disappear between your CRM and the field technician."
             },
             {
-                q: "Do I need to be tech-savvy?",
-                a: "Not at all. We handle all the technical heavy lifting. You just need to focus on answering the phone and doing the work you're good at."
+                q: "How does the '60-Second Rule' impact ROI?",
+                a: "A lead contacted in <60 seconds is 8 times more likely to book. We engineer automated response logic that bypasses human bottlenecks, ensuring you are the first company the customer hears from, 24/7."
             },
             {
-                q: "Will this replace my current tools like Jobber or ServiceTitan?",
-                a: "No, we work alongside your current tools to make sure you're getting the most out of them. We build the website and the lead generation engine that feeds into your existing CRM."
+                q: "Can we double our service volume without hiring more dispatchers?",
+                a: "Yes. By automating manual data entry and replacing probabilistic dispatching with deterministic logic, your current office staff can manage 3x the territory volume with significantly less stress."
             },
             {
-                q: "What types of businesses do you work with?",
-                a: "We specialize in local service businesses like plumbers, HVAC technicians, electricians, and contractors."
+                q: "Does your logic replace our existing CRM software?",
+                a: "No. We act as a force multiplier for your CRM. We bridge the gaps where generic software fails, building custom middleware that makes your current tools actually work the way your business needs them to."
+            },
+            {
+                q: "How soon will we see measurable results?",
+                a: "Initial operational wins are usually live within 14 days. We target high-friction bottlenecks first—like the intake flow and automated follow-ups—to drive immediate, measurable ROI."
+            },
+            {
+                q: "What is a 'Fractional Operations Engineer'?",
+                a: "Unlike a 'consultant' who just gives advice, we are engineers who build. We act as your outsourced CTO/COO, managing your technical infrastructure so you can focus on scaling the business."
             }
         ],
         articles: [
@@ -249,7 +257,17 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "60-second-lead-rule",
                 title: "The 60-Second Rule",
                 description: "In high-volume service, response velocity is the single most critical variable for your bottom line.",
-                content: "### Operational Velocity\n\nIn the service industry, seconds are dollars. A lead contacted in under 60 seconds closes at a rate eight times higher than one contacted even five minutes later. Most firms suffer from what we call Human Latency, which is the costly gap between a lead arriving and your team actually noticing it. We replace this inconsistent gap with deterministic logic that acts instantly.\n\n### The Math of Friction\n\nManual dispatch is inherently slow and prone to failure. By the time a dispatcher dials, the customer has often already called two competitors. Our engineered approach minimizes this friction by injecting lead data directly into your communication pipeline in under 200ms, ensuring you are always the first point of contact.\n\n### Industrial Execution\n\nWe implement immediate connect protocols to maintain this speed. This includes instant CRM injection to automate manual typing, real-time priority alerts for your best leads, and automated engagement touch-points that hit the customer's phone the moment they hit submit.",
+                content: `### Operational Velocity
+
+In the service industry, seconds are dollars. A lead contacted in under 60 seconds closes at a rate eight times higher than one contacted even five minutes later. Most firms suffer from what we call Human Latency, which is the costly gap between a lead arriving and your team actually noticing it. We replace this inconsistent gap with deterministic logic that acts instantly.
+
+### The Math of Friction
+
+Manual dispatch is inherently slow and prone to failure. By the time a dispatcher dials, the customer has often already called two competitors. Our engineered approach minimizes this friction by injecting lead data directly into your communication pipeline in under 200ms, ensuring you are always the first point of contact.
+
+### Industrial Execution
+
+We implement immediate connect protocols to maintain this speed. This includes instant CRM injection to automate manual typing, real-time priority alerts for your best leads, and automated engagement touch-points that hit the customer's phone the moment they hit submit.`,
                 date: "2026-04-01",
                 readTime: "4 min"
             },
@@ -257,7 +275,17 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "scaling-without-hiring",
                 title: "Scaling Without Hiring",
                 description: "Increase your service volume without adding to your administrative overhead.",
-                content: "### The Staffing Trap\n\nTraditional growth usually leads to heavy overhead. Historically, every new technician requires a corresponding increase in office staff to manage the resulting paperwork. This linear growth model effectively kills your margins over time. We help firms shift to an exponential logic model where your infrastructure does the heavy lifting.\n\n### Digital Infrastructure\n\nTo scale without reducing your profitability, you must automate low-value repetitive tasks. We replace manual data entry, quote follow-ups, and scheduling verification with secure, rigid flows that never sleep and never make mistakes. This allows your team to focus on high-value strategy rather than data management.\n\n### Operational Integrity\n\nManual errors are the hidden tax on your ROI. Our systems ensure total data integrity from the initial intake all the way to the final invoice. This precision allows you to triple your territory volume with the same office headcount you have today.",
+                content: `### The Staffing Trap
+
+Traditional growth usually leads to heavy overhead. Historically, every new technician requires a corresponding increase in office staff to manage the resulting paperwork. This linear growth model effectively kills your margins over time. We help firms shift to an exponential logic model where your infrastructure does the heavy lifting.
+
+### Digital Infrastructure
+
+To scale without reducing your profitability, you must automate low-value repetitive tasks. We replace manual data entry, quote follow-ups, and scheduling verification with secure, rigid flows that never sleep and never make mistakes. This allows your team to focus on high-value strategy rather than data management.
+
+### Operational Integrity
+
+Manual errors are the hidden tax on your ROI. Our systems ensure total data integrity from the initial intake all the way to the final invoice. This precision allows you to triple your territory volume with the same office headcount you have today.`,
                 date: "2026-04-07",
                 readTime: "5 min"
             },
@@ -265,8 +293,72 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "stop-losing-leads",
                 title: "Stop Losing Leads",
                 description: "Fix the invisible revenue loss in your intake funnel.",
-                content: "### Identifying the Void\n\nIs your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. We deep-dive into the technical path of every single lead that enters your ecosystem to fix these leaks.\n\n### System Analysis\n\nWe track every step of the journey to find where you are losing money. We analyze form friction to see why users drop off, measure the actual delay in notifications, and identify which follow-ups are failing to convert. This data allows us to plug every leak with reliable, automated processes.",
+                content: `### Identifying the Void
+
+Is your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. We deep-dive into the technical path of every single lead that enters your ecosystem to fix these leaks.
+
+### System Analysis
+
+We track every step of the journey to find where you are losing money. We analyze form friction to see why users drop off, measure the actual delay in notifications, and identify which follow-ups are failing to convert. This data allows us to plug every leak with reliable, automated processes.`,
                 date: "2026-04-07",
+                readTime: "6 min"
+            },
+            {
+                id: "true-cost-manual-entry",
+                title: "The True Cost of Manual Data Entry",
+                description: "Why paying a human to copy-paste data is destroying your margins.",
+                content: `### The Hidden Tax
+
+Every time an employee copies a customer's address from an email into your CRM, you are bleeding money. It's not just the 30 seconds of labor—it's the context switching, the inevitable typos, and the compounding delay across hundreds of tickets a week.
+
+### Error Propagation
+
+A single typo in an address or phone number doesn't just waste office time; it sends a $150/hr field crew to the wrong location. Manual entry is fundamentally a probabilistic system. It guarantees failure at scale. 
+
+### Engineered Precision
+
+By replacing human keystrokes with API-level integrations, we guarantee 100% data fidelity. Lead information flows directly from the web form, into the CRM, and onto the technician's mobile device instantly. The result? Zero lost tickets, zero wrong addresses, and maximum field efficiency.`,
+                date: "2026-04-12",
+                readTime: "5 min"
+            },
+            {
+                id: "audit-your-operations",
+                title: "How to Audit Your Own Operations for Leaks",
+                description: "A framework for identifying the bottlenecks in your service business.",
+                content: `### Map the Flow
+
+The first step in any engineering audit is mapping the existing state. You must document the exact lifecycle of a lead, from the moment they click your ad to the moment the final invoice is paid. Most business owners are shocked to realize how many manual steps are actually involved in a single job.
+
+### Identify the Friction
+
+Look for "Swivel Chair Integration"—moments where an employee has to look at one screen and manually type the information into another. Look for instances where a technician has to call the office for details that should already be on their device. These are your friction points.
+
+### Calculate the Latency
+
+Measure the time it takes for a new lead to receive a response. Measure the time it takes to generate and send a quote after a site visit. If these metrics rely on a human remembering to do them, you have an operational leak. The solution is removing the human from the trigger, and letting the system enforce the action.`,
+                date: "2026-04-18",
+                readTime: "7 min"
+            },
+            {
+                id: "founders-perspective",
+                title: "Why I Built Carrillo Dynamics: A Founder's Perspective",
+                description: "From ripping apart engines and pitching in college to engineering enterprise-grade service systems.",
+                content: `### The Gritty Reality of Service
+
+I didn't start my career in a cushy tech office. I spent time in professional landscaping, working customer service at hardware and automotive stores, and acting as a Project Engineer in high-rise tenant improvement projects. I've also spent countless hours in the garage ripping apart my own car engines and dropping transmissions. I know what the gritty, blue-collar reality of physical work looks like, and I know how chaotic the back-office operations can get when you're trying to dispatch crews, manage inventory, and keep clients happy simultaneously.
+
+### The Engineering Discipline
+
+While earning my B.S. in Engineering Management (with a specialization in Mechanical Engineering) from the Illinois Institute of Technology, I learned how to build rigid, scalable systems out of chaos. You can't guess your way through an engine rebuild or a high-rise TI project—it requires exact tolerances, deterministic logic, and flawless execution. Most local service businesses are running on guesswork and manual labor when they should be running like a tuned engine. 
+
+### The Athletic Drive
+
+As a starting collegiate pitcher for the Illinois Tech baseball team, I learned that raw talent means nothing without absolute discipline, focus, and the ability to execute under pressure. That competitive drive is why I founded Carrillo Dynamics here in the Chicagoland area. I don't build "pretty websites." I build industrial-grade, no-BS digital systems designed to dominate local markets.
+
+### The Core Philosophy
+
+Technology and AI shouldn't replace the human element of your business; they should amplify the human spirit, grit, and vision that you poured into building it. When we engineer a system to handle your dispatching and lead flow, we aren't removing the soul of your company—we're freeing you and your team to focus on the high-value work that actually matters.`,
+                date: "2026-04-24",
                 readTime: "6 min"
             }
         ],
@@ -409,10 +501,10 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "¿Podemos duplicar nuestro volumen de servicios sin contratar más despachadores?",
-                a: "Posicionados para el crecimiento. Al automatizar la entrada manual de datos y reemplazar el despacho probabilístico con lógica determinista, su personal de oficina actual puede gestionar 3 veces el volumen de territorio con significativamente menos estrés."
+                a: "Sí. Al automatizar la entrada manual de datos y reemplazar el despacho probabilístico con lógica determinista, su personal de oficina actual puede gestionar 3 veces el volumen de territorio con significativamente menos estrés."
             },
             {
-                q: "¿Su lógica reemplaza mi CRM (ServiceTitan, Jobber, Housecall Pro)?",
+                q: "¿Su lógica reemplaza nuestro software CRM existente?",
                 a: "No. Actuamos como un multiplicador de fuerza para su CRM. Cerramos las brechas donde el software genérico falla, construyendo middleware personalizado que hace que sus herramientas actuales funcionen como su negocio realmente lo requiere."
             },
             {
@@ -420,24 +512,8 @@ export const i18nData: Record<Language, I18nContent> = {
                 a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los cuellos de botella de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
             },
             {
-                q: "¿Por qué lo llaman Diagnóstico de Automatización?",
-                a: "Porque no adivinamos. Nos sumergimos en sus registros de datos brutos para encontrar exactamente dónde se retrasan los tiempos y dónde se pierden los leads. Es un diagnóstico de ingeniería de su operación actual."
-            },
-            {
-                q: "¿Están seguros los datos de mis clientes durante estas automatizaciones?",
-                a: "La seguridad no es negociable. Construimos canales de datos seguros y encriptados dentro de su ecosistema existente. Los datos de sus clientes permanecen bajo su control en todo momento."
-            },
-            {
                 q: "¿Qué es un 'Ingeniero de Operaciones Fraccional'?",
                 a: "A diferencia de un 'consultor' que solo da consejos, somos ingenieros que construyen. Actuamos como su CTO/COO externo, gestionando su infraestructura técnica para que usted pueda enfocarse en escalar el negocio."
-            },
-            {
-                q: "¿Qué sucede si tenemos un pico de volumen de demanda?",
-                a: "Nuestros sistemas están construidos para una 'Escala Elástica'. Mientras que el despacho humano colapsa bajo el caos, nuestra lógica genera el pico de demanda, priorizando trabajos de alto valor y automatizando consultas estándar."
-            },
-            {
-                q: "¿Soy el dueño de la lógica de automatización una vez construida?",
-                a: "100%. Usted posee la propiedad intelectual de los sistemas que construimos para usted. Nosotros proporcionamos la ingeniería y los diagnósticos; usted es el dueño del motor."
             }
         ],
         articles: [
@@ -445,7 +521,17 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "60-second-lead-rule",
                 title: "La Regla de los 60 Segundos",
                 description: "La velocidad de respuesta es la variable más crítica para su rentabilidad.",
-                content: "### Velocidad Operativa\n\nEn la industria de servicios, los segundos se traducen en dólares. Un cliente potencial contactado en menos de 60 segundos tiene una probabilidad de cierre ocho veces mayor que uno contactado apenas cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre la llegada de un prospecto y el momento en que su equipo lo detecta. Reemplazamos este lapso inconsistente con lógica determinista que actúa al instante.\n\n### La Matemática de la Fricción\n\nEl despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque de ingeniería minimiza esta fricción inyectando los datos del prospecto directamente en su flujo de comunicación en menos de 200 ms, asegurando que usted sea siempre el primer punto de contacto.\n\n### Ejecución Industrial\n\nImplementamos protocolos de conexión inmediata para mantener esta velocidad. Esto incluye la inyección instantánea en el CRM para automatizar la escritura manual, alertas de prioridad en tiempo real para sus mejores leads y puntos de contacto automatizados que llegan al teléfono del cliente en el momento en que envía su solicitud.",
+                content: `### Velocidad Operativa
+
+En la industria de servicios, los segundos se traducen en dólares. Un cliente potencial contactado en menos de 60 segundos tiene una probabilidad de cierre ocho veces mayor que uno contactado apenas cinco minutos después. La mayoría de las empresas sufren de lo que llamamos Latencia Humana, el costoso lapso entre la llegada de un prospecto y el momento en que su equipo lo detecta. Reemplazamos este lapso inconsistente con lógica determinista que actúa al instante.
+
+### La Matemática de la Fricción
+
+El despacho manual es intrínsecamente lento y propenso a errores. Para cuando un despachador marca, el cliente a menudo ya ha llamado a dos competidores. Nuestro enfoque de ingeniería minimiza esta fricción inyectando los datos del prospecto directamente en su flujo de comunicación en menos de 200 ms, asegurando que usted sea siempre el primer punto de contacto.
+
+### Ejecución Industrial
+
+Implementamos protocolos de conexión inmediata para mantener esta velocidad. Esto incluye la inyección instantánea en el CRM para automatizar la escritura manual, alertas de prioridad en tiempo real para sus mejores leads y puntos de contacto automatizados que llegan al teléfono del cliente en el momento en que envía su solicitud.`,
                 date: "2026-04-01",
                 readTime: "4 min"
             },
@@ -453,7 +539,17 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "scaling-without-hiring",
                 title: "Escalar sin Contratar",
                 description: "Aumente su volumen de servicios sin añadir carga administrativa.",
-                content: "### La Trampa del Personal\n\nEl crecimiento tradicional suele conllevar grandes gastos generales. Históricamente, cada nuevo técnico requiere un aumento correspondiente en el personal de oficina para gestionar el papeleo resultante. Este modelo de crecimiento lineal termina erosionando sus márgenes con el tiempo. Ayudamos a las empresas a cambiar a un modelo de lógica exponencial donde su infraestructura hace el trabajo pesado.\n\n### Infraestructura Digital\n\nPara escalar sin reducir su rentabilidad, debe automatizar las tareas repetitivas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos seguros y robustos que nunca duermen y nunca cometen errores. Esto permite que su equipo se concentre en la estrategia de alto valor en lugar de en la gestión de datos.\n\n### Integridad Operativa\n\nLos errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión inicial hasta la factura final. Esta precisión le permite triplicar su volumen de territorio con el mismo personal de oficina que tiene actualmente.",
+                content: `### La Trampa del Personal
+
+El crecimiento tradicional suele conllevar grandes gastos generales. Históricamente, cada nuevo técnico requiere un aumento correspondiente en el personal de oficina para gestionar el papeleo resultante. Este modelo de crecimiento lineal termina erosionando sus márgenes con el tiempo. Ayudamos a las empresas a cambiar a un modelo de lógica exponencial donde su infraestructura hace el trabajo pesado.
+
+### Infraestructura Digital
+
+Para escalar sin reducir su rentabilidad, debe automatizar las tareas repetitivas de bajo valor. Reemplazamos la entrada manual de datos, el seguimiento de cotizaciones y la verificación de programación con flujos seguros y robustos que nunca duermen y nunca cometen errores. Esto permite que su equipo se concentre en la estrategia de alto valor en lugar de en la gestión de datos.
+
+### Integridad Operativa
+
+Los errores manuales son el impuesto oculto en su ROI. Nuestros sistemas aseguran una integridad de datos total desde la admisión inicial hasta la factura final. Esta precisión le permite triplicar su volumen de territorio con el mismo personal de oficina que tiene actualmente.`,
                 date: "2026-04-07",
                 readTime: "5 min"
             },
@@ -461,8 +557,72 @@ export const i18nData: Record<Language, I18nContent> = {
                 id: "stop-losing-leads",
                 title: "Deje de Perder Clientes",
                 description: "Detenga la pérdida invisible de ingresos en su embudo de ventas.",
-                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas tienen puntos ciegos donde los prospectos mueren antes de llegar a un técnico. Hacemos una inmersión profunda en la ruta de cada lead para tapar estas fugas.\n\n### Análisis de Sistemas\n\nRastreamos cada paso del viaje para encontrar dónde está perdiendo dinero. Analizamos por qué los usuarios abandonan, medimos el retraso real en las notificaciones e identificamos qué seguimientos no logran convertir. Estos datos nos permiten sellar cada fuga con procesos automatizados confiables.",
+                content: `### Identificando el Vacío
+
+¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas tienen puntos ciegos donde los prospectos mueren antes de llegar a un técnico. Hacemos una inmersión profunda en la ruta de cada lead para tapar estas fugas.
+
+### Análisis de Sistemas
+
+Rastreamos cada paso del viaje para encontrar dónde está perdiendo dinero. Analizamos por qué los usuarios abandonan, medimos el retraso real en las notificaciones e identificamos qué seguimientos no logran convertir. Estos datos nos permiten sellar cada fuga con procesos automatizados confiables.`,
                 date: "2026-04-07",
+                readTime: "6 min"
+            },
+            {
+                id: "true-cost-manual-entry",
+                title: "El Verdadero Costo del Ingreso Manual de Datos",
+                description: "Por qué pagar a un humano para copiar y pegar datos está destruyendo sus márgenes.",
+                content: `### El Impuesto Oculto
+
+Cada vez que un empleado copia la dirección de un cliente de un correo electrónico a su CRM, usted está perdiendo dinero. No son solo los 30 segundos de trabajo: es el cambio de contexto, los errores tipográficos inevitables y el retraso compuesto en cientos de tickets a la semana.
+
+### Propagación de Errores
+
+Un solo error en una dirección o número de teléfono no solo hace perder tiempo en la oficina; envía a un equipo de campo de $150/hr a la ubicación equivocada. El ingreso manual es fundamentalmente un sistema probabilístico. Garantiza el fracaso a escala.
+
+### Precisión Diseñada
+
+Al reemplazar las pulsaciones humanas con integraciones a nivel de API, garantizamos el 100% de fidelidad de los datos. La información de los leads fluye directamente desde el formulario web, hacia el CRM y hacia el dispositivo móvil del técnico al instante. ¿El resultado? Cero tickets perdidos, cero direcciones equivocadas y máxima eficiencia de campo.`,
+                date: "2026-04-12",
+                readTime: "5 min"
+            },
+            {
+                id: "audit-your-operations",
+                title: "Cómo Auditar sus Propias Operaciones",
+                description: "Un marco para identificar los cuellos de botella en su empresa de servicios.",
+                content: `### Mapear el Flujo
+
+El primer paso en cualquier auditoría de ingeniería es mapear el estado actual. Debe documentar el ciclo de vida exacto de un lead, desde el momento en que hace clic en su anuncio hasta el momento en que se paga la factura final. A la mayoría de los dueños de negocios les sorprende darse cuenta de cuántos pasos manuales están realmente involucrados en un solo trabajo.
+
+### Identificar la Fricción
+
+Busque "Integraciones de Silla Giratoria": momentos en los que un empleado tiene que mirar una pantalla y escribir manualmente la información en otra. Busque casos en los que un técnico tenga que llamar a la oficina para obtener detalles que ya deberían estar en su dispositivo. Estos son sus puntos de fricción.
+
+### Calcular la Latencia
+
+Mida el tiempo que tarda un nuevo lead en recibir una respuesta. Mida el tiempo que tarda en generar y enviar una cotización después de una visita al sitio. Si estas métricas dependen de que un humano recuerde hacerlas, tiene una fuga operativa. La solución es eliminar al humano del disparador y dejar que el sistema aplique la acción.`,
+                date: "2026-04-18",
+                readTime: "7 min"
+            },
+            {
+                id: "founders-perspective",
+                title: "Por Qué Construí Carrillo Dynamics: Perspectiva del Fundador",
+                description: "Desde desarmar motores y lanzar béisbol universitario hasta diseñar sistemas empresariales.",
+                content: `### La Realidad del Trabajo Fuerte
+
+No comencé mi carrera en una cómoda oficina de tecnología. Pasé tiempo en paisajismo profesional, trabajando en servicio al cliente en tiendas automotrices y ferreterías, y actuando como Ingeniero de Proyectos. También he pasado incontables horas en el garaje desarmando los motores de mis propios autos y quitando transmisiones. Sé cómo es la realidad física y fuerte del trabajo manual, y sé lo caóticas que pueden llegar a ser las operaciones cuando intentas despachar equipos, administrar el inventario y mantener contentos a los clientes al mismo tiempo.
+
+### La Disciplina de Ingeniería
+
+Mientras obtenía mi Licenciatura en Gestión de Ingeniería (con especialización en Ingeniería Mecánica) del Illinois Institute of Technology, aprendí a construir sistemas rígidos y escalables a partir del caos. No se puede adivinar al reconstruir un motor o un proyecto de gran altura: requiere tolerancias exactas, lógica determinista y ejecución impecable. La mayoría de las empresas de servicios locales funcionan con conjeturas y trabajo manual cuando deberían funcionar como un motor afinado.
+
+### El Impulso Atlético
+
+Como lanzador abridor titular en el equipo de béisbol de Illinois Tech, aprendí que el talento puro no significa nada sin una disciplina y un enfoque absolutos para ejecutar bajo presión. Ese impulso competitivo es la razón por la que fundé Carrillo Dynamics aquí en el área de Chicago. No construyo "sitios web bonitos". Construyo sistemas digitales de grado industrial diseñados para dominar los mercados locales.
+
+### La Filosofía Central
+
+La tecnología y la IA no deberían reemplazar el elemento humano de su negocio; deberían amplificar el espíritu, la fuerza y la visión humana que usted invirtió en construirlo. Cuando diseñamos un sistema para manejar su flujo de leads, no estamos quitando el alma de su empresa: lo estamos liberando a usted y a su equipo para enfocarse en el trabajo de alto valor que realmente importa.`,
+                date: "2026-04-24",
                 readTime: "6 min"
             }
         ],

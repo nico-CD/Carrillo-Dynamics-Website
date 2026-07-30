@@ -140,11 +140,11 @@ const Index = () => {
                     </div>
 
                     <div className="bg-zinc-950/50 backdrop-blur-xl border-2 border-border/50 p-8 md:p-16 relative overflow-hidden flex flex-col justify-center transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(16,185,129,0.15)] rounded-3xl">
-                        {/* Engineering Grid Background */}
+                        {/* Engineering Graph Paper Background */}
                         <div 
-                            className="absolute inset-0 pointer-events-none opacity-20"
+                            className="absolute inset-0 pointer-events-none opacity-[0.2]"
                             style={{
-                                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z' fill='%2310b981' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E")`
+                                backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.5'/%3E%3C/svg%3E")`
                             }}
                         />
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#10b981]/10 rounded-full blur-[100px] pointer-events-none" />
