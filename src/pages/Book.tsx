@@ -83,7 +83,8 @@ const Book = () => {
 
         return () => {
             if (script) {
-            document.body.removeChild(script);
+                document.body.removeChild(script);
+            }
         };
     }, []);
 

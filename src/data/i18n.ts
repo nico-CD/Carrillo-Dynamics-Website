@@ -244,14 +244,6 @@ export const i18nData: Record<Language, I18nContent> = {
                 a: "We specialize in local service businesses like plumbers, HVAC technicians, electricians, and contractors."
             }
         ],
-                q: "What happens if we have a sudden volume spike?",
-                a: "Our systems are built for 'Elastic Scale'. While human dispatch collapses under chaos, our logic manages the surge, prioritizing high-value jobs and automating standard inquiries."
-            },
-            {
-                q: "Do I own the automation logic once built?",
-                a: "100%. You own the intellectual property of the systems we build for you. We provide the engineering and the diagnostics; you own the engine."
-            }
-        ],
         articles: [
             {
                 id: "60-second-lead-rule",
