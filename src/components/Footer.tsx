@@ -7,7 +7,7 @@ const Footer = () => {
     const navigate = useNavigate();
 
     return (
-        <footer className="px-6 py-16 md:py-24 border-t border-border bg-background transition-colors duration-300">
+        <footer className="px-6 py-16 md:py-24 border-t border-border bg-background transition-colors duration-300 relative z-10">
             <div className="mx-auto max-w-7xl">
                 <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24 items-start">
                     

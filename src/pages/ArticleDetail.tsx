@@ -10,6 +10,12 @@ import Footer from "../components/Footer";
 import SEOManager from "../components/SEOManager";
 import ForensicDiagnostic from "../components/ForensicDiagnostic";
 import { Button } from "../components/ui/button";
+import { Rule60Diagram } from "../components/diagrams/Rule60Diagram";
+import { ScalingDiagram } from "../components/diagrams/ScalingDiagram";
+import { IntakeDiagram } from "../components/diagrams/IntakeDiagram";
+import { LatencyTaxDiagram } from "../components/diagrams/LatencyTaxDiagram";
+import { SwivelChairDiagram } from "../components/diagrams/SwivelChairDiagram";
+import { FounderBlueprintDiagram } from "../components/diagrams/FounderBlueprintDiagram";
 
 const ArticleDetail = () => {
     const { id } = useParams();
@@ -126,6 +132,15 @@ const ArticleDetail = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                                 {/* MAIN CONTENT: HIGH-DENSITY TEXT */}
                                 <div className="lg:col-span-9 space-y-12">
+                                        
+                                        {/* DYNAMIC DIAGRAM INJECTION (MODULAR) */}
+                                        {article.id === '60-second-lead-rule' && <Rule60Diagram />}
+                                        {article.id === 'scaling-without-hiring' && <ScalingDiagram />}
+                                        {article.id === 'diagnostic-intake-automation' && <IntakeDiagram />}
+                                        {article.id === 'human-latency-tax' && <LatencyTaxDiagram />}
+                                        {article.id === 'swivel-chair-integration' && <SwivelChairDiagram />}
+                                        {article.id === 'why-i-built-carrillo-dynamics' && <FounderBlueprintDiagram />}
+
                                         <ReactMarkdown
                                             components={{
                                                 p: ({node, ...props}) => <p className="text-lg md:text-xl leading-[2.2] text-zinc-300 mb-12" {...props} />,

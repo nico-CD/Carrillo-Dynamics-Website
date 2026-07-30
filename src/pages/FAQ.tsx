@@ -37,7 +37,7 @@ const FAQPage = () => {
             <main className="pt-32 pb-24 px-6 max-w-4xl mx-auto w-full">
                 <motion.div {...revealProps} className="space-y-16">
                     <div className="space-y-4">
-                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.9] text-foreground transition-all break-words text-balance">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9] text-foreground transition-all break-words text-balance">
                             {t.pageTitles.faq.main} <span className="italic text-[#10b981]">{t.pageTitles.faq.accent}.</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed max-w-2xl">

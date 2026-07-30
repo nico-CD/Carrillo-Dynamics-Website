@@ -34,6 +34,17 @@ const SocialProof = () => {
             {/* Darker background with top subtle line to separate from How It Works */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/20 to-transparent" />
             
+            {/* Topographical Contour Map Background */}
+            <div 
+                className="absolute inset-0 pointer-events-none opacity-[0.03]"
+                style={{
+                    backgroundImage: `
+                        repeating-radial-gradient(circle at 0% 0%, transparent 0, transparent 40px, #10b981 40px, #10b981 41px),
+                        repeating-radial-gradient(circle at 100% 100%, transparent 0, transparent 60px, #10b981 60px, #10b981 61px)
+                    `
+                }}
+            />
+            
             {/* Abstract Mesh Background Glow */}
             <div className="absolute inset-0 pointer-events-none opacity-30">
                 <div className="absolute top-0 left-1/4 w-[50rem] h-[50rem] bg-gradient-to-br from-[#10b981]/10 to-transparent rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
