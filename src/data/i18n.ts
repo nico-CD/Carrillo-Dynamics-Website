@@ -347,7 +347,7 @@ Measure the time it takes for a new lead to receive a response. Measure the time
                 description: "Why I built Carrillo Dynamics: deterministic logic for service businesses.",
                 content: `### Real World Operations
 
-I didn't start my career sitting behind a desk. My background is in the field—from landscaping and automotive work, to managing high-rise tenant improvement projects. I know what physical work actually entails. I also know how chaotic the back-office gets when you're juggling dispatch, inventory, and demanding clients all at once.
+I didn't start my career sitting behind a desk. My background is in the field, from landscaping and automotive work, to managing high-rise tenant improvement projects. I know what physical work actually entails. I also know how chaotic the back-office gets when you're juggling dispatch, inventory, and demanding clients all at once.
 
 ### Systems Thinking
 
