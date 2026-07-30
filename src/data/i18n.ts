@@ -136,7 +136,7 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         hero: {
             title: "Stop losing clients to",
-            subtitle: "We engineer websites and systems that help service businesses scale. Get more jobs. Automate the busywork. Cut the headaches.",
+            subtitle: "We engineer the websites and systems that help service businesses scale. Get more jobs. Automate the busywork. Cut the headaches.",
             cta: "Get Started",
             audit: "Book a Call",
             badge1: "TRUSTED LOCALLY",
