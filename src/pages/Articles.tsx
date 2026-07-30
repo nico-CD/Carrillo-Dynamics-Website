@@ -59,7 +59,7 @@ const ArticlesPage = () => {
                             >
                                 <div className="space-y-6">
                                     {insightImages[article.id] && (
-                                        <div className="w-full h-48 md:h-56 bg-[#0B132B] rounded-xl overflow-hidden border border-border/50">
+                                        <div className="w-full h-48 md:h-56 bg-black rounded-xl overflow-hidden border border-border/50">
                                             <img 
                                                 src={insightImages[article.id]} 
                                                 alt={article.title} 

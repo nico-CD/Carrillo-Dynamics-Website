@@ -138,7 +138,7 @@ const ArticleDetail = () => {
                                         
                                         {/* GENERATED VISUAL DIAGRAM */}
                                         {insightImages[article.id] && (
-                                            <div className="w-full rounded-2xl overflow-hidden border border-border/50 bg-[#0B132B] mb-12 shadow-2xl">
+                                            <div className="w-full rounded-2xl overflow-hidden border border-border/50 bg-black mb-12 shadow-2xl">
                                                 <img 
                                                     src={insightImages[article.id]} 
                                                     alt={article.title}
