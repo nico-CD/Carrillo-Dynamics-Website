@@ -95,7 +95,7 @@ const ArticleDetail = () => {
 
                                 <div className="space-y-4">
                                     <div className="text-[10px] font-black uppercase tracking-[0.5em] text-muted-foreground/30 font-mono">
-                                        CD-OPS // INTERNAL WHITEPAPER_{id?.toUpperCase()}
+                                        RESOURCE_{id?.toUpperCase()}
                                     </div>
                                     <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.8] text-foreground text-balance break-words">
                                         {article.title}
@@ -109,11 +109,11 @@ const ArticleDetail = () => {
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <Clock className="h-3 w-3 text-[#10b981]" />
-                                        <span>METRIC: {article.readTime} LXP</span>
+                                        <span>READ TIME: {article.readTime}</span>
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <ShieldCheck className="h-3 w-3 text-[#10b981]" />
-                                        <span>VERIFIED ARCHITECTURE</span>
+                                        <span>ACTIONABLE INSIGHTS</span>
                                     </div>
                                 </div>
                             </div>
@@ -125,26 +125,14 @@ const ArticleDetail = () => {
                                     <article className="
                                         prose prose-zinc dark:prose-invert 
                                         max-w-none 
-                                        prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter
+                                        prose-headings:font-bold
                                         prose-h1:hidden 
-                                        prose-h3:text-2xl prose-h3:md:text-3xl prose-h3:font-black prose-h3:tracking-tighter prose-h3:text-foreground prose-h3:border-b prose-h3:border-border prose-h3:pb-4 prose-h3:mt-16
-                                        prose-p:text-lg prose-p:md:text-xl prose-p:leading-[1.6] prose-p:text-muted-foreground prose-p:font-medium prose-p:mb-8
-                                        prose-li:text-muted-foreground prose-li:font-medium
-                                        space-y-8
+                                        prose-h3:text-2xl prose-h3:md:text-3xl prose-h3:font-bold prose-h3:text-foreground prose-h3:mt-12 prose-h3:mb-6
+                                        prose-p:text-lg prose-p:md:text-xl prose-p:leading-[1.7] prose-p:text-muted-foreground prose-p:mb-8
+                                        prose-li:text-lg prose-li:text-muted-foreground
+                                        prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-8
                                     ">
-                                        <ReactMarkdown
-                                            components={{
-                                                h3: ({node, ...props}) => <h3 {...props} className="text-foreground whitespace-normal break-words text-balance leading-tight" />,
-                                                p: ({node, ...props}) => <p {...props} className="whitespace-normal break-words text-balance leading-relaxed" />,
-                                                ul: ({node, ...props}) => <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16 bg-muted/5 border-2 border-border p-8 py-12 scanner-border"><ul {...props} className="contents" /></div>,
-                                                li: ({node, ...props}) => (
-                                                    <div className="flex items-start gap-4">
-                                                         <Database className="h-5 w-5 shrink-0 text-[#10b981] mt-1" />
-                                                         <span className="text-base md:text-lg font-black text-foreground break-words leading-tight uppercase tracking-tight">{props.children}</span>
-                                                     </div>
-                                                )
-                                            }}
-                                        >
+                                        <ReactMarkdown>
                                             {article.content}
                                         </ReactMarkdown>
                                     </article>
@@ -199,7 +187,7 @@ const ArticleDetail = () => {
                             </div>
 
                             {/* FOOTER CTA SECTION */}
-                            <section className="bg-foreground text-background p-8 md:p-16 mt-24 space-y-12 transition-colors relative overflow-hidden flex flex-col items-start scanner-border print:hidden">
+                            <section className="bg-foreground text-background p-8 md:p-16 mt-24 space-y-12 transition-colors relative overflow-hidden flex flex-col items-start print:hidden">
                                 <div className="space-y-6 relative z-10 w-full">
 
                                     <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none max-w-xl">
@@ -213,7 +201,7 @@ const ArticleDetail = () => {
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">
                                     <Button 
-                                        onClick={() => navigate('/book')}
+                                        onClick={() => navigate('/#intake')}
                                         className="h-20 px-12 bg-[#10b981] text-black font-black uppercase tracking-[0.2em] rounded-none hover:bg-white transition-all flex items-center group"
                                     >
                                         {t.nav.strategy}

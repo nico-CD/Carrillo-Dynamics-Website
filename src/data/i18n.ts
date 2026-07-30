@@ -134,8 +134,8 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Our", accent: "Resources" }
         },
         hero: {
-            title: "Stop losing customers to",
-            subtitle: "We build fast websites with no-nonsense digital systems for local service businesses. Get more jobs and streamline your operations.",
+            title: "Stop losing clients to",
+            subtitle: "We build high-performance websites and digital systems for service businesses. Get more jobs, eliminate manual work, and scale without the headaches.",
             cta: "Get Started",
             audit: "Book a Call",
             badge1: "TRUSTED LOCALLY",
@@ -262,26 +262,26 @@ export const i18nData: Record<Language, I18nContent> = {
                 readTime: "5 min"
             },
             {
-                id: "operational-leak-detection",
-                title: "Operations Leak Detection",
-                description: "Stop the invisible revenue loss in your intake funnel.",
-                content: "### Identifying the Void\n\nIs your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. Automation Diagnostic is a deep-dive into the technical path of every single lead that enters your ecosystem.\n\n### Technical Analysis\n\nWe track every millisecond of the journey to find where you are losing money. We analyze form friction to see why users drop off, triage velocity to measure the actual delay in notifications, and closing logic to identify which follow-ups are failing to convert. This data allows us to conduct a technical diagnostic to plug every leak with pure operational engineering.",
+                id: "stop-losing-leads",
+                title: "Stop Losing Leads",
+                description: "Fix the invisible revenue loss in your intake funnel.",
+                content: "### Identifying the Void\n\nIs your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. We deep-dive into the technical path of every single lead that enters your ecosystem to fix these leaks.\n\n### System Analysis\n\nWe track every step of the journey to find where you are losing money. We analyze form friction to see why users drop off, measure the actual delay in notifications, and identify which follow-ups are failing to convert. This data allows us to plug every leak with reliable, automated processes.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }
         ],
         articleLabels: {
-            abstract: "Abstract",
-            technicalSpecs: "Technical Specs",
-            integrity: "INTEGRITY",
-            integrityValue: "INDUSTRIAL GRADE",
-            protocol: "PROTOCOL",
-            protocolValue: "DETERMINISTIC",
-            latency: "LATENCY",
-            latencyValue: "< 100MS",
+            abstract: "Summary",
+            technicalSpecs: "Key Takeaways",
+            integrity: "FOCUS",
+            integrityValue: "GROWTH",
+            protocol: "APPROACH",
+            protocolValue: "SYSTEMATIC",
+            latency: "RESULT",
+            latencyValue: "EFFICIENCY",
             downloadPdf: "Download PDF",
-            shareEntry: "Share Entry",
-            backToArchive: "TECHNICAL ARCHIVE"
+            shareEntry: "Share Resource",
+            backToArchive: "BACK TO RESOURCES"
         }
     },
     es: {
@@ -306,8 +306,8 @@ export const i18nData: Record<Language, I18nContent> = {
             articles: { main: "Nuestros", accent: "Recursos" }
         },
         hero: {
-            title: "Su negocio está perdiendo dinero en",
-            subtitle: "Construimos infraestructura digital de alta velocidad para empresas de servicios, para que su sitio web deje de caerse, su teléfono no pare de sonar y deje de perder trabajos frente a sus competidores.",
+            title: "Su negocio está perdiendo clientes por",
+            subtitle: "Construimos sitios web de alto rendimiento y sistemas digitales para empresas de servicios. Consiga más trabajos, elimine el trabajo manual y escale sin dolores de cabeza.",
             cta: "Comenzar",
             audit: "Sesión de Estrategia",
             badge1: "INGENIERÍA BASADA EN CHICAGO",
@@ -458,26 +458,26 @@ export const i18nData: Record<Language, I18nContent> = {
                 readTime: "5 min"
             },
             {
-                id: "operational-leak-detection",
-                title: "Detección de Fugas en Operaciones",
-                description: "Detenga la pérdida invisible de ingresos en su embudo de admisión.",
-                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas de alto volumen tienen puntos ciegos donde los leads mueren silenciosamente antes de llegar a un técnico. El Diagnóstico de Automatización es una inmersión profunda en la ruta técnica de cada lead que ingresa a su ecosistema.\n\n### Análisis Técnico\n\nRastreamos cada milisegundo del viaje para encontrar dónde está perdiendo dinero. Analizamos la fricción del formulario para ver por qué los usuarios abandonan, la velocidad de triaje para medir el retraso real en las notificaciones y la lógica de cierre para identificar qué seguimientos no logran convertir. Estos datos nos permiten desarrollar un diagnóstico técnico para sellar cada fuga con pura ingeniería operativa.",
+                id: "stop-losing-leads",
+                title: "Deje de Perder Clientes",
+                description: "Detenga la pérdida invisible de ingresos en su embudo de ventas.",
+                content: "### Identificando el Vacío\n\n¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas tienen puntos ciegos donde los prospectos mueren antes de llegar a un técnico. Hacemos una inmersión profunda en la ruta de cada lead para tapar estas fugas.\n\n### Análisis de Sistemas\n\nRastreamos cada paso del viaje para encontrar dónde está perdiendo dinero. Analizamos por qué los usuarios abandonan, medimos el retraso real en las notificaciones e identificamos qué seguimientos no logran convertir. Estos datos nos permiten sellar cada fuga con procesos automatizados confiables.",
                 date: "2026-04-07",
                 readTime: "6 min"
             }
         ],
         articleLabels: {
             abstract: "Resumen",
-            technicalSpecs: "Especificaciones",
-            integrity: "INTEGRIDAD",
-            integrityValue: "GRADO INDUSTRIAL",
-            protocol: "PROTOCOLO",
-            protocolValue: "DETERMINISTA",
-            latency: "LATENCIA",
-            latencyValue: "< 100MS",
+            technicalSpecs: "Puntos Clave",
+            integrity: "ENFOQUE",
+            integrityValue: "CRECIMIENTO",
+            protocol: "MÉTODO",
+            protocolValue: "SISTEMÁTICO",
+            latency: "RESULTADO",
+            latencyValue: "EFICIENCIA",
             downloadPdf: "Descargar PDF",
             shareEntry: "Compartir",
-            backToArchive: "ARCHIVO TÉCNICO"
+            backToArchive: "VOLVER A RECURSOS"
         }
     }
 };

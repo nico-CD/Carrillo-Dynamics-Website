@@ -18,15 +18,15 @@ const ArticlesPage = () => {
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans transition-colors duration-300">
             <SEOManager 
-                title={lang === 'en' ? 'Technical Archive' : 'Archivo Técnico'}
-                description={lang === 'en' ? 'Explorations in engineering flow, industrial grit, and automation diagnostics.' : 'Exploraciones en ingeniería de flujo, tesón industrial y diagnósticos de automatización.'}
+                title={lang === 'en' ? 'Resources & Guides' : 'Recursos y Guías'}
+                description={lang === 'en' ? 'Tips, strategies, and systems to help you grow your service business.' : 'Consejos, estrategias y sistemas para ayudarle a hacer crecer su negocio de servicios.'}
             />
             <Navbar />
             
             <main className="pt-32 pb-24 px-6 max-w-6xl mx-auto w-full">
                 <motion.div {...revealProps} className="space-y-16">
                     <div className="space-y-4 max-w-3xl">
-                        <h1 className="text-5xl sm:text-7xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] text-foreground transition-colors break-words text-balance">
+                        <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-foreground transition-colors break-words text-balance">
                             {t.pageTitles.articles.main} <span className="italic text-[#10b981]">{t.pageTitles.articles.accent}.</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed max-w-2xl">
@@ -43,11 +43,11 @@ const ArticlesPage = () => {
                                 to={`/articles/${article.id}`}
                                 className={`group bg-background p-8 md:p-12 hover:bg-muted/50 transition-all flex flex-col justify-between h-full space-y-12 ${idx === 0 ? 'md:col-span-2' : ''}`}
                             >
-                                <div className="space-y-6">
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight group-hover:text-[#10b981] transition-colors leading-none text-foreground">
+                                <div className="space-y-4">
+                                    <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight group-hover:text-[#10b981] transition-colors leading-tight text-foreground">
                                         {article.title}
                                     </h2>
-                                    <p className="text-muted-foreground font-medium text-lg leading-relaxed line-clamp-2">
+                                    <p className="text-muted-foreground font-medium text-base md:text-lg leading-relaxed line-clamp-3">
                                         {article.description}
                                     </p>
                                 </div>
