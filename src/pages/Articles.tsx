@@ -29,10 +29,10 @@ const ArticlesPage = () => {
                         <h1 className="text-5xl sm:text-7xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] text-foreground transition-colors break-words text-balance">
                             {t.pageTitles.articles.main} <span className="italic text-[#10b981]">{t.pageTitles.articles.accent}.</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed">
+                        <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed max-w-2xl">
                             {lang === 'en' 
-                                ? 'Technical documentation and engineering insights from Chicago-based automation cycles.'
-                                : 'Documentación técnica y conocimientos de ingeniería de los ciclos de automatización con sede en Chicago.'}
+                                ? 'Tips, strategies, and systems to help you grow your service business.'
+                                : 'Consejos, estrategias y sistemas para ayudarle a hacer crecer su negocio de servicios.'}
                         </p>
                     </div>
 

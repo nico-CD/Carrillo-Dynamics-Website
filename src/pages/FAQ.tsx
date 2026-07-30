@@ -34,8 +34,8 @@ const FAQPage = () => {
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed max-w-2xl">
                             {lang === 'en' 
-                                ? 'Technical documentation and answers regarding our industrial-grade systems engineering protocol.'
-                                : 'Documentación técnica y respuestas sobre nuestro protocolo de ingeniería de sistemas de grado industrial.'}
+                                ? 'Everything you need to know about working with us.'
+                                : 'Todo lo que necesita saber sobre cómo trabajar con nosotros.'}
                         </p>
                     </div>
 

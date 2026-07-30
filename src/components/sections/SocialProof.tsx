@@ -1,64 +1,59 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Zap, Target, Wrench } from "lucide-react";
 import { useTranslation } from "@/components/LanguageProvider";
 
 const SocialProof = () => {
     const { lang } = useTranslation();
 
-    const testimonials = [
+    const pillars = [
         {
-            name: "John D.",
-            role: lang === 'en' ? "HVAC Business Owner" : "Propietario de HVAC",
-            content: lang === 'en' 
-                ? "Since Carrillo Dynamics revamped our site, our lead volume has doubled. We no longer lose jobs to competitors because of a slow website." 
-                : "Desde que Carrillo Dynamics renovó nuestro sitio, nuestro volumen de clientes potenciales se ha duplicado.",
-            rating: 5
+            icon: Zap,
+            title: lang === 'en' ? "Speed is Money" : "La Velocidad es Dinero",
+            description: lang === 'en' 
+                ? "In the service industry, if you're slow, your competitor gets the job. Our systems ensure you're always the first to respond." 
+                : "En la industria de servicios, si es lento, su competidor se lleva el trabajo. Nuestros sistemas aseguran que siempre sea el primero en responder."
         },
         {
-            name: "Sarah M.",
-            role: lang === 'en' ? "Plumbing Contractor" : "Contratista de Plomería",
-            content: lang === 'en'
-                ? "The automated lead follow-up system they built for us saves my dispatchers 10 hours a week. Incredible ROI."
-                : "El sistema automatizado de seguimiento nos ahorra 10 horas a la semana. Retorno de inversión increíble.",
-            rating: 5
+            icon: Target,
+            title: lang === 'en' ? "No-Nonsense Execution" : "Ejecución Directa",
+            description: lang === 'en'
+                ? "We don't sell vanity metrics. We build digital infrastructure that actually works and drives tangible revenue."
+                : "No vendemos métricas de vanidad. Construimos infraestructura digital que realmente funciona y genera ingresos."
+        },
+        {
+            icon: Wrench,
+            title: lang === 'en' ? "Streamlined Operations" : "Operaciones Simplificadas",
+            description: lang === 'en'
+                ? "Stop drowning in paperwork. Automate your scheduling and follow-ups to get paid faster and reduce office headaches."
+                : "Deje de ahogarse en papeleo. Automatice su programación y seguimiento para cobrar más rápido y reducir dolores de cabeza."
         }
     ];
 
     return (
-        <section className="py-24 bg-background border-b border-border">
+        <section className="py-24 bg-muted/5 border-y border-border">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">
-                        {lang === 'en' ? "Trusted By Local Businesses" : "De Confianza para Empresas Locales"}
+                    <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
+                        {lang === 'en' ? "Built for " : "Construido para "}
+                        <span className="text-[#10b981] italic">{lang === 'en' ? "Results." : "Resultados."}</span>
                     </h2>
-                    <div className="flex flex-wrap justify-center gap-8 opacity-50 grayscale">
-                        {/* Placeholder logos */}
-                        <div className="text-2xl font-black italic">PRO HVAC</div>
-                        <div className="text-2xl font-black italic">ELITE PLUMBING</div>
-                        <div className="text-2xl font-black italic">MIDWEST ROOFING</div>
-                    </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 mt-20">
-                    {testimonials.map((testimonial, i) => (
+                <div className="grid md:grid-cols-3 gap-8 mt-12">
+                    {pillars.map((pillar, i) => (
                         <motion.div 
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.2 }}
-                            className="p-8 border border-border bg-muted/5 flex flex-col space-y-4"
+                            className="p-8 border border-border bg-background flex flex-col space-y-4 hover:border-[#10b981]/50 transition-colors"
                         >
-                            <div className="flex gap-1">
-                                {[...Array(testimonial.rating)].map((_, idx) => (
-                                    <Star key={idx} className="w-5 h-5 fill-[#10b981] text-[#10b981]" />
-                                ))}
+                            <div className="h-12 w-12 bg-[#10b981]/10 flex items-center justify-center mb-4">
+                                <pillar.icon className="w-6 h-6 text-[#10b981]" />
                             </div>
-                            <p className="text-lg italic font-medium">"{testimonial.content}"</p>
-                            <div className="mt-auto pt-4 border-t border-border/50">
-                                <p className="font-bold uppercase">{testimonial.name}</p>
-                                <p className="text-sm text-muted-foreground uppercase tracking-widest">{testimonial.role}</p>
-                            </div>
+                            <h3 className="text-xl font-bold uppercase">{pillar.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed">{pillar.description}</p>
                         </motion.div>
                     ))}
                 </div>

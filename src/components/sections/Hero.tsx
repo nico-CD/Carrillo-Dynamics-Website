@@ -43,7 +43,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
     }, [currentWord, isDeleting, wordIndex, typingSpeed, words]);
 
     return (
-        <section className="relative flex min-h-[85vh] flex-col justify-center px-6 pt-32 md:pt-48 pb-12 md:pb-24 bg-background overflow-hidden transition-colors duration-300 scanner-border border-b border-foreground/5">
+        <section className="relative flex min-h-[85vh] flex-col justify-center px-6 pt-32 md:pt-48 pb-12 md:pb-24 bg-background overflow-hidden transition-colors duration-300 border-b border-foreground/5">
             <div className="max-w-7xl mx-auto w-full z-10">
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-4">
                     <motion.div

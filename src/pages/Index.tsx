@@ -32,10 +32,10 @@ const INDUSTRIES = [
 ];
 
 const BOTTLENECKS = [
-    { en: "Dispatching & Scheduling", es: "Despacho y Programación" },
-    { en: "Lead Follow-up & Conversion", es: "Seguimiento y Conversión" },
-    { en: "Paperwork & Compliance", es: "Papeleo y Cumplimiento" },
-    { en: "Legacy System Integration", es: "Integración de Sistemas Legacy" },
+    { en: "Missed Calls & Lost Leads", es: "Llamadas Perdidas y Leads Perdidos" },
+    { en: "Too Much Paperwork", es: "Demasiado Papeleo" },
+    { en: "Scheduling Nightmares", es: "Pesadillas de Programación" },
+    { en: "Slow Follow-ups", es: "Seguimiento Lento" },
     { en: "Other", es: "Otro" }
 ];
 
@@ -97,6 +97,15 @@ const Index = () => {
             localStorage.removeItem('carrillo_dynamics_intake');
             setIsSubmitted(true);
             scrollToForm();
+            
+            // Load Calendly script after form submit
+            if (!document.getElementById('calendly-script')) {
+                const script = document.createElement('script');
+                script.id = 'calendly-script';
+                script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                script.async = true;
+                document.body.appendChild(script);
+            }
         }
     };
 
@@ -142,23 +151,20 @@ const Index = () => {
                         <div className="absolute top-0 left-0 w-full h-[2px] bg-foreground opacity-5" />
 
                         {isSubmitted ? (
-                            <div className="w-full min-h-[400px] flex flex-col items-center justify-center animate-in fade-in duration-1000 text-center">
-                                <h3 className="text-2xl md:text-3xl font-black uppercase mb-4 text-[#10b981] tracking-widest">
-                                    {lang === 'en' ? 'Processing Complete' : 'Procesamiento Completo'}
+                            <div className="w-full min-h-[700px] flex flex-col items-center justify-center animate-in fade-in duration-1000 text-center pt-8">
+                                <h3 className="text-2xl md:text-3xl font-black uppercase mb-2 text-[#10b981] tracking-widest">
+                                    {lang === 'en' ? 'Got it!' : '¡Entendido!'}
                                 </h3>
-                                <p className="text-muted-foreground font-medium mb-12 max-w-md">
+                                <p className="text-muted-foreground font-medium mb-8 max-w-md">
                                     {lang === 'en' 
-                                        ? 'Your operational diagnostic has been initialized. Proceed to schedule your strategy session.' 
-                                        : 'Su diagnóstico operativo ha sido inicializado. Proceda a programar su sesión de estrategia.'}
+                                        ? "We'll be in touch shortly to map out your custom growth plan. You can also pick a time below to skip the wait." 
+                                        : 'Nos pondremos en contacto en breve. También puede elegir un horario a continuación.'}
                                 </p>
-                                <Button
-                                    onClick={() => navigate('/book')}
-                                    size="lg"
-                                    className="h-20 w-full sm:w-fit rounded-none px-12 text-xs md:text-lg font-black uppercase tracking-[0.2em] bg-[#10b981] hover:bg-foreground hover:text-background text-black shadow-[0_0_50px_rgba(16,185,129,0.2)] transition-all border-none group"
-                                >
-                                    {lang === 'en' ? 'CONTINUE TO SCHEDULING' : 'CONTINUAR A PROGRAMACIÓN'}
-                                    <ArrowRight className="ml-4 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
-                                </Button>
+                                <div 
+                                    className="calendly-inline-widget w-full" 
+                                    data-url={`https://calendly.com/nico-carrillodynamics/30min?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`} 
+                                    style={{ minWidth: '320px', height: '700px' }} 
+                                />
                             </div>
                         ) : (
                         <div className="w-full">

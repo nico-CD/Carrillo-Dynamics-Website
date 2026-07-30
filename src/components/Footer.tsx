@@ -22,11 +22,11 @@ const Footer = () => {
                                 alt="Logo"
                                 className="h-8 w-8 object-contain transition-transform group-hover:scale-105"
                             />
-                            <span className="text-lg font-black uppercase tracking-[0.2em] text-foreground transition-colors duration-300">Carrillo Dynamics LLC</span>
+                            <span className="text-sm font-black uppercase tracking-[0.2em] text-foreground transition-colors duration-300">Carrillo Dynamics LLC</span>
                         </div>
                         <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] leading-relaxed transition-colors duration-300">
                             {lang === 'en' ? 'Engineered Precision. Industrial Grit.' : 'Precisión de Ingeniería. Tesón Industrial.'}<br />
-                            CHICAGO, IL <span className="mx-2 opacity-50">|</span> <a href="https://www.linkedin.com/in/nico-c-3b4b571aa" target="_blank" rel="noreferrer" className="hover:text-[#10b981] transition-colors">LINKEDIN</a>
+                            CHICAGO, IL
                         </p>
                     </div>
 
@@ -39,10 +39,6 @@ const Footer = () => {
                                 <a href="mailto:engineering@carrillodynamics.com" className="flex items-center gap-3 hover:text-foreground transition-colors group">
                                     <Mail className="h-3 w-3 opacity-60 group-hover:text-[#10b981] transition-colors" />
                                     engineering@carrillodynamics.com
-                                </a>
-                                <a href="tel:7087227876" className="flex items-center gap-3 hover:text-foreground transition-colors group">
-                                    <Phone className="h-3 w-3 opacity-60 group-hover:text-[#10b981] transition-colors" />
-                                    708-722-7876
                                 </a>
                                 <div className="flex items-center gap-3 group text-muted-foreground opacity-60">
                                     <MapPin className="h-3 w-3" />

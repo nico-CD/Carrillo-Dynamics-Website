@@ -116,7 +116,7 @@ export const i18nData: Record<Language, I18nContent> = {
         nav: {
             home: "Home",
             faq: "FAQ",
-            articles: "Articles",
+            articles: "Resources",
             blueprint: "GET STARTED",
             privacy: "Privacy",
             terms: "Terms",
@@ -131,11 +131,11 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         pageTitles: {
             faq: { main: "Frequently Asked", accent: "Questions" },
-            articles: { main: "Our", accent: "Blog" }
+            articles: { main: "Our", accent: "Resources" }
         },
         hero: {
             title: "Stop losing customers to",
-            subtitle: "We build modern, fast websites and straightforward lead-generation systems for local service businesses. Get more jobs and streamline your operations.",
+            subtitle: "We build fast websites with no-nonsense digital systems for local service businesses. Get more jobs and streamline your operations.",
             cta: "Get Started",
             audit: "Book a Call",
             badge1: "TRUSTED LOCALLY",
@@ -288,7 +288,7 @@ export const i18nData: Record<Language, I18nContent> = {
         nav: {
             home: "Inicio",
             faq: "FAQ",
-            articles: "Artículos",
+            articles: "Recursos",
             blueprint: "OBTENGA SU DIAGNÓSTICO GRATIS",
             privacy: "Privacidad",
             terms: "Términos",
@@ -303,7 +303,7 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         pageTitles: {
             faq: { main: "Operaciones", accent: "FAQ" },
-            articles: { main: "Archivo", accent: "Técnico" }
+            articles: { main: "Nuestros", accent: "Recursos" }
         },
         hero: {
             title: "Su negocio está perdiendo dinero en",
