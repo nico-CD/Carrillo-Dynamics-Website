@@ -2,7 +2,8 @@ import { useRef, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { Loader2, ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
+import { InlineWidget } from "react-calendly";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -97,15 +98,6 @@ const Index = () => {
             localStorage.removeItem('carrillo_dynamics_intake');
             setIsSubmitted(true);
             scrollToForm();
-            
-            // Load Calendly script after form submit
-            if (!document.getElementById('calendly-script')) {
-                const script = document.createElement('script');
-                script.id = 'calendly-script';
-                script.src = 'https://assets.calendly.com/assets/external/widget.js';
-                script.async = true;
-                document.body.appendChild(script);
-            }
         }
     };
 
@@ -160,11 +152,22 @@ const Index = () => {
                                         ? "We'll be in touch shortly to map out your custom growth plan. You can also pick a time below to skip the wait." 
                                         : 'Nos pondremos en contacto en breve. También puede elegir un horario a continuación.'}
                                 </p>
-                                <div 
-                                    className="calendly-inline-widget w-full" 
-                                    data-url={`https://calendly.com/nico-carrillodynamics/30min?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`} 
-                                    style={{ minWidth: '320px', height: '700px' }} 
-                                />
+                                <div className="w-full">
+                                    <InlineWidget 
+                                        url={`https://calendly.com/nico-carrillodynamics/30min?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`}
+                                        styles={{
+                                            height: '700px',
+                                            minWidth: '320px'
+                                        }}
+                                        pageSettings={{
+                                            backgroundColor: '09090b',
+                                            hideEventTypeDetails: true,
+                                            hideLandingPageDetails: true,
+                                            primaryColor: '10b981',
+                                            textColor: 'ffffff'
+                                        }}
+                                    />
+                                </div>
                             </div>
                         ) : (
                         <div className="w-full">

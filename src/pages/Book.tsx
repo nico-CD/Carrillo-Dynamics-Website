@@ -1,72 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SEOManager from '@/components/SEOManager';
 import { useTranslation } from '@/components/LanguageProvider';
-
-// Define TS interface for window.Calendly
-declare global {
-    interface Window {
-        Calendly?: {
-            initInlineWidget: (options: {
-                url: string;
-                parentElement: HTMLElement | null;
-                prefill?: Record<string, any>;
-                utm?: Record<string, any>;
-                hideEventTypeDetails?: boolean;
-                hideGdprBanner?: boolean;
-                styles?: {
-                    backgroundColor?: string;
-                    textColor?: string;
-                    primaryColor?: string;
-                    height?: string;
-                };
-            }) => void;
-        };
-    }
-}
+import { motion } from 'framer-motion';
+import { InlineWidget } from 'react-calendly';
 
 const Book = () => {
     const { lang } = useTranslation();
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const initWidget = () => {
-            const targetEl = document.getElementById('calendly-target-container');
-            if (window.Calendly && targetEl) {
-                targetEl.innerHTML = '';
-                window.Calendly.initInlineWidget({
-                    url: `https://calendly.com/nico-carrillodynamics/30min?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang}`,
-                    parentElement: targetEl,
-                    styles: {
-                        backgroundColor: '09090b',
-                        textColor: 'ffffff',
-                        primaryColor: '10b981',
-                        height: '1000px'
-                    }
-                });
-                setTimeout(() => setIsLoading(false), 1500);
-            }
-        };
-
-        const scriptId = 'calendly-script';
-        let script = document.getElementById(scriptId) as HTMLScriptElement | null;
-
-        if (!script) {
-            script = document.createElement('script');
-            script.id = scriptId;
-            script.src = 'https://assets.calendly.com/assets/external/widget.js';
-            script.async = true;
-            script.onload = initWidget;
-            document.body.appendChild(script);
-        } else {
-            if (window.Calendly) {
-                initWidget();
-            } else {
-                script.addEventListener('load', initWidget);
-            }
-        }
-    }, [lang]);
 
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans">
@@ -94,27 +35,28 @@ const Book = () => {
                 </motion.div>
             </section>
 
-            <section className="py-24 px-6 bg-muted/10 relative">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-background border-2 border-border p-4 md:p-8 shadow-[0_0_50px_rgba(0,0,0,0.1)]">
-                        <div id="calendly-target-container" style={{ minWidth: '320px', height: '700px' }} />
-                        
-                        {/* Fallback Fail-Safe Banner */}
-                        <div className="border-t border-border p-6 bg-black/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-                            <span className="text-xs md:text-sm font-mono text-muted-foreground">
-                                {lang === 'en' 
-                                    ? "Experiencing script latency? Open the scheduling terminal directly."
-                                    : "¿Experimenta latencia de script? Abra la terminal de programación directamente."}
-                            </span>
-                            <a 
-                                href="https://calendly.com/nico-carrillodynamics/15-minute-strategy-session"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="px-6 py-3 text-xs uppercase tracking-widest border border-emerald-500/30 text-emerald-400 bg-emerald-950/20 hover:bg-emerald-500 hover:text-black font-mono transition-all shrink-0 text-center"
-                            >
-                                {lang === 'en' ? "Open Scheduler" : "Abrir Programador"}
-                            </a>
-                        </div>
+            <section className="py-24 px-6 bg-muted/10 relative overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-full pointer-events-none opacity-20">
+                    <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#10b981]/10 rounded-full blur-[100px]" />
+                    <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#10b981]/5 rounded-full blur-[100px]" />
+                </div>
+
+                <div className="max-w-4xl mx-auto relative z-10">
+                    <div className="bg-background border border-border/50 rounded-2xl p-2 md:p-4 shadow-[0_20px_50px_-15px_rgba(16,185,129,0.2)]">
+                        <InlineWidget 
+                            url={`https://calendly.com/nico-carrillodynamics/30min?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang}`}
+                            styles={{
+                                height: '700px',
+                                minWidth: '320px'
+                            }}
+                            pageSettings={{
+                                backgroundColor: '09090b',
+                                hideEventTypeDetails: false,
+                                hideLandingPageDetails: false,
+                                primaryColor: '10b981',
+                                textColor: 'ffffff'
+                            }}
+                        />
                     </div>
                 </div>
             </section>
