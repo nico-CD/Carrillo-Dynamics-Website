@@ -49,7 +49,7 @@ const FAQPage = () => {
 
                     <Accordion type="single" collapsible className="w-full space-y-4">
                         {t.faqs.map((faq, idx) => (
-                            <AccordionItem key={idx} value={`item-${idx}`} className="border border-border bg-muted/20 rounded-none px-4 md:px-8 data-[state=open]:bg-muted transition-all uppercase">
+                            <AccordionItem key={idx} value={`item-${idx}`} className="border border-border bg-zinc-950 rounded-none px-4 md:px-8 data-[state=open]:bg-zinc-900 transition-all uppercase relative z-10">
                                 <AccordionTrigger className="text-left text-lg md:text-xl font-bold hover:no-underline py-8 data-[state=open]:text-foreground transition-colors uppercase tracking-tight leading-snug text-muted-foreground/80">
                                     <span className="max-w-[90%] break-words">{faq.q}</span>
                                 </AccordionTrigger>

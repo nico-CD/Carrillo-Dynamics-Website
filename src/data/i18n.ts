@@ -228,16 +228,16 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         faqs: [
             {
-                q: "What is the real cost of 'Lead Leakage'?",
-                a: "For high-volume firms, even a 5% leak in the intake funnel can cost an estimated $50k - $100k in annual revenue. Our Automation Diagnostic identifies these 'silent kills', where leads disappear between your CRM and the field technician."
+                q: "What is the real cost of \"Lead Leakage\"?",
+                a: "For high-volume firms, even a 5% leak in the intake funnel can cost an estimated $50k - $100k in annual revenue. Our Automation Diagnostic identifies these \"silent kills\", where leads disappear between your CRM and the field technician."
             },
             {
-                q: "How does the '60-Second Rule' impact ROI?",
+                q: "How does the \"60-Second Rule\" impact ROI?",
                 a: "A lead contacted in <60 seconds is 8 times more likely to book. We engineer automated response logic that bypasses human bottlenecks, ensuring you are the first company the customer hears from, 24/7."
             },
             {
                 q: "Can we double our service volume without hiring more dispatchers?",
-                a: "Yes. By automating manual data entry and replacing probabilistic dispatching with deterministic logic, your current office staff can manage 3x the territory volume with significantly less stress."
+                a: "Yes. By automating manual data entry and replacing probabilistic dispatching with deterministic logic, your current office staff can manage more volume with significantly less stress."
             },
             {
                 q: "Does your logic replace our existing CRM software?",
@@ -248,8 +248,8 @@ export const i18nData: Record<Language, I18nContent> = {
                 a: "Initial operational wins are usually live within 14 days. We target high-friction bottlenecks first, like the intake flow and automated follow-ups, to drive immediate, measurable ROI."
             },
             {
-                q: "What is a 'Fractional Operations Engineer'?",
-                a: "Unlike a 'consultant' who just gives advice, we are engineers who build. We act as your outsourced CTO/COO, managing your technical infrastructure so you can focus on scaling the business."
+                q: "What is a \"Fractional Operations Engineer\"?",
+                a: "Unlike a \"consultant\" who just gives advice, we are engineers who build. We act like your outsourced CTO/COO, managing your technical infrastructure so you can focus on scaling the business."
             }
         ],
         articles: [
@@ -492,16 +492,16 @@ Technology and AI shouldn't replace the human element of your business; they sho
         },
         faqs: [
             {
-                q: "¿Cuál es el costo real de la 'Fuga de Leads'?",
-                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar un estimado de $50k - $100k en ingresos anuales. Nuestro Diagnóstico de Automatización identifica estas 'muertes silenciosas', donde los leads desaparecen entre su CRM y el técnico de campo."
+                q: "¿Cuál es el costo real de la \"Fuga de Leads\"?",
+                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar un estimado de $50k - $100k en ingresos anuales. Nuestro Diagnóstico de Automatización identifica estas \"muertes silenciosas\", donde los leads desaparecen entre su CRM y el técnico de campo."
             },
             {
-                q: "¿Cómo impacta la 'Regla de los 60 Segundos' en el ROI?",
+                q: "¿Cómo impacta la \"Regla de los 60 Segundos\" en el ROI?",
                 a: "Un lead contactado en <60 segundos tiene 8 veces más probabilidades de reservar. Diseñamos lógica de respuesta automatizada que evita los cuellos de botella humanos, asegurando que sea la primera empresa que el cliente escuche, 24/7."
             },
             {
                 q: "¿Podemos duplicar nuestro volumen de servicios sin contratar más despachadores?",
-                a: "Sí. Al automatizar la entrada manual de datos y reemplazar el despacho probabilístico con lógica determinista, su personal de oficina actual puede gestionar 3 veces el volumen de territorio con significativamente menos estrés."
+                a: "Sí. Al automatizar la entrada manual de datos y reemplazar el despacho probabilístico con lógica determinista, su personal de oficina actual puede gestionar más volumen con significativamente menos estrés."
             },
             {
                 q: "¿Su lógica reemplaza nuestro software CRM existente?",
@@ -512,8 +512,8 @@ Technology and AI shouldn't replace the human element of your business; they sho
                 a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los cuellos de botella de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
             },
             {
-                q: "¿Qué es un 'Ingeniero de Operaciones Fraccional'?",
-                a: "A diferencia de un 'consultor' que solo da consejos, somos ingenieros que construyen. Actuamos como su CTO/COO externo, gestionando su infraestructura técnica para que usted pueda enfocarse en escalar el negocio."
+                q: "¿Qué es un \"Ingeniero de Operaciones Fraccional\"?",
+                a: "A diferencia de un \"consultor\" que solo da consejos, somos ingenieros que construyen. Actuamos como su CTO/COO externo, gestionando su infraestructura técnica para que usted pueda enfocarse en escalar el negocio."
             }
         ],
         articles: [

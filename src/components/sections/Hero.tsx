@@ -61,7 +61,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
                         className="space-y-8 md:space-y-12 flex flex-col items-center"
                     >
                         <div className="space-y-4 text-center">
-                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-black uppercase tracking-tight leading-[0.9] text-foreground transition-colors duration-300">
+                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.9] text-foreground transition-colors duration-300">
                                 <span className="block mb-2 md:mb-4 text-balance">{t.hero.title}</span>
                                 <span className="block text-[#10b981] italic min-h-[1.2em]">
                                     {currentWord}
