@@ -66,6 +66,7 @@ export interface I18nContent {
     intake: {
         title: string;
         titleItalic: string;
+        titleAccent: string;
         subtitle: string;
         fullName: string;
         email: string;
@@ -163,7 +164,8 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         intake: {
             title: "Get your ",
-            titleItalic: "Free Automation Diagnostic.",
+            titleItalic: "Free ",
+            titleAccent: "Automation Diagnostic.",
             subtitle: "Tell us where your manual bottlenecks are. In 24 hours, we'll send you a personalized video analysis and automation diagnostic.",
             fullName: "Full Name",
             email: "Business Email",
@@ -427,7 +429,8 @@ Technology and AI shouldn't replace the human element of your business; they sho
         },
         intake: {
             title: "Obtenga su ",
-            titleItalic: "Diagnóstico de Automatización Gratuito.",
+            titleAccent: "Diagnóstico de Automatización ",
+            titleItalic: "Gratuito.",
             subtitle: "Díganos dónde están sus cuellos de botella manuales. En 24 horas, le enviaremos un análisis en video personalizado y un diagnóstico de automatización.",
             fullName: "Nombre Completo",
             email: "Email de Negocios",
