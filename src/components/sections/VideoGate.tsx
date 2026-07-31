@@ -58,26 +58,28 @@ const VideoGate = () => {
                     </p>
                 </div>
 
-                <div className="bg-zinc-950/50 backdrop-blur-xl border-2 border-border/50 p-6 md:p-12 relative overflow-hidden flex flex-col justify-center transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(16,185,129,0.15)] rounded-3xl aspect-video max-h-[600px]">
+                <div className="bg-zinc-950/50 backdrop-blur-xl border-2 border-border/50 p-4 sm:p-6 md:p-12 relative overflow-hidden flex flex-col justify-center transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(16,185,129,0.15)] rounded-3xl w-full min-h-[450px]">
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#10b981]/50 to-transparent opacity-30" />
 
                     {isUnlocked ? (
-                        <div className="w-full h-full animate-in fade-in zoom-in-95 duration-1000 flex flex-col items-center justify-center bg-black rounded-xl overflow-hidden relative">
-                            <iframe 
-                                className="w-full h-[calc(100%-80px)] absolute top-0 inset-x-0"
-                                src="https://www.youtube.com/embed/Ox1LSIBMwZw?autoplay=1&rel=0&modestbranding=1" 
-                                title="Engineering Breakdown" 
-                                frameBorder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowFullScreen
-                            ></iframe>
-                            <div className="absolute bottom-0 w-full h-[80px] bg-zinc-950 flex items-center justify-center border-t border-border/50">
+                        <div className="w-full flex flex-col bg-black rounded-xl overflow-hidden relative animate-in fade-in zoom-in-95 duration-1000 border border-border/50">
+                            <div className="w-full aspect-video relative">
+                                <iframe 
+                                    className="absolute inset-0 w-full h-full"
+                                    src="https://www.youtube.com/embed/Ox1LSIBMwZw?autoplay=1&rel=0&modestbranding=1" 
+                                    title="Engineering Breakdown" 
+                                    frameBorder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                            <div className="w-full h-auto sm:h-[80px] bg-zinc-950 flex items-center justify-center border-t border-border/50 p-4 sm:p-0">
                                 <Button 
                                     onClick={() => window.location.href = '/start'}
-                                    className="h-12 bg-[#10b981] hover:bg-[#0ea672] text-black font-black uppercase tracking-widest rounded-none border-none px-8 flex items-center gap-2"
+                                    className="w-full sm:w-auto h-14 sm:h-12 bg-[#10b981] hover:bg-[#0ea672] text-black font-black uppercase tracking-widest rounded-none border-none px-4 sm:px-8 flex items-center justify-center gap-2 text-xs sm:text-sm"
                                 >
                                     {lang === 'en' ? "Next Step: Free Diagnostic" : "Siguiente Paso: Diagnóstico Gratuito"}
-                                    <ArrowRight className="w-5 h-5" />
+                                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                                 </Button>
                             </div>
                         </div>
@@ -101,17 +103,17 @@ const VideoGate = () => {
                                     type="submit"
                                     size="lg"
                                     disabled={isLoading}
-                                    className="w-full h-16 rounded-none bg-[#10b981] hover:bg-[#0ea672] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] text-black text-lg font-black uppercase tracking-widest transition-all px-4 disabled:opacity-50 disabled:cursor-not-allowed group border-none"
+                                    className="w-full h-16 rounded-none bg-[#10b981] hover:bg-[#0ea672] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] text-black text-sm sm:text-lg font-black uppercase tracking-widest transition-all px-2 sm:px-4 disabled:opacity-50 disabled:cursor-not-allowed group border-none"
                                 >
                                     {isLoading ? (
-                                        <div className="flex items-center gap-3">
-                                            <Loader2 className="h-6 w-6 animate-spin" />
+                                        <div className="flex items-center gap-2 sm:gap-3">
+                                            <Loader2 className="h-5 w-5 sm:h-6 sm:w-6 animate-spin" />
                                             <span>{lang === 'en' ? "Unlocking_" : "Desbloqueando_"}</span>
                                         </div>
                                     ) : (
-                                        <div className="flex items-center gap-3">
-                                            <span>{lang === 'en' ? "Watch the Breakdown" : "Ver el Análisis"}</span>
-                                            <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+                                        <div className="flex items-center gap-2 sm:gap-3">
+                                            <span className="whitespace-nowrap">{lang === 'en' ? "Watch the Breakdown" : "Ver el Análisis"}</span>
+                                            <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover:translate-x-1 flex-shrink-0" />
                                         </div>
                                     )}
                                 </Button>
