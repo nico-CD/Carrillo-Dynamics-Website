@@ -14,10 +14,10 @@ export const intakeSchema = z.object({
         "Other"
     ]),
     bottleneck: z.enum([
-        "Dispatching & Scheduling",
-        "Lead Follow-up & Conversion",
-        "Paperwork & Compliance",
-        "Legacy System Integration",
+        "Missed Calls & Lost Leads",
+        "Too Much Paperwork",
+        "Scheduling Nightmares",
+        "Slow Follow-ups",
         "Other"
     ]),
     consent: z.boolean().refine(val => val === true, "Must consent to process data"),
