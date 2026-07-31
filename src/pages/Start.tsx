@@ -137,7 +137,7 @@ const Start = () => {
                     <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-[0_20px_50px_-15px_rgba(16,185,129,0.15)] border border-border">
                         <iframe 
                             className="w-full h-full"
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&rel=0&modestbranding=1" 
+                            src="https://www.youtube.com/embed/Ox1LSIBMwZw?autoplay=0&rel=0&modestbranding=1" 
                             title="Engineering Breakdown" 
                             frameBorder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
