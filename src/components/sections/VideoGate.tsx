@@ -65,7 +65,7 @@ const VideoGate = () => {
                         <div className="w-full h-full animate-in fade-in zoom-in-95 duration-1000 flex flex-col items-center justify-center bg-black rounded-xl overflow-hidden relative">
                             <iframe 
                                 className="w-full h-[calc(100%-80px)] absolute top-0 inset-x-0"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1" 
+                                src="https://www.youtube.com/embed/Ox1LSIBMwZw?autoplay=1&rel=0&modestbranding=1" 
                                 title="Engineering Breakdown" 
                                 frameBorder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
