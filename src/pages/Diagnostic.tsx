@@ -35,7 +35,7 @@ const BOTTLENECKS = [
     { en: "Other", es: "Otro" }
 ];
 
-const Start = () => {
+const Diagnostic = () => {
     const { lang, t } = useTranslation();
     const formRef = useRef<HTMLDivElement>(null);
     const { isLoading, submitIntake } = useIntake();
@@ -96,75 +96,7 @@ const Start = () => {
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans overflow-x-hidden transition-colors duration-300">
             <SEOManager isNoindex={true} />
-            {/* Clean Header - No distracting navigation, just the logo */}
-            <header className="w-full border-b border-foreground/10 bg-background/80 backdrop-blur-md z-50 sticky top-0 h-20 flex items-center px-6">
-                <div className="max-w-7xl mx-auto flex w-full items-center justify-center">
-                    <div className="flex items-center gap-2">
-                        <img src="/bull_PNGs/vect.bull.svg" alt="Carrillo Dynamics Logo" className="h-10 w-10" />
-                        <span className="font-black text-xl tracking-tighter">
-                            CARRILLO <span className="text-[#10b981]">DYNAMICS</span>
-                        </span>
-                    </div>
-                </div>
-            </header>
-
-            {/* VIDEO SECTION */}
-            <section className="px-6 py-20 bg-background relative z-10 transition-colors duration-300">
-                {/* Engineering Graph Paper Background */}
-                <div 
-                    className="absolute inset-0 pointer-events-none opacity-[0.4] bg-repeat"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
-                    }}
-                />
-                
-                <div className="mx-auto max-w-5xl relative z-10">
-                    <div className="mb-12 text-center space-y-4">
-                        <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
-                            {lang === 'en' ? (
-                                <>The <span className="text-[#10b981]">Engineering</span> Breakdown</>
-                            ) : (
-                                <>El Análisis de <span className="text-[#10b981]">Ingeniería</span></>
-                            )}
-                        </h1>
-                        <p className="text-muted-foreground font-medium max-w-2xl mx-auto">
-                            {lang === 'en' 
-                                ? "Watch the overview below to see exactly how we automate dispatch and eliminate manual data entry. Once finished, complete the diagnostic form."
-                                : "Mire el resumen a continuación para ver exactamente cómo automatizamos el despacho y eliminamos la entrada manual de datos. Una vez que termine, complete el formulario de diagnóstico."}
-                        </p>
-                    </div>
-                    
-                    <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-[0_20px_50px_-15px_rgba(16,185,129,0.15)] border border-border">
-                        <iframe 
-                            className="w-full h-full"
-                            src="https://www.youtube.com/embed/Ox1LSIBMwZw?autoplay=0&rel=0&modestbranding=1" 
-                            title="Engineering Breakdown" 
-                            frameBorder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowFullScreen
-                        ></iframe>
-                    </div>
-
-                    <div className="mt-8 bg-zinc-950/50 backdrop-blur-xl border border-[#10b981]/30 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_0_30px_-10px_rgba(16,185,129,0.2)]">
-                        <div className="text-center md:text-left">
-                            <h3 className="text-xl md:text-2xl font-black uppercase text-foreground">
-                                {lang === 'en' ? "Want to see it in action?" : "¿Quieres verlo en acción?"}
-                            </h3>
-                            <p className="text-muted-foreground font-medium mt-2">
-                                {lang === 'en' ? "Test drive the live demo website built for local trades." : "Prueba el sitio web de demostración en vivo diseñado para oficios locales."}
-                            </p>
-                        </div>
-                        <a 
-                            href="https://demo.carrillodynamics.com" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="shrink-0 flex items-center justify-center gap-2 h-14 px-8 bg-[#10b981] hover:bg-[#0ea672] text-black font-black uppercase tracking-widest text-sm transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] rounded-none"
-                        >
-                            {lang === 'en' ? "Launch Demo" : "Lanza Demo"} <ArrowRight className="h-5 w-5" />
-                        </a>
-                    </div>
-                </div>
-            </section>
+            <Navbar />
 
             {/* THE INTAKE FORM SECTION */}
             <section id="intake" className="px-6 py-20 md:py-32 bg-background relative z-10 transition-colors duration-300 overflow-hidden">
@@ -175,23 +107,25 @@ const Start = () => {
                     }}
                 />
                 
+
+
                 <motion.div
                     ref={formRef}
                     className="w-full max-w-full px-4 mx-auto md:max-w-4xl scroll-mt-24 relative z-10"
                     {...revealProps}
                 >
-                    <div className="mb-20 text-center space-y-8">
-                        <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight leading-none text-foreground transition-colors duration-300 mx-auto">
+                    <div className="mb-16 text-center space-y-6">
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none text-foreground transition-colors duration-300 mx-auto">
                             {t.intake.title}
                             {lang === 'en' ? (
                                 <>
-                                    <span className="italic text-[#10b981]">{t.intake.titleItalic}</span>
-                                    <span className="text-[#10b981]">{t.intake.titleAccent}</span>
+                                    <span className="italic text-[#10b981]"> {t.intake.titleItalic}</span>
+                                    <span className="text-[#10b981]"> {t.intake.titleAccent}</span>
                                 </>
                             ) : (
                                 <>
-                                    <span className="text-[#10b981]">{t.intake.titleAccent}</span>
-                                    <span className="italic text-[#10b981]">{t.intake.titleItalic}</span>
+                                    <span className="text-[#10b981]"> {t.intake.titleAccent}</span>
+                                    <span className="italic text-[#10b981]"> {t.intake.titleItalic}</span>
                                 </>
                             )}
                         </h2>
@@ -415,6 +349,27 @@ const Start = () => {
                         </div>
                         )}
                     </div>
+                    
+                    <div className="mt-16 mx-auto max-w-4xl relative z-10">
+                        <div className="bg-zinc-950/50 backdrop-blur-xl border border-[#10b981]/30 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_0_30px_-10px_rgba(16,185,129,0.2)]">
+                            <div className="text-center md:text-left">
+                                <h3 className="text-xl md:text-2xl font-black uppercase text-foreground">
+                                    {lang === 'en' ? "Want to see it in action?" : "¿Quieres verlo en acción?"}
+                                </h3>
+                                <p className="text-muted-foreground font-medium mt-2">
+                                    {lang === 'en' ? "Test drive the live demo website built for local trades." : "Prueba el sitio web de demostración en vivo diseñado para oficios locales."}
+                                </p>
+                            </div>
+                            <a 
+                                href="https://demo.carrillodynamics.com" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="shrink-0 flex items-center justify-center gap-2 h-14 px-8 bg-[#10b981] hover:bg-[#0ea672] text-black font-black uppercase tracking-widest text-sm transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] rounded-none"
+                            >
+                                {lang === 'en' ? "Launch Demo" : "Lanza Demo"} <ArrowRight className="h-5 w-5" />
+                            </a>
+                        </div>
+                    </div>
                 </motion.div>
             </section>
 
@@ -423,4 +378,4 @@ const Start = () => {
     );
 };
 
-export default Start;
+export default Diagnostic;

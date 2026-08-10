@@ -29,9 +29,13 @@ const ExitIntentModal = () => {
         setIsSubmitting(true);
 
         try {
-            await fetch('https://primary-production-4591.up.railway.app/webhook/e07e66df-287f-4fd2-8b4e-8fcb7b134907', {
+            const webhookUrl = import.meta.env.VITE_FORMSPREE_URL || "https://formspree.io/f/mzdnwklv";
+            await fetch(webhookUrl, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
                 body: JSON.stringify({ email, source: 'exit_intent' })
             });
             setSubmitted(true);

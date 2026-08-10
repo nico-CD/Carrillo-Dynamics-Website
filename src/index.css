@@ -46,12 +46,7 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Hide default cursor on desktop for custom cursor */
-  @media (min-width: 768px) {
-    * {
-      cursor: none !important;
-    }
-  }
+
 
   /* Industrial Slim Scrollbar (Monochrome) */
   ::-webkit-scrollbar {

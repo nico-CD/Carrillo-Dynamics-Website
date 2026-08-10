@@ -13,7 +13,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import PageProgressBar from "./components/PageProgressBar";
 import Breadcrumbs from "./components/Breadcrumbs";
 import SEOManager from "./components/SEOManager";
-import CustomCursor from "./components/CustomCursor";
 import Index from "./pages/Index";
 
 const NotFound = React.lazy(() => import("./pages/NotFound"));
@@ -25,6 +24,7 @@ const ArticlesPage = React.lazy(() => import("./pages/Articles"));
 const ArticleDetail = React.lazy(() => import("./pages/ArticleDetail"));
 const Book = React.lazy(() => import("./pages/Book"));
 const Start = React.lazy(() => import("./pages/Start"));
+const Diagnostic = React.lazy(() => import("./pages/Diagnostic"));
 
 const queryClient = new QueryClient();
 
@@ -35,7 +35,6 @@ const App = () => (
         <TooltipProvider>
           <BrowserRouter>
             <ScrollToTop />
-            <CustomCursor />
             <LanguageProvider>
               <SEOManager />
               <PageProgressBar />
@@ -68,6 +67,7 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/book" element={<Book />} />
                   <Route path="/start" element={<Start />} />
+                  <Route path="/diagnostic" element={<Diagnostic />} />
 
                   <Route path="/privacy" element={<PrivacyPolicy />} />
                   <Route path="/terms" element={<TermsConditions />} />
