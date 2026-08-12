@@ -75,7 +75,7 @@ const VideoGate = () => {
                             </div>
                             <div className="w-full h-auto sm:h-[80px] bg-zinc-950 flex items-center justify-center border-t border-border/50 p-4 sm:p-0">
                                 <Button 
-                                    onClick={() => window.location.href = '/start'}
+                                    onClick={() => window.location.href = '/book'}
                                     className="w-full sm:w-auto h-14 sm:h-12 bg-[#10b981] hover:bg-[#0ea672] text-black font-black uppercase tracking-widest rounded-none border-none px-4 sm:px-8 flex items-center justify-center gap-2 text-xs sm:text-sm"
                                 >
                                     {lang === 'en' ? "Next Step: Strategy Session" : "Siguiente Paso: Sesión de Estrategia"}

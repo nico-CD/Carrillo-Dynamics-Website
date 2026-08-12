@@ -54,8 +54,8 @@ const Start = () => {
                         </h1>
                         <p className="text-muted-foreground font-medium max-w-2xl mx-auto">
                             {lang === 'en' 
-                                ? "Watch the overview below to see exactly how we automate dispatch and eliminate manual data entry. Once finished, complete the diagnostic form."
-                                : "Mire el resumen a continuación para ver exactamente cómo automatizamos el despacho y eliminamos la entrada manual de datos. Una vez que termine, complete el formulario de diagnóstico."}
+                                ? "Watch the overview below to see exactly how we automate dispatch and eliminate manual data entry. Once finished, schedule your strategy session below."
+                                : "Mire el resumen a continuación para ver exactamente cómo automatizamos el despacho y eliminamos la entrada manual de datos. Una vez que termine, programe su sesión de estrategia a continuación."}
                         </p>
                     </div>
                     
