@@ -100,26 +100,26 @@ const Start = () => {
                         </p>
                     </div>
 
-                    <div className="w-full mb-12">
-                        <InlineWidget 
-                            url={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`}
-                            styles={{
-                                height: '700px',
-                                width: '100%'
-                            }}
-                            pageSettings={{
-                                backgroundColor: '09090b',
-                                hideEventTypeDetails: true,
-                                hideLandingPageDetails: true,
-                                primaryColor: '10b981',
-                                textColor: 'ffffff'
-                            }}
-                        />
-                    </div>
+                    <InlineWidget 
+                        url={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`}
+                        styles={{
+                            height: '700px',
+                            width: '100%',
+                            border: 'none',
+                            overflow: 'hidden'
+                        }}
+                        pageSettings={{
+                            backgroundColor: '09090b',
+                            hideEventTypeDetails: true,
+                            hideLandingPageDetails: true,
+                            primaryColor: '10b981',
+                            textColor: 'ffffff'
+                        }}
+                    />
                 </motion.div>
 
                 <motion.div
-                    className="w-full max-w-full px-4 mx-auto max-w-5xl relative z-10 mt-8"
+                    className="w-full max-w-5xl px-4 mx-auto relative z-10 mt-8 mb-12"
                     {...revealProps}
                 >
                     <div className="bg-zinc-950/50 backdrop-blur-xl border border-[#10b981]/30 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_0_30px_-10px_rgba(16,185,129,0.2)]">
