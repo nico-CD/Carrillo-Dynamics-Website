@@ -85,7 +85,7 @@ const Start = () => {
                     className="w-full max-w-full px-4 mx-auto md:max-w-4xl scroll-mt-24 relative z-10"
                     {...revealProps}
                 >
-                    <div className="mb-12 text-center space-y-4">
+                    <div className="mb-4 text-center space-y-4">
                         <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none text-foreground transition-colors duration-300 mx-auto">
                             {lang === 'en' ? (
                                 <>Book Your <span className="italic text-[#10b981]">Strategy Session</span></>

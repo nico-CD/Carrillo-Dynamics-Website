@@ -40,7 +40,7 @@ const Book = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="w-full max-w-full px-4 mx-auto md:max-w-4xl text-center relative z-10 mb-12"
+                    className="w-full max-w-full px-4 mx-auto md:max-w-4xl text-center relative z-10 mb-4"
                 >
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight leading-none mb-6 text-foreground">
                         {lang === 'en' ? 'Book Your ' : 'Agende Su '} <br className="md:hidden" />
@@ -75,17 +75,6 @@ const Book = () => {
                             textColor: 'ffffff'
                         }}
                     />
-                    
-                    <div className="mt-8 mb-12 text-center">
-                        <a 
-                            href={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?locale=${lang}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-muted-foreground hover:text-[#10b981] transition-colors"
-                        >
-                            {lang === 'en' ? 'Widget not loading? Click here to book directly.' : '¿El widget no carga? Haga clic aquí para agendar directamente.'}
-                        </a>
-                    </div>
                 </motion.div>
 
                 <div className="w-full max-w-5xl mx-auto px-4 relative z-10 mt-12 mb-12">
