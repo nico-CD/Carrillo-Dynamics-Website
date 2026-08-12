@@ -5,7 +5,7 @@ import SEOManager from '@/components/SEOManager';
 import { useTranslation } from '@/components/LanguageProvider';
 import { motion } from 'framer-motion';
 import { InlineWidget } from 'react-calendly';
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search, PenTool, Rocket } from "lucide-react";
 
 const Book = () => {
     const { lang } = useTranslation();
@@ -77,33 +77,61 @@ const Book = () => {
                     />
                 </motion.div>
 
-                <div className="w-full max-w-5xl mx-auto px-4 relative z-10 mt-12 mb-12">
+                <motion.div
+                    className="w-full max-w-5xl mx-auto px-4 relative z-10 mt-16 mb-8"
+                    {...revealProps}
+                >
                     <div className="mb-12 text-center space-y-4">
-                        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground">
                             {lang === 'en' ? (
-                                <>The <span className="text-[#10b981]">Engineering</span> Breakdown</>
+                                <>What Happens <span className="text-[#10b981]">Next?</span></>
                             ) : (
-                                <>El Análisis de <span className="text-[#10b981]">Ingeniería</span></>
+                                <>¿Qué Pasa <span className="text-[#10b981]">Después?</span></>
                             )}
                         </h2>
-                        <p className="text-muted-foreground font-medium max-w-2xl mx-auto">
-                            {lang === 'en' 
-                                ? "Watch the overview below to see exactly how we automate dispatch and eliminate manual data entry."
-                                : "Mire el resumen a continuación para ver exactamente cómo automatizamos el despacho y eliminamos la entrada manual de datos."}
-                        </p>
                     </div>
-                    
-                    <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-[0_20px_50px_-15px_rgba(16,185,129,0.15)] border border-border">
-                        <iframe 
-                            className="w-full h-full"
-                            src="https://www.youtube.com/embed/Ox1LSIBMwZw?autoplay=0&rel=0&modestbranding=1" 
-                            title="Engineering Breakdown" 
-                            frameBorder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowFullScreen
-                        ></iframe>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Step 1 */}
+                        <div className="bg-zinc-950/50 backdrop-blur-xl border border-border p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_0_30px_-15px_rgba(16,185,129,0.1)]">
+                            <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center mb-6 border border-[#10b981]/20">
+                                <Search className="w-8 h-8 text-[#10b981]" />
+                            </div>
+                            <h3 className="text-xl font-black uppercase text-foreground mb-3">
+                                {lang === 'en' ? "1. The Audit" : "1. La Auditoría"}
+                            </h3>
+                            <p className="text-muted-foreground font-medium">
+                                {lang === 'en' ? "We map out your current business bottlenecks and workflows." : "Mapeamos sus flujos de trabajo y cuellos de botella actuales."}
+                            </p>
+                        </div>
+                        
+                        {/* Step 2 */}
+                        <div className="bg-zinc-950/50 backdrop-blur-xl border border-border p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_0_30px_-15px_rgba(16,185,129,0.1)]">
+                            <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center mb-6 border border-[#10b981]/20">
+                                <PenTool className="w-8 h-8 text-[#10b981]" />
+                            </div>
+                            <h3 className="text-xl font-black uppercase text-foreground mb-3">
+                                {lang === 'en' ? "2. The Blueprint" : "2. El Plano"}
+                            </h3>
+                            <p className="text-muted-foreground font-medium">
+                                {lang === 'en' ? "We design a custom automation architecture for your trade." : "Diseñamos una arquitectura de automatización personalizada."}
+                            </p>
+                        </div>
+                        
+                        {/* Step 3 */}
+                        <div className="bg-zinc-950/50 backdrop-blur-xl border border-border p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_0_30px_-15px_rgba(16,185,129,0.1)]">
+                            <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center mb-6 border border-[#10b981]/20">
+                                <Rocket className="w-8 h-8 text-[#10b981]" />
+                            </div>
+                            <h3 className="text-xl font-black uppercase text-foreground mb-3">
+                                {lang === 'en' ? "3. The Deployment" : "3. El Despliegue"}
+                            </h3>
+                            <p className="text-muted-foreground font-medium">
+                                {lang === 'en' ? "We build, test, and launch your new automated system." : "Construimos, probamos y lanzamos su nuevo sistema automatizado."}
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </motion.div>
 
                 <motion.div
                     className="w-full max-w-5xl px-4 mx-auto relative z-10 mt-8 mb-12"
