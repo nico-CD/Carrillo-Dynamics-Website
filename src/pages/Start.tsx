@@ -100,26 +100,28 @@ const Start = () => {
                         </p>
                     </div>
 
-                    <div className="w-full max-w-full bg-zinc-950/50 backdrop-blur-xl border-2 border-border/50 p-4 sm:p-8 relative overflow-hidden flex flex-col justify-center transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(16,185,129,0.15)] rounded-2xl md:rounded-3xl mb-12">
-                        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#10b981]/50 to-transparent opacity-30" />
-                        <div className="w-full">
-                            <InlineWidget 
-                                url={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`}
-                                styles={{
-                                    height: '700px',
-                                    minWidth: '320px'
-                                }}
-                                pageSettings={{
-                                    backgroundColor: '09090b',
-                                    hideEventTypeDetails: true,
-                                    hideLandingPageDetails: true,
-                                    primaryColor: '10b981',
-                                    textColor: 'ffffff'
-                                }}
-                            />
-                        </div>
+                    <div className="w-full mb-12">
+                        <InlineWidget 
+                            url={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`}
+                            styles={{
+                                height: '700px',
+                                width: '100%'
+                            }}
+                            pageSettings={{
+                                backgroundColor: '09090b',
+                                hideEventTypeDetails: true,
+                                hideLandingPageDetails: true,
+                                primaryColor: '10b981',
+                                textColor: 'ffffff'
+                            }}
+                        />
                     </div>
+                </motion.div>
 
+                <motion.div
+                    className="w-full max-w-full px-4 mx-auto max-w-5xl relative z-10 mt-8"
+                    {...revealProps}
+                >
                     <div className="bg-zinc-950/50 backdrop-blur-xl border border-[#10b981]/30 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_0_30px_-10px_rgba(16,185,129,0.2)]">
                         <div className="text-center md:text-left">
                             <h3 className="text-xl md:text-2xl font-black uppercase text-foreground">
