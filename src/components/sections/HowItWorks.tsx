@@ -8,10 +8,10 @@ const HowItWorks = () => {
     const steps = [
         {
             icon: <ClipboardCheck className="w-12 h-12 text-[#10b981]" />,
-            title: lang === 'en' ? "1. Reach Out" : "1. Contáctenos",
+            title: lang === 'en' ? "1. Book a Session" : "1. Reserve una Sesión",
             description: lang === 'en' 
-                ? "Submit your details through our form below. We'll review your current setup and find the leaks." 
-                : "Envíe sus datos a través de nuestro formulario a continuación. Revisaremos su configuración y encontraremos las fugas."
+                ? "Watch the engineering breakdown below, then grab 15 minutes on our calendar to map out your digital engine." 
+                : "Mire el desglose de ingeniería a continuación, luego reserve 15 minutos en nuestro calendario para trazar su motor digital."
         },
         {
             icon: <LineChart className="w-12 h-12 text-[#10b981]" />,
