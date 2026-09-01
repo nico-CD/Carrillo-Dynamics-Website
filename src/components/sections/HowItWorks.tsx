@@ -11,7 +11,7 @@ const HowItWorks = () => {
             title: lang === 'en' ? "1. Book a Session" : "1. Reserve una Sesión",
             description: lang === 'en'
                 ? "Watch the engineering breakdown below, grab 15 minutes on our calendar to map out your digital engine."
-                : "Mire el desglose de ingeniería a continuación, luego reserve 15 minutos en nuestro calendario para trazar su motor digital."
+                : "Mire el desglose de ingeniería a continuación, reserva 15 minutos en nuestro calendario para trazar su motor digital."
         },
         {
             icon: <LineChart className="w-12 h-12 text-[#10b981]" />,
