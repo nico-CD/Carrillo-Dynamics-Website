@@ -9,8 +9,8 @@ const HowItWorks = () => {
         {
             icon: <ClipboardCheck className="w-12 h-12 text-[#10b981]" />,
             title: lang === 'en' ? "1. Book a Session" : "1. Reserve una Sesión",
-            description: lang === 'en' 
-                ? "Watch the engineering breakdown below, then grab 15 minutes on our calendar to map out your digital engine." 
+            description: lang === 'en'
+                ? "Watch the engineering breakdown below, grab 15 minutes on our calendar to map out your digital engine."
                 : "Mire el desglose de ingeniería a continuación, luego reserve 15 minutos en nuestro calendario para trazar su motor digital."
         },
         {
@@ -35,7 +35,7 @@ const HowItWorks = () => {
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] z-0">
                 <img src="/bull_PNGs/vect.bull.svg" alt="Background" className="w-[800px] h-[800px] object-contain grayscale" />
             </div>
-            
+
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-20">
                 <div className="absolute top-1/4 left-0 w-[30rem] h-[30rem] bg-[#10b981]/15 rounded-full blur-[100px]" />
                 <div className="absolute bottom-1/4 right-0 w-[40rem] h-[40rem] bg-[#10b981]/10 rounded-full blur-[120px]" />
@@ -47,10 +47,10 @@ const HowItWorks = () => {
                         {lang === 'en' ? "How It Works" : "Cómo Funciona"}
                     </h2>
                 </div>
-                
+
                 <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
                     {steps.map((step, index) => (
-                        <motion.div 
+                        <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
