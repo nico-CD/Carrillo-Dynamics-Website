@@ -385,7 +385,7 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
             home: "Inicio",
             faq: "FAQ",
             articles: "Recursos",
-            blueprint: "OBTENGA SU DIAGNÓSTICO GRATIS",
+            blueprint: "EMPIEZA AHORA",
             privacy: "Privacidad",
             terms: "Términos",
             strategy: "Sesión de Estrategia"
