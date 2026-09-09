@@ -355,7 +355,7 @@ While earning my Engineering degree at Illinois Tech, I learned how to build rel
 
 ### Building What Works
 
-That's why I started Carrillo Dynamics. I'm not here to build "pretty websites" or pitch abstract tech buzzwords. I'm here to build functional, industrial-grade digital tools that actually help trade businesses operate more efficiently. We build the infrastructure so you can handle more volume without the headaches.
+That's why I started Carrillo Dynamics. I'm not here to build "pretty websites" or pitch abstract tech buzzwords. I'm here to build functional, digital tools that actually help trade businesses operate more efficiently. We build the infrastructure so you can handle more volume without the headaches.
 
 ### The Bottom Line
 
@@ -622,7 +622,7 @@ Mientras obtenía mi título de Ingeniería en Illinois Tech, aprendí a constru
 
 ### Construyendo lo que Funciona
 
-Por eso comencé Carrillo Dynamics. No estoy aquí para construir "sitios web bonitos" o vender palabras de moda tecnológicas abstractas. Estoy aquí para construir herramientas digitales funcionales de grado industrial que realmente ayuden a las empresas a operar de manera más eficiente. Construimos la infraestructura para que puedas manejar más volumen sin dolores de cabeza.
+Por eso comencé Carrillo Dynamics. No estoy aquí para construir "sitios web bonitos" o vender palabras de moda tecnológicas abstractas. Estoy aquí para construir herramientas digitales funcionales que realmente ayuden a las empresas a operar de manera más eficiente. Construimos la infraestructura para que puedas manejar más volumen sin dolores de cabeza.
 
 ### En Conclusión
 
