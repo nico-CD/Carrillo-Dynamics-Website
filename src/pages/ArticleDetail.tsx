@@ -215,7 +215,7 @@ const ArticleDetail = () => {
                                 <div className="space-y-6 relative z-10 w-full">
 
                                     <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none max-w-xl text-foreground">
-                                        {lang === 'en' ? 'Engineered Precision. Industrial Grit.' : 'Precisión de Ingeniería. Tesón Industrial.'}
+                                        {lang === 'en' ? 'STOP BLEEDING LEADS. AUTOMATE YOUR WORKFLOW.' : 'DEJE DE PERDER CLIENTES. AUTOMATICE SU SISTEMA.'}
                                     </h2>
                                     <p className="font-bold max-w-2xl text-lg md:text-xl text-zinc-400">
                                         {lang === 'en'
