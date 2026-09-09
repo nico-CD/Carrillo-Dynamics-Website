@@ -30,7 +30,7 @@ const HowItWorks = () => {
     ];
 
     return (
-        <section className="relative py-32 bg-background border-b border-border overflow-hidden">
+        <section className="relative py-40 bg-background border-b border-border overflow-hidden">
             {/* Abstract Background Glow & Logo Integration */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] z-0">
                 <img src="/bull_PNGs/vect.bull.svg" alt="Background" className="w-[800px] h-[800px] object-contain grayscale" />
