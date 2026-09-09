@@ -24,9 +24,9 @@ const ArticleDetail = () => {
     const { id } = useParams();
     const { t, lang } = useTranslation();
     const navigate = useNavigate();
-    
+
     const article = t.articles.find(a => a.id === id);
-    
+
     const { scrollYProgress } = useScroll();
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 100,
@@ -71,29 +71,29 @@ const ArticleDetail = () => {
     return (
         <div className="bg-background min-h-screen selection:bg-[#10b981]/10 font-sans relative overflow-hidden">
             {/* Engineering Graph Paper Background */}
-            <div 
+            <div
                 className="absolute inset-0 pointer-events-none opacity-[0.4] z-0 bg-repeat"
                 style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
                 }}
             />
-            <SEOManager 
+            <SEOManager
                 title={article.title}
                 description={article.description}
             />
-            
+
             <Navbar />
-            
+
             <div className="flex flex-col lg:flex-row min-h-screen bg-background pt-20">
                 <ArticleSidebar />
-                
+
                 <main className="flex-1 lg:ml-80 overflow-x-hidden relative">
                     <div className="absolute inset-x-0 top-0 h-screen opacity-[0.03] pointer-events-none overflow-hidden grayscale">
                         <ForensicDiagnostic />
                     </div>
 
                     <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-24 relative z-10 space-y-24">
-                        
+
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ const ArticleDetail = () => {
                         >
                             {/* TECHNICAL HEADER BLOCK */}
                             <div className="space-y-8 border-l-4 border-[#10b981] pl-8">
-                                <Link 
+                                <Link
                                     to="/resources"
                                     className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#10b981] hover:text-foreground transition-colors"
                                 >
@@ -135,30 +135,30 @@ const ArticleDetail = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                                 {/* MAIN CONTENT: HIGH-DENSITY TEXT */}
                                 <div className="lg:col-span-9 space-y-12">
-                                        
-                                        {/* GENERATED VISUAL DIAGRAM */}
-                                        {insightImages[article.id] && (
-                                            <div className="w-full rounded-2xl overflow-hidden border border-border/50 bg-black mb-12 shadow-2xl">
-                                                <img 
-                                                    src={insightImages[article.id]} 
-                                                    alt={article.title}
-                                                    className="w-full h-auto object-contain max-h-[550px] mx-auto"
-                                                />
-                                            </div>
-                                        )}
 
-                                        <ReactMarkdown
-                                            components={{
-                                                p: ({node, ...props}) => <p className="text-lg md:text-xl leading-[2.2] text-zinc-300 mb-12" {...props} />,
-                                                h3: ({node, ...props}) => <h3 className="text-3xl md:text-4xl font-black text-foreground mt-20 mb-8 uppercase tracking-tight" {...props} />,
-                                                ul: ({node, ...props}) => <ul className="list-disc pl-6 mb-12 space-y-4" {...props} />,
-                                                li: ({node, ...props}) => <li className="text-lg text-zinc-300" {...props} />,
-                                                h1: ({node, ...props}) => <h1 className="hidden" {...props} />,
-                                                h2: ({node, ...props}) => <h2 className="text-4xl font-black text-foreground mt-24 mb-10" {...props} />
-                                            }}
-                                        >
-                                            {article.content}
-                                        </ReactMarkdown>
+                                    {/* GENERATED VISUAL DIAGRAM */}
+                                    {insightImages[article.id] && (
+                                        <div className="w-full rounded-2xl overflow-hidden border border-border/50 bg-black mb-12 shadow-2xl">
+                                            <img
+                                                src={insightImages[article.id]}
+                                                alt={article.title}
+                                                className="w-full h-auto object-contain max-h-[550px] mx-auto"
+                                            />
+                                        </div>
+                                    )}
+
+                                    <ReactMarkdown
+                                        components={{
+                                            p: ({ node, ...props }) => <p className="text-lg md:text-xl leading-[2.2] text-zinc-300 mb-12" {...props} />,
+                                            h3: ({ node, ...props }) => <h3 className="text-3xl md:text-4xl font-black text-foreground mt-20 mb-8 uppercase tracking-tight" {...props} />,
+                                            ul: ({ node, ...props }) => <ul className="list-disc pl-6 mb-12 space-y-4" {...props} />,
+                                            li: ({ node, ...props }) => <li className="text-lg text-zinc-300" {...props} />,
+                                            h1: ({ node, ...props }) => <h1 className="hidden" {...props} />,
+                                            h2: ({ node, ...props }) => <h2 className="text-4xl font-black text-foreground mt-24 mb-10" {...props} />
+                                        }}
+                                    >
+                                        {article.content}
+                                    </ReactMarkdown>
                                 </div>
 
                                 {/* SIDEBAR: METADATA & QUICK LINKS (Below on mobile, Right on desktop) */}
@@ -189,17 +189,17 @@ const ArticleDetail = () => {
                                     </div>
 
                                     <div className="space-y-4 pt-4">
-                                        <Button 
+                                        <Button
                                             onClick={handlePrint}
-                                            variant="outline" 
+                                            variant="outline"
                                             className="w-full justify-start rounded-none h-12 text-[10px] font-black uppercase tracking-widest border-border hover:bg-muted/5 transition-all"
                                         >
                                             <ShieldCheck className="mr-3 h-4 w-4 text-[#10b981]" />
                                             {t.articleLabels.downloadPdf}
                                         </Button>
-                                        <Button 
+                                        <Button
                                             onClick={handleShare}
-                                            variant="outline" 
+                                            variant="outline"
                                             className="w-full justify-start rounded-none h-12 text-[10px] font-black uppercase tracking-widest border-border hover:bg-muted/5 transition-all"
                                         >
                                             <ShieldCheck className="mr-3 h-4 w-4 text-[#10b981]" />
@@ -218,17 +218,17 @@ const ArticleDetail = () => {
                                         {lang === 'en' ? 'Engineered Precision. Industrial Grit.' : 'Precisión de Ingeniería. Tesón Industrial.'}
                                     </h2>
                                     <p className="font-bold max-w-2xl text-lg md:text-xl text-zinc-400">
-                                        {lang === 'en' 
-                                             ? 'Request your free diagnostic to identify and plug operational leaks.'
-                                             : 'Solicite su diagnóstico gratuito para identificar y tapar fugas operativas.'}
+                                        {lang === 'en'
+                                            ? 'Request your free diagnostic to identify and plug operational leaks.'
+                                            : 'Solicite su diagnóstico gratuito para identificar y tapar fugas operativas.'}
                                     </p>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">
-                                    <Button 
+                                    <Button
                                         onClick={() => navigate('/#intake')}
                                         className="h-20 px-12 bg-[#10b981] text-black font-black uppercase tracking-[0.2em] rounded-none hover:bg-white transition-all flex items-center group"
                                     >
-                                        {lang === 'en' ? 'Get Started' : 'Comenzar'}
+                                        {lang === 'en' ? 'Get Started' : 'Empieza Ahora'}
                                         <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
                                     </Button>
                                 </div>

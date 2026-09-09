@@ -36,13 +36,13 @@ const ArticleSidebar = () => {
                         {lang === 'en' ? 'Core Resources' : 'Recursos Principales'}
                     </h3>
                     <nav className="space-y-4">
-                        <Link 
-                            to="/book" 
+                        <Link
+                            to="/book"
                             className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-[#10b981] hover:text-[#0ea672] transition-colors"
                         >
                             {lang === 'en' ? 'Book Strategy Session' : 'Sesión de Estrategia'}
                         </Link>
-                        <button 
+                        <button
                             onClick={() => {
                                 const el = document.getElementById('intake');
                                 if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -50,7 +50,7 @@ const ArticleSidebar = () => {
                             }}
                             className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors text-left w-full"
                         >
-                            {lang === 'en' ? 'Request Diagnostic' : 'Solicitar Diagnóstico'}
+                            {lang === 'en' ? 'Get Started' : 'Empieza Ahora'}
                         </button>
                         <Link to="/faq" className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors">
                             {t.nav.faq}

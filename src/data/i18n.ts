@@ -404,7 +404,7 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
         hero: {
             title: "Su negocio está perdiendo clientes por",
             subtitle: "Diseñamos sitios web y sistemas que ayudan a las empresas de servicios a escalar. Consiga más trabajos. Automatice el trabajo manual. Reduzca los dolores de cabeza.",
-            cta: "Comenzar",
+            cta: "Empieza Ahora",
             audit: "Sesión de Estrategia",
             badge1: "INGENIERÍA BASADA EN CHICAGO",
             badge2: "SIN RETRASOS DE CARGA",
