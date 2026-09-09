@@ -219,8 +219,8 @@ const ArticleDetail = () => {
                                     </h2>
                                     <p className="font-bold max-w-2xl text-lg md:text-xl text-zinc-400">
                                         {lang === 'en'
-                                            ? 'Request your free diagnostic to identify and plug operational leaks.'
-                                            : 'Solicite su diagnóstico gratuito para identificar y tapar fugas operativas.'}
+                                            ? 'Unlock the full engineering breakdown and stop letting leads slip through the cracks.'
+                                            : 'Desbloquee el desglose de ingeniería completo y deje de perder clientes potenciales.'}
                                     </p>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">
