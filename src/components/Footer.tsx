@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Terminal } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useTranslation } from "./LanguageProvider";
 import { useNavigate } from "react-router-dom";
 

@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 
 // Lazy load below-the-fold components
 const HowItWorks = React.lazy(() => import("@/components/sections/HowItWorks"));
-const ValueProps = React.lazy(() => import("@/components/sections/ValueProps"));
 const VideoGate = React.lazy(() => import("@/components/sections/VideoGate"));
 
 const Index = () => {
@@ -41,7 +40,6 @@ const Index = () => {
             {/* SEGMENT 2 & 3: BELOW THE FOLD */}
             <Suspense fallback={<div className="min-h-screen bg-background" />}>
                 <HowItWorks />
-                <ValueProps />
                 <VideoGate />
             </Suspense>
 
