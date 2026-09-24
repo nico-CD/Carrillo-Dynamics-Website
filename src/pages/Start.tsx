@@ -1,138 +1,207 @@
+import { useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Clapperboard } from "lucide-react";
+import { Clapperboard, ExternalLink, Languages } from "lucide-react";
 import { InlineWidget } from "react-calendly";
 import Footer from "@/components/Footer";
 import SEOManager from "@/components/SEOManager";
 import { useTranslation } from "@/components/LanguageProvider";
+import { DEMO_HUB_URL, START_TRADES, hubTradeUrl } from "@/data/trades";
 
-const DEMO_URL = "https://demo.carrillodynamics.com";
-
+/**
+ * QR-only landing. Not linked from the public homepage —
+ * card scanners arrive here directly.
+ */
 const Start = () => {
-    const { lang } = useTranslation();
+  const { lang, setLanguage } = useTranslation();
+  const [searchParams] = useSearchParams();
 
-    const revealProps = {
-        initial: { opacity: 0, y: 20 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true, margin: "-100px" },
-        transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }
-    };
+  const hubHome = useMemo(() => {
+    const url = new URL(DEMO_HUB_URL);
+    ["utm_source", "utm_medium", "utm_campaign", "src", "v"].forEach((key) => {
+      const val = searchParams.get(key);
+      if (val) url.searchParams.set(key, val);
+    });
+    return url.toString();
+  }, [searchParams]);
 
-    return (
-        <div className="bg-background min-h-screen text-foreground selection:bg-[#10b981]/10 font-sans overflow-x-hidden transition-colors duration-300">
-            <SEOManager isNoindex={true} />
-            <header className="w-full border-b border-foreground/10 bg-background/80 backdrop-blur-md z-50 sticky top-0 h-20 flex items-center px-6">
-                <div className="max-w-6xl mx-auto flex w-full items-center justify-center">
-                    <div className="flex items-center gap-2">
-                        <img src="/bull_PNGs/vect.bull.svg" alt="Carrillo Dynamics Logo" className="h-10 w-10" />
-                        <span className="font-black text-xl tracking-tighter">
-                            CARRILLO <span className="text-[#10b981]">DYNAMICS</span>
-                        </span>
-                    </div>
-                </div>
-            </header>
+  const revealProps = {
+    initial: { opacity: 0, y: 16 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-60px" },
+    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const },
+  };
 
-            <section className="px-6 py-20 bg-background relative z-10 transition-colors duration-300">
-                <div
-                    className="absolute inset-0 pointer-events-none opacity-[0.4] bg-repeat"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
-                    }}
-                />
+  const copy =
+    lang === "en"
+      ? {
+          title: "Watch the walk-through.",
+          titleAccent: "Then drive it live.",
+          subtitle:
+            "This video walks the CD Trade Automation Suite — then open any trade below or book time if you want a custom build.",
+          videoBadge: "DEMO VIDEO — COMING SOON",
+          videoAlt: "Demo video placeholder",
+          openHub: "Open full demo hub",
+          tradesTitle: "Jump into a trade",
+          bookTitleLead: "Book Your",
+          bookTitleAccent: "Strategy Session",
+          bookBody:
+            "15 minutes to map bottlenecks and sketch an automation engine for your shop.",
+          langToggle: "ES",
+        }
+      : {
+          title: "Vea el recorrido.",
+          titleAccent: "Luego pruébelo en vivo.",
+          subtitle:
+            "Este video recorre la Suite de Automatización CD — luego abra un oficio abajo o agende si quiere un build a medida.",
+          videoBadge: "VIDEO DEMO — PRÓXIMAMENTE",
+          videoAlt: "Marcador de posición del video demo",
+          openHub: "Abrir hub completo",
+          tradesTitle: "Entrar a un oficio",
+          bookTitleLead: "Agende Su",
+          bookTitleAccent: "Sesión de Estrategia",
+          bookBody:
+            "15 minutos para mapear cuellos de botella y bosquejar un motor de automatización para su taller.",
+          langToggle: "EN",
+        };
 
-                <div className="mx-auto max-w-6xl relative z-10">
-                    <div className="mb-12 text-center space-y-4">
-                        <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
-                            {lang === 'en' ? (
-                                <>The <span className="text-[#10b981]">Engineering</span> Breakdown</>
-                            ) : (
-                                <>El Análisis de <span className="text-[#10b981]">Ingeniería</span></>
-                            )}
-                        </h1>
-                        <p className="text-muted-foreground font-medium max-w-2xl mx-auto">
-                            {lang === 'en'
-                                ? "Our full walk-through video is currently in production. In the meantime, test-drive the live sandbox or book a call below."
-                                : "Nuestro video completo está actualmente en producción. Mientras tanto, pruebe el sandbox en vivo o agende una llamada a continuación."}
-                        </p>
-                    </div>
+  return (
+    <div className="min-h-screen overflow-x-hidden bg-background font-sans text-foreground selection:bg-[#10b981]/10 transition-colors duration-300">
+      <SEOManager isNoindex={true} />
 
-                    <div className="relative w-full overflow-hidden rounded-2xl border border-[#27272A] bg-[#18181B]">
-                        <img
-                            src="/images/demo-preview.jpg"
-                            alt={lang === 'en' ? "Live sandbox preview" : "Vista previa del sandbox"}
-                            className="block w-full aspect-video object-cover object-top opacity-50"
-                        />
-                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6 text-center">
-                            <div className="inline-flex items-center gap-2 bg-zinc-950/90 border border-zinc-700 text-emerald-400 font-mono text-sm px-6 py-3 rounded-full shadow-2xl backdrop-blur-md">
-                                <span className="opacity-60">[</span>
-                                <Clapperboard className="h-4 w-4 shrink-0" />
-                                <span>
-                                    {lang === 'en' ? "DEMO VIDEO COMING SOON" : "VIDEO DEMO PRÓXIMAMENTE"}
-                                </span>
-                                <span className="opacity-60">]</span>
-                            </div>
-                            <a
-                                href={DEMO_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 bg-[#10b981] hover:bg-[#0ea672] text-zinc-950 font-black px-8 py-4 rounded-xl text-sm md:text-base uppercase tracking-wider transition-all"
-                            >
-                                {lang === 'en' ? "Test Drive Live Demo Instead" : "Pruebe el Demo en Vivo"}
-                                <ArrowRight className="h-5 w-5" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="intake" className="px-6 pb-20 md:pb-32 bg-background relative z-10 transition-colors duration-300 overflow-hidden">
-                <div
-                    className="absolute inset-0 pointer-events-none opacity-[0.4] bg-repeat"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`
-                    }}
-                />
-
-                <motion.div
-                    className="w-full max-w-full px-4 mx-auto md:max-w-4xl scroll-mt-24 relative z-10"
-                    {...revealProps}
-                >
-                    <div className="mb-4 text-center space-y-4">
-                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none text-foreground transition-colors duration-300 mx-auto">
-                            {lang === 'en' ? (
-                                <>Book Your <span className="italic text-[#10b981]">Strategy Session</span></>
-                            ) : (
-                                <>Agende Su <span className="italic text-[#10b981]">Sesión de Estrategia</span></>
-                            )}
-                        </h2>
-                        <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-2xl leading-relaxed transition-colors duration-300 mx-auto">
-                            {lang === 'en'
-                                ? "Let's discuss your business, find the bottlenecks, and see how our automation systems can help you scale."
-                                : "Hablemos sobre su negocio, identifiquemos los cuellos de botella y veamos cómo nuestros sistemas de automatización pueden ayudarle a escalar."}
-                        </p>
-                    </div>
-
-                    <InlineWidget
-                        url={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === 'en' ? 'en' : 'es'}`}
-                        styles={{
-                            height: '700px',
-                            width: '100%',
-                            border: 'none',
-                            overflow: 'hidden'
-                        }}
-                        pageSettings={{
-                            backgroundColor: '09090b',
-                            hideEventTypeDetails: true,
-                            hideLandingPageDetails: true,
-                            primaryColor: '10b981',
-                            textColor: 'ffffff'
-                        }}
-                    />
-                </motion.div>
-            </section>
-
-            <Footer />
+      <header className="sticky top-0 z-50 flex h-14 items-center border-b border-foreground/10 bg-background/80 px-4 backdrop-blur-md sm:h-16 sm:px-6">
+        <div className="mx-auto flex w-full max-w-3xl items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-2">
+            <img
+              src="/bull_PNGs/vect.bull.svg"
+              alt=""
+              className="h-8 w-8 shrink-0 sm:h-9 sm:w-9"
+            />
+            <span className="truncate font-black text-base tracking-tighter sm:text-lg">
+              CARRILLO <span className="text-[#10b981]">DYNAMICS</span>
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setLanguage(lang === "en" ? "es" : "en")}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-foreground/20 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider hover:border-[#10b981] hover:text-[#10b981]"
+          >
+            <Languages className="h-3.5 w-3.5" />
+            {copy.langToggle}
+          </button>
         </div>
-    );
+      </header>
+
+      <main className="relative z-10">
+        <div
+          className="pointer-events-none absolute inset-0 bg-repeat opacity-[0.3]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%2310b981' stroke-width='0.5' stroke-opacity='0.8'/%3E%3C/svg%3E")`,
+          }}
+        />
+
+        {/* Video (promised on the card) */}
+        <section className="relative px-4 pb-6 pt-8 sm:px-6 sm:pt-10">
+          <div className="relative z-10 mx-auto max-w-3xl text-center">
+            <h1 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">
+              {copy.title}{" "}
+              <span className="text-[#10b981]">{copy.titleAccent}</span>
+            </h1>
+            <p className="mx-auto mt-3 max-w-lg text-sm font-medium leading-relaxed text-muted-foreground sm:text-base">
+              {copy.subtitle}
+            </p>
+
+            <div className="relative mt-6 w-full overflow-hidden rounded-2xl border border-[#27272A] bg-[#18181B]">
+              <div className="relative aspect-video w-full">
+                <img
+                  src="/images/demo-preview.jpg"
+                  alt={copy.videoAlt}
+                  className="absolute inset-0 h-full w-full object-cover object-top opacity-40"
+                />
+                <div className="absolute inset-0 flex items-center justify-center px-4">
+                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2.5 font-mono text-[11px] text-emerald-400 backdrop-blur-md sm:text-sm">
+                    <span className="opacity-60">[</span>
+                    <Clapperboard className="h-4 w-4 shrink-0" />
+                    <span className="truncate">{copy.videoBadge}</span>
+                    <span className="opacity-60">]</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href={hubHome}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[#10b981] px-5 py-3.5 text-sm font-black uppercase tracking-wider text-zinc-950 transition-colors hover:bg-[#0ea672] sm:w-auto sm:px-8"
+            >
+              {copy.openHub}
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
+        </section>
+
+        {/* Trade deep-links — compact chips only */}
+        <section className="relative z-10 px-4 pb-16 sm:px-6 sm:pb-20">
+          <motion.div className="mx-auto max-w-3xl" {...revealProps}>
+            <p className="mb-3 text-center text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">
+              {copy.tradesTitle}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {START_TRADES.filter((t) => t.id !== "custom").map((trade) => {
+                const label = lang === "en" ? trade.labelEn : trade.labelEs;
+                return (
+                  <a
+                    key={trade.id}
+                    href={hubTradeUrl(trade.id, searchParams)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-foreground/15 bg-zinc-950 px-3.5 py-2 text-[11px] font-black uppercase tracking-wider text-foreground transition-colors hover:border-[#10b981] hover:text-[#10b981]"
+                  >
+                    {label}
+                  </a>
+                );
+              })}
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Book + Calendly */}
+        <section id="book" className="relative z-10 scroll-mt-20 px-4 pt-10 pb-16 sm:px-6 sm:pt-14 md:pb-24">
+          <motion.div className="relative z-10 mx-auto w-full max-w-full md:max-w-4xl" {...revealProps}>
+            <div className="mb-8 space-y-3 text-center sm:mb-10">
+              <h2 className="text-3xl font-black uppercase leading-none tracking-tight sm:text-4xl">
+                {copy.bookTitleLead}{" "}
+                <span className="italic text-[#10b981]">{copy.bookTitleAccent}</span>
+              </h2>
+              <p className="mx-auto max-w-xl text-sm font-medium text-muted-foreground sm:text-base">
+                {copy.bookBody}
+              </p>
+            </div>
+
+            <InlineWidget
+              url={`https://calendly.com/nico-carrillodynamics/15-minute-strategy-session?hide_event_type_details=1&hide_gdpr_banner=1&locale=${lang === "en" ? "en" : "es"}`}
+              styles={{
+                height: "700px",
+                width: "100%",
+                border: "none",
+                overflow: "hidden",
+              }}
+              pageSettings={{
+                backgroundColor: "09090b",
+                hideEventTypeDetails: true,
+                hideLandingPageDetails: true,
+                primaryColor: "10b981",
+                textColor: "ffffff",
+              }}
+            />
+          </motion.div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
 };
 
 export default Start;
