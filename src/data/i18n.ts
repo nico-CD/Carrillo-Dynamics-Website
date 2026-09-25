@@ -181,50 +181,106 @@ export const i18nData: Record<Language, I18nContent> = {
             submitting: "Initiating_"
         },
         privacyPolicy: {
-            title: "Privacy Governance Standards",
-            titleMain: "Privacy Governance",
-            titleAccent: "Standards",
-            lastUpdated: "Revision: 04.08.2026",
+            title: "Privacy Policy",
+            titleMain: "Privacy",
+            titleAccent: "Policy",
+            lastUpdated: "Last updated: September 25, 2026",
             sections: [
                 {
-                    title: "01. Collection & Governance",
-                    content: "We collect operational details needed to design and build your systems - business info you share on forms or calls, project notes, and technical requirements. We handle that data carefully and only as needed for the engagement."
+                    title: "01. Who we are",
+                    content: "Carrillo Dynamics LLC (\"Carrillo Dynamics,\" \"we,\" \"us\") builds websites and automation systems for local service businesses. We are based in Chicago, Illinois. Contact: engineering@carrillodynamics.com."
                 },
                 {
-                    title: "02. Internal Usage Protocols",
-                    content: "Your data is used to architect and deliver your project. We do not sell client data. Access is limited to active work on your account."
+                    title: "02. What we collect",
+                    content: "We collect information you choose to share: name, email, company details, and notes you send by email or through our booking calendar (Calendly). If you browse our sites, standard technical data such as IP address, browser type, and pages viewed may be collected by our hosting providers for security and performance."
                 },
                 {
-                    title: "03. Communication Standards",
-                    content: "We strictly follow TCPA guidelines. Mobile information, including SMS consent data, is never shared with third parties or affiliates for marketing purposes."
+                    title: "03. How we use information",
+                    content: "We use your information to respond to inquiries, schedule strategy calls, deliver project work, improve our sites, and meet legal obligations. We do not sell your personal information."
                 },
                 {
-                    title: "04. Data Sovereignty",
-                    content: "Clients retain the rights to audit the logic built in their environment. Carrillo Dynamics LLC operates as a technical processor, ensuring your intellectual secrets remain yours."
+                    title: "04. Sharing",
+                    content: "We use trusted processors to operate the business (for example hosting, email, and Calendly). They only process data as needed to provide those services. We may disclose information if required by law."
+                },
+                {
+                    title: "05. Demo and portfolio sites",
+                    content: "The trade sites hosted on subdomains such as hvac.carrillodynamics.com, plumbing.carrillodynamics.com, and related demo URLs are demonstration and portfolio engines built by Carrillo Dynamics. They are not live customer businesses. Phone numbers shown on those demos are fictional (for example 555 numbers). Booking links and engineering@carrillodynamics.com contact Carrillo Dynamics, not an independent trade company."
+                },
+                {
+                    title: "06. Cookies and analytics",
+                    content: "Our sites may use essential cookies to function. If we use analytics tools, they help us understand aggregate traffic. You can control cookies through your browser settings."
+                },
+                {
+                    title: "07. Retention and security",
+                    content: "We keep project and inquiry records as long as needed for the relationship and legal requirements, then delete or anonymize them when no longer needed. We take reasonable steps to protect data, but no online system is perfectly secure."
+                },
+                {
+                    title: "08. Your choices",
+                    content: "Email engineering@carrillodynamics.com to request access, correction, or deletion of personal information we hold about you, subject to applicable law. If you booked a call through Calendly, you can also manage that booking in Calendly."
+                },
+                {
+                    title: "09. Children",
+                    content: "Our services are directed to businesses and adults. We do not knowingly collect personal information from children under 13."
+                },
+                {
+                    title: "10. Changes",
+                    content: "We may update this policy from time to time. The \"Last updated\" date at the top will change when we do. Continued use of the sites after updates means you accept the revised policy."
+                },
+                {
+                    title: "11. Contact",
+                    content: "Questions about privacy: engineering@carrillodynamics.com. Carrillo Dynamics LLC, Chicago, IL, United States."
                 }
             ]
         },
         termsOfService: {
-            title: "Engineering Engagement Terms",
-            titleMain: "Engineering Engagement",
-            titleAccent: "Terms",
-            lastUpdated: "Revision: 04.08.2026",
+            title: "Terms of Service",
+            titleMain: "Terms of",
+            titleAccent: "Service",
+            lastUpdated: "Last updated: September 25, 2026",
             sections: [
                 {
-                    title: "01. Professional Scope",
-                    content: "Carrillo Dynamics LLC provides technical execution via Fractional Operations Engineering. Our deliverables are functional logic and architectural diagnostics, not passive consulting."
+                    title: "01. Agreement",
+                    content: "By using carrillodynamics.com, demo.carrillodynamics.com, related trade demo subdomains, or booking a call with us, you agree to these Terms. If you do not agree, do not use the sites or services."
                 },
                 {
-                    title: "02. Intellectual Property",
-                    content: "Upon full settlement, the client owns 100% of the perpetual ownership of the specific automation sequences and middleware logic deployed within their infrastructure."
+                    title: "02. What we do",
+                    content: "Carrillo Dynamics LLC designs and builds websites and automation systems for service businesses. Project scope, fees, and timelines are set in a separate proposal or agreement for each engagement. A free strategy call does not create a paid project until both parties agree in writing (including email)."
                 },
                 {
-                    title: "03. Engineering Liability",
-                    content: "Services are provided on an 'As Engineered' performance basis. Liability is limited to the value of the current active engineering sprint. Governed by the laws of the State of Illinois."
+                    title: "03. Demo and portfolio sites",
+                    content: "Trade demo sites (including but not limited to HVAC, plumbing, electrical, waste, roofing, towing, and landscaping subdomains under carrillodynamics.com) are samples of engines we can build. They are not websites of independent operating companies unless we expressly say otherwise. Fictional business names, reviews, addresses, and 555 phone numbers are for demonstration only. Do not rely on demo content as real service offerings, licensing, or insurance claims."
                 },
                 {
-                    title: "04. Termination Logic",
-                    content: "Either party may pause engineering cycles with 14 days notice. Any logic completed remains the property of the client post-settlement."
+                    title: "04. No professional advice on demos",
+                    content: "Demo forms, chat widgets, and booking UIs may simulate shop workflows. Submitting a demo form does not create a service contract with a trade company and does not guarantee a response from a field technician."
+                },
+                {
+                    title: "05. Intellectual property",
+                    content: "Unless a signed project agreement says otherwise: (a) Carrillo Dynamics owns the demos, branding, and pre-existing tools we bring to a project; (b) after full payment for custom work delivered to you, you own the custom deliverables described in that agreement; (c) you may not copy, resell, or republish our demos or marketing site content without written permission."
+                },
+                {
+                    title: "06. Acceptable use",
+                    content: "You may not misuse the sites (including attempts to break security, scrape at abusive scale, spam forms, or use the sites for unlawful purposes)."
+                },
+                {
+                    title: "07. Disclaimers",
+                    content: "Sites and demos are provided \"as is.\" We do not warrant uninterrupted or error-free operation. Results from automation projects vary by business and are not guaranteed."
+                },
+                {
+                    title: "08. Limitation of liability",
+                    content: "To the maximum extent allowed by Illinois law, Carrillo Dynamics LLC is not liable for indirect, incidental, special, consequential, or lost-profit damages arising from use of the sites or services. Our total liability for any claim related to the sites is limited to one hundred U.S. dollars (USD $100), and for paid project work is limited to the fees you paid us for that project in the three months before the claim."
+                },
+                {
+                    title: "09. Indemnity",
+                    content: "You agree to indemnify and hold Carrillo Dynamics LLC harmless from claims arising out of your misuse of the sites or your breach of these Terms."
+                },
+                {
+                    title: "10. Governing law",
+                    content: "These Terms are governed by the laws of the State of Illinois, without regard to conflict-of-law rules. Disputes will be resolved in state or federal courts located in Illinois, unless a project agreement specifies otherwise."
+                },
+                {
+                    title: "11. Changes and contact",
+                    content: "We may update these Terms; the \"Last updated\" date will change when we do. Questions: engineering@carrillodynamics.com."
                 }
             ]
         },
@@ -452,50 +508,106 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
             submitting: "Iniciando_"
         },
         privacyPolicy: {
-            title: "Estándares de Gobernanza de Privacidad",
-            titleMain: "Gobernanza de",
+            title: "Política de Privacidad",
+            titleMain: "Política de",
             titleAccent: "Privacidad",
-            lastUpdated: "Revisión: 04.08.2026",
+            lastUpdated: "Última actualización: 25 de septiembre de 2026",
             sections: [
                 {
-                    title: "01. Recopilación y Gobernanza",
-                    content: "Recopilamos los detalles operativos necesarios para diseñar y construir sus sistemas: información de negocio que comparte en formularios o llamadas, notas de proyecto y requisitos técnicos. Tratamos esos datos con cuidado y solo según lo necesite el trabajo."
+                    title: "01. Quiénes somos",
+                    content: "Carrillo Dynamics LLC (\"Carrillo Dynamics,\" \"nosotros\") construye sitios web y sistemas de automatización para negocios de servicios locales. Estamos en Chicago, Illinois. Contacto: engineering@carrillodynamics.com."
                 },
                 {
-                    title: "02. Protocolos de Uso Interno",
-                    content: "Sus datos se usan para diseñar y entregar su proyecto. No vendemos datos de clientes. El acceso está limitado al trabajo activo de su cuenta."
+                    title: "02. Qué recopilamos",
+                    content: "Recopilamos la información que usted elige compartir: nombre, correo, datos de empresa y notas que envía por email o al agendar en nuestro calendario (Calendly). Si navega nuestros sitios, nuestros proveedores de hosting pueden recopilar datos técnicos estándar (IP, navegador, páginas vistas) por seguridad y rendimiento."
                 },
                 {
-                    title: "03. Estándares de Comunicación",
-                    content: "Seguimos estrictamente las directrices de la TCPA. La información móvil, incluidos los datos de consentimiento de SMS, nunca se comparte con terceros o afiliados con fines de marketing."
+                    title: "03. Cómo usamos la información",
+                    content: "Usamos su información para responder consultas, agendar llamadas de estrategia, entregar proyectos, mejorar los sitios y cumplir obligaciones legales. No vendemos su información personal."
                 },
                 {
-                    title: "04. Data Sovereignty",
-                    content: "Los clientes conservan el derecho de auditar la lógica desarrollada en su entorno. Carrillo Dynamics LLC opera como un procesador técnico, asegurando que sus secretos de propiedad intelectual sigan siendo suyos."
+                    title: "04. Compartir datos",
+                    content: "Usamos procesadores de confianza para operar el negocio (por ejemplo hosting, correo y Calendly). Solo procesan datos según sea necesario. Podemos divulgar información si la ley lo exige."
+                },
+                {
+                    title: "05. Sitios demo y de portafolio",
+                    content: "Los sitios de oficios en subdominios como hvac.carrillodynamics.com, plumbing.carrillodynamics.com y demos relacionados son motores de demostración y portafolio hechos por Carrillo Dynamics. No son negocios de clientes en operación. Los teléfonos en esos demos son ficticios (por ejemplo números 555). Los enlaces de reserva y engineering@carrillodynamics.com contactan a Carrillo Dynamics, no a una empresa de oficio independiente."
+                },
+                {
+                    title: "06. Cookies y analítica",
+                    content: "Los sitios pueden usar cookies esenciales. Si usamos herramientas de analítica, sirven para entender tráfico agregado. Puede controlar cookies en su navegador."
+                },
+                {
+                    title: "07. Conservación y seguridad",
+                    content: "Conservamos registros de proyectos y consultas el tiempo necesario para la relación y requisitos legales; luego los eliminamos o anonimizamos. Tomamos medidas razonables de seguridad, pero ningún sistema en línea es perfecto."
+                },
+                {
+                    title: "08. Sus opciones",
+                    content: "Escriba a engineering@carrillodynamics.com para solicitar acceso, corrección o eliminación de datos personales, según la ley aplicable. Si agendó por Calendly, también puede gestionar esa reserva allí."
+                },
+                {
+                    title: "09. Menores",
+                    content: "Nuestros servicios están dirigidos a negocios y adultos. No recopilamos a sabiendas información de menores de 13 años."
+                },
+                {
+                    title: "10. Cambios",
+                    content: "Podemos actualizar esta política. La fecha de \"Última actualización\" cambiará cuando lo hagamos. Seguir usando los sitios implica aceptar la política revisada."
+                },
+                {
+                    title: "11. Contacto",
+                    content: "Preguntas de privacidad: engineering@carrillodynamics.com. Carrillo Dynamics LLC, Chicago, IL, Estados Unidos."
                 }
             ]
         },
         termsOfService: {
-            title: "Términos de Compromiso de Ingeniería",
-            titleMain: "Compromiso de",
-            titleAccent: "Ingeniería",
-            lastUpdated: "Revisión: 04.08.2026",
+            title: "Términos de Servicio",
+            titleMain: "Términos de",
+            titleAccent: "Servicio",
+            lastUpdated: "Última actualización: 25 de septiembre de 2026",
             sections: [
                 {
-                    title: "01. Alcance Profesional",
-                    content: "Carrillo Dynamics LLC proporciona ejecución técnica a través de Ingeniería de Operaciones Fraccional. Nuestros entregables son lógica funcional y diagnósticos arquitectónicos, no consultoría pasiva."
+                    title: "01. Acuerdo",
+                    content: "Al usar carrillodynamics.com, demo.carrillodynamics.com, subdominios demo de oficios relacionados, o al agendar una llamada, usted acepta estos Términos. Si no está de acuerdo, no use los sitios ni los servicios."
                 },
                 {
-                    title: "02. Propiedad Intelectual",
-                    content: "Tras la liquidación total, el cliente es propietario del 100% de los derechos perpetuos sobre las secuencias de automatización específicas y la lógica de middleware desplegada en su infraestructura."
+                    title: "02. Qué hacemos",
+                    content: "Carrillo Dynamics LLC diseña y construye sitios web y sistemas de automatización para negocios de servicios. El alcance, honorarios y plazos se definen en una propuesta o acuerdo por proyecto. Una llamada de estrategia gratuita no crea un proyecto de pago hasta que ambas partes acuerden por escrito (incluido el correo)."
                 },
                 {
-                    title: "03. Responsabilidad de Ingeniería",
-                    content: "Los servicios se prestan bajo la premisa de 'Rendimiento Diseñado'. La responsabilidad se limita al valor del sprint de ingeniería activo actual. Se rige por las leyes del Estado de Illinois."
+                    title: "03. Sitios demo y de portafolio",
+                    content: "Los sitios demo de oficios (incluyendo HVAC, plomería, eléctrico, residuos, techado, grúas y paisajismo bajo carrillodynamics.com) son ejemplos de motores que podemos construir. No son sitios de empresas independientes en operación, salvo que indiquemos lo contrario. Nombres, reseñas, direcciones y teléfonos 555 son solo para demostración. No confíe en ese contenido como oferta real de servicio, licencias o seguros."
                 },
                 {
-                    title: "04. Lógica de Terminación",
-                    content: "Cualquiera de las partes puede pausar los ciclos de ingeniería con un aviso previo de 14 días. Toda lógica completada seguirá siendo propiedad del cliente tras el pago correspondiente."
+                    title: "04. Sin servicio real en demos",
+                    content: "Formularios, chats y reservas en demos pueden simular flujos de un taller. Enviar un formulario demo no crea un contrato con una empresa de oficio ni garantiza respuesta de un técnico de campo."
+                },
+                {
+                    title: "05. Propiedad intelectual",
+                    content: "Salvo que un acuerdo de proyecto firmado diga lo contrario: (a) Carrillo Dynamics es dueño de los demos, marca y herramientas previas; (b) tras el pago completo del trabajo a medida entregado, usted es dueño de los entregables descritos en ese acuerdo; (c) no puede copiar, revender ni republicar nuestros demos o contenido de marketing sin permiso escrito."
+                },
+                {
+                    title: "06. Uso aceptable",
+                    content: "No puede hacer mal uso de los sitios (seguridad, scraping abusivo, spam en formularios o fines ilegales)."
+                },
+                {
+                    title: "07. Descargos",
+                    content: "Los sitios y demos se ofrecen \"tal cual\". No garantizamos operación ininterrumpida ni sin errores. Los resultados de proyectos de automatización varían y no están garantizados."
+                },
+                {
+                    title: "08. Límite de responsabilidad",
+                    content: "En la máxima medida permitida por la ley de Illinois, Carrillo Dynamics LLC no responde por daños indirectos, incidentales, especiales, consecuentes o lucro cesante por el uso de los sitios o servicios. La responsabilidad total por reclamos relacionados con los sitios se limita a cien dólares estadounidenses (USD $100), y por trabajo de proyecto pagado a los honorarios que nos pagó por ese proyecto en los tres meses previos al reclamo."
+                },
+                {
+                    title: "09. Indemnización",
+                    content: "Usted acepta indemnizar y mantener indemne a Carrillo Dynamics LLC frente a reclamos por mal uso de los sitios o incumplimiento de estos Términos."
+                },
+                {
+                    title: "10. Ley aplicable",
+                    content: "Estos Términos se rigen por las leyes del Estado de Illinois. Las disputas se resolverán en tribunales estatales o federales de Illinois, salvo que un acuerdo de proyecto diga otra cosa."
+                },
+                {
+                    title: "11. Cambios y contacto",
+                    content: "Podemos actualizar estos Términos; la fecha de \"Última actualización\" cambiará. Preguntas: engineering@carrillodynamics.com."
                 }
             ]
         },

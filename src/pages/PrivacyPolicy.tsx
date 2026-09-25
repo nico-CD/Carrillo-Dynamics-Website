@@ -4,37 +4,35 @@ import { useTranslation } from "@/components/LanguageProvider";
 import SEOManager from "@/components/SEOManager";
 
 const PrivacyPolicy = () => {
-  const { lang, t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-primary/30 font-sans flex flex-col transition-colors duration-300">
-      <SEOManager 
-        title={lang === 'en' ? 'Privacy Policy' : 'Política de Privacidad'}
-        description={t.privacyPolicy.titleMain}
+      <SEOManager
+        title={t.privacyPolicy.title}
+        description={t.privacyPolicy.titleMain + " " + t.privacyPolicy.titleAccent}
       />
       <Navbar />
 
       <main className="flex-1 px-6 py-40 mx-auto max-w-4xl w-full">
         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tight mb-12 text-foreground">
-          {t.privacyPolicy.titleMain} <span className="text-[#10b981] italic">{t.privacyPolicy.titleAccent}</span>
+          {t.privacyPolicy.titleMain}{" "}
+          <span className="text-[#10b981] italic">{t.privacyPolicy.titleAccent}</span>
         </h1>
-        
+
         <div className="space-y-16 text-muted-foreground font-medium leading-relaxed">
-          <p className="text-[10px] font-black uppercase tracking-widest opacity-60">{t.privacyPolicy.lastUpdated}</p>
-          
+          <p className="text-[10px] font-black uppercase tracking-widest opacity-60">
+            {t.privacyPolicy.lastUpdated}
+          </p>
+
           {t.privacyPolicy.sections.map((section, idx) => (
             <div key={idx} className="space-y-6">
-              <h2 className="text-2xl font-black uppercase text-foreground tracking-tight">{section.title}</h2>
+              <h2 className="text-2xl font-black uppercase text-foreground tracking-tight">
+                {section.title}
+              </h2>
               <p className="text-lg md:text-xl">{section.content}</p>
             </div>
           ))}
-
-          <div className="p-8 border-2 border-border bg-muted/30 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-1 h-full bg-[#10b981]" />
-            <p className="text-foreground font-bold italic text-lg">
-                Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties under any circumstances.
-            </p>
-          </div>
         </div>
       </main>
 
