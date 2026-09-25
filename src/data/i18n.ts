@@ -136,8 +136,8 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         hero: {
             title: "Stop losing clients to",
-            subtitle: "We engineer the websites and systems that help service businesses scale. Get more jobs. Automate the busywork. Cut the headaches.",
-            cta: "Get Started",
+            subtitle: "We build the engines that help service businesses scale. Get more jobs. Automate the busywork. Cut the headaches.",
+            cta: "Test our engines",
             audit: "Book a Call",
             badge1: "TRUSTED LOCALLY",
             badge2: "FAST & RELIABLE",
@@ -188,11 +188,11 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Collection & Governance",
-                    content: "We collect specific operational data required to engineer your Automation Diagnostic. This includes business metadata, intake volume statistics, and technical bottleneck logs. We adhere to industrial-grade standards for data integrity."
+                    content: "We collect operational details needed to design and build your systems — business info you share on forms or calls, project notes, and technical requirements. We handle that data carefully and only as needed for the engagement."
                 },
                 {
                     title: "02. Internal Usage Protocols",
-                    content: "Your data is used exclusively for technical auditing and systems architecture. We do not sell the telemetry of our clients. Access is restricted to active engineering cycles."
+                    content: "Your data is used to architect and deliver your project. We do not sell client data. Access is limited to active work on your account."
                 },
                 {
                     title: "03. Communication Standards",
@@ -230,28 +230,32 @@ export const i18nData: Record<Language, I18nContent> = {
         },
         faqs: [
             {
-                q: "What is the real cost of \"Lead Leakage\"?",
-                a: "For high-volume firms, even a 5% leak in the intake funnel can cost an estimated $50k - $100k in annual revenue. Our Automation Diagnostic identifies these \"silent kills\", where leads disappear between your CRM and the field technician."
+                q: "What is the real cost of missed leads?",
+                a: "For busy shops, even a small leak — after-hours calls, slow follow-up, jobs that never get booked — can cost tens of thousands a year. We build engines that catch those jobs before they go to a competitor."
             },
             {
                 q: "How does the \"60-Second Rule\" impact ROI?",
-                a: "A lead contacted in <60 seconds is 8 times more likely to book. We engineer automated response logic that bypasses human bottlenecks, ensuring you are the first company the customer hears from, 24/7."
+                a: "A lead contacted in under 60 seconds is far more likely to book. We set up automated response so your shop is often the first call back — day or night — without someone living on the phone."
             },
             {
-                q: "Can we double our service volume without hiring more dispatchers?",
-                a: "Yes. By automating manual data entry and replacing probabilistic dispatching with deterministic logic, your current office staff can manage more volume with significantly less stress."
+                q: "Can we take more jobs without hiring more office staff?",
+                a: "Yes. When intake, dispatch, and follow-ups stop living in sticky notes and text threads, your current crew can handle more volume with less chaos."
             },
             {
-                q: "Does your logic replace our existing CRM software?",
-                a: "No. We act as a force multiplier for your CRM. We bridge the gaps where generic software fails, building custom middleware that makes your current tools actually work the way your business needs them to."
+                q: "Do you replace our CRM or existing tools?",
+                a: "Usually no. We connect and automate around what you already use so the tools finally match how your shop actually runs — not just a pretty website bolted on top."
             },
             {
-                q: "How soon will we see measurable results?",
-                a: "Initial operational wins are usually live within 14 days. We target high-friction bottlenecks first, like the intake flow and automated follow-ups, to drive immediate, measurable ROI."
+                q: "How soon will we see results?",
+                a: "First wins often show within a couple of weeks. We start with the highest-friction spots — missed calls, slow intake, follow-ups that die — so you feel the difference fast."
             },
             {
-                q: "What is a \"Fractional Operations Engineer\"?",
-                a: "Unlike a \"consultant\" who just gives advice, we are engineers who build. We act like your outsourced CTO/COO, managing your technical infrastructure so you can focus on scaling the business."
+                q: "What does Carrillo Dynamics actually do?",
+                a: "We're ops and automation engineers for local service businesses. We don't just advise — we build and ship the systems. Book a 15-minute strategy call and we'll map what an engine for your trade would look like."
+            },
+            {
+                q: "Do you work in English and Spanish?",
+                a: "Yes. Sites, flows, and conversations can run in English, Spanish, or both — a real advantage for many local trade markets."
             }
         ],
         articles: [
@@ -294,14 +298,14 @@ Manual errors are the hidden tax on your ROI. Our systems ensure total data inte
             {
                 id: "stop-losing-leads",
                 title: "Stop Losing Leads",
-                description: "Fix the invisible revenue loss in your intake funnel.",
+                description: "Fix the invisible revenue loss between the first call and a booked job.",
                 content: `### Identifying the Void
 
-Is your marketing budget leaking through cracks in your process? Most high-volume firms have blind spots where leads quietly die before they ever reach a technician. We deep-dive into the technical path of every single lead that enters your ecosystem to fix these leaks.
+Is your marketing budget leaking through cracks in your process? Most busy shops have blind spots where leads quietly die before they ever reach a truck. On a strategy call we walk the path of a lead through your shop and find where jobs fall off.
 
-### System Analysis
+### What We Build
 
-We analyze your intake workflows to identify latency and operational friction points. We analyze form friction to see why users drop off, measure the actual delay in notifications, and identify which follow-ups are failing to convert. This data enables us to implement automated processes designed to capture and route leads before they go cold.`,
+We tighten intake, speed up response, and make sure follow-ups actually happen — so leads get captured and routed before they go cold. Not just a pretty website: an engine that helps you keep the jobs you already paid to attract.`,
                 date: "2026-04-07",
                 readTime: "6 min"
             },
@@ -355,7 +359,7 @@ While earning my Engineering degree at Illinois Tech, I learned how to build rel
 
 ### Building What Works
 
-That's why I started Carrillo Dynamics. I'm not here to build "pretty websites" or pitch abstract tech buzzwords. I'm here to build functional, digital tools that actually help trade businesses operate more efficiently. We build the infrastructure so you can handle more volume without the headaches.
+That's why I started Carrillo Dynamics. I'm not here to sell you just a "pretty website" or pitch abstract tech buzzwords. I'm here to build engines — websites and systems — that help trade businesses run cleaner and take more work without the headaches.
 
 ### The Bottom Line
 
@@ -393,8 +397,8 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
         success: {
             title: "Solicitud ",
             titleItalic: "Recibida.",
-            description: "Estoy revisando personalmente su flujo de trabajo ahora mismo. Esté atento a un correo mío. Le enviaré un diagnóstico en video personalizado abordando su obstáculo operativo específico en menos de 24 horas.",
-            founder: "- Nico Carrillo (Fundador de Carrillo Dynamics)",
+            description: "Estamos revisando su solicitud. Esté atento a un correo — le respondemos pronto.",
+            founder: "- Nico Carrillo (Carrillo Dynamics)",
             cta: "Volver al Inicio"
         },
         pageTitles: {
@@ -403,8 +407,8 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
         },
         hero: {
             title: "Su negocio está perdiendo clientes por",
-            subtitle: "Diseñamos sitios web y sistemas que ayudan a las empresas de servicios a escalar. Consiga más trabajos. Automatice el trabajo manual. Reduzca los dolores de cabeza.",
-            cta: "Empieza Ahora",
+            subtitle: "Construimos los motores que ayudan a las empresas de servicios a escalar. Consiga más trabajos. Automatice el trabajo manual. Reduzca los dolores de cabeza.",
+            cta: "Prueba nuestros motores",
             audit: "Sesión de Estrategia",
             badge1: "INGENIERÍA BASADA EN CHICAGO",
             badge2: "SIN RETRASOS DE CARGA",
@@ -455,11 +459,11 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
             sections: [
                 {
                     title: "01. Recopilación y Gobernanza",
-                    content: "Recopilamos datos operativos específicos necesarios para realizar su Diagnóstico de Automatización. Esto incluye metadatos comerciales, estadísticas de volumen de admisión y registros de cuellos de botella técnicos. Nos adherimos a estándares de grado industrial para la integridad de los datos."
+                    content: "Recopilamos los detalles operativos necesarios para diseñar y construir sus sistemas: información de negocio que comparte en formularios o llamadas, notas de proyecto y requisitos técnicos. Tratamos esos datos con cuidado y solo según lo necesite el trabajo."
                 },
                 {
                     title: "02. Protocolos de Uso Interno",
-                    content: "Sus datos se utilizan exclusivamente para auditorías técnicas y arquitectura de sistemas. No vendemos la telemetría de nuestros clientes. El acceso está restringido a los ciclos de ingeniería activos."
+                    content: "Sus datos se usan para diseñar y entregar su proyecto. No vendemos datos de clientes. El acceso está limitado al trabajo activo de su cuenta."
                 },
                 {
                     title: "03. Estándares de Comunicación",
@@ -497,28 +501,32 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
         },
         faqs: [
             {
-                q: "¿Cuál es el costo real de la \"Fuga de Leads\"?",
-                a: "Para empresas de alto volumen, incluso una fuga del 5% en el embudo de admisión puede costar un estimado de $50k - $100k en ingresos anuales. Nuestro Diagnóstico de Automatización identifica estas \"muertes silenciosas\", donde los leads desaparecen entre su CRM y el técnico de campo."
+                q: "¿Cuál es el costo real de perder leads?",
+                a: "Para talleres ocupados, incluso una fuga pequeña — llamadas fuera de horario, seguimiento lento, trabajos que nunca se agendan — puede costar decenas de miles al año. Construimos motores que atrapan esos trabajos antes de que se vayan con la competencia."
             },
             {
                 q: "¿Cómo impacta la \"Regla de los 60 Segundos\" en el ROI?",
-                a: "Un lead contactado en <60 segundos tiene 8 veces más probabilidades de reservar. Diseñamos lógica de respuesta automatizada que evita los cuellos de botella humanos, asegurando que sea la primera empresa que el cliente escuche, 24/7."
+                a: "Un lead contactado en menos de 60 segundos tiene muchas más probabilidades de agendar. Configuramos respuestas automáticas para que su taller suela ser el primero en devolver la llamada — de día o de noche — sin que alguien viva pegado al teléfono."
             },
             {
-                q: "¿Podemos duplicar nuestro volumen de servicios sin contratar más despachadores?",
-                a: "Sí. Al automatizar la entrada manual de datos y reemplazar el despacho probabilístico con lógica determinista, su personal de oficina actual puede gestionar más volumen con significativamente menos estrés."
+                q: "¿Podemos tomar más trabajos sin contratar más personal de oficina?",
+                a: "Sí. Cuando el intake, el despacho y el seguimiento dejan de vivir en notas adhesivas y mensajes de texto, su equipo actual puede manejar más volumen con menos caos."
             },
             {
-                q: "¿Su lógica reemplaza nuestro software CRM existente?",
-                a: "No. Actuamos como un multiplicador de fuerza para su CRM. Cerramos las brechas donde el software genérico falla, construyendo middleware personalizado que hace que sus herramientas actuales funcionen como su negocio realmente lo requiere."
+                q: "¿Reemplazan nuestro CRM o herramientas actuales?",
+                a: "Por lo general no. Conectamos y automatizamos alrededor de lo que ya usa para que las herramientas coincidan con cómo opera su taller — no solo un sitio bonito encima."
             },
             {
-                q: "¿Qué tan pronto podemos ver resultados medibles?",
-                a: "Las primeras victorias operativas suelen estar activas en 14 días. Nos enfocamos primero en los cuellos de botella de alto impacto, como el flujo de admisión y los seguimientos automatizados, para impulsar un ROI medible."
+                q: "¿Qué tan pronto veremos resultados?",
+                a: "Las primeras victorias suelen verse en un par de semanas. Empezamos por los puntos de mayor fricción — llamadas perdidas, intake lento, seguimientos que mueren — para que sienta la diferencia rápido."
             },
             {
-                q: "¿Qué es un \"Ingeniero de Operaciones Fraccional\"?",
-                a: "A diferencia de un \"consultor\" que solo da consejos, somos ingenieros que construyen. Actuamos como su CTO/COO externo, gestionando su infraestructura técnica para que usted pueda enfocarse en escalar el negocio."
+                q: "¿Qué hace realmente Carrillo Dynamics?",
+                a: "Somos ingenieros de operaciones y automatización para negocios de servicios locales. No solo aconsejamos — construimos y entregamos los sistemas. Reserve una llamada de estrategia de 15 minutos y mapeamos cómo se vería un motor para su oficio."
+            },
+            {
+                q: "¿Trabajan en inglés y español?",
+                a: "Sí. Sitios, flujos y conversaciones pueden ir en inglés, español o ambos — una ventaja real en muchos mercados de oficios locales."
             }
         ],
         articles: [
@@ -561,14 +569,14 @@ Los errores manuales son el impuesto oculto en su ROI. Nuestros sistemas asegura
             {
                 id: "stop-losing-leads",
                 title: "Deje de Perder Clientes",
-                description: "Detenga la pérdida invisible de ingresos en su embudo de ventas.",
+                description: "Detenga la pérdida invisible de ingresos entre la primera llamada y el trabajo agendado.",
                 content: `### Identificando el Vacío
 
-¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de las empresas tienen puntos ciegos donde los prospectos mueren antes de llegar a un técnico. Hacemos una inmersión profunda en la ruta de cada lead para tapar estas fugas.
+¿Se está fugando su presupuesto de marketing a través de grietas en su proceso? La mayoría de los talleres tienen puntos ciegos donde los prospectos mueren antes de llegar a un camión. En una llamada de estrategia recorremos el camino de un lead por su taller y encontramos dónde se caen los trabajos.
 
-### Análisis de Sistemas
+### Lo Que Construimos
 
-Analizamos sus flujos de trabajo de admisión para identificar puntos de latencia y fricción operativa. Analizamos por qué los usuarios abandonan, medimos el retraso real en las notificaciones e identificamos qué seguimientos no logran convertir. Estos datos nos permiten implementar procesos automatizados diseñados para capturar y enrutar prospectos antes de que se enfríen.`,
+Ajustamos el intake, aceleramos la respuesta y hacemos que los seguimientos realmente ocurran — para capturar y enrutar leads antes de que se enfríen. No solo un sitio bonito: un motor que le ayuda a conservar los trabajos que ya pagó por atraer.`,
                 date: "2026-04-07",
                 readTime: "6 min"
             },
@@ -622,7 +630,7 @@ Mientras obtenía mi título de Ingeniería en Illinois Tech, aprendí a constru
 
 ### Construyendo lo que Funciona
 
-Por eso comencé Carrillo Dynamics. No estoy aquí para construir "sitios web bonitos" o vender palabras de moda tecnológicas abstractas. Estoy aquí para construir herramientas digitales funcionales que realmente ayuden a las empresas a operar de manera más eficiente. Construimos la infraestructura para que puedas manejar más volumen sin dolores de cabeza.
+Por eso comencé Carrillo Dynamics. No estoy aquí para venderle solo un "sitio bonito" ni palabras de moda. Estoy aquí para construir motores — sitios y sistemas — que ayuden a los oficios a operar más limpio y tomar más trabajo sin los dolores de cabeza.
 
 ### En Conclusión
 

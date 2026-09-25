@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "./components/theme-provider";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "./components/LanguageProvider";
@@ -24,7 +24,6 @@ const ArticlesPage = React.lazy(() => import("./pages/Articles"));
 const ArticleDetail = React.lazy(() => import("./pages/ArticleDetail"));
 const Book = React.lazy(() => import("./pages/Book"));
 const Start = React.lazy(() => import("./pages/Start"));
-const Diagnostic = React.lazy(() => import("./pages/Diagnostic"));
 
 const queryClient = new QueryClient();
 
@@ -67,7 +66,7 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/book" element={<Book />} />
                   <Route path="/start" element={<Start />} />
-                  <Route path="/diagnostic" element={<Diagnostic />} />
+                  <Route path="/diagnostic" element={<Navigate to="/book" replace />} />
 
                   <Route path="/privacy" element={<PrivacyPolicy />} />
                   <Route path="/terms" element={<TermsConditions />} />

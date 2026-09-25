@@ -29,8 +29,8 @@ const FAQPage = () => {
             <SEOManager 
                 title={lang === 'en' ? 'Support & Intelligence FAQ' : 'FAQ de Soporte e Inteligencia'}
                 description={lang === 'en' 
-                    ? 'Everything you need to know about our industrial-grade automation diagnostics and systems engineering.' 
-                    : 'Todo lo que necesita saber sobre nuestros diagnósticos de automatización de grado industrial e ingeniería de sistemas.'}
+                    ? 'Everything you need to know about engines, automation, and working with Carrillo Dynamics.' 
+                    : 'Todo lo que necesita saber sobre motores, automatización y trabajar con Carrillo Dynamics.'}
             />
             <Navbar />
             

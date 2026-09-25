@@ -82,18 +82,18 @@ const StructuredData = () => {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "What is a Carrillo Dynamics Automation Diagnostic?",
+                "name": "What does Carrillo Dynamics do?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The Automation Diagnostic is a scientific technical audit that identifies operational leaks and engineers deterministic digital systems to replace manual bottlenecks."
+                    "text": "Carrillo Dynamics builds websites and automation engines for local service businesses — so shops get more jobs, automate busywork, and cut headaches. Book a 15-minute strategy call to map an engine for your trade."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How does Carrillo Dynamics optimize HVAC and service workflows?",
+                "name": "How does Carrillo Dynamics help HVAC and other trade shops?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "By replacing human-dependent dispatching with deterministic routing logic and real-time data sync, allowing firms to scale volume without adding office headcount."
+                    "text": "By automating intake, dispatch, and follow-ups so crews can take more volume without adding office headcount — not just a pretty website."
                 }
             }
         ]

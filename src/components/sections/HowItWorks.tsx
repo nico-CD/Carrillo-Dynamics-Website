@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ClipboardCheck, Handshake, LineChart } from "lucide-react";
 import { useTranslation } from "@/components/LanguageProvider";
@@ -7,15 +8,15 @@ const HowItWorks = () => {
 
     const steps = [
         {
-            badge: lang === 'en' ? "[ STEP 01 ]" : "[ PASO 01 ]",
+            badge: lang === 'en' ? "Step 1" : "Paso 1",
             icon: ClipboardCheck,
             title: lang === 'en' ? "Book a Session Below" : "Reserve una Sesión",
             description: lang === 'en'
-                ? "Test-drive the live engineering sandbox below, grab 15 minutes on our calendar to map out your digital engine."
-                : "Pruebe el sandbox de ingeniería en vivo a continuación, reserva 15 minutos en nuestro calendario para trazar su motor digital."
+                ? "Test-drive our engine below, grab 15 minutes on our calendar to map out your own digital engine."
+                : "Pruebe nuestro motor abajo, reserve 15 minutos en el calendario para trazar su propio motor digital."
         },
         {
-            badge: lang === 'en' ? "[ STEP 02 ]" : "[ PASO 02 ]",
+            badge: lang === 'en' ? "Step 2" : "Paso 2",
             icon: LineChart,
             title: lang === 'en' ? "Get a Custom Plan" : "Obtenga un Plan",
             description: lang === 'en'
@@ -23,7 +24,7 @@ const HowItWorks = () => {
                 : "Le proporcionamos una estrategia directa para obtener más clientes y automatizar las tareas repetitivas."
         },
         {
-            badge: lang === 'en' ? "[ STEP 03 ]" : "[ PASO 03 ]",
+            badge: lang === 'en' ? "Step 3" : "Paso 3",
             icon: Handshake,
             title: lang === 'en' ? "Grow Your Business" : "Haga Crecer su Negocio",
             description: lang === 'en'
@@ -62,7 +63,7 @@ const HowItWorks = () => {
                                     transition={{ delay: index * 0.2 }}
                                     className="group flex flex-col bg-[#18181B] border border-[#27272A] rounded-2xl p-8 md:p-10 text-center transition-all duration-300 hover:border-[#10b981]/50 hover:shadow-[0_20px_50px_-15px_rgba(16,185,129,0.35)]"
                                 >
-                                    <span className="self-center mb-6 font-mono text-[10px] md:text-xs font-black uppercase tracking-widest text-[#10b981]">
+                                    <span className="self-center mb-6 text-base md:text-lg font-black uppercase tracking-wide text-[#10b981]">
                                         {step.badge}
                                     </span>
                                     <div className="mx-auto mb-6 flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-xl border border-[#27272A] bg-[#18181B] text-[#10b981] transition-colors duration-300 group-hover:border-[#10b981]/40">
@@ -88,6 +89,22 @@ const HowItWorks = () => {
                             </div>
                         );
                     })}
+                </div>
+
+                <div className="mt-16 md:mt-20 text-center">
+                    <p className="mb-4 text-base md:text-lg font-medium text-muted-foreground">
+                        {lang === 'en'
+                            ? "Ready for a custom build?"
+                            : "¿Listo para un build a medida?"}
+                    </p>
+                    <Link
+                        to="/book"
+                        className="inline-flex items-center gap-2 rounded-xl bg-[#10b981] px-8 py-4 text-sm md:text-base font-black uppercase tracking-wider text-zinc-950 transition-colors hover:bg-[#0ea672]"
+                    >
+                        {lang === 'en'
+                            ? "Book a strategy call →"
+                            : "Agendar sesión de estrategia →"}
+                    </Link>
                 </div>
             </div>
         </section>

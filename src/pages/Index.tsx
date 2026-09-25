@@ -12,16 +12,15 @@ const VideoGate = React.lazy(() => import("@/components/sections/VideoGate"));
 const Index = () => {
     const location = useLocation();
 
-    // Funnel Logic: Hash Check for redirect continuity
     useEffect(() => {
-        if (location.hash === '#engineering-breakdown' || location.hash === '#intake') {
-            const timer = setTimeout(() => scrollToForm(), 500);
+        if (location.hash === '#engines' || location.hash === '#engineering-breakdown') {
+            const timer = setTimeout(() => scrollToEngines(), 500);
             return () => clearTimeout(timer);
         }
     }, [location.hash]);
 
-    const scrollToForm = () => {
-        const el = document.getElementById('engineering-breakdown');
+    const scrollToEngines = () => {
+        const el = document.getElementById('engines');
         if (el) {
             el.scrollIntoView({ behavior: "smooth" });
         }
@@ -34,7 +33,7 @@ const Index = () => {
 
             {/* SEGMENT 1: HERO */}
             <section className="border-b border-foreground/5">
-                <Hero onContactClick={scrollToForm} />
+                <Hero onContactClick={scrollToEngines} />
             </section>
 
             {/* SEGMENT 2 & 3: BELOW THE FOLD */}

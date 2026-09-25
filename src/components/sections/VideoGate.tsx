@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/components/LanguageProvider";
@@ -19,12 +18,10 @@ const VideoGate = () => {
       ? {
           titleLead: "Test-drive our",
           titleAccent: "engines.",
-          body: "Open the CD Trade Automation Suite to test-drive seven live trade demos.",
+          body: "Open the CD Trade Automation Suite to try seven live trade demos.",
           cta: "Open demo hub",
           badge: "Live Suite",
           previewAlt: "CD Trade Automation Suite preview",
-          bookPrompt: "Ready for a custom build?",
-          bookCta: "Book a strategy call →",
         }
       : {
           titleLead: "Pruebe nuestros",
@@ -33,13 +30,11 @@ const VideoGate = () => {
           cta: "Abrir hub de demos",
           badge: "Suite en vivo",
           previewAlt: "Vista previa de la Suite de Automatización CD",
-          bookPrompt: "¿Listo para un build a medida?",
-          bookCta: "Agendar sesión de estrategia →",
         };
 
   return (
     <section
-      id="engineering-breakdown"
+      id="engines"
       className="relative z-10 overflow-hidden bg-background px-6 py-32 transition-colors duration-300 md:py-40"
     >
       <div
@@ -83,16 +78,6 @@ const VideoGate = () => {
             </span>
           </div>
         </a>
-
-        <div className="mt-8 text-center">
-          <p className="mb-2 text-sm font-medium text-muted-foreground">{copy.bookPrompt}</p>
-          <Link
-            to="/book"
-            className="inline-flex items-center gap-1 text-sm font-black uppercase tracking-wider text-[#10b981] transition-colors hover:text-[#0ea672]"
-          >
-            {copy.bookCta}
-          </Link>
-        </div>
       </motion.div>
     </section>
   );

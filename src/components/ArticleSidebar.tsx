@@ -11,7 +11,7 @@ const ArticleSidebar = () => {
             <div className="space-y-8">
                 <div>
                     <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-6">
-                        {lang === 'en' ? 'Technical Documentation' : 'Documentación Técnica'}
+                        {lang === 'en' ? 'Resources' : 'Recursos'}
                     </h3>
                     <nav className="space-y-1">
                         {t.articles.map((article) => (
@@ -33,7 +33,7 @@ const ArticleSidebar = () => {
 
                 <div className="pt-8 border-t border-border">
                     <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-6">
-                        {lang === 'en' ? 'Core Resources' : 'Recursos Principales'}
+                        {lang === 'en' ? 'Next step' : 'Siguiente paso'}
                     </h3>
                     <nav className="space-y-4">
                         <Link
@@ -42,16 +42,6 @@ const ArticleSidebar = () => {
                         >
                             {lang === 'en' ? 'Book Strategy Session' : 'Sesión de Estrategia'}
                         </Link>
-                        <button
-                            onClick={() => {
-                                const el = document.getElementById('intake');
-                                if (el) el.scrollIntoView({ behavior: 'smooth' });
-                                else window.location.href = "/#intake";
-                            }}
-                            className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors text-left w-full"
-                        >
-                            {lang === 'en' ? 'Get Started' : 'Empieza Ahora'}
-                        </button>
                         <Link to="/faq" className="block px-4 text-xs font-black uppercase tracking-[0.1em] text-muted-foreground hover:text-[#10b981] transition-colors">
                             {t.nav.faq}
                         </Link>

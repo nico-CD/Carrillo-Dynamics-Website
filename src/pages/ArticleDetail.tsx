@@ -8,7 +8,6 @@ import ArticleSidebar from "../components/ArticleSidebar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SEOManager from "../components/SEOManager";
-import ForensicDiagnostic from "../components/ForensicDiagnostic";
 import { Button } from "../components/ui/button";
 
 const insightImages: Record<string, string> = {
@@ -88,10 +87,6 @@ const ArticleDetail = () => {
                 <ArticleSidebar />
 
                 <main className="flex-1 lg:ml-80 overflow-x-hidden relative">
-                    <div className="absolute inset-x-0 top-0 h-screen opacity-[0.03] pointer-events-none overflow-hidden grayscale">
-                        <ForensicDiagnostic />
-                    </div>
-
                     <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-24 relative z-10 space-y-24">
 
                         <motion.div
@@ -219,16 +214,16 @@ const ArticleDetail = () => {
                                     </h2>
                                     <p className="font-bold max-w-2xl text-lg md:text-xl text-zinc-400">
                                         {lang === 'en'
-                                            ? 'Unlock the full engineering breakdown and stop letting leads slip through the cracks.'
-                                            : 'Desbloquee el desglose de ingeniería completo y deje de perder clientes potenciales.'}
+                                            ? 'Book a 15-minute strategy call and we\'ll map an engine for your shop — not just a pretty website.'
+                                            : 'Reserve una llamada de estrategia de 15 minutos y mapearemos un motor para su taller — no solo un sitio bonito.'}
                                     </p>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">
                                     <Button
-                                        onClick={() => navigate('/#intake')}
+                                        onClick={() => navigate('/book')}
                                         className="h-20 px-12 bg-[#10b981] text-black font-black uppercase tracking-[0.2em] rounded-none hover:bg-white transition-all flex items-center group"
                                     >
-                                        {lang === 'en' ? 'Get Started' : 'Empieza Ahora'}
+                                        {lang === 'en' ? 'Book a strategy call' : 'Agendar sesión'}
                                         <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform" />
                                     </Button>
                                 </div>

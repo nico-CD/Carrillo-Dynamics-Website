@@ -41,7 +41,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
                     onClick={onContactClick}
                     className="px-10 py-5 bg-[#10b981] text-zinc-950 font-black text-xl rounded-xl hover:bg-[#0ea672] shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all hover:scale-105 uppercase"
                 >
-                    {lang === 'en' ? "Test-drive live engine ↓" : "Prueba el motor en vivo ↓"}
+                    {lang === 'en' ? "Test our engines" : "Prueba nuestros motores"}
                 </button>
             </motion.div>
         </section>

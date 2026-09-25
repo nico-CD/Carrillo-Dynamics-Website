@@ -143,7 +143,7 @@ const Book = () => {
                                 {lang === 'en' ? "Want to see it in action?" : "¿Quieres verlo en acción?"}
                             </h3>
                             <p className="text-muted-foreground font-medium mt-2">
-                                {lang === 'en' ? "Test drive the live demo website built for local trades." : "Prueba el sitio web de demostración en vivo diseñado para oficios locales."}
+                                {lang === 'en' ? "Test-drive the live trade engines built for local shops." : "Pruebe los motores en vivo diseñados para talleres locales."}
                             </p>
                         </div>
                         <a 

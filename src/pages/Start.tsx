@@ -36,13 +36,14 @@ const Start = () => {
     lang === "en"
       ? {
           title: "Watch the walk-through.",
-          titleAccent: "Then drive it live.",
+          titleAccent: "Then book a call.",
           subtitle:
-            "This video walks the CD Trade Automation Suite — then open the live hub or book time if you want a custom build.",
+            "This video shows the engines we build for local trades — English or Spanish. Then book 15 minutes or drive a live demo yourself.",
           videoBadge: "Walk-through video coming soon",
           previewAlt: "CD Trade Automation Suite preview",
           previewBadge: "Live Suite",
           openHub: "Open full demo hub",
+          bookPrimary: "Book a 15-min strategy call",
           bookTitleLead: "Book Your",
           bookTitleAccent: "Strategy Session",
           bookBody:
@@ -51,19 +52,24 @@ const Start = () => {
         }
       : {
           title: "Vea el recorrido.",
-          titleAccent: "Luego pruébelo en vivo.",
+          titleAccent: "Luego agende.",
           subtitle:
-            "Este video recorre la Suite de Automatización CD — luego abra el hub en vivo o agende si quiere un build a medida.",
+            "Este video muestra los motores que construimos para oficios locales — en inglés o español. Luego reserve 15 minutos o pruebe un demo en vivo.",
           videoBadge: "Video del recorrido próximamente",
           previewAlt: "Vista previa de la Suite de Automatización CD",
           previewBadge: "Suite en vivo",
           openHub: "Abrir hub completo",
+          bookPrimary: "Agendar llamada de 15 min",
           bookTitleLead: "Agende Su",
           bookTitleAccent: "Sesión de Estrategia",
           bookBody:
             "15 minutos para mapear cuellos de botella y bosquejar un motor de automatización para su taller.",
           langToggle: "EN",
         };
+
+  const scrollToBook = () => {
+    document.getElementById("book")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background font-sans text-foreground selection:bg-[#10b981]/10 transition-colors duration-300">
@@ -100,7 +106,6 @@ const Start = () => {
           }}
         />
 
-        {/* Video placeholder + demo hub preview */}
         <section className="relative px-4 pb-6 pt-8 sm:px-6 sm:pt-10">
           <div className="relative z-10 mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">
@@ -120,15 +125,21 @@ const Start = () => {
                   className="absolute inset-0 h-full w-full object-cover object-top opacity-40"
                 />
                 <div className="absolute inset-0 flex items-center justify-center px-4">
-                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2.5 font-mono text-[11px] text-emerald-400 backdrop-blur-md sm:text-sm">
-                    <span className="opacity-60">[</span>
+                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2.5 text-[11px] text-emerald-400 backdrop-blur-md sm:text-sm">
                     <Clapperboard className="h-4 w-4 shrink-0" />
                     <span className="truncate">{copy.videoBadge}</span>
-                    <span className="opacity-60">]</span>
                   </div>
                 </div>
               </div>
             </div>
+
+            <button
+              type="button"
+              onClick={scrollToBook}
+              className="mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-[#10b981] px-5 py-3.5 text-sm font-black uppercase tracking-wider text-zinc-950 transition-colors hover:bg-[#0ea672] sm:w-auto sm:px-8"
+            >
+              {copy.bookPrimary}
+            </button>
 
             <a
               href={hubHome}
@@ -145,14 +156,13 @@ const Start = () => {
                 alt={copy.previewAlt}
                 className="block aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
               />
-              <div className="pointer-events-none absolute inset-0 bg-[#10b981]/0 transition-colors duration-300 group-hover:bg-[#10b981]/5" />
             </a>
 
             <a
               href={hubHome}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[#10b981] px-5 py-3.5 text-sm font-black uppercase tracking-wider text-zinc-950 transition-colors hover:bg-[#0ea672] sm:w-auto sm:px-8"
+              className="mt-5 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl border border-[#10b981]/40 px-5 py-3.5 text-sm font-black uppercase tracking-wider text-[#10b981] transition-colors hover:bg-[#10b981]/10 sm:w-auto sm:px-8"
             >
               {copy.openHub}
               <ExternalLink className="h-4 w-4" />
@@ -160,7 +170,6 @@ const Start = () => {
           </div>
         </section>
 
-        {/* Book + Calendly */}
         <section id="book" className="relative z-10 scroll-mt-20 px-4 pt-20 pb-16 sm:px-6 sm:pt-24 md:pb-24">
           <motion.div className="relative z-10 mx-auto w-full max-w-full md:max-w-4xl" {...revealProps}>
             <div className="mb-8 space-y-3 text-center sm:mb-10">
