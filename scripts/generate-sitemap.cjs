@@ -27,7 +27,7 @@ function generate() {
         const staticPages = [
             { path: '', freq: 'weekly', priority: '1.0' },
             { path: 'faq', freq: 'monthly', priority: '0.8' },
-            { path: 'articles', freq: 'weekly', priority: '0.9' },
+            { path: 'resources', freq: 'weekly', priority: '0.9' },
             { path: 'book', freq: 'weekly', priority: '0.9' },
             { path: 'privacy', freq: 'monthly', priority: '0.5' },
             { path: 'terms', freq: 'monthly', priority: '0.5' }
@@ -49,10 +49,10 @@ function generate() {
             xml += `  </url>\n`;
         });
 
-        // Dynamic Articles
+        // Dynamic Articles (live routes are /resources/:id)
         articleIds.forEach(id => {
             xml += `  <url>\n`;
-            xml += `    <loc>${BASE_URL}/articles/${id}</loc>\n`;
+            xml += `    <loc>${BASE_URL}/resources/${id}</loc>\n`;
             xml += `    <lastmod>${today}</lastmod>\n`;
             xml += `    <changefreq>weekly</changefreq>\n`;
             xml += `    <priority>0.8</priority>\n`;

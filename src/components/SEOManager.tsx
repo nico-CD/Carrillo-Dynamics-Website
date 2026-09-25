@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useTranslation } from './LanguageProvider';
 
 interface SEOManagerProps {
-    title?: string; // This should be the [Page Name] only
+    title?: string;
     description?: string;
     canonicalPath?: string;
     type?: string;
@@ -21,24 +21,21 @@ const SEOManager: React.FC<SEOManagerProps> = ({
     const { lang } = useTranslation();
     const location = useLocation();
     
-    // Base configuration
     const brandName = 'Carrillo Dynamics';
-    const slogan = lang === 'en' 
-        ? 'Engineered Precision. Industrial Grit.' 
-        : 'Precisión de Ingeniería. Tesón Industrial.';
+    const tagline = lang === 'en' 
+        ? 'Less chaos. More capacity.' 
+        : 'Menos caos. Más capacidad.';
     
-    // Pattern: Carrillo Dynamics | [Page Name] | Engineered Precision. Industrial Grit.
     const fullTitle = title 
-        ? `${brandName} | ${title} | ${slogan}`
-        : `${brandName} | ${slogan}`;
+        ? `${brandName} | ${title}`
+        : `${brandName} | ${tagline}`;
         
     const siteDescription = lang === 'en' 
-        ? 'We engineer websites and systems that help service businesses scale. Get more jobs. Automate the busywork. Cut the headaches.'
-        : 'Diseñamos sitios web y sistemas que ayudan a las empresas de servicios a escalar. Consiga más trabajos. Automatice el trabajo manual. Reduzca los dolores de cabeza.';
+        ? 'We build the engines that help service businesses scale. Get more jobs. Automate the busywork. Cut the headaches. Chicago-based. English and Spanish.'
+        : 'Construimos los motores que ayudan a las empresas de servicios a escalar. Consiga más trabajos. Automatice el trabajo manual. Reduzca los dolores de cabeza. Con sede en Chicago. Inglés y español.';
     
     const baseUrl = 'https://carrillodynamics.com';
     
-    // Clean current path (remove trailing slashes, ensure it starts with /)
     const currentPath = location.pathname.endsWith('/') && location.pathname !== '/'
         ? location.pathname.slice(0, -1)
         : location.pathname;
@@ -49,35 +46,35 @@ const SEOManager: React.FC<SEOManagerProps> = ({
 
     return (
         <Helmet>
-            {/* Primary Meta Tags */}
             <title>{fullTitle}</title>
             <meta name="title" content={fullTitle} />
             <meta name="description" content={description || siteDescription} />
-            {isNoindex && <meta name="robots" content="noindex" />}
+            <meta name="robots" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
 
-            {/* AI Optimization (AEO/GEO) */}
             <meta name="author" content="Carrillo Dynamics LLC" />
             <meta name="geo.region" content="US-IL" />
             <meta name="geo.placename" content="Chicago" />
+            <meta name="language" content={lang === 'en' ? 'English' : 'Spanish'} />
 
-            {/* Canonical */}
             <link rel="canonical" href={finalCanonical} />
+            <link rel="alternate" hrefLang="en" href={finalCanonical} />
+            <link rel="alternate" hrefLang="es" href={finalCanonical} />
+            <link rel="alternate" hrefLang="x-default" href={finalCanonical} />
 
-            {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />
             <meta property="og:url" content={finalCanonical} />
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={description || siteDescription} />
             <meta property="og:image" content={`${baseUrl}/bull_PNGs/vect.bull.png`} />
+            <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_US'} />
+            <meta property="og:site_name" content="Carrillo Dynamics" />
 
-            {/* Twitter */}
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={finalCanonical} />
-            <meta property="twitter:title" content={fullTitle} />
-            <meta property="twitter:description" content={description || siteDescription} />
-            <meta property="twitter:image" content={`${baseUrl}/bull_PNGs/vect.bull.png`} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:url" content={finalCanonical} />
+            <meta name="twitter:title" content={fullTitle} />
+            <meta name="twitter:description" content={description || siteDescription} />
+            <meta name="twitter:image" content={`${baseUrl}/bull_PNGs/vect.bull.png`} />
             
-            {/* Language Attribute */}
             <html lang={lang} />
         </Helmet>
     );

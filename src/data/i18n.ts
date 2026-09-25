@@ -188,7 +188,7 @@ export const i18nData: Record<Language, I18nContent> = {
             sections: [
                 {
                     title: "01. Collection & Governance",
-                    content: "We collect operational details needed to design and build your systems — business info you share on forms or calls, project notes, and technical requirements. We handle that data carefully and only as needed for the engagement."
+                    content: "We collect operational details needed to design and build your systems - business info you share on forms or calls, project notes, and technical requirements. We handle that data carefully and only as needed for the engagement."
                 },
                 {
                     title: "02. Internal Usage Protocols",
@@ -231,11 +231,11 @@ export const i18nData: Record<Language, I18nContent> = {
         faqs: [
             {
                 q: "What is the real cost of missed leads?",
-                a: "For busy shops, even a small leak — after-hours calls, slow follow-up, jobs that never get booked — can cost tens of thousands a year. We build engines that catch those jobs before they go to a competitor."
+                a: "For busy shops, even a small leak - after-hours calls, slow follow-up, jobs that never get booked - can cost tens of thousands a year. We build engines that catch those jobs before they go to a competitor."
             },
             {
                 q: "How does the \"60-Second Rule\" impact ROI?",
-                a: "A lead contacted in under 60 seconds is far more likely to book. We set up automated response so your shop is often the first call back — day or night — without someone living on the phone."
+                a: "A lead contacted in under 60 seconds is far more likely to book. We set up automated response so your shop is often the first call back - day or night - without someone living on the phone."
             },
             {
                 q: "Can we take more jobs without hiring more office staff?",
@@ -243,19 +243,19 @@ export const i18nData: Record<Language, I18nContent> = {
             },
             {
                 q: "Do you replace our CRM or existing tools?",
-                a: "Usually no. We connect and automate around what you already use so the tools finally match how your shop actually runs — not just a pretty website bolted on top."
+                a: "Usually no. We connect and automate around what you already use so the tools finally match how your shop actually runs - not just a pretty website bolted on top."
             },
             {
                 q: "How soon will we see results?",
-                a: "First wins often show within a couple of weeks. We start with the highest-friction spots — missed calls, slow intake, follow-ups that die — so you feel the difference fast."
+                a: "First wins often show within a couple of weeks. We start with the highest-friction spots - missed calls, slow intake, follow-ups that die - so you feel the difference fast."
             },
             {
                 q: "What does Carrillo Dynamics actually do?",
-                a: "We're ops and automation engineers for local service businesses. We don't just advise — we build and ship the systems. Book a 15-minute strategy call and we'll map what an engine for your trade would look like."
+                a: "We're ops and automation engineers for local service businesses. We don't just advise - we build and ship the systems. Book a 15-minute strategy call and we'll map what an engine for your trade would look like."
             },
             {
                 q: "Do you work in English and Spanish?",
-                a: "Yes. Sites, flows, and conversations can run in English, Spanish, or both — a real advantage for many local trade markets."
+                a: "Yes. Sites, flows, and conversations can run in English, Spanish, or both - a real advantage for many local trade markets."
             }
         ],
         articles: [
@@ -305,7 +305,7 @@ Is your marketing budget leaking through cracks in your process? Most busy shops
 
 ### What We Build
 
-We tighten intake, speed up response, and make sure follow-ups actually happen — so leads get captured and routed before they go cold. Not just a pretty website: an engine that helps you keep the jobs you already paid to attract.`,
+We tighten intake, speed up response, and make sure follow-ups actually happen - so leads get captured and routed before they go cold. Not just a pretty website: an engine that helps you keep the jobs you already paid to attract.`,
                 date: "2026-04-07",
                 readTime: "6 min"
             },
@@ -321,7 +321,7 @@ Every time an employee copies a customer's address from an email into your CRM, 
 
 A single typo in an address or phone number doesn't just waste office time; it sends a $150/hr field crew to the wrong location. Manual data re-entry introduces risk and unnecessary delay into every ticket. 
 
-### Engineered Precision
+### Clean Data Flow
 
 By bypassing manual data entry, we build direct API connections that eliminate transcription errors. Lead info flows straight from your web form into your CRM and onto your technician's phone instantly. The result: faster dispatching, zero data loss, and higher field efficiency.`,
                 date: "2026-04-12",
@@ -359,13 +359,13 @@ While earning my Engineering degree at Illinois Tech, I learned how to build rel
 
 ### Building What Works
 
-That's why I started Carrillo Dynamics. I'm not here to sell you just a "pretty website" or pitch abstract tech buzzwords. I'm here to build engines — websites and systems — that help trade businesses run cleaner and take more work without the headaches.
+That's why I started Carrillo Dynamics. I'm not here to sell you just a "pretty website" or pitch abstract tech buzzwords. I'm here to build engines - websites and systems - that help trade businesses run cleaner and take more work without the headaches.
 
 ### The Bottom Line
 
 Technology shouldn't complicate your life; it should amplify the hard work you've already put into your business. When we streamline your operations, we aren't changing who you are, we're just freeing you and your team up to do the real work that pays the bills.
 
-— Nico Carrillo, Owner/Engineer`,
+ -  Nico Carrillo, Owner/Engineer`,
                 date: "2026-04-24",
                 readTime: "6 min"
             }
@@ -397,7 +397,7 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
         success: {
             title: "Solicitud ",
             titleItalic: "Recibida.",
-            description: "Estamos revisando su solicitud. Esté atento a un correo — le respondemos pronto.",
+            description: "Estamos revisando su solicitud. Esté atento a un correo - le respondemos pronto.",
             founder: "- Nico Carrillo (Carrillo Dynamics)",
             cta: "Volver al Inicio"
         },
@@ -502,11 +502,11 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
         faqs: [
             {
                 q: "¿Cuál es el costo real de perder leads?",
-                a: "Para talleres ocupados, incluso una fuga pequeña — llamadas fuera de horario, seguimiento lento, trabajos que nunca se agendan — puede costar decenas de miles al año. Construimos motores que atrapan esos trabajos antes de que se vayan con la competencia."
+                a: "Para talleres ocupados, incluso una fuga pequeña - llamadas fuera de horario, seguimiento lento, trabajos que nunca se agendan - puede costar decenas de miles al año. Construimos motores que atrapan esos trabajos antes de que se vayan con la competencia."
             },
             {
                 q: "¿Cómo impacta la \"Regla de los 60 Segundos\" en el ROI?",
-                a: "Un lead contactado en menos de 60 segundos tiene muchas más probabilidades de agendar. Configuramos respuestas automáticas para que su taller suela ser el primero en devolver la llamada — de día o de noche — sin que alguien viva pegado al teléfono."
+                a: "Un lead contactado en menos de 60 segundos tiene muchas más probabilidades de agendar. Configuramos respuestas automáticas para que su taller suela ser el primero en devolver la llamada - de día o de noche - sin que alguien viva pegado al teléfono."
             },
             {
                 q: "¿Podemos tomar más trabajos sin contratar más personal de oficina?",
@@ -514,19 +514,19 @@ Technology shouldn't complicate your life; it should amplify the hard work you'v
             },
             {
                 q: "¿Reemplazan nuestro CRM o herramientas actuales?",
-                a: "Por lo general no. Conectamos y automatizamos alrededor de lo que ya usa para que las herramientas coincidan con cómo opera su taller — no solo un sitio bonito encima."
+                a: "Por lo general no. Conectamos y automatizamos alrededor de lo que ya usa para que las herramientas coincidan con cómo opera su taller - no solo un sitio bonito encima."
             },
             {
                 q: "¿Qué tan pronto veremos resultados?",
-                a: "Las primeras victorias suelen verse en un par de semanas. Empezamos por los puntos de mayor fricción — llamadas perdidas, intake lento, seguimientos que mueren — para que sienta la diferencia rápido."
+                a: "Las primeras victorias suelen verse en un par de semanas. Empezamos por los puntos de mayor fricción - llamadas perdidas, intake lento, seguimientos que mueren - para que sienta la diferencia rápido."
             },
             {
                 q: "¿Qué hace realmente Carrillo Dynamics?",
-                a: "Somos ingenieros de operaciones y automatización para negocios de servicios locales. No solo aconsejamos — construimos y entregamos los sistemas. Reserve una llamada de estrategia de 15 minutos y mapeamos cómo se vería un motor para su oficio."
+                a: "Somos ingenieros de operaciones y automatización para negocios de servicios locales. No solo aconsejamos - construimos y entregamos los sistemas. Reserve una llamada de estrategia de 15 minutos y mapeamos cómo se vería un motor para su oficio."
             },
             {
                 q: "¿Trabajan en inglés y español?",
-                a: "Sí. Sitios, flujos y conversaciones pueden ir en inglés, español o ambos — una ventaja real en muchos mercados de oficios locales."
+                a: "Sí. Sitios, flujos y conversaciones pueden ir en inglés, español o ambos - una ventaja real en muchos mercados de oficios locales."
             }
         ],
         articles: [
@@ -576,7 +576,7 @@ Los errores manuales son el impuesto oculto en su ROI. Nuestros sistemas asegura
 
 ### Lo Que Construimos
 
-Ajustamos el intake, aceleramos la respuesta y hacemos que los seguimientos realmente ocurran — para capturar y enrutar leads antes de que se enfríen. No solo un sitio bonito: un motor que le ayuda a conservar los trabajos que ya pagó por atraer.`,
+Ajustamos el intake, aceleramos la respuesta y hacemos que los seguimientos realmente ocurran - para capturar y enrutar leads antes de que se enfríen. No solo un sitio bonito: un motor que le ayuda a conservar los trabajos que ya pagó por atraer.`,
                 date: "2026-04-07",
                 readTime: "6 min"
             },
@@ -592,7 +592,7 @@ Cada vez que un empleado copia la dirección de un cliente de un correo electró
 
 Un solo error en una dirección o número de teléfono no solo hace perder tiempo en la oficina; envía a un equipo de campo de $150/hr a la ubicación equivocada. El reingreso manual de datos introduce riesgos y retrasos innecesarios en cada ticket.
 
-### Precisión Diseñada
+### Datos limpios
 
 Al evitar la entrada manual de datos, construimos conexiones API directas que eliminan los errores de transcripción. La información del lead fluye directamente desde su formulario web hacia su CRM y al teléfono de su técnico al instante. El resultado: un despacho más rápido, cero pérdida de datos y mayor eficiencia en el campo.`,
                 date: "2026-04-12",
@@ -630,13 +630,13 @@ Mientras obtenía mi título de Ingeniería en Illinois Tech, aprendí a constru
 
 ### Construyendo lo que Funciona
 
-Por eso comencé Carrillo Dynamics. No estoy aquí para venderle solo un "sitio bonito" ni palabras de moda. Estoy aquí para construir motores — sitios y sistemas — que ayuden a los oficios a operar más limpio y tomar más trabajo sin los dolores de cabeza.
+Por eso comencé Carrillo Dynamics. No estoy aquí para venderle solo un "sitio bonito" ni palabras de moda. Estoy aquí para construir motores - sitios y sistemas - que ayuden a los oficios a operar más limpio y tomar más trabajo sin los dolores de cabeza.
 
 ### En Conclusión
 
 La tecnología no debería complicar tu vida; debería amplificar el arduo trabajo que ya has puesto en tu negocio. Cuando optimizamos tus operaciones, no estamos cambiando quién eres, solo te estamos liberando a ti y a tu equipo para hacer el trabajo real que paga las cuentas.
 
-— Nico Carrillo, Owner/Engineer`,
+ -  Nico Carrillo, Owner/Engineer`,
                 date: "2026-04-24",
                 readTime: "6 min"
             }

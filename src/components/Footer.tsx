@@ -27,8 +27,8 @@ const Footer = () => {
             </div>
             <p className="text-[10px] font-black uppercase leading-relaxed tracking-[0.2em] text-muted-foreground transition-colors duration-300">
               {lang === "en"
-                ? "Engineered Precision. Industrial Grit."
-                : "Precisión de Ingeniería. Tesón Industrial."}
+                ? "Less chaos. More capacity."
+                : "Menos caos. Más capacidad."}
               <br />
               CHICAGO, IL
             </p>
@@ -59,7 +59,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-[#10b981] transition-colors hover:text-[#0ea672]"
                 >
-                  {lang === "en" ? "Demo Hub" : "Hub de Demos"}
+                  {lang === "en" ? "CD Engine Demos" : "Demos CD Engine"}
                 </a>
                 <Link to="/book" className="transition-colors hover:text-foreground">
                   {t.nav.strategy}

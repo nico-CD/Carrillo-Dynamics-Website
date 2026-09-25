@@ -9,7 +9,7 @@ import { useTranslation } from "@/components/LanguageProvider";
 import { DEMO_HUB_URL } from "@/data/trades";
 
 /**
- * QR-only landing. Not linked from the public homepage —
+ * QR-only landing. Not linked from the public homepage.
  * card scanners arrive here directly.
  */
 const Start = () => {
@@ -38,11 +38,11 @@ const Start = () => {
           title: "Watch the walk-through.",
           titleAccent: "Then book a call.",
           subtitle:
-            "This video shows the engines we build for local trades — English or Spanish. Then book 15 minutes or drive a live demo yourself.",
+            "This video shows the engines we build for local trades, in English or Spanish. Then book 15 minutes or drive a live demo yourself.",
           videoBadge: "Walk-through video coming soon",
-          previewAlt: "CD Trade Automation Suite preview",
-          previewBadge: "Live Suite",
-          openHub: "Open full demo hub",
+          previewAlt: "CD Engine Demos preview",
+          previewBadge: "Live Demos",
+          openHub: "Open CD Engine Demos",
           bookPrimary: "Book a 15-min strategy call",
           bookTitleLead: "Book Your",
           bookTitleAccent: "Strategy Session",
@@ -54,11 +54,11 @@ const Start = () => {
           title: "Vea el recorrido.",
           titleAccent: "Luego agende.",
           subtitle:
-            "Este video muestra los motores que construimos para oficios locales — en inglés o español. Luego reserve 15 minutos o pruebe un demo en vivo.",
+            "Este video muestra los motores que construimos para oficios locales, en inglés o español. Luego reserve 15 minutos o pruebe un demo en vivo.",
           videoBadge: "Video del recorrido próximamente",
-          previewAlt: "Vista previa de la Suite de Automatización CD",
-          previewBadge: "Suite en vivo",
-          openHub: "Abrir hub completo",
+          previewAlt: "Vista previa de CD Engine Demos",
+          previewBadge: "Demos en vivo",
+          openHub: "Abrir CD Engine Demos",
           bookPrimary: "Agendar llamada de 15 min",
           bookTitleLead: "Agende Su",
           bookTitleAccent: "Sesión de Estrategia",

@@ -18,18 +18,18 @@ const VideoGate = () => {
       ? {
           titleLead: "Test-drive our",
           titleAccent: "engines.",
-          body: "Open the CD Trade Automation Suite to try seven live trade demos.",
-          cta: "Open demo hub",
-          badge: "Live Suite",
-          previewAlt: "CD Trade Automation Suite preview",
+          body: "Open CD Engine Demos to try seven live trade engines.",
+          cta: "Open demos",
+          badge: "Live Demos",
+          previewAlt: "CD Engine Demos preview",
         }
       : {
           titleLead: "Pruebe nuestros",
           titleAccent: "motores.",
-          body: "Abra la Suite de Automatización CD para probar siete demos de oficios en vivo.",
-          cta: "Abrir hub de demos",
-          badge: "Suite en vivo",
-          previewAlt: "Vista previa de la Suite de Automatización CD",
+          body: "Abra CD Engine Demos para probar siete motores de oficios en vivo.",
+          cta: "Abrir demos",
+          badge: "Demos en vivo",
+          previewAlt: "Vista previa de CD Engine Demos",
         };
 
   return (

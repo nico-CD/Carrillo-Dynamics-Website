@@ -3,20 +3,26 @@ import { useTranslation } from "./LanguageProvider";
 const StructuredData = () => {
     const { lang } = useTranslation();
 
+    const descriptionEn =
+        "Carrillo Dynamics builds websites and automation engines for local service businesses in the Chicago area and beyond. Get more jobs, automate busywork, cut headaches. Book a 15-minute strategy call. English and Spanish.";
+    const descriptionEs =
+        "Carrillo Dynamics construye sitios web y motores de automatización para negocios de servicios locales en el área de Chicago y más allá. Consiga más trabajos, automatice el trabajo manual, reduzca dolores de cabeza. Reserve una llamada de 15 minutos. Inglés y español.";
+
     const websiteSchema = {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Carrillo Dynamics LLC",
         "url": "https://carrillodynamics.com",
-        "alternateName": "CD_Ops",
-        "description": lang === 'en' 
-            ? "Engineered Precision. Industrial Grit. Chicago-based Systems Engineering."
-            : "Precisión de Ingeniería. Tesón Industrial. Ingeniería de sistemas con sede en Chicago.",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://carrillodynamics.com/articles?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+        "alternateName": ["Carrillo Dynamics", "CD Engine Demos"],
+        "description": lang === "en" ? descriptionEn : descriptionEs,
+        "inLanguage": ["en", "es"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Carrillo Dynamics LLC",
+            "url": "https://carrillodynamics.com",
+            "logo": "https://carrillodynamics.com/bull_PNGs/vect.bull.png",
+            "email": "engineering@carrillodynamics.com",
+        },
     };
 
     const localBusinessSchema = {
@@ -26,54 +32,46 @@ const StructuredData = () => {
         "url": "https://carrillodynamics.com",
         "logo": "https://carrillodynamics.com/bull_PNGs/vect.bull.png",
         "image": "https://carrillodynamics.com/bull_PNGs/vect.bull.png",
-        "description": lang === 'en' 
-            ? "Chicago-based Systems Engineering firm serving the Greater Chicago Area and industrial clients nationwide. Specialized in high-stakes automation."
-            : "Empresa de ingeniería de sistemas con sede en Chicago que sirve al área metropolitana de Chicago y clientes industriales en todo el país.",
-        "priceRange": "$$$",
-        "telephone": "+17087227876",
+        "email": "engineering@carrillodynamics.com",
+        "description": lang === "en" ? descriptionEn : descriptionEs,
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Serving Greater Chicago Area",
             "addressLocality": "Chicago",
             "addressRegion": "IL",
-            "postalCode": "60601",
-            "addressCountry": "US"
+            "addressCountry": "US",
         },
         "geo": {
             "@type": "GeoCoordinates",
             "latitude": 41.8781,
-            "longitude": -87.6298
+            "longitude": -87.6298,
         },
         "areaServed": [
-            {
-                "@type": "City",
-                "name": "Chicago"
-            },
-            {
-                "@type": "State",
-                "name": "Illinois"
-            }
+            { "@type": "City", "name": "Chicago" },
+            { "@type": "State", "name": "Illinois" },
+            { "@type": "Country", "name": "United States" },
         ],
         "knowsAbout": [
-            "Systems Engineering",
-            "Industrial Automation",
-            "Operational Efficiency",
-            "HVAC Workflow Optimization",
-            "Logistics Automation"
+            "Service business automation",
+            "Trade operations systems",
+            "Lead intake and dispatch",
+            "Bilingual English Spanish business systems",
+            "HVAC plumbing electrical workflow automation",
         ],
         "brand": {
             "@type": "Brand",
             "name": "Carrillo Dynamics",
-            "slogan": lang === 'en' ? "Engineered Precision. Industrial Grit." : "Precisión de Ingeniería. Tesón Industrial."
+            "slogan": lang === "en" ? "Less chaos. More capacity." : "Menos caos. Más capacidad.",
         },
-        // Spanish-specific Core Value injection
-        ...(lang === 'es' ? {
-            "award": "Core Value: Tesón (Compromiso de ingeniería persistente y de alta resistencia)"
-        } : {}),
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".hero-title", ".hero-subtitle"]
-        }
+        "sameAs": [
+            "https://demo.carrillodynamics.com",
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "engineering@carrillodynamics.com",
+            "availableLanguage": ["English", "Spanish"],
+            "url": "https://carrillodynamics.com/book",
+        },
     };
 
     const faqSchema = {
@@ -85,31 +83,41 @@ const StructuredData = () => {
                 "name": "What does Carrillo Dynamics do?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Carrillo Dynamics builds websites and automation engines for local service businesses — so shops get more jobs, automate busywork, and cut headaches. Book a 15-minute strategy call to map an engine for your trade."
-                }
+                    "text": "Carrillo Dynamics builds websites and automation engines for local service businesses so shops get more jobs, automate busywork, and cut headaches. Book a 15-minute strategy call to map an engine for your trade.",
+                },
             },
             {
                 "@type": "Question",
-                "name": "How does Carrillo Dynamics help HVAC and other trade shops?",
+                "name": "Who is Carrillo Dynamics for?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "By automating intake, dispatch, and follow-ups so crews can take more volume without adding office headcount — not just a pretty website."
-                }
-            }
-        ]
+                    "text": "Owners of local service businesses: HVAC, plumbing, electrical, roofing, towing, landscaping, waste removal, and similar trades that swing tools or drive trucks.",
+                },
+            },
+            {
+                "@type": "Question",
+                "name": "Do you work in English and Spanish?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Sites, flows, and conversations can run in English, Spanish, or both.",
+                },
+            },
+            {
+                "@type": "Question",
+                "name": "How do I get started?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Book a 15-minute strategy call at https://carrillodynamics.com/book. You can also preview live trade demos at https://demo.carrillodynamics.com.",
+                },
+            },
+        ],
     };
 
     return (
         <>
-            <script type="application/ld+json">
-                {JSON.stringify(websiteSchema)}
-            </script>
-            <script type="application/ld+json">
-                {JSON.stringify(localBusinessSchema)}
-            </script>
-            <script type="application/ld+json">
-                {JSON.stringify(faqSchema)}
-            </script>
+            <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+            <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+            <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         </>
     );
 };

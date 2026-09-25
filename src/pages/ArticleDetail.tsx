@@ -214,8 +214,8 @@ const ArticleDetail = () => {
                                     </h2>
                                     <p className="font-bold max-w-2xl text-lg md:text-xl text-zinc-400">
                                         {lang === 'en'
-                                            ? 'Book a 15-minute strategy call and we\'ll map an engine for your shop — not just a pretty website.'
-                                            : 'Reserve una llamada de estrategia de 15 minutos y mapearemos un motor para su taller — no solo un sitio bonito.'}
+                                            ? 'Book a 15-minute strategy call and we\'ll map an engine for your shop, not just a pretty website.'
+                                            : 'Reserve una llamada de estrategia de 15 minutos y mapearemos un motor para su taller, no solo un sitio bonito.'}
                                     </p>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto pt-8">

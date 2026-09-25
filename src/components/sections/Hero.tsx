@@ -25,7 +25,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
             >
                 <h1 className="uppercase leading-[0.9]">
                     <span className="block text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white md:whitespace-nowrap">
-                        {lang === 'en' ? "Stop bleeding leads." : "Deja de perder clientes."}
+                        {lang === 'en' ? "Less chaos. More capacity." : "Menos caos. Más capacidad."}
                     </span>
                     <span className="block text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-[#10b981] mt-1 md:mt-2 md:whitespace-nowrap">
                         {lang === 'en' ? "Automate your shop." : "Automatiza tu taller."}
