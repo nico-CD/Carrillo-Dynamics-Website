@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Clapperboard, ExternalLink, Languages } from "lucide-react";
+import { ExternalLink, Languages } from "lucide-react";
 import { InlineWidget } from "react-calendly";
 import Footer from "@/components/Footer";
 import SEOManager from "@/components/SEOManager";
 import { useTranslation } from "@/components/LanguageProvider";
-import { DEMO_HUB_URL, START_TRADES, hubTradeUrl } from "@/data/trades";
+import { DEMO_HUB_URL } from "@/data/trades";
 
 /**
  * QR-only landing. Not linked from the public homepage —
@@ -38,11 +38,10 @@ const Start = () => {
           title: "Watch the walk-through.",
           titleAccent: "Then drive it live.",
           subtitle:
-            "This video walks the CD Trade Automation Suite — then open any trade below or book time if you want a custom build.",
-          videoBadge: "DEMO VIDEO — COMING SOON",
-          videoAlt: "Demo video placeholder",
+            "Open the CD Trade Automation Suite to test-drive live trade demos — or book time if you want a custom build.",
+          previewAlt: "CD Trade Automation Suite preview",
+          previewBadge: "Live Suite",
           openHub: "Open full demo hub",
-          tradesTitle: "Jump into a trade",
           bookTitleLead: "Book Your",
           bookTitleAccent: "Strategy Session",
           bookBody:
@@ -53,11 +52,10 @@ const Start = () => {
           title: "Vea el recorrido.",
           titleAccent: "Luego pruébelo en vivo.",
           subtitle:
-            "Este video recorre la Suite de Automatización CD — luego abra un oficio abajo o agende si quiere un build a medida.",
-          videoBadge: "VIDEO DEMO — PRÓXIMAMENTE",
-          videoAlt: "Marcador de posición del video demo",
+            "Abra la Suite de Automatización CD para probar demos de oficios en vivo — o agende si quiere un build a medida.",
+          previewAlt: "Vista previa de la Suite de Automatización CD",
+          previewBadge: "Suite en vivo",
           openHub: "Abrir hub completo",
-          tradesTitle: "Entrar a un oficio",
           bookTitleLead: "Agende Su",
           bookTitleAccent: "Sesión de Estrategia",
           bookBody:
@@ -100,7 +98,7 @@ const Start = () => {
           }}
         />
 
-        {/* Video (promised on the card) */}
+        {/* Demo hub preview */}
         <section className="relative px-4 pb-6 pt-8 sm:px-6 sm:pt-10">
           <div className="relative z-10 mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">
@@ -111,59 +109,30 @@ const Start = () => {
               {copy.subtitle}
             </p>
 
-            <div className="relative mt-6 w-full overflow-hidden rounded-2xl border border-[#27272A] bg-[#18181B]">
-              <div className="relative aspect-video w-full">
-                <img
-                  src="/images/demo-preview.jpg"
-                  alt={copy.videoAlt}
-                  className="absolute inset-0 h-full w-full object-cover object-top opacity-40"
-                />
-                <div className="absolute inset-0 flex items-center justify-center px-4">
-                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2.5 font-mono text-[11px] text-emerald-400 backdrop-blur-md sm:text-sm">
-                    <span className="opacity-60">[</span>
-                    <Clapperboard className="h-4 w-4 shrink-0" />
-                    <span className="truncate">{copy.videoBadge}</span>
-                    <span className="opacity-60">]</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <a
               href={hubHome}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[#10b981] px-5 py-3.5 text-sm font-black uppercase tracking-wider text-zinc-950 transition-colors hover:bg-[#0ea672] sm:w-auto sm:px-8"
+              aria-label={copy.openHub}
+              className="group relative mt-6 block w-full overflow-hidden rounded-2xl border border-[#27272A] bg-[#18181B] transition-all duration-300 hover:border-[#10b981]/50 hover:shadow-[0_20px_50px_-15px_rgba(16,185,129,0.35)]"
             >
-              {copy.openHub}
-              <ExternalLink className="h-4 w-4" />
+              <span className="absolute right-3 top-3 z-10 rounded-full border border-[#10b981]/40 bg-[#18181B]/90 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#10b981] backdrop-blur-sm sm:right-4 sm:top-4">
+                {copy.previewBadge}
+              </span>
+              <img
+                src="/images/demo-preview.jpg"
+                alt={copy.previewAlt}
+                className="block aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[#10b981]/0 transition-colors duration-300 group-hover:bg-[#10b981]/5" />
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
+                <span className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#10b981] px-5 py-3 text-sm font-black uppercase tracking-wider text-zinc-950 shadow-lg transition-colors group-hover:bg-[#0ea672] sm:w-fit">
+                  {copy.openHub}
+                  <ExternalLink className="h-4 w-4" />
+                </span>
+              </div>
             </a>
           </div>
-        </section>
-
-        {/* Trade deep-links — compact chips only */}
-        <section className="relative z-10 px-4 pb-16 sm:px-6 sm:pb-20">
-          <motion.div className="mx-auto max-w-3xl" {...revealProps}>
-            <p className="mb-3 text-center text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">
-              {copy.tradesTitle}
-            </p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {START_TRADES.filter((t) => t.id !== "custom").map((trade) => {
-                const label = lang === "en" ? trade.labelEn : trade.labelEs;
-                return (
-                  <a
-                    key={trade.id}
-                    href={hubTradeUrl(trade.id, searchParams)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-foreground/15 bg-zinc-950 px-3.5 py-2 text-[11px] font-black uppercase tracking-wider text-foreground transition-colors hover:border-[#10b981] hover:text-[#10b981]"
-                  >
-                    {label}
-                  </a>
-                );
-              })}
-            </div>
-          </motion.div>
         </section>
 
         {/* Book + Calendly */}
