@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
 import { useTranslation } from "@/components/LanguageProvider";
 
 interface HeroProps {
@@ -24,17 +23,6 @@ const Hero = ({ onContactClick }: HeroProps) => {
                 transition={{ duration: 0.8 }}
                 className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center text-center"
             >
-                <div className="inline-flex items-center gap-2 bg-[#18181B] border border-[#27272A] text-[#10b981] font-mono text-xs md:text-sm px-4 py-1.5 rounded-full mt-4 md:mt-6 mb-12 md:mb-16">
-                    <span className="opacity-60">[</span>
-                    <Zap className="h-3.5 w-3.5 shrink-0" />
-                    <span>
-                        {lang === 'en'
-                            ? "OPERATIONAL AUTOMATION FOR THE TRADES"
-                            : "AUTOMATIZACIÓN OPERATIVA PARA LOS OFICIOS"}
-                    </span>
-                    <span className="opacity-60">]</span>
-                </div>
-
                 <h1 className="uppercase leading-[0.9]">
                     <span className="block text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white md:whitespace-nowrap">
                         {lang === 'en' ? "Stop bleeding leads." : "Deja de perder clientes."}
